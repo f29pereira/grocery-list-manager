@@ -15,7 +15,9 @@ export default function CloseButton({
   return (
     <button
       className={clsx(
-        "flex items-center justify-center cursor-pointer",
+        "flex items-center justify-center cursor-pointer text-slate-950",
+        "focus-visible:outline-solid focus-visible:outline-[3.2px] focus-visible:outline-offset-1 focus-visible:outline-green-900",
+        "transition-[color] delay-150 duration-300 ease-in-out motion-reduce:transition-none md:hover:text-slate-700",
         styles,
       )}
       aria-label={ariaLabel}

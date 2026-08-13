@@ -7,14 +7,14 @@ import Footer from "../components/shared/Footer/Footer";
  */
 export default function Root() {
   return (
-    <>
+    <div className="flex min-h-screen flex-col">
       <Nav />
 
-      <main>
+      <main className="flex-1">
         <Outlet />
       </main>
 
       <Footer />
-    </>
+    </div>
   );
 }

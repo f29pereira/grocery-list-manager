@@ -1,7 +1,9 @@
 import { useState } from "react";
 
 /**
- * Custom Hook: manages a boolean toggle state
+ * Custom hook that manages a boolean toggle state
+ * @param startValue initial state value
+ * @returns current state, state setter function and toggle function
  */
 export default function useToggle(startValue: boolean) {
   const [isToggled, setIsToggled] = useState(startValue);
@@ -13,13 +15,5 @@ export default function useToggle(startValue: boolean) {
     setIsToggled((prev) => !prev);
   };
 
-  /**
-   * Sets the isToggled state by a given value
-   * @param value boolean value
-   */
-  const setToggle = (value: boolean) => {
-    setIsToggled(value);
-  };
-
-  return { isToggled, toggle, setToggle };
+  return { isToggled, setIsToggled, toggle };
 }

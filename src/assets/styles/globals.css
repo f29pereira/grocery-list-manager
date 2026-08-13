@@ -1,1 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght,YOPQ@100..900,300&family=Space+Grotesk:wght@300..700&display=swap");
 @import "tailwindcss";
+
+@theme {
+  /*Fonts*/
+  --font-space-grotesk: "Space Grotesk", sans-serif;
+  --font-kumbh-sans: "Kumbh Sans", sans-serif;
+
+  /*Colors*/
+  --color-light-bg: var(--color-gray-50);
+}
+
+@layer base {
+  body {
+    font-family: var(--font-kumbh-sans);
+    background-color: var(--color-light-bg);
+  }
+}

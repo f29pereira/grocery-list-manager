@@ -13,6 +13,7 @@ export default function MobileNavToggle() {
     <>
       <button
         className={clsx(
+          "flex items-center",
           "cursor-pointer text-green-600",
           "focus-visible:outline-solid focus-visible:outline-[3.2px] focus-visible:outline-offset-4 focus-visible:outline-green-900",
           "transition-[color] delay-150 duration-300 ease-in-out motion-reduce:transition-none md:hover:text-green-500",

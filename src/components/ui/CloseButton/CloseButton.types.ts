@@ -1,7 +1,7 @@
 /**
  * Props for the CloseButton component
  * @property ariaLabel    - aria-label text description
- * @property styles       - tailwind css classes
+ * @property styles       - (optional) Tailwind CSS classes
  * @property handleClose  - close function
  */
 export type CloseButtonProps = {

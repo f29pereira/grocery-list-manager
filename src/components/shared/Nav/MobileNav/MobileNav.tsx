@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { NavLink } from "react-router";
 import type { MouseEvent, SyntheticEvent, TransitionEvent } from "react";
 import type { MobileNavProps } from "./MobileNav.types";
-import CloseButton from "@/components/ui/CloseButton/CloseButton";
-import useDialog from "@/hooks/useDialog";
 import clsx from "clsx";
+import useDialog from "@/hooks/useDialog";
+import CloseButton from "@/components/ui/CloseButton/CloseButton";
+import NavigationLink from "@/components/ui/NavigationLink/NavigationLink";
 
 /**
  * Renders the mobile navigation dialog with:
@@ -101,13 +101,11 @@ export default function MobileNav({ isToggled, setToggle }: MobileNavProps) {
         />
 
         <div className="ml-2">
-          <NavLink
-            className="cursor-pointer text-base"
+          <NavigationLink
             to="/"
-            onClick={startClosingDialog}
-          >
-            Home
-          </NavLink>
+            handleOnClick={startClosingDialog}
+            text="Home"
+          />
           {/*TO DO: Add links*/}
         </div>
       </nav>

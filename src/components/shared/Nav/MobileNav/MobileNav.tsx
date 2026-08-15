@@ -76,7 +76,7 @@ export default function MobileNav({ isToggled, setToggle }: MobileNavProps) {
   return (
     <dialog
       className="
-      fixed left-0 top-0 w-screen h-screen max-w-none max-h-none bg-black/55"
+      fixed inset-0 w-screen h-screen max-w-none max-h-none bg-black/55"
       ref={dialogRef}
       onClick={closeOnBackdropClick}
       onClose={() => setToggle(false)}
@@ -85,7 +85,8 @@ export default function MobileNav({ isToggled, setToggle }: MobileNavProps) {
     >
       <nav
         className={clsx(
-          "w-[60%] h-full pl-6 pt-6 bg-white",
+          "w-[65%] h-full",
+          "pl-6 pt-6 rounded-r-4xl bg-white",
           "transition-transform duration-300 ease-out motion-reduce:transition-none",
           isClosing
             ? "-translate-x-full"
@@ -96,12 +97,13 @@ export default function MobileNav({ isToggled, setToggle }: MobileNavProps) {
       >
         <CloseButton
           ariaLabel="Close menu"
-          styles="w-9 h-9 mb-8"
+          styles="w-9 h-9 mt-8 mb-16"
           handleClose={startClosingDialog}
         />
 
         <div className="ml-2">
           <NavigationLink
+            styles="font-bold text-slate-800 hover:text-slate-700"
             to="/"
             handleOnClick={startClosingDialog}
             text="Home"

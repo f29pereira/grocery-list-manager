@@ -103,11 +103,13 @@ export default function MobileNav({ isToggled, setToggle }: MobileNavProps) {
 
         <div className="ml-2">
           <NavigationLink
-            styles="font-bold text-slate-800 hover:text-slate-700"
+            styles="font-bold text-base text-slate-800 hover:text-slate-700"
             to="/"
             handleOnClick={startClosingDialog}
-            text="Home"
-          />
+          >
+            Home
+          </NavigationLink>
+
           {/*TO DO: Add links*/}
         </div>
       </nav>

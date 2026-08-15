@@ -11,19 +11,19 @@ export default function NavigationLink({
   styles,
   to,
   handleOnClick,
-  text,
+  children,
 }: NavigationLinkProps) {
   return (
     <NavLink
       className={clsx(
-        "cursor-pointer text-base",
+        "cursor-pointer rounded-sm",
         "focus-visible:outline-solid focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue-500",
         styles,
       )}
       to={to}
       onClick={handleOnClick}
     >
-      {text}
+      {children}
     </NavLink>
   );
 }

@@ -4,7 +4,7 @@ import type { MobileNavProps } from "./MobileNav.types";
 import clsx from "clsx";
 import useDialog from "@/hooks/useDialog";
 import CloseButton from "@/components/ui/CloseButton/CloseButton";
-import NavigationLink from "@/components/ui/NavigationLink/NavigationLink";
+import MobileLinksList from "./MobileLinksList/MobileLinksList";
 
 /**
  * Renders the mobile navigation dialog with:
@@ -81,7 +81,7 @@ export default function MobileNav({ isToggled, setToggle }: MobileNavProps) {
       onClick={closeOnBackdropClick}
       onClose={() => setToggle(false)}
       onCancel={handleOnCancel}
-      aria-label="Mobile navigation"
+      aria-label="Menu"
     >
       <nav
         className={clsx(
@@ -93,7 +93,7 @@ export default function MobileNav({ isToggled, setToggle }: MobileNavProps) {
             : "translate-x-0 starting:-translate-x-full",
         )}
         onTransitionEnd={handleOnTransitionEnd}
-        aria-label="Main navigation"
+        aria-label="Main"
       >
         <CloseButton
           ariaLabel="Close menu"
@@ -101,17 +101,7 @@ export default function MobileNav({ isToggled, setToggle }: MobileNavProps) {
           handleClose={startClosingDialog}
         />
 
-        <div className="ml-2">
-          <NavigationLink
-            styles="font-bold text-base text-slate-800 hover:text-slate-700"
-            to="/"
-            handleOnClick={startClosingDialog}
-          >
-            Home
-          </NavigationLink>
-
-          {/*TO DO: Add links*/}
-        </div>
+        <MobileLinksList handleOnClick={startClosingDialog} />
       </nav>
     </dialog>
   );

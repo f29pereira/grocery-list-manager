@@ -23,7 +23,10 @@ export default function NavLogo() {
       >
         <div className="flex justify-center items-center gap-1">
           <TbPaperBag className="text-2xl sm:text-3xl" aria-hidden="true" />
-          <span className="text-2xl tracking-widest">GL</span>
+          <span className="sr-only">Grocery List</span>
+          <span className="text-2xl tracking-widest" aria-hidden="true">
+            GL
+          </span>
         </div>
       </NavigationLink>
 

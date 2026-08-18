@@ -22,8 +22,8 @@ export default function NavLogo() {
         to="/"
       >
         <div className="flex justify-center items-center gap-1">
-          <TbPaperBag className="text-2xl sm:text-3xl" />
-          <span className="text-2xl tracking-widest">GM</span>
+          <TbPaperBag className="text-2xl sm:text-3xl" aria-hidden="true" />
+          <span className="text-2xl tracking-widest">GL</span>
         </div>
       </NavigationLink>
 
@@ -39,7 +39,7 @@ export default function NavLogo() {
         to="/"
       >
         <div className="flex justify-center items-center gap-2">
-          <TbPaperBag className="text-2xl md:text-3xl" />
+          <TbPaperBag className="text-2xl md:text-3xl" aria-hidden="true" />
           <span className="text-2xl md:text-3xl">Grocery List</span>
         </div>
       </NavigationLink>

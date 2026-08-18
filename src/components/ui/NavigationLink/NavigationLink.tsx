@@ -10,6 +10,7 @@ import clsx from "clsx";
 export default function NavigationLink({
   styles,
   to,
+  end,
   handleOnClick,
   children,
 }: NavigationLinkProps) {
@@ -21,6 +22,7 @@ export default function NavigationLink({
         styles,
       )}
       to={to}
+      end={end}
       onClick={handleOnClick}
     >
       {children}

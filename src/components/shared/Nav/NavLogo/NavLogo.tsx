@@ -2,7 +2,7 @@ import { TbPaperBag } from "@/assets/icons/icon";
 import NavigationLink from "@/components/ui/NavigationLink/NavigationLink";
 
 /**
- * Renders the app logo, used by the Nav component, as a navigation link
+ * Renders the app logo, used by the Nav and PageNotFound components, as a navigation link
  *
  * Displays:
  * - the logo icon and "GM" on viewports < 640px
@@ -13,7 +13,8 @@ export default function NavLogo() {
     <>
       {/*Viewports < 640px*/}
       <NavigationLink
-        styles="text-green-600
+        styles="inline-block
+                text-green-600
                 font-space-grotesk font-black
                 transition-[color] delay-150 duration-300 ease-in-out 
                 motion-reduce:transition-none 

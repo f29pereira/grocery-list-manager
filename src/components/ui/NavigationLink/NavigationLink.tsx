@@ -17,7 +17,7 @@ export default function NavigationLink({
   return (
     <NavLink
       className={clsx(
-        "rounded-sm",
+        "rounded-full",
         "focus-visible:outline-solid focus-visible:outline-3",
         "focus-visible:outline-offset-2 focus-visible:outline-blue-500",
         styles,

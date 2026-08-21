@@ -12,7 +12,8 @@ export default function FooterCredit() {
     <div
       className="flex justify-center items-center mt-10 
                 font-bold text-slate-700 text-sm 
-                lg:mt-42 lg:font-normal lg:text-base"
+                lg:mt-44 lg:font-normal lg:text-base
+                xl:mt-50"
     >
       <span className="sr-only">Copywright</span>
       <FaRegCopyright className="text-lg mr-2" aria-hidden="true" />

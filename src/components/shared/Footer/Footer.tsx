@@ -12,8 +12,8 @@ export default function Footer() {
   return (
     <footer
       className="bg-white py-12
-                lg:px-10 lg:py-20
-                xl:px-32"
+                lg:px-10 lg:pt-20
+                xl:px-30"
     >
       <div className="lg:flex lg:justify-between">
         <FooterLogo />

@@ -16,7 +16,8 @@ export default function Nav() {
   return (
     <nav
       className="relative flex justify-between items-center px-6 py-5
-              bg-nav-footer-bg dark:bg-dark-nav-footer-bg theme-transition
+              bg-nav-footer-bg
+                theme-transition
                 md:px-8 md:py-7"
       aria-label="Main"
     >

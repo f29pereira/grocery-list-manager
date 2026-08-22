@@ -12,12 +12,11 @@ export default function MobileNavToggle() {
     <div className="lg:hidden">
       <button
         className="flex items-center
-                  cursor-pointer rounded-sm text-green-600
-                  focus-visible:outline-solid focus-visible:outline-[3.2px] focus-visible:outline-offset-2
-                focus-visible:outline-blue-500 focus-visible:bg-blue-50
-                  transition-[color] delay-150 duration-300 ease-in-out 
-                  motion-reduce:transition-none 
-                hover:text-green-500"
+                  cursor-pointer rounded-sm 
+                text-brand
+                  focus-visible:focus-ring focus-visible:outline-offset-2
+                  theme-transition 
+                hover:text-brand-hover"
         onClick={toggle}
         aria-label="Mobile navigation"
         aria-expanded={isToggled}

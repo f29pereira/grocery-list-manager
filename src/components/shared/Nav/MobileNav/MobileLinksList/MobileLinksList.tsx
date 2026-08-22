@@ -11,10 +11,9 @@ export default function MobileLinksList({
   handleOnClick,
 }: MobileLinksListProps) {
   const navItemStyles = `relative inline-block
-                        font-bold text-base text-slate-800
-                        hover:text-slate-700
-                        transition-[color] delay-150 duration-300 ease-in-out
-                        motion-reduce:transition-none
+                        font-bold text-link
+                        hover:text-link-hover
+                        theme-transition
                         lg:mr-10`;
 
   return (

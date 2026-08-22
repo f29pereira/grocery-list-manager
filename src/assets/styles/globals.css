@@ -1,18 +1,53 @@
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght,YOPQ@100..900,300&family=Space+Grotesk:wght@300..700&display=swap");
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   /*Fonts*/
   --font-space-grotesk: "Space Grotesk", sans-serif;
   --font-kumbh-sans: "Kumbh Sans", sans-serif;
 
   /*Colors*/
-  --color-light-bg: var(--color-gray-50);
+  --color-brand: var(--color-green-600);
+  --color-brand-hover: var(--color-green-500);
+  --color-body-bg: var(--color-gray-50);
+  --color-nav-footer-bg: var(--color-white);
+  --color-text: var(--color-slate-800);
+  --color-link: var(--color-text);
+  --color-focus: var(--color-blue-500);
+}
+
+/*Theme transition utility*/
+@utility theme-transition {
+  transition:
+    background-color 300ms ease-in-out,
+    color 300ms ease-in-out 150ms,
+    border-color 300ms ease-in-out;
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
 }
 
 @layer base {
   body {
     font-family: var(--font-kumbh-sans);
-    background-color: var(--color-light-bg);
+    background-color: var(--color-body-bg);
+  }
+
+  /*Dark theme custom variables*/
+  .dark {
+    --color-brand: var(--color-green-500);
+    --color-brand-hover: var(--color-green-400);
+    --color-body-bg: var(--color-slate-900);
+    --color-nav-footer-bg: var(--color-slate-950);
+    --color-text: var(--color-white);
+    --color-link: var(--color-text);
+    --color-focus: var(--color-cyan-400);
+  }
+
+  .dark body {
+    background-color: var(--color-body-bg);
   }
 }

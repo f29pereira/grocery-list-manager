@@ -11,7 +11,9 @@ import FooterCredit from "./FooterCredit/FooterCredit";
 export default function Footer() {
   return (
     <footer
-      className="bg-white py-12
+      className="py-12
+              bg-nav-footer-bg dark:bg-nav-footer-bg
+                theme-transition
                 lg:px-10 lg:pt-20
                 xl:px-30"
     >

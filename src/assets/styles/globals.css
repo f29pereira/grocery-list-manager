@@ -15,6 +15,7 @@
   --color-nav-footer-bg: var(--color-white);
   --color-text: var(--color-slate-800);
   --color-link: var(--color-text);
+  --color-link-hover: var(--color-slate-700);
   --color-focus: var(--color-blue-500);
 }
 
@@ -28,6 +29,13 @@
   @media (prefers-reduced-motion: reduce) {
     transition: none;
   }
+}
+
+/*Focus visible utility*/
+@utility focus-ring {
+  outline-style: solid;
+  outline-width: 3.2px;
+  outline-color: var(--color-focus);
 }
 
 @layer base {
@@ -44,6 +52,7 @@
     --color-nav-footer-bg: var(--color-slate-950);
     --color-text: var(--color-white);
     --color-link: var(--color-text);
+    --color-link-hover: var(--color-slate-300);
     --color-focus: var(--color-cyan-400);
   }
 

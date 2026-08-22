@@ -5,11 +5,13 @@ import clsx from "clsx";
 import useDialog from "@/hooks/useDialog";
 import CloseButton from "@/components/ui/CloseButton/CloseButton";
 import MobileLinksList from "./MobileLinksList/MobileLinksList";
+import ThemeSwitcher from "@/components/ui/ThemeSwitcher/ThemeSwitcher";
 
 /**
  * Renders the mobile navigation dialog with:
- * - close button
- * - navigation link: Home
+ * - Close button
+ * - Navigation link: Home
+ * - App theme switch
  *
  * The navigation element features a translation transition when opened or closed.
  *
@@ -85,9 +87,12 @@ export default function MobileNav({ isToggled, setToggle }: MobileNavProps) {
     >
       <nav
         className={clsx(
-          "w-[65%] h-full",
-          "pl-6 pt-6 rounded-r-4xl bg-white",
-          "transition-transform duration-300 ease-out motion-reduce:transition-none",
+          "flex flex-col w-[65%] h-full",
+          "pl-6 pt-6 pb-20",
+          "rounded-r-4xl",
+          "bg-nav-footer-bg",
+          "transition-transform duration-300 ease-out",
+          "motion-reduce:transition-none",
           isClosing
             ? "-translate-x-full"
             : "translate-x-0 starting:-translate-x-full",
@@ -101,7 +106,11 @@ export default function MobileNav({ isToggled, setToggle }: MobileNavProps) {
           handleClose={startClosingDialog}
         />
 
-        <MobileLinksList handleOnClick={startClosingDialog} />
+        <div className="flex flex-col justify-between flex-1">
+          <MobileLinksList handleOnClick={startClosingDialog} />
+
+          <ThemeSwitcher />
+        </div>
       </nav>
     </dialog>
   );

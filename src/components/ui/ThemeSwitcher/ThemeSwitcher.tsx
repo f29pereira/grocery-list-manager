@@ -22,12 +22,11 @@ export default function ThemeSwitcher() {
 
   const btnStyles = `absolute top-0 z-10 flex justify-center items-center w-12.5 h-12.5
                     border-2 border-solid rounded-full cursor-pointer
-                    focus-visible:outline-solid focus-visible:outline-[3.2px] 
-                    focus-visible:outline-focus focus-visible:dark:outline-focus
+                    focus-visible:focus-ring focus-visible:-outline-offset-1
                     theme-transition
                     lg:w-9 lg:h-9`;
 
-  const btnSelectedStyles = `text-brand dark:text-brand
+  const btnSelectedStyles = `text-brand
                             border-slate-500 dark:border-white
                             bg-slate-100 dark:bg-slate-600`;
 

@@ -13,8 +13,8 @@
   --color-brand-hover: var(--color-green-500);
   --color-body-bg: var(--color-gray-50);
   --color-nav-footer-bg: var(--color-white);
-  --color-text: var(--color-slate-800);
-  --color-link: var(--color-text);
+  --color-title: var(--color-slate-950);
+  --color-link: var(--color-slate-800);
   --color-link-hover: var(--color-slate-700);
   --color-focus: var(--color-blue-500);
 }
@@ -50,8 +50,8 @@
     --color-brand-hover: var(--color-green-400);
     --color-body-bg: var(--color-slate-900);
     --color-nav-footer-bg: var(--color-slate-950);
-    --color-text: var(--color-white);
-    --color-link: var(--color-text);
+    --color-title: var(--color-white);
+    --color-link: var(--color-slate-200);
     --color-link-hover: var(--color-slate-300);
     --color-focus: var(--color-cyan-400);
   }

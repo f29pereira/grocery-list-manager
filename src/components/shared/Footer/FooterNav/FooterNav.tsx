@@ -7,22 +7,19 @@ import { FaXTwitter, FaFacebook, FaSquareInstagram } from "@/assets/icons/icon";
  */
 export default function FooterNav() {
   const navItemStyles = `inline-block rounded-sm 
-                        text-base text-slate-800 
-                        focus-visible:outline-solid focus-visible:outline-[3.2px] 
-                        focus-visible:outline-offset-2 focus-visible:outline-blue-500 
-                        focus-visible:bg-blue-50
-                        transition-[color] delay-150 duration-300 ease-in-out
-                        motion-reduce:transition-none
-                        hover:text-slate-700 
-                        hover:underline hover:underline-offset-8 hover:decoration-slate-700`;
+                        text-base text-link 
+                        focus-visible:focus-ring focus-visible:outline-offset-2
+                        focus-visible:dark:bg-transparent
+                        theme-transition
+                        hover:text-link-hover 
+                        hover:underline hover:underline-offset-8 
+                        hover:decoration-text-link`;
 
   const socialItemStyles = `inline-block rounded-sm
-                          font-normal text-3xl text-green-600
-                          focus-visible:outline-solid focus-visible:outline-[3.2px] 
-                          focus-visible:outline-offset-2 focus-visible:outline-blue-500
-                          transition-[color] delay-150 duration-300 ease-in-out 
-                          motion-reduce:transition-none
-                          hover:text-green-500`;
+                          font-normal text-3xl text-brand
+                          focus-visible:focus-ring focus-visible:outline-offset-2 
+                          theme-transition
+                          hover:text-brand-hover`;
 
   return (
     <nav className="lg:flex lg:gap-20" aria-label="Footer">
@@ -34,7 +31,7 @@ export default function FooterNav() {
       >
         <ul>
           <li>
-            <h3 className="mb-2 font-bold text-lg">Company</h3>
+            <h3 className="mb-2 font-bold text-lg text-title">Company</h3>
             <a href="#" className={navItemStyles}>
               About
             </a>
@@ -42,7 +39,7 @@ export default function FooterNav() {
         </ul>
 
         <ul>
-          <h3 className="mb-2 font-bold text-lg">Legal</h3>
+          <h3 className="mb-2 font-bold text-lg text-title">Legal</h3>
           <li>
             <a href="#" className={`mb-4 ${navItemStyles}`}>
               Privacy Policy
@@ -56,7 +53,7 @@ export default function FooterNav() {
         </ul>
 
         <ul>
-          <h3 className="mb-2 font-bold text-lg">Support</h3>
+          <h3 className="mb-2 font-bold text-lg text-title">Support</h3>
           <li>
             <a href="#" className={`mb-4 ${navItemStyles}`}>
               Contact

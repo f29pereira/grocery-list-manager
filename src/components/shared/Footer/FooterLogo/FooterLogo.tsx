@@ -12,11 +12,10 @@ export default function FooterLogo() {
     >
       <NavigationLink
         styles="inline-block  
-              text-green-600 
+              text-brand 
               font-space-grotesk font-black
-              transition-[color] delay-150 duration-300 ease-in-out 
-              motion-reduce:transition-none 
-              hover:text-green-500"
+              theme-transition 
+              hover:text-brand-hover"
         to="/"
       >
         <div className="flex justify-center items-center gap-2">

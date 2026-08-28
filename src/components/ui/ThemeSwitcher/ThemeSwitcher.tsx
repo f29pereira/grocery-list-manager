@@ -2,6 +2,7 @@ import { useTheme } from "@/contexts/ThemeContext/useTheme";
 import clsx from "clsx";
 import { LuMonitor, LuSun, LuMoon } from "@/assets/icons/icon";
 import type { Theme } from "@/contexts/ThemeContext/ThemeContext/ThemeContext.type";
+import { useTranslation } from "react-i18next";
 
 /**
  * Renders an app theme switch that allows users to select:
@@ -10,6 +11,10 @@ import type { Theme } from "@/contexts/ThemeContext/ThemeContext/ThemeContext.ty
  * - Dark theme
  */
 export default function ThemeSwitcher() {
+  // Translation
+  const { t } = useTranslation();
+
+  // Context
   const { theme, setTheme } = useTheme();
 
   /**
@@ -39,7 +44,7 @@ export default function ThemeSwitcher() {
                 border-2 border-solid border-slate-500 dark:border-white rounded-full
                 lg:w-30 lg:h-9.5"
     >
-      <p className="sr-only">Select a theme:</p>
+      <p className="sr-only">{t("themeSwitcher.p-label")}</p>
 
       {/*System button*/}
       <button
@@ -49,7 +54,7 @@ export default function ThemeSwitcher() {
           isBtnSelected("system") ? btnSelectedStyles : btnNotSelectedStyles,
         )}
         onClick={() => setTheme("system")}
-        aria-label="System"
+        aria-label={t("themeSwitcher.system-btn-label")}
       >
         <LuMonitor className="text-2xl lg:text-xl" aria-hidden="true" />
       </button>
@@ -62,7 +67,7 @@ export default function ThemeSwitcher() {
           isBtnSelected("light") ? btnSelectedStyles : btnNotSelectedStyles,
         )}
         onClick={() => setTheme("light")}
-        aria-label="Light"
+        aria-label={t("themeSwitcher.light-btn-label")}
       >
         <LuSun className="text-2xl lg:text-xl" aria-hidden="true" />
       </button>
@@ -75,7 +80,7 @@ export default function ThemeSwitcher() {
           isBtnSelected("dark") ? btnSelectedStyles : btnNotSelectedStyles,
         )}
         onClick={() => setTheme("dark")}
-        aria-label="Dark"
+        aria-label={t("themeSwitcher.dark-btn-label")}
       >
         <LuMoon className="text-2xl lg:text-xl" aria-hidden="true" />
       </button>

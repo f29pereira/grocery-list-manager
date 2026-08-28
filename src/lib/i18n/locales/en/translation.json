@@ -13,5 +13,14 @@
     "system-btn-label": "System",
     "light-btn-label": "Light",
     "dark-btn-label": "Dark"
+  },
+  "pageNotFound": {
+    "title": "Ooops!",
+    "error": {
+      "label": "Error",
+      "description": "Page not found"
+    },
+    "message": "Sorry, the page you are looking for doesn't exist or it isn't available at the moment.",
+    "home-link": "Back to Home"
   }
 }

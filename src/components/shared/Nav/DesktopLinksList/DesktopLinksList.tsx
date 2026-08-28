@@ -1,4 +1,5 @@
 import NavigationLink from "@/components/ui/NavigationLink/NavigationLink";
+import { useTranslation } from "react-i18next";
 
 /**
  * Renders the desktop navigation links on viewports >= 1024px:
@@ -7,6 +8,8 @@ import NavigationLink from "@/components/ui/NavigationLink/NavigationLink";
  * The link features a slide in underline on hover. If the link is active, the underline remains visible.
  */
 export default function DesktopLinksList() {
+  const { t } = useTranslation();
+
   const navItemStyles = `relative inline-block
                         text-link
                         after:absolute after:-bottom-[9px] after:left-0
@@ -26,7 +29,7 @@ export default function DesktopLinksList() {
     <ul className="hidden lg:flex">
       <li>
         <NavigationLink styles={navItemStyles} to="/" end={true}>
-          Home
+          {t("home.link")}
         </NavigationLink>
       </li>
       {/*TO DO: Add Links*/}

@@ -22,5 +22,29 @@
     },
     "message": "Lamentamos, mas a página que procura não existe ou não está disponível de momento.",
     "home-link": "Voltar à página inicial"
+  },
+  "footer": {
+    "credits": {
+      "copyright": "Direitos de autor",
+      "made-by": "Desenvolvido por",
+      "new-tab": "Abre num novo separador"
+    },
+    "nav": {
+      "company": {
+        "title": "Empresa",
+        "about-link": "Sobre"
+      },
+      "legal": {
+        "title": "Legal",
+        "privacy-policy-link": "Política de Privacidade",
+        "terms-of-service-link": "Termos de Serviço"
+      },
+      "support": {
+        "title": "Suporte",
+        "contact-link": "Contacto",
+        "support-link": "Suporte"
+      },
+      "social-label": "Siga-nos no"
+    }
   }
 }

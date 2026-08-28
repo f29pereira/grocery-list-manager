@@ -1,4 +1,5 @@
 import { FaXTwitter, FaFacebook, FaSquareInstagram } from "@/assets/icons/icon";
+import { useTranslation } from "react-i18next";
 
 /**
  * Renders the footer navigation links with:
@@ -6,6 +7,8 @@ import { FaXTwitter, FaFacebook, FaSquareInstagram } from "@/assets/icons/icon";
  * - X, Facebook and Instagram
  */
 export default function FooterNav() {
+  const { t } = useTranslation();
+
   const navItemStyles = `inline-block rounded-sm 
                         text-base text-link 
                         focus-visible:focus-ring focus-visible:outline-offset-2
@@ -23,45 +26,53 @@ export default function FooterNav() {
 
   return (
     <nav className="lg:flex lg:gap-20" aria-label="Footer">
-      {/*Company, Legal, Support links*/}
       <div
         className="flex flex-col gap-10 
                   text-center
                   lg:flex-row xl:gap-15 2xl:gap-20"
       >
+        {/*Company links*/}
         <ul>
           <li>
-            <h3 className="mb-2 font-bold text-lg text-title">Company</h3>
+            <h3 className="mb-2 font-bold text-lg text-title">
+              {t("footer.nav.company.title")}
+            </h3>
             <a href="#" className={navItemStyles}>
-              About
+              {t("footer.nav.company.about-link")}
             </a>
           </li>
         </ul>
 
+        {/*Legal links*/}
         <ul>
-          <h3 className="mb-2 font-bold text-lg text-title">Legal</h3>
+          <h3 className="mb-2 font-bold text-lg text-title">
+            {t("footer.nav.legal.title")}
+          </h3>
           <li>
             <a href="#" className={`mb-4 ${navItemStyles}`}>
-              Privacy Policy
+              {t("footer.nav.legal.privacy-policy-link")}
             </a>
           </li>
           <li>
             <a href="#" className={navItemStyles}>
-              Terms of Service
+              {t("footer.nav.legal.terms-of-service-link")}
             </a>
           </li>
         </ul>
 
+        {/*Support links*/}
         <ul>
-          <h3 className="mb-2 font-bold text-lg text-title">Support</h3>
+          <h3 className="mb-2 font-bold text-lg text-title">
+            {t("footer.nav.support.title")}
+          </h3>
           <li>
             <a href="#" className={`mb-4 ${navItemStyles}`}>
-              Contact
+              {t("footer.nav.support.contact-link")}
             </a>
           </li>
           <li>
             <a href="#" className={navItemStyles}>
-              Support
+              {t("footer.nav.support.support-link")}
             </a>
           </li>
         </ul>
@@ -71,7 +82,7 @@ export default function FooterNav() {
       <ul
         className="flex justify-center gap-12 mt-10
                   lg:mt-0 xl:ml-20"
-        aria-label="Follow us on"
+        aria-label={t("footer.nav.social-label")}
       >
         <li>
           <a href="#" className={socialItemStyles} aria-label="X">

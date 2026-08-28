@@ -22,5 +22,29 @@
     },
     "message": "Sorry, the page you are looking for doesn't exist or it isn't available at the moment.",
     "home-link": "Back to Home"
+  },
+  "footer": {
+    "credits": {
+      "copyright": "Copyright",
+      "made-by": "Made by",
+      "new-tab": "Opens in a new tab"
+    },
+    "nav": {
+      "company": {
+        "title": "Company",
+        "about-link": "About"
+      },
+      "legal": {
+        "title": "Legal",
+        "privacy-policy-link": "Privacy Policy",
+        "terms-of-service-link": "Terms of Service"
+      },
+      "support": {
+        "title": "Support",
+        "contact-link": "Contact",
+        "support-link": "Support"
+      },
+      "social-label": "Follow us on"
+    }
   }
 }

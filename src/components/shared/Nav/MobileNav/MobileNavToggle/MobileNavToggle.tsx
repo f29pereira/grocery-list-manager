@@ -1,11 +1,16 @@
 import useToggle from "@/hooks/useToggle";
 import { RxHamburgerMenu } from "@/assets/icons/icon";
 import MobileNav from "../MobileNav";
+import { useTranslation } from "react-i18next";
 
 /**
  * Renders a hamburger button or dialog (MobileNav component) on viewports < 1024px
  */
 export default function MobileNavToggle() {
+  // Translation
+  const { t } = useTranslation();
+
+  // Custom Hook
   const { isToggled, toggle, setIsToggled } = useToggle(false);
 
   return (
@@ -18,7 +23,7 @@ export default function MobileNavToggle() {
                   theme-transition 
                 hover:text-brand-hover"
         onClick={toggle}
-        aria-label="Mobile navigation"
+        aria-label={t("mobile.toggle-btn-label")}
         aria-expanded={isToggled}
       >
         <RxHamburgerMenu className="text-2xl md:text-3xl" aria-hidden="true" />

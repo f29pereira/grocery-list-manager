@@ -1,5 +1,11 @@
 {
   "home": {
     "link": "Início"
+  },
+  "mobile": {
+    "toggle-btn-label": "Navegação móvel",
+    "dialog-label": "Menu",
+    "nav-label": "Principal",
+    "close-btn-label": "Fechar menu"
   }
 }

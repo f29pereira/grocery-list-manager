@@ -6,6 +6,7 @@ import useDialog from "@/hooks/useDialog";
 import CloseButton from "@/components/ui/CloseButton/CloseButton";
 import MobileLinksList from "./MobileLinksList/MobileLinksList";
 import ThemeSwitcher from "@/components/ui/ThemeSwitcher/ThemeSwitcher";
+import { useTranslation } from "react-i18next";
 
 /**
  * Renders the mobile navigation dialog with:
@@ -18,6 +19,9 @@ import ThemeSwitcher from "@/components/ui/ThemeSwitcher/ThemeSwitcher";
  * Props are defined in {@link MobileNavProps}.
  */
 export default function MobileNav({ isToggled, setToggle }: MobileNavProps) {
+  // Translation
+  const { t } = useTranslation();
+
   // Custom Hook
   const dialogRef = useDialog(isToggled);
 
@@ -83,7 +87,7 @@ export default function MobileNav({ isToggled, setToggle }: MobileNavProps) {
       onClick={closeOnBackdropClick}
       onClose={() => setToggle(false)}
       onCancel={handleOnCancel}
-      aria-label="Menu"
+      aria-label={t("mobile.dialog-label")}
     >
       <nav
         className={clsx(
@@ -98,10 +102,10 @@ export default function MobileNav({ isToggled, setToggle }: MobileNavProps) {
             : "translate-x-0 starting:-translate-x-full",
         )}
         onTransitionEnd={handleOnTransitionEnd}
-        aria-label="Main"
+        aria-label={t("mobile.nav-label")}
       >
         <CloseButton
-          ariaLabel="Close menu"
+          ariaLabel={t("mobile.close-btn-label")}
           styles="w-9 h-9 mt-8 mb-16"
           handleClose={startClosingDialog}
         />

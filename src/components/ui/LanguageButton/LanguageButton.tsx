@@ -8,6 +8,8 @@ import {
   MdKeyboardArrowUp,
 } from "@/assets/icons/icon";
 import { useTranslation } from "react-i18next";
+import { getLocaleName } from "./LanguageList/LanguageList.utils";
+import LanguageList from "./LanguageList/LanguageList";
 
 /**
  * Renders a button with the current app language and when clicked displays the languages list pop-up
@@ -57,7 +59,7 @@ export default function LanguageButton() {
             theme-transition
             hover:text-slate-400 hover:dark:text-slate-300"
         onClick={handleClick}
-        aria-label={t("languageButton.label")}
+        aria-label={`${t("languageButton.label")} ${getLocaleName(locale)}`}
       >
         <div
           className="flex justify-between items-center gap-4 px-2
@@ -87,13 +89,13 @@ export default function LanguageButton() {
         </div>
       </button>
 
-      {/*Language selector*/}
+      {/*Languages list pop-up*/}
       {isToggled ? (
         <div
           className="absolute bottom-full left-1/2 -translate-x-1/2 
-                    lg:top-full lg:bottom-0"
+                    lg:top-9 lg:bottom-0"
         >
-          {/*TO DO: Add LanguageList component*/}
+          <LanguageList close={handleClick} />
         </div>
       ) : null}
     </div>

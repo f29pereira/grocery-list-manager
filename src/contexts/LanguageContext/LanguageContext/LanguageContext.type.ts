@@ -1,5 +1,5 @@
 import type { Dispatch, SetStateAction } from "react";
-import { SUPPORTED_LANGUAGES } from "@/constants/app.constants";
+import type { SupportedLanguages } from "@/types/common.types";
 
 /**
  * Type for the LanguageContext
@@ -12,8 +12,3 @@ export type LanguageContextType = {
   setLocale: Dispatch<SetStateAction<SupportedLanguages>>;
   localesList: readonly SupportedLanguages[];
 };
-
-/**
- * Type for the supported app languages
- */
-export type SupportedLanguages = (typeof SUPPORTED_LANGUAGES)[number];

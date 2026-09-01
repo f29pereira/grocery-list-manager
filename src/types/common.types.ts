@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { SUPPORTED_LANGUAGES } from "@/constants/app.constants";
 
 /**
  * Type for React children
@@ -7,3 +8,8 @@ import type { ReactNode } from "react";
 export type ReactChildrenType = {
   children: ReactNode;
 };
+
+/**
+ * Type for the supported app languages
+ */
+export type SupportedLanguages = (typeof SUPPORTED_LANGUAGES)[number];

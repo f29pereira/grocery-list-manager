@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import type { ReactChildrenType } from "@/types/common.types";
-import type { SupportedLanguages } from "./LanguageContext/LanguageContext.type";
+import type { SupportedLanguages } from "@/types/common.types";
 import { LanguageContext } from "./LanguageContext/LanguageContext";
 import {
   LOCALIZATION_LOCAL_STORAGE,

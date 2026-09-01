@@ -14,6 +14,9 @@
     "light-btn-label": "Light",
     "dark-btn-label": "Dark"
   },
+  "languageButton": {
+    "label": "Switch language, current selected"
+  },
   "pageNotFound": {
     "title": "Ooops!",
     "error": {

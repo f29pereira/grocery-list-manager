@@ -6,6 +6,7 @@ import useDialog from "@/hooks/useDialog";
 import CloseButton from "@/components/ui/CloseButton/CloseButton";
 import MobileLinksList from "./MobileLinksList/MobileLinksList";
 import ThemeSwitcher from "@/components/ui/ThemeSwitcher/ThemeSwitcher";
+import LanguageButton from "@/components/ui/LanguageButton/LanguageButton";
 import { useTranslation } from "react-i18next";
 
 /**
@@ -113,7 +114,11 @@ export default function MobileNav({ isToggled, setToggle }: MobileNavProps) {
         <div className="flex flex-col justify-between flex-1">
           <MobileLinksList handleOnClick={startClosingDialog} />
 
-          <ThemeSwitcher />
+          <div className="flex flex-col gap-8 w-37.5">
+            <LanguageButton />
+
+            <ThemeSwitcher />
+          </div>
         </div>
       </nav>
     </dialog>

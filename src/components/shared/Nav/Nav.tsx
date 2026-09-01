@@ -3,6 +3,8 @@ import MobileNavToggle from "./MobileNav/MobileNavToggle/MobileNavToggle";
 import NavLogo from "./NavLogo/NavLogo";
 import DesktopLinksList from "./DesktopLinksList/DesktopLinksList";
 import ThemeSwitcher from "@/components/ui/ThemeSwitcher/ThemeSwitcher";
+import NavigationLink from "@/components/ui/NavigationLink/NavigationLink";
+import LanguageButton from "@/components/ui/LanguageButton/LanguageButton";
 
 /**
  * Renders the app navigation with:
@@ -29,18 +31,29 @@ export default function Nav() {
         <DesktopLinksList />
       </div>
 
-      <div className="flex items-center gap-8">
+      <div className="flex items-stretch gap-8">
         <div className="hidden lg:block">
           <ThemeSwitcher />
         </div>
 
+        <div className="hidden lg:block">
+          <LanguageButton />
+        </div>
+
         <button>
-          <FaRegUserCircle
-            className="cursor-pointer text-2xl 
+          <NavigationLink
+            styles="text-2xl text-brand 
+                  hover:text-brand-hover 
+                  md:text-3xl"
+            to=""
+          >
+            <FaRegUserCircle
+              className="cursor-pointer text-2xl 
                     text-brand dark:text-brand
                     hover:text-brand-hover hover:dark:text-brand-hover
                       md:text-3xl"
-          />
+            />
+          </NavigationLink>
         </button>
       </div>
     </nav>

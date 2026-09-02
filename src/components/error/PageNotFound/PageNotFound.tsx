@@ -27,7 +27,7 @@ export default function PageNotFound() {
         <div
           className="relative px-8 py-10
                   bg-card
-                    rounded-3xl shadow-xl
+                    rounded-3xl shadow-xl dark:shadow-none
                     md:px-10 md:py-12"
         >
           <h1 className="mb-8">

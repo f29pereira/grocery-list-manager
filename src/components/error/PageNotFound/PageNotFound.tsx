@@ -1,4 +1,4 @@
-import NavLogo from "@/components/shared/Nav/NavLogo/NavLogo";
+import Logo from "@/components/shared/Logo/Logo";
 import { LuFileX, RiArrowGoBackFill } from "@/assets/icons/icon";
 import NavigationLink from "@/components/ui/NavigationLink/NavigationLink";
 import { useTranslation } from "react-i18next";
@@ -17,7 +17,7 @@ export default function PageNotFound() {
         className="absolute flex justify-center top-5 right-0 left-0 
                   md:justify-start md:left-8 md:top-7"
       >
-        <NavLogo />
+        <Logo styles="text-brand hover:text-brand-hover" />
       </div>
 
       <div

@@ -1,6 +1,6 @@
 import { FaRegUserCircle } from "@/assets/icons/icon";
 import MobileNavToggle from "./MobileNav/MobileNavToggle/MobileNavToggle";
-import NavLogo from "./NavLogo/NavLogo";
+import Logo from "../Logo/Logo";
 import DesktopLinksList from "./DesktopLinksList/DesktopLinksList";
 import ThemeSwitcher from "@/components/ui/ThemeSwitcher/ThemeSwitcher";
 import NavigationLink from "@/components/ui/NavigationLink/NavigationLink";
@@ -26,12 +26,12 @@ export default function Nav() {
       <MobileNavToggle />
 
       <div className="flex items-center gap-20">
-        <NavLogo />
+        <Logo styles="text-brand hover:text-brand-hover" />
 
         <DesktopLinksList />
       </div>
 
-      <div className="flex items-stretch gap-8">
+      <div className="flex items-center gap-8">
         <div className="hidden lg:block">
           <ThemeSwitcher />
         </div>
@@ -40,21 +40,20 @@ export default function Nav() {
           <LanguageButton />
         </div>
 
-        <button>
-          <NavigationLink
-            styles="text-2xl text-brand 
+        {/*TO DO: update to property*/}
+        <NavigationLink
+          styles="text-2xl text-brand 
                   hover:text-brand-hover 
                   md:text-3xl"
-            to=""
-          >
-            <FaRegUserCircle
-              className="cursor-pointer text-2xl 
-                    text-brand dark:text-brand
-                    hover:text-brand-hover hover:dark:text-brand-hover
+          to="/signin"
+        >
+          <FaRegUserCircle
+            className="text-2xl 
+                    text-brand
+                    hover:text-brand-hover
                       md:text-3xl"
-            />
-          </NavigationLink>
-        </button>
+          />
+        </NavigationLink>
       </div>
     </nav>
   );

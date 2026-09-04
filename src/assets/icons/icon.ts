@@ -3,6 +3,8 @@ import {
   FaUserCircle,
   FaRegCopyright,
   FaGlobe,
+  FaRegEye,
+  FaRegEyeSlash,
 } from "react-icons/fa";
 import {
   FaXTwitter,
@@ -18,7 +20,7 @@ import {
   Fa8,
   Fa9,
 } from "react-icons/fa6";
-import { IoIosClose, IoMdMoon, IoMdSunny } from "react-icons/io";
+import { IoIosClose, IoMdMoon, IoMdSunny, IoMdCheckmark } from "react-icons/io";
 import { LuFileX, LuMonitor, LuSun, LuMoon } from "react-icons/lu";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import { RiArrowGoBackFill } from "react-icons/ri";
@@ -42,6 +44,8 @@ export {
   Fa9,
   FaRegCopyright,
   FaGlobe,
+  FaRegEye,
+  FaRegEyeSlash,
   LuFileX,
   LuMonitor,
   LuSun,
@@ -51,6 +55,7 @@ export {
   IoIosClose,
   IoMdMoon,
   IoMdSunny,
+  IoMdCheckmark,
   RiArrowGoBackFill,
   RxHamburgerMenu,
   TbPaperBag,

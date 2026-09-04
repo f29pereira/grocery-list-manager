@@ -49,5 +49,8 @@
       },
       "social-label": "Follow us on"
     }
+  },
+  "forms": {
+    "step": "Step"
   }
 }

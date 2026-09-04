@@ -49,5 +49,8 @@
       },
       "social-label": "Siga-nos no"
     }
+  },
+  "forms": {
+    "step": "Etapa"
   }
 }

@@ -51,6 +51,10 @@
     }
   },
   "forms": {
-    "step": "Etapa"
+    "step": "Etapa",
+    "password-toggle": {
+      "show": "Mostrar palavra-passe",
+      "dont-show": "Ocultar palavra-passe"
+    }
   }
 }

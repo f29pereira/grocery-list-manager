@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import type { StepListProps } from "./StepsList.types";
 import Step from "./Step/Step";
 
@@ -14,9 +15,8 @@ export default function StepsList({ stepsList, currentStep }: StepListProps) {
       aria-hidden="true"
     >
       {stepsList.map((step, index) => (
-        <>
+        <Fragment key={index}>
           <Step
-            key={index}
             isSelected={index === currentStep}
             isCompleted={index < currentStep}
             number={index + 1}
@@ -31,7 +31,7 @@ export default function StepsList({ stepsList, currentStep }: StepListProps) {
                        lg:w-0.5 lg:h-20"
             ></div>
           ) : null}
-        </>
+        </Fragment>
       ))}
     </div>
   );

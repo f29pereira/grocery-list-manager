@@ -19,6 +19,7 @@ import {
   Fa7,
   Fa8,
   Fa9,
+  FaUserPlus,
 } from "react-icons/fa6";
 import { IoIosClose, IoMdMoon, IoMdSunny, IoMdCheckmark } from "react-icons/io";
 import { LuFileX, LuMonitor, LuSun, LuMoon } from "react-icons/lu";
@@ -42,6 +43,7 @@ export {
   Fa7,
   Fa8,
   Fa9,
+  FaUserPlus,
   FaRegCopyright,
   FaGlobe,
   FaRegEye,

@@ -15,6 +15,8 @@
   --color-nav-footer-bg: var(--color-white);
   --color-title: var(--color-slate-950);
   --color-paragraph: var(--color-gray-900);
+  --color-label: var(--color-paragraph);
+  --color-placeholder: var(--color-gray-400);
   --color-link: var(--color-slate-800);
   --color-link-hover: var(--color-slate-700);
   --color-focus: var(--color-blue-500);
@@ -54,6 +56,8 @@
     --color-nav-footer-bg: var(--color-slate-950);
     --color-title: var(--color-white);
     --color-paragraph: var(--color-slate-200);
+    --color-label: var(--color-title);
+    --color-placeholder: var(--color-paragraph);
     --color-link: var(--color-slate-200);
     --color-link-hover: var(--color-slate-300);
     --color-focus: var(--color-cyan-400);

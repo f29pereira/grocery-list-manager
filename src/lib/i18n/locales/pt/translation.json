@@ -55,6 +55,16 @@
     "password-toggle": {
       "show": "Mostrar palavra-passe",
       "dont-show": "Ocultar palavra-passe"
+    },
+    "signUp": {
+      "auth-step": {
+        "title": "Criar uma conta",
+        "email-label": "Email",
+        "password-label": "Password",
+        "signIn-message": "Já tem uma conta ?",
+        "signIn-link": "Iniciar Sessão",
+        "submit-btn": "Criar conta"
+      }
     }
   }
 }

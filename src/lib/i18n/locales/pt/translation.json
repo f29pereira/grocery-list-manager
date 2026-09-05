@@ -63,7 +63,11 @@
         "password-label": "Password",
         "signIn-message": "Já tem uma conta ?",
         "signIn-link": "Iniciar Sessão",
-        "submit-btn": "Criar conta"
+        "submit-btn": "Criar conta",
+        "errorMessages": {
+          "required": "Este campo é obrigatório",
+          "invalid": "Este campo é inválido"
+        }
       }
     }
   }

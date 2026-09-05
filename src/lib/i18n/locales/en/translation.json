@@ -63,7 +63,11 @@
         "password-label": "Password",
         "signIn-message": "Already have an account ?",
         "signIn-link": "Sign In",
-        "submit-btn": "Create account"
+        "submit-btn": "Create account",
+        "errorMessages": {
+          "required": "This field is required",
+          "invalid": "This field is invalid"
+        }
       }
     }
   }

@@ -1,27 +1,40 @@
 import { useTranslation } from "react-i18next";
+import { useForm, FormProvider } from "react-hook-form";
 import type { AuthStepProps } from "./AuthStep.types";
-import clsx from "clsx";
-import useToggle from "@/hooks/useToggle";
-import PasswordToggleButton from "../../shared/PasswordToggleButton/PasswordToggleButton";
+import type { AuthenticationFields } from "../../types/common.types";
+import EmailField from "../../shared/EmailField/EmailField";
+import PasswordField from "../../shared/PasswordField/PasswordField";
 import CreateAccountButton from "./CreateAccountButton/CreateAccountButton";
 import NavigationLink from "@/components/ui/NavigationLink/NavigationLink";
 
 /**
- * Renders the user authentication form step
+ * Renders the user authentication form step used by the SignUpForm component
  */
 export default function AuthStep({ nextStep }: AuthStepProps) {
+  "use no memo"; // Prevents React Hook Form conflict with the React compiler
+
   // Translation
   const { t } = useTranslation();
 
-  // Custom Hook
-  const { isToggled, toggle } = useToggle(false); // Password visibility
+  // React Hook Form: methods
+  const methods = useForm<AuthenticationFields>();
+
+  // React Hook Form: context for inputs
+  const {
+    register,
+    formState: { errors },
+  } = methods;
 
   /**
    * Submits the authentication form
    */
-  const submit = () => {
-    // TO DO: Add Firebase account creation
-    nextStep();
+  const onSubmit = () => {
+    try {
+      // TO DO: Add Firebase account creation
+      nextStep();
+    } catch (error) {
+      /*TO DO: redirect to error page*/
+    }
   };
 
   return (
@@ -36,56 +49,17 @@ export default function AuthStep({ nextStep }: AuthStepProps) {
         {t("forms.signUp.auth-step.title")}
       </h1>
 
-      <form className="flex flex-col justify-center" action={submit} noValidate>
-        {/*Email*/}
-        <div className="flex items-center gap-4 mb-4">
-          <label className="text-label" htmlFor="email">
-            {t("forms.signUp.auth-step.email-label")}
-          </label>
-        </div>
-
-        {/*TO DO: Add input validation (React Hook Form) + error message component*/}
-        <input
-          className="w-full px-4 py-2
-                  text-base text-paragraph
-                  border-2 border-solid border-slate-300 dark:border-white 
-                  rounded-full
-                  focus-visible:focus-ring focus-visible:outline-offset-2
-                placeholder:text-placeholder placeholder:italic"
-          type="email"
-          id="email"
-          autoComplete="email"
-          placeholder="e.g johndoe@lorem.com"
-        />
-
-        {/*Password*/}
-        <div className="flex items-center gap-4 mt-8 mb-4">
-          <label className="text-label" htmlFor="password">
-            {t("forms.signUp.auth-step.password-label")}
-          </label>
-        </div>
-
-        <div className="relative mb-10">
-          {/*TO DO: Add input validation (React Hook Form) + error message component + password rules*/}
-          <input
-            className={clsx(
-              "w-full h-12 px-4 py-2",
-              "text-paragraph",
-              "border-2 border-solid border-slate-300 dark:border-white",
-              "rounded-full",
-              "focus-visible:focus-ring focus-visible:outline-offset-2",
-              "placeholder:text-placeholder placeholder:italic",
-              isToggled ? "text-base" : "text-lg tracking-widest",
-            )}
-            type={isToggled ? "text" : "password"}
-            id="password"
-          />
-
-          <PasswordToggleButton isToggled={isToggled} toggle={toggle} />
-        </div>
-
-        <CreateAccountButton />
-      </form>
+      <FormProvider {...methods}>
+        <form
+          className="flex flex-col justify-center"
+          onSubmit={methods.handleSubmit(onSubmit)}
+          noValidate
+        >
+          <EmailField />
+          <PasswordField />
+          <CreateAccountButton />
+        </form>
+      </FormProvider>
 
       {/*TO DO: Add Google account*/}
 

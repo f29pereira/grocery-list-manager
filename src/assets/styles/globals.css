@@ -20,7 +20,10 @@
   --color-link: var(--color-slate-800);
   --color-link-hover: var(--color-slate-700);
   --color-focus: var(--color-blue-500);
+  --color-focus-error: var(--color-red-500);
   --color-card: var(--color-nav-footer-bg);
+  --color-input: var(--color-slate-300);
+  --color-input-error: var(--color-focus-error);
 }
 
 /*Theme transition utility*/
@@ -61,7 +64,10 @@
     --color-link: var(--color-slate-200);
     --color-link-hover: var(--color-slate-300);
     --color-focus: var(--color-cyan-400);
+    --color-focus-error: var(--color-red-300);
     --color-card: var(--color-gray-700);
+    --color-input: var(--color-title);
+    --color-input-error: var(--color-focus-error);
   }
 
   .dark body {

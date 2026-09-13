@@ -56,7 +56,6 @@ export default function CreateAccountForm() {
       .then((userCredential) => {
         const user = userCredential.user;
         setUser(user);
-        // TO DO: Go to Email verification screen
         nextStep();
       })
       .catch((error) => {

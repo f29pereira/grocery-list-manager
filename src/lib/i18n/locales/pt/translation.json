@@ -104,7 +104,11 @@
         }
       },
       "email-step": {
-        "step": "Email"
+        "step": "Email",
+        "title": "Verificação de Email",
+        "description-before-email-send": "Por favor, clique no botão para enviar um e-mail de verificação para",
+        "description-after-email-send": "E-mail de verificação enviado. Pode continuar e confirmá-lo mais tarde.",
+        "send-email-btn": "Enviar email"
       }
     }
   }

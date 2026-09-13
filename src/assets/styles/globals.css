@@ -13,15 +13,21 @@
   --color-brand-hover: var(--color-green-500);
   --color-body-bg: var(--color-gray-50);
   --color-nav-footer-bg: var(--color-white);
-  --color-title: var(--color-slate-950);
-  --color-paragraph: var(--color-gray-900);
-  --color-label: var(--color-paragraph);
-  --color-placeholder: var(--color-gray-400);
-  --color-link: var(--color-slate-800);
-  --color-link-hover: var(--color-slate-700);
   --color-focus: var(--color-blue-500);
   --color-focus-error: var(--color-red-500);
   --color-card: var(--color-nav-footer-bg);
+  /*Text*/
+  --color-title: var(--color-slate-950);
+  --color-paragraph: var(--color-gray-900);
+  /*UI*/
+  --color-link: var(--color-slate-800);
+  --color-link-hover: var(--color-slate-700);
+  --color-button: var(--color-brand);
+  --color-button-hover: var(--color-brand-hover);
+  --color-button-label: var(--color-white);
+  /*Form*/
+  --color-label: var(--color-paragraph);
+  --color-placeholder: var(--color-gray-400);
   --color-input: var(--color-slate-300);
   --color-input-error: var(--color-focus-error);
 
@@ -81,15 +87,21 @@
     --color-brand-hover: var(--color-green-400);
     --color-body-bg: var(--color-slate-900);
     --color-nav-footer-bg: var(--color-slate-950);
-    --color-title: var(--color-white);
-    --color-paragraph: var(--color-slate-200);
-    --color-label: var(--color-title);
-    --color-placeholder: var(--color-paragraph);
-    --color-link: var(--color-slate-200);
-    --color-link-hover: var(--color-slate-300);
     --color-focus: var(--color-cyan-400);
     --color-focus-error: var(--color-red-300);
     --color-card: var(--color-gray-700);
+    /*Text*/
+    --color-title: var(--color-white);
+    --color-paragraph: var(--color-slate-200);
+    /*UI*/
+    --color-placeholder: var(--color-paragraph);
+    --color-link: var(--color-slate-200);
+    --color-link-hover: var(--color-slate-300);
+    --color-button: var(--color-brand);
+    --color-button-hover: var(--color-brand-hover);
+    --color-button-label: var(--color-green-950);
+    /*Form*/
+    --color-label: var(--color-title);
     --color-input: var(--color-title);
     --color-input-error: var(--color-focus-error);
   }

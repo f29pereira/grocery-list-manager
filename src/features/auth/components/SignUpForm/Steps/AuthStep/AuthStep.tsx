@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import CreateAccountForm from "./CreateAccountForm/CreateAccountForm";
 import NavigationLink from "@/components/ui/NavigationLink/NavigationLink";
+import useFocus from "@/hooks/useFocus";
 
 /**
  * Renders the user authentication form step used by the SignUpForm component with:
@@ -12,6 +13,9 @@ export default function AuthStep() {
   // Translation
   const { t } = useTranslation();
 
+  // Custom Hook
+  const { elementRef } = useFocus<HTMLHeadingElement>();
+
   return (
     <div>
       {/*Main title*/}
@@ -19,7 +23,10 @@ export default function AuthStep() {
         className="mb-8
                   font-black 
                   text-center text-xl text-title
+                  focus-visible:outline-none
                   lg:text-left lg:text-2xl"
+        ref={elementRef}
+        tabIndex={-1}
       >
         {t("forms.signUp.auth-step.title")}
       </h1>

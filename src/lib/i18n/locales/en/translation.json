@@ -102,6 +102,9 @@
           "operation-not-allowed": "Sorry, sign up is unavailable. Please try again later",
           "weak-password": "Password is too weak. Please follow the password rules"
         }
+      },
+      "email-step": {
+        "step": "Email"
       }
     }
   }

@@ -102,6 +102,9 @@
           "operation-not-allowed": "Desculpe, o registo não está disponível. Por favor, tente mais tarde",
           "weak-password": "Palavra-passe muito fraca. Por favor, siga as regras"
         }
+      },
+      "email-step": {
+        "step": "Email"
       }
     }
   }

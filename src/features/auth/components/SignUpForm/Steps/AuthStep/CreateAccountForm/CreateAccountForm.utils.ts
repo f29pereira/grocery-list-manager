@@ -3,6 +3,7 @@ import type { RegisterOptions } from "react-hook-form";
 import type { AuthenticationFields } from "../../../../types/auth.types";
 import { getPasswordStatus } from "../../../../shared/PasswordField/PasswordRules/PasswordRules.utils";
 import { isFirebaseError } from "@/utils/common.utils";
+import { getGenericAuthErrorMessages } from "@/features/auth/components/utils/common.utils";
 
 /**
  * Returns Firebase createUserWithEmailAndPassword custom error messages
@@ -32,15 +33,11 @@ export const getCreateUserErrorMessage = (
       return t(
         "forms.signUp.auth-step.firebase-createUser-error-messages.weak-password",
       );
-    // Generic auth errors
-    case "auth/network-request-failed":
-      return t(
-        "forms.auth.firebase-generic-error-messages.network-request-failed",
-      );
-    case "auth/too-many-requests":
-      return t("forms.auth.firebase-generic-error-messages.too-many-requests");
     default:
-      return t("forms.generic-errorMessages.error");
+      return (
+        getGenericAuthErrorMessages(t, errorCode) ??
+        t("forms.generic-errorMessages.error")
+      );
   }
 };
 

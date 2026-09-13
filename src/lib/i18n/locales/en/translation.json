@@ -83,7 +83,8 @@
       },
       "firebase-generic-error-messages": {
         "network-request-failed": "Network error. Please check your connection and try again.",
-        "too-many-requests": "Too many attempts. Please wait a moment and try again"
+        "too-many-requests": "Too many attempts. Please wait a moment and try again.",
+        "user-token": "Your session has expired. Please sign in."
       }
     },
     "signUp": {

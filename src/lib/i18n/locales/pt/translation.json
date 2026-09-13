@@ -82,8 +82,9 @@
         }
       },
       "firebase-generic-error-messages": {
-        "network-request-failed": "Erro de rede. Verifique a sua ligação e tente novamente",
-        "too-many-requests": "Muitas tentativas. Por favor, aguarde um momento e tente novamente"
+        "network-request-failed": "Erro de rede. Verifique a sua ligação e tente novamente.",
+        "too-many-requests": "Muitas tentativas. Por favor, aguarde um momento e tente novamente.",
+        "user-token": "A sua sessão expirou. Por favor, inicie sessão."
       }
     },
     "signUp": {

@@ -50,6 +50,10 @@
       "social-label": "Siga-nos no"
     }
   },
+  "multi-step": {
+    "next-step": "Próx. Etapa",
+    "prev-step": "Voltar"
+  },
   "forms": {
     "step": "Etapa",
     "generic-errorMessages": {

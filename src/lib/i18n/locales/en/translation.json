@@ -50,6 +50,10 @@
       "social-label": "Follow us on"
     }
   },
+  "multi-step": {
+    "next-step": "Next step",
+    "prev-step": "Go Back"
+  },
   "forms": {
     "step": "Step",
     "generic-errorMessages": {

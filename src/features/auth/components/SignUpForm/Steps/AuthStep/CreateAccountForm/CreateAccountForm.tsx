@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useForm, FormProvider } from "react-hook-form";
 import type { AuthenticationFields } from "../../../../types/auth.types";
@@ -14,7 +13,8 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import EmailField from "../../../../shared/EmailField/EmailField";
 import PasswordField from "../../../../shared/PasswordField/PasswordField";
 import CreateAccountButton from "../CreateAccountButton/CreateAccountButton";
-import FormErrorMessage from "@/components/shared/Form/FormErrorMessage/FormErrorMessage";
+import useErrorMessage from "@/hooks/useErrorMessage";
+import SubmitErrorMessage from "@/components/shared/Form/SubmitErrorMessage/SubmitErrorMessage";
 
 /**
  * Renders the create account form with email and password fields
@@ -28,6 +28,8 @@ export default function CreateAccountForm() {
   // Context
   const { nextStep } = useMultiStep();
   const { setUser } = useAuth();
+  const { errorMessage, setErrorMessage, clearErrorMessage } =
+    useErrorMessage();
 
   // React Hook Form: methods
   const methods = useForm<AuthenticationFields>();
@@ -42,9 +44,6 @@ export default function CreateAccountForm() {
     formState: { errors, isSubmitting },
   } = methods;
 
-  // State
-  const [submitError, setSubmitError] = useState<string>("");
-
   /**
    * Submits the authentication form
    * @param data email and password fields
@@ -52,6 +51,8 @@ export default function CreateAccountForm() {
    * If an error is catched, sets submitError state to display a form error message
    */
   const onSubmit = (data: AuthenticationFields) => {
+    clearErrorMessage();
+
     createUserWithEmailAndPassword(auth, data.email, data.password)
       .then((userCredential) => {
         const user = userCredential.user;
@@ -60,7 +61,7 @@ export default function CreateAccountForm() {
       })
       .catch((error) => {
         const errorMessage = getCreateUserErrorMessage(t, error);
-        setSubmitError(errorMessage);
+        setErrorMessage(errorMessage);
       });
   };
 
@@ -74,13 +75,7 @@ export default function CreateAccountForm() {
         <EmailField validation={signUpEmailValidation} />
         <PasswordField validation={signUpPasswordValidation} />
 
-        <div
-          className="min-h-17.5 overflow-hidden sm:mx-auto sm:w-2/3 lg:w-full"
-          aria-live="assertive"
-          aria-atomic="true"
-        >
-          {submitError ? <FormErrorMessage message={submitError} /> : null}
-        </div>
+        <SubmitErrorMessage message={errorMessage} />
 
         <div className="mt-2 sm:mx-auto sm:w-2/3 lg:w-full">
           <CreateAccountButton isSubmitting={isSubmitting} />

@@ -2,11 +2,12 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { sendEmailVerification } from "firebase/auth";
 import useFocus from "@/hooks/useFocus";
+import useErrorMessage from "@/hooks/useErrorMessage";
 import { useAuth } from "@/contexts/AuthContext/useAuth";
+import { sendEmailVerificationErrorMessage } from "./EmailVerificationStep.utils";
 import SendEmailButton from "./SendEmailButton/SendEmailButton";
 import NextStepButton from "@/components/ui/StepButtons/NextStepButton/NextStepButton";
-import FormErrorMessage from "@/components/shared/Form/FormErrorMessage/FormErrorMessage";
-import { sendEmailVerificationErrorMessage } from "./EmailVerificationStep.utils";
+import SubmitErrorMessage from "@/components/shared/Form/SubmitErrorMessage/SubmitErrorMessage";
 
 /**
  * Renders the email verification step used by the SignUpForm component
@@ -25,13 +26,15 @@ export default function EmailVerificationStep() {
 
   // Context
   const { user } = useAuth();
+  const { errorMessage, setErrorMessage, clearErrorMessage } =
+    useErrorMessage();
 
   // Custom Hook
   const { elementRef } = useFocus<HTMLHeadingElement>();
 
   // State
   const [isEmailSent, setIsEmailSent] = useState<boolean>(false);
-  const [submitError, setSubmitError] = useState<string>("");
+  //const [submitError, setSubmitError] = useState<string>("");
 
   /**
    * Sends the verification email
@@ -39,12 +42,16 @@ export default function EmailVerificationStep() {
    * If an error is catched, sets submitError state to display an error message
    */
   const sendEmail = () => {
+    clearErrorMessage();
+
     if (user) {
       sendEmailVerification(user)
-        .then(() => setIsEmailSent(true))
+        .then(() => {
+          setIsEmailSent(true);
+        })
         .catch((error) => {
           const errorMessage = sendEmailVerificationErrorMessage(t, error);
-          setSubmitError(errorMessage);
+          setErrorMessage(errorMessage);
         });
     }
   };
@@ -86,13 +93,7 @@ export default function EmailVerificationStep() {
         )}
       </div>
 
-      <div
-        className="min-h-17.5 overflow-hidden sm:mx-auto sm:w-2/3 lg:w-full"
-        aria-live="assertive"
-        aria-atomic="true"
-      >
-        {submitError ? <FormErrorMessage message={submitError} /> : null}
-      </div>
+      <SubmitErrorMessage message={errorMessage} />
 
       <div className="mt-8 sm:mx-auto sm:w-2/3 lg:w-full">
         {isEmailSent ? (

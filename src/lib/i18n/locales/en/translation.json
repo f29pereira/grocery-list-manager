@@ -103,7 +103,7 @@
           "weak-password": "Password is too weak. Please follow the password rules"
         }
       },
-      "email-step": {
+      "email-verification-step": {
         "step": "Email",
         "title": "Email verification",
         "description-before-email-send": "Please click the button to send a verification email to",

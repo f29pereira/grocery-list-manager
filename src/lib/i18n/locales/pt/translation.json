@@ -103,7 +103,7 @@
           "weak-password": "Palavra-passe muito fraca. Por favor, siga as regras"
         }
       },
-      "email-step": {
+      "email-verification-step": {
         "step": "Email",
         "title": "Verificação de Email",
         "description-before-email-send": "Por favor, clique no botão para enviar um e-mail de verificação para",

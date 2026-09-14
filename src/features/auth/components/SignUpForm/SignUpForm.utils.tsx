@@ -8,5 +8,8 @@ export const getStepsDescription = (
   t: TFunction<"translation", undefined>,
 ): string[] => {
   // TO DO: Add next steps descriptions
-  return [t("forms.signUp.auth-step.step"), t("forms.signUp.email-step.step")];
+  return [
+    t("forms.signUp.auth-step.step"),
+    t("forms.signUp.email-verification-step.step"),
+  ];
 };

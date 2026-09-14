@@ -15,11 +15,11 @@ export default function PillButton({
   return (
     <button
       className={clsx(
-        "w-full px-6 py-4",
+        "w-full px-4 py-2",
         "rounded-full cursor-pointer",
         "theme-transition dark:shadow-none",
         "focus-visible:focus-ring focus-visible:outline-offset-2",
-        "md:px-8",
+        "md:px-6 md:py-3",
         styles,
       )}
       onClick={handleClick}

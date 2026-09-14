@@ -1,5 +1,5 @@
 import type { SendEmailButtonProps } from "./SendEmailButton.types";
-import { MdEmail } from "@/assets/icons/icon";
+import { LuSend } from "@/assets/icons/icon";
 import PillButton from "@/components/ui/PillButton/PillButton";
 import { useTranslation } from "react-i18next";
 
@@ -20,9 +20,12 @@ export default function SendEmailButton({ handleClick }: SendEmailButtonProps) {
       handleClick={handleClick}
     >
       <div className="flex justify-center items-center gap-4">
-        <MdEmail className="text-2xl text-button-label" aria-hidden="true" />
+        <LuSend
+          className="text-2xl text-button-label rotate-12"
+          aria-hidden="true"
+        />
         <span className="font-black text-button-label">
-          {t("forms.signUp.email-step.send-email-btn")}
+          {t("forms.signUp.email-verification-step.send-email-btn")}
         </span>
       </div>
     </PillButton>

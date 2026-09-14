@@ -23,9 +23,20 @@ import {
   FaUserPlus,
 } from "react-icons/fa6";
 import { GoDot } from "react-icons/go";
-import { IoIosClose, IoMdMoon, IoMdSunny, IoMdCheckmark } from "react-icons/io";
-import { LuFileX, LuMonitor, LuSun, LuMoon } from "react-icons/lu";
-import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
+import {
+  IoIosClose,
+  IoMdMoon,
+  IoMdSunny,
+  IoMdCheckmark,
+  IoIosArrowBack,
+  IoIosArrowForward,
+} from "react-icons/io";
+import { LuFileX, LuMonitor, LuSun, LuMoon, LuSend } from "react-icons/lu";
+import {
+  MdKeyboardArrowDown,
+  MdKeyboardArrowUp,
+  MdEmail,
+} from "react-icons/md";
 import { RiArrowGoBackFill, RiErrorWarningLine } from "react-icons/ri";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { TbPaperBag } from "react-icons/tb";
@@ -56,12 +67,16 @@ export {
   LuMonitor,
   LuSun,
   LuMoon,
+  LuSend,
   MdKeyboardArrowDown,
   MdKeyboardArrowUp,
+  MdEmail,
   IoIosClose,
   IoMdMoon,
   IoMdSunny,
   IoMdCheckmark,
+  IoIosArrowBack,
+  IoIosArrowForward,
   RiArrowGoBackFill,
   RiErrorWarningLine,
   RxHamburgerMenu,

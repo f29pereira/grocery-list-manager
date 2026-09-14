@@ -12,6 +12,8 @@ import { useTranslation } from "react-i18next";
  * - step number and description on viewports >= 1024px
  * - Checkmark icon if the step is completed
  *
+ * The checkmark icon features a pop-in animation.
+ *
  * Props are defined in {@link StepProps}.
  */
 export default function Step({
@@ -32,11 +34,14 @@ export default function Step({
           "dark:border-2 dark:border-white",
           "theme-transition",
           "lg:w-10 lg:h-10",
-          isSelected ? "bg-green-500" : "bg-green-600",
+          isSelected ? "bg-green-900" : "bg-green-600",
         )}
       >
         {!isSelected && isCompleted ? (
-          <IoMdCheckmark className="text-2xl text-white" />
+          <IoMdCheckmark
+            className="text-2xl text-white 
+                      motion-safe:animate-pop-in"
+          />
         ) : (
           getStepNumberIcon(number)
         )}

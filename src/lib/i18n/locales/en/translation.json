@@ -91,6 +91,7 @@
       "auth-step": {
         "step": "Account",
         "title": "Create an account",
+        "title-label": "Step 1 of 3 Create an account",
         "email-label": "Email",
         "password-label": "Password",
         "signIn-message": "Already have an account ?",
@@ -106,9 +107,15 @@
       "email-verification-step": {
         "step": "Email",
         "title": "Email verification",
+        "title-label": "Step 2 of 3 Email verification",
         "description-before-email-send": "Please click the button to send a verification email to",
         "description-after-email-send": "Verification email sent. Feel free to continue, you can confirm it later.",
         "send-email-btn": "Send email"
+      },
+      "user-details": {
+        "step": "Details",
+        "title": "User Details",
+        "title-label": "Step 3 of 3 User Details"
       }
     }
   }

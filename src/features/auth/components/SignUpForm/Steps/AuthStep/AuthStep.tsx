@@ -27,6 +27,7 @@ export default function AuthStep() {
                   lg:text-left lg:text-2xl"
         ref={elementRef}
         tabIndex={-1}
+        aria-label={t("forms.signUp.auth-step.title-label")}
       >
         {t("forms.signUp.auth-step.title")}
       </h1>

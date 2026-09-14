@@ -60,6 +60,7 @@ export default function EmailVerificationStep() {
                   lg:text-left lg:text-2xl"
         ref={elementRef}
         tabIndex={-1}
+        aria-label={t("forms.signUp.email-verification-step.title-label")}
       >
         {t("forms.signUp.email-verification-step.title")}
       </h1>

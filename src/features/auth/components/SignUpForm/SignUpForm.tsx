@@ -38,7 +38,10 @@ export default function SignUpForm() {
       >
         <div className="lg:flex lg:gap-40 lg:w-full lg:h-full">
           <div className="mb-8 lg:flex lg:flex-col lg:gap-4 lg:mb-0">
-            <div className="flex justify-center lg:flex-none">
+            <div
+              className="flex justify-center mb-4
+                        lg:flex-none"
+            >
               <Logo styles="text-brand hover:text-brand-hover" />
             </div>
             <StepsList stepsList={stepsList} currentStep={currentStep} />

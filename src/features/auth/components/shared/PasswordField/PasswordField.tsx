@@ -3,9 +3,9 @@ import { useTranslation } from "react-i18next";
 import clsx from "clsx";
 import type { PasswordFieldProps } from "./PasswordField.type";
 import type { AuthenticationFields } from "../../types/auth.types";
-import FieldErrorMessage from "@/components/shared/Form/FieldErrorMessage/FieldErrorMessage";
 import useToggle from "@/hooks/useToggle";
 import useInputValidation from "@/hooks/useInputValidation";
+import FieldHeader from "@/components/shared/Form/FieldHeader/FieldHeader";
 import PasswordToggleButton from "../../shared/PasswordField/PasswordToggleButton/PasswordToggleButton";
 import PasswordRules from "./PasswordRules/PasswordRules";
 
@@ -39,17 +39,12 @@ export default function PasswordField({ validation }: PasswordFieldProps) {
 
   return (
     <>
-      <div className="flex justify-between items-center mt-8 mb-4">
-        {/*Password label*/}
-        <label className="text-label" htmlFor="password">
-          {t("forms.signUp.auth-step.password-label")}
-        </label>
-
-        <FieldErrorMessage
-          id="password-error"
-          message={getInputErrorMessage("password")}
-        />
-      </div>
+      <FieldHeader
+        inputId="password"
+        labelText={t("forms.signUp.auth-step.password-label")}
+        errorId="password-error"
+        errorMessage={getInputErrorMessage("password")}
+      />
 
       <div className="relative">
         {/*Password input*/}

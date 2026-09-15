@@ -3,8 +3,8 @@ import { useTranslation } from "react-i18next";
 import clsx from "clsx";
 import type { EmailFieldProps } from "./EmailField.types";
 import type { AuthenticationFields } from "../../types/auth.types";
-import FieldErrorMessage from "@/components/shared/Form/FieldErrorMessage/FieldErrorMessage";
 import useInputValidation from "@/hooks/useInputValidation";
+import FieldHeader from "@/components/shared/Form/FieldHeader/FieldHeader";
 
 /**
  * Renders the email field
@@ -30,17 +30,12 @@ export default function EmailField({ validation }: EmailFieldProps) {
 
   return (
     <>
-      <div className="flex justify-between items-center mb-4">
-        {/*Email label*/}
-        <label className="text-label" htmlFor="email">
-          {t("forms.signUp.auth-step.email-label")}
-        </label>
-
-        <FieldErrorMessage
-          id="email-error"
-          message={getInputErrorMessage("email")}
-        />
-      </div>
+      <FieldHeader
+        inputId="email"
+        labelText={t("forms.signUp.auth-step.email-label")}
+        errorId="email-error"
+        errorMessage={getInputErrorMessage("email")}
+      />
 
       {/*Email input*/}
       <input

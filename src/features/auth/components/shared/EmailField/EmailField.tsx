@@ -29,7 +29,7 @@ export default function EmailField({ validation }: EmailFieldProps) {
   const { isInputInvalid, getInputErrorMessage } = useInputValidation(errors);
 
   return (
-    <>
+    <div className="mb-4">
       <FieldHeader
         inputId="email"
         labelText={t("forms.signUp.auth-step.email-label")}
@@ -56,6 +56,6 @@ export default function EmailField({ validation }: EmailFieldProps) {
         aria-describedby="email-error"
         {...register("email", validation(t))}
       />
-    </>
+    </div>
   );
 }

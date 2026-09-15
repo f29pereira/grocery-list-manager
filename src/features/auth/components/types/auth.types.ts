@@ -7,3 +7,13 @@ export type AuthenticationFields = {
   email: string;
   password: string;
 };
+
+/**
+ * Type for the user detail fields
+ * @property firstName - first name
+ * @property lastName  - last name
+ */
+export type UserDetailsFields = {
+  firstName: string;
+  lastName: string;
+};

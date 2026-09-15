@@ -12,7 +12,7 @@ import { auth } from "@/lib/firebase/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import EmailField from "../../../../shared/EmailField/EmailField";
 import PasswordField from "../../../../shared/PasswordField/PasswordField";
-import CreateAccountButton from "../CreateAccountButton/CreateAccountButton";
+import CreateAccountButton from "./CreateAccountButton/CreateAccountButton";
 import useErrorMessage from "@/hooks/useErrorMessage";
 import SubmitErrorMessage from "@/components/shared/Form/SubmitErrorMessage/SubmitErrorMessage";
 

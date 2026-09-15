@@ -6,16 +6,16 @@ import type { FieldErrorMessageProps } from "./FieldErrorMessage.types";
  * Props are defined in {@link FieldErrorMessageProps}.
  */
 export default function FieldErrorMessage({
-  id,
-  message,
+  errorId,
+  errorMessage,
 }: FieldErrorMessageProps) {
   return (
     <span
       className="font-medium text-sm text-input-error 
                 lg:text-base"
-      id={id}
+      id={errorId}
     >
-      {message}
+      {errorMessage}
     </span>
   );
 }

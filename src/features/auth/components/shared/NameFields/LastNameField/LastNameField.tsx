@@ -29,7 +29,7 @@ export default function LastNameField({ validation }: LastNameFieldProps) {
   const { isInputInvalid, getInputErrorMessage } = useInputValidation(errors);
 
   return (
-    <>
+    <div className="mb-4">
       <FieldHeader
         inputId="last-name"
         labelText={t("forms.signUp.user-details-step.name.last-name-label")}
@@ -55,6 +55,6 @@ export default function LastNameField({ validation }: LastNameFieldProps) {
         aria-describedby="family-name"
         {...register("lastName", validation(t))}
       />
-    </>
+    </div>
   );
 }

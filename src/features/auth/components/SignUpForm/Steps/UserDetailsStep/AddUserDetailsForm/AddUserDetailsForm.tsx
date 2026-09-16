@@ -4,15 +4,17 @@ import { useForm, FormProvider } from "react-hook-form";
 import type { UserDetailsFields } from "@/features/auth/components/types/auth.types";
 import FirstNameField from "@/features/auth/components/shared/NameFields/FirstNameField/FirstNameField";
 import LastNameField from "@/features/auth/components/shared/NameFields/LastNameField/LastNameField";
-import { nameFieldValidation } from "./AddUserDetailsForm.utils";
+import {
+  nameFieldValidation,
+  addUserDetailsDocument,
+} from "./AddUserDetailsForm.utils";
 import useErrorMessage from "@/hooks/useErrorMessage";
+import { getGenericDocumentError } from "@/utils/common.utils";
 import SubmitErrorMessage from "@/components/shared/Form/SubmitErrorMessage/SubmitErrorMessage";
 import AddUserDetailsButton from "./AddUserDetailsButton/AddUserDetailsButton";
 
 /**
- * Renders the add user details form with:
- * - First name and Last name fields
- * - TO DO: add fields
+ * Renders the add user details form with First name and Last name fields
  */
 export default function AddUserDetailsForm() {
   "use no memo"; // Prevents React Hook Form conflict with the React compiler
@@ -44,15 +46,17 @@ export default function AddUserDetailsForm() {
    *
    * If an error was caught, sets submitError state to display a form error message
    */
-  const onSubmit = (data: UserDetailsFields) => {
+  const onSubmit = async (data: UserDetailsFields) => {
     clearErrorMessage();
 
     try {
-      /*TO DO: Add user details to firestore*/
+      if (user) {
+        await addUserDetailsDocument(user.uid, data.firstName, data.lastName);
+        // TO DO: redirect to user profile
+      }
     } catch (error) {
-      /*TO DO: Display error message*/
-      // const errorText =
-      // setErrorMessage(errorText);
+      const errorText = getGenericDocumentError(t, error);
+      setErrorMessage(errorText);
     }
   };
 

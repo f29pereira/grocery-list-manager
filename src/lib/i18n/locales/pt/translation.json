@@ -56,6 +56,7 @@
   },
   "forms": {
     "step": "Etapa",
+    "submit-button": "Salvar",
     "generic-errorMessages": {
       "required": "Este campo é obrigatório",
       "invalid": "Este campo é inválido",
@@ -84,7 +85,8 @@
       "firebase-generic-error-messages": {
         "network-request-failed": "Erro de rede. Verifique a sua ligação e tente novamente.",
         "too-many-requests": "Muitas tentativas. Por favor, aguarde um momento e tente novamente.",
-        "user-token": "A sua sessão expirou. Por favor, inicie sessão."
+        "user-token": "A sua sessão expirou. Por favor, inicie sessão.",
+        "permission-denied": "Não tem permissão para guardar estes dados. Por favor, inicie sessão."
       }
     },
     "signUp": {
@@ -112,10 +114,15 @@
         "description-after-email-send": "E-mail de verificação enviado. Pode continuar e confirmá-lo mais tarde.",
         "send-email-btn": "Enviar email"
       },
-      "user-details": {
+      "user-details-step": {
         "step": "Detalhes",
         "title": "Detalhes to Utilizador",
-        "title-label": "Etapa 3 de 3 Detalhes to Utilizador"
+        "title-label": "Etapa 3 de 3 Detalhes to Utilizador",
+        "name": {
+          "first-name-label": "Nome",
+          "last-name-label": "Apelido",
+          "name-max-length": "Máx. 50 caracteres"
+        }
       }
     }
   }

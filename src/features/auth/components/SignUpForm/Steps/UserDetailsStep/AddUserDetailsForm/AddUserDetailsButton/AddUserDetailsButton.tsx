@@ -20,7 +20,8 @@ export default function AddUserDetailsButton({
     <SubmitButton
       styles="bg-button 
             shadow-lg shadow-green-600/50 
-            hover:bg-button-hover"
+            hover:bg-button-hover
+            disabled:hover:bg-button"
       isSubmitting={isSubmitting}
       buttonIcon={
         <FaUserCheck

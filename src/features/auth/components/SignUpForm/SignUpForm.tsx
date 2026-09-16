@@ -1,10 +1,11 @@
+import { useTranslation } from "react-i18next";
+import { useMultiStep } from "@/contexts/MultiStepContext/useMultiStep";
+import { getStepsDescription } from "./SignUpForm.utils";
 import Logo from "@/components/shared/Logo/Logo";
 import StepsList from "@/components/shared/StepsList/StepsList";
 import AuthStep from "./Steps/AuthStep/AuthStep";
 import EmailVerificationStep from "./Steps/EmailVerificationStep/EmailVerificationStep";
-import { useTranslation } from "react-i18next";
-import { useMultiStep } from "@/contexts/MultiStepContext/useMultiStep";
-import { getStepsDescription } from "./SignUpForm.utils";
+import UserDetailStep from "./Steps/UserDetailsStep/UserDetailsStep";
 
 /**
  * Renders the multi-step sign up form with:
@@ -50,7 +51,7 @@ export default function SignUpForm() {
           <div className="lg:flex-1 lg:flex lg:flex-col lg:justify-center">
             {currentStep === 0 && <AuthStep />}
             {currentStep === 1 && <EmailVerificationStep />}
-            {/*TO DO: Add User Details step*/}
+            {currentStep === 2 && <UserDetailStep />}
           </div>
         </div>
       </div>

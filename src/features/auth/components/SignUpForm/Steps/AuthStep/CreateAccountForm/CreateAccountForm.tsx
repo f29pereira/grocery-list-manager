@@ -48,7 +48,7 @@ export default function CreateAccountForm() {
    * Submits the authentication form
    * @param data email and password fields
    *
-   * If an error is catched, sets submitError state to display a form error message
+   * If an error was caught, sets submitError state to display a form error message
    */
   const onSubmit = (data: AuthenticationFields) => {
     clearErrorMessage();
@@ -60,8 +60,8 @@ export default function CreateAccountForm() {
         nextStep();
       })
       .catch((error) => {
-        const errorMessage = getCreateUserErrorMessage(t, error);
-        setErrorMessage(errorMessage);
+        const errorText = getCreateUserErrorMessage(t, error);
+        setErrorMessage(errorText);
       });
   };
 

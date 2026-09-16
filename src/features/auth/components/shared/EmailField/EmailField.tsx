@@ -29,7 +29,7 @@ export default function EmailField({ validation }: EmailFieldProps) {
   const { isInputInvalid, getInputErrorMessage } = useInputValidation(errors);
 
   return (
-    <div className="mb-4">
+    <div className="mb-8">
       <FieldHeader
         inputId="email"
         labelText={t("forms.signUp.auth-step.email-label")}

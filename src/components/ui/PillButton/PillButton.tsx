@@ -10,6 +10,7 @@ export default function PillButton({
   ariaLabel,
   styles,
   handleClick,
+  isDisabled,
   children,
 }: PillButtonProps) {
   return (
@@ -24,6 +25,7 @@ export default function PillButton({
       )}
       onClick={handleClick}
       aria-label={ariaLabel}
+      disabled={isDisabled}
     >
       {children}
     </button>

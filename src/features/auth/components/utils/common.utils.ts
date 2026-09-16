@@ -1,4 +1,5 @@
 import type { TFunction } from "i18next";
+import { FIREBASE_ERROR_CODES } from "@/constants/app.constants";
 
 /**
  * Returns a custom error message for a given auth related Firebase error
@@ -10,13 +11,11 @@ export const getGenericAuthErrorMessages = (
   error: string,
 ) => {
   switch (error) {
-    case "auth/network-request-failed":
-      // Thrown if a network error (such as timeout, interrupted connection or unreachable host) has occurred
+    case FIREBASE_ERROR_CODES.NETWORK_REQUEST_FAILED:
       return t(
         "forms.auth.firebase-generic-error-messages.network-request-failed",
       );
-    case "auth/too-many-requests":
-      // Thrown if requests are blocked from a device due to unusual activity. Trying again after some delay would unblock
+    case FIREBASE_ERROR_CODES.TOO_MANY_REQUESTS:
       return t("forms.auth.firebase-generic-error-messages.too-many-requests");
   }
 };
@@ -31,8 +30,8 @@ export const getGenericSignInAuthErrorMessages = (
   error: string,
 ) => {
   switch (error) {
-    case "auth/invalid-user-token": // Thrown if the user's credential is no longer valid. The user must sign in again
-    case "auth/user-token-expired": // Thrown if the user's credential has expired. The user must sign in again
+    case FIREBASE_ERROR_CODES.INVALID_USER_TOKEN:
+    case FIREBASE_ERROR_CODES.USER_TOKEN_EXPIRED:
       return t("forms.auth.firebase-generic-error-messages.user-token");
   }
 };

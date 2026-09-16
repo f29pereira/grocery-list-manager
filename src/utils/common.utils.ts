@@ -1,5 +1,6 @@
 import { FirebaseError } from "firebase/app";
 import type { TFunction } from "i18next";
+import { FIRESTORE_ERROR_CODES } from "@/constants/app.constants";
 
 /*TO DO: Add updateDoc error messages for "not-found" //  Some requested document was not found.*/
 
@@ -15,14 +16,11 @@ export const getGenericDocumentError = (
   const erroCode = isFirebaseError(error) ? error.code : "";
 
   switch (erroCode) {
-    case "unauthenticated":
-      // Thrown if the request does not have valid authentication credentials for the operation
+    case FIRESTORE_ERROR_CODES.UNAUTHENTICATED:
       return t("forms.auth.firebase-generic-error-messages.user-token");
-    case "permission-denied":
-      // Thrown if the caller does not have permission to execute the specified operation
+    case FIRESTORE_ERROR_CODES.PERMISSION_DENIED:
       return t("forms.auth.firebase-generic-error-messages.permission-denied");
-    case "unavailable":
-      // Thrown if the service is currently unavailable
+    case FIRESTORE_ERROR_CODES.UNAVAILABLE:
       return t(
         "forms.auth.firebase-generic-error-messages.network-request-failed",
       );

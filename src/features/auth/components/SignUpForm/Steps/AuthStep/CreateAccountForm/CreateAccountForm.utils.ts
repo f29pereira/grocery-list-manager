@@ -4,6 +4,7 @@ import type { AuthenticationFields } from "../../../../types/auth.types";
 import { getPasswordStatus } from "../../../../shared/PasswordField/PasswordRules/PasswordRules.utils";
 import { isFirebaseError } from "@/utils/common.utils";
 import { getGenericAuthErrorMessages } from "@/features/auth/components/utils/common.utils";
+import { FIREBASE_ERROR_CODES } from "@/constants/app.constants";
 
 /**
  * Returns Firebase createUserWithEmailAndPassword custom error messages
@@ -17,19 +18,19 @@ export const getCreateUserErrorMessage = (
   const errorCode = isFirebaseError(error) ? error.code : "";
 
   switch (errorCode) {
-    case "auth/email-already-in-use":
+    case FIREBASE_ERROR_CODES.EMAIL_ALREADY_IN_USE:
       return t(
         "forms.signUp.auth-step.firebase-createUser-error-messages.email-in-use",
       );
-    case "auth/invalid-email":
+    case FIREBASE_ERROR_CODES.INVALID_EMAIL:
       return t(
         "forms.signUp.auth-step.firebase-createUser-error-messages.invalid-email",
       );
-    case "auth/operation-not-allowed":
+    case FIREBASE_ERROR_CODES.OPERATION_NOT_ALLOWED:
       return t(
         "forms.signUp.auth-step.firebase-createUser-error-messages.operation-not-allowed",
       );
-    case "auth/weak-password":
+    case FIREBASE_ERROR_CODES.WEAK_PASSWORD:
       return t(
         "forms.signUp.auth-step.firebase-createUser-error-messages.weak-password",
       );

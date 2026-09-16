@@ -19,11 +19,11 @@ export default function SubmitButton({
   return (
     <PillButton
       styles={clsx(
-        "bg-button",
-        "shadow-lg shadow-green-600/50",
-        "hover:bg-button-hover",
+        "disabled:cursor-not-allowed disabled:opacity-75",
+        "disabled:hover:bg-button",
         styles,
       )}
+      isDisabled={isSubmitting}
     >
       <div className="flex justify-center items-center gap-4">
         {isSubmitting ? (

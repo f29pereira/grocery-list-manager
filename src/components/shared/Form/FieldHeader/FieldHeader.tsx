@@ -14,7 +14,7 @@ export default function FieldHeader({
   errorMessage,
 }: FieldHeaderProps) {
   return (
-    <div className="flex justify-between items-center mb-4">
+    <div className="flex justify-between items-center mb-2">
       <FieldLabel inputId={inputId} labelText={labelText} />
 
       <FieldErrorMessage errorId={errorId} errorMessage={errorMessage} />

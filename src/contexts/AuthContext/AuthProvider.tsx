@@ -41,8 +41,18 @@ export default function AuthProvider({ children }: ReactChildrenType) {
     });
   }, []);
 
+  const isProfileComplete = Boolean(authUser?.user && authUser?.details);
+
   return (
-    <AuthContext value={{ authUser, setAuthUser, isLoading, setIsLoading }}>
+    <AuthContext
+      value={{
+        authUser,
+        setAuthUser,
+        isProfileComplete,
+        isLoading,
+        setIsLoading,
+      }}
+    >
       {children}
     </AuthContext>
   );

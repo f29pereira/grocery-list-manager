@@ -3,6 +3,30 @@ import type { TFunction } from "i18next";
 import { FIRESTORE_ERROR_CODES } from "@/constants/app.constants";
 
 /**
+ * Returns Firebase getDoc or updateDoc custom error messages
+ * @param t error messages translation
+ * @param error Firebase error
+ * @param docAction Firebase getDoc or updateDoc action
+ *
+ * @returns custom error message for getDoc or updateDoc if error is "not-found"
+ */
+export const getGetDocOrUpdateDocErrorMessage = (
+  t: TFunction<"translation", undefined>,
+  error: unknown,
+  docAction: "getDoc" | "updateDoc",
+) => {
+  const errorCode = isFirebaseError(error) ? error.code : "";
+
+  if (errorCode === FIRESTORE_ERROR_CODES.NOT_FOUND) {
+    return docAction === "getDoc"
+      ? t("error-messages.firestore.doc-not-found.get-doc")
+      : t("error-messages.firestore.doc-not-found.update-doc");
+  }
+
+  return getGenericDocumentErrorMessage(t, error);
+};
+
+/**
  * Returns a custom error message for a given Firestore related error
  * @param t error messages translation
  * @param error Firebase error

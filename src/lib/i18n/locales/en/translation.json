@@ -114,18 +114,22 @@
     }
   },
   "error-messages": {
-    "generic": "Sorry, something went wrong. Please try again later",
+    "generic": "Sorry, something went wrong. Please try again later.",
     "firebase": {
-      "email-already-in-use": "This email is already in use. Please sign in instead",
+      "email-already-in-use": "This email is already in use. Please sign in instead.",
       "invalid-email": "Invalid email",
       "operation-not-allowed": "Sorry, sign up is unavailable. Please try again later",
-      "weak-password": "Password is too weak. Please follow the password rules",
+      "weak-password": "Password is too weak. Please follow the password rules.",
       "too-many-requests": "Too many attempts. Please wait a moment and try again.",
       "network-request-failed": "Network error. Please check your connection and try again.",
       "user-token": "Your session has expired. Please sign in."
     },
     "firestore": {
-      "permission-denied": "You don't have permission to save this. Please sign in."
+      "permission-denied": "You don't have permission to save this. Please sign in.",
+      "doc-not-found": {
+        "get-doc": "This item no longer exists",
+        "update-doc": "Couldn't save your changes. This item no longer exists"
+      }
     }
   }
 }

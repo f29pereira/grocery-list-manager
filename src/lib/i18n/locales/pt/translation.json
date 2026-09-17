@@ -114,18 +114,22 @@
     }
   },
   "error-messages": {
-    "generic": "Desculpe, algo correu mal. Por favor, tente mais tarde",
+    "generic": "Desculpe, algo correu mal. Por favor, tente mais tarde.",
     "firebase": {
-      "email-already-in-use": "Este e-mail já está a ser utilizado. Por favor, inicie sessão",
+      "email-already-in-use": "Este e-mail já está a ser utilizado. Por favor, inicie sessão.",
       "invalid-email": "Email inválido",
-      "operation-not-allowed": "Desculpe, o registo não está disponível. Por favor, tente mais tarde",
-      "weak-password": "Palavra-passe muito fraca. Por favor, siga as regras",
+      "operation-not-allowed": "Desculpe, o registo não está disponível. Por favor, tente mais tarde.",
+      "weak-password": "Palavra-passe muito fraca. Por favor, siga as regras.",
       "network-request-failed": "Erro de rede. Verifique a sua ligação e tente novamente.",
       "too-many-requests": "Muitas tentativas. Por favor, aguarde um momento e tente novamente.",
       "user-token": "A sua sessão expirou. Por favor, inicie sessão."
     },
     "firestore": {
-      "permission-denied": "Não tem permissão para guardar estes dados. Por favor, inicie sessão."
+      "permission-denied": "Não tem permissão para guardar estes dados. Por favor, inicie sessão.",
+      "doc-not-found": {
+        "get-doc": "Este item já não existe.",
+        "update-doc": "Não foi possível guardar as suas alterações. Este item já não existe."
+      }
     }
   }
 }

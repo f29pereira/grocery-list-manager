@@ -27,7 +27,7 @@ export default function CreateAccountForm() {
 
   // Context
   const { nextStep } = useMultiStep();
-  const { setUser } = useAuth();
+  const { setAuthUser } = useAuth();
   const { errorMessage, setErrorMessage, clearErrorMessage } =
     useErrorMessage();
 
@@ -55,8 +55,7 @@ export default function CreateAccountForm() {
 
     createUserWithEmailAndPassword(auth, data.email, data.password)
       .then((userCredential) => {
-        const user = userCredential.user;
-        setUser(user);
+        setAuthUser({ user: userCredential.user, details: null });
         nextStep();
       })
       .catch((error) => {

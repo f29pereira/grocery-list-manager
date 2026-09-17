@@ -25,7 +25,7 @@ export default function EmailVerificationStep() {
   const { t } = useTranslation();
 
   // Context
-  const { user } = useAuth();
+  const { authUser } = useAuth();
   const { errorMessage, setErrorMessage, clearErrorMessage } =
     useErrorMessage();
 
@@ -34,7 +34,6 @@ export default function EmailVerificationStep() {
 
   // State
   const [isEmailSent, setIsEmailSent] = useState<boolean>(false);
-  //const [submitError, setSubmitError] = useState<string>("");
 
   /**
    * Sends the verification email
@@ -44,8 +43,8 @@ export default function EmailVerificationStep() {
   const sendEmail = () => {
     clearErrorMessage();
 
-    if (user) {
-      sendEmailVerification(user)
+    if (authUser?.user) {
+      sendEmailVerification(authUser.user)
         .then(() => {
           setIsEmailSent(true);
         })
@@ -88,7 +87,9 @@ export default function EmailVerificationStep() {
             {t(
               "forms.signUp.email-verification-step.description-before-email-send",
             )}
-            <span className="ml-2 font-bold text-paragraph">{user?.email}</span>
+            <span className="ml-2 font-bold text-paragraph">
+              {authUser?.user?.email}
+            </span>
           </p>
         )}
       </div>

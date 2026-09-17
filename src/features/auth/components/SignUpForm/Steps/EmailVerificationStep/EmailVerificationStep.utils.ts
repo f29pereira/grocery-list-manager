@@ -19,6 +19,6 @@ export const sendEmailVerificationErrorMessage = (
   return (
     getGenericAuthErrorMessage(t, errorCode) ??
     getGenericSignInAuthErrorMessage(t, errorCode) ??
-    t("forms.generic-errorMessages.error")
+    t("error-messages.generic")
   );
 };

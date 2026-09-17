@@ -19,25 +19,16 @@ export const getCreateUserErrorMessage = (
 
   switch (errorCode) {
     case FIREBASE_ERROR_CODES.EMAIL_ALREADY_IN_USE:
-      return t(
-        "forms.signUp.auth-step.firebase-createUser-error-messages.email-in-use",
-      );
+      return t("error-messages.firebase.email-already-in-use");
     case FIREBASE_ERROR_CODES.INVALID_EMAIL:
-      return t(
-        "forms.signUp.auth-step.firebase-createUser-error-messages.invalid-email",
-      );
+      return t("error-messages.firebase.invalid-email");
     case FIREBASE_ERROR_CODES.OPERATION_NOT_ALLOWED:
-      return t(
-        "forms.signUp.auth-step.firebase-createUser-error-messages.operation-not-allowed",
-      );
+      return t("error-messages.firebase.operation-not-allowed");
     case FIREBASE_ERROR_CODES.WEAK_PASSWORD:
-      return t(
-        "forms.signUp.auth-step.firebase-createUser-error-messages.weak-password",
-      );
+      return t("error-messages.firebase.weak-password");
     default:
       return (
-        getGenericAuthErrorMessage(t, errorCode) ??
-        t("forms.generic-errorMessages.error")
+        getGenericAuthErrorMessage(t, errorCode) ?? t("error-messages.generic")
       );
   }
 };

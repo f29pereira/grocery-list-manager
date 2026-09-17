@@ -11,19 +11,17 @@ export const getGenericDocumentErrorMessage = (
   t: TFunction<"translation", undefined>,
   error: unknown,
 ) => {
-  const erroCode = isFirebaseError(error) ? error.code : "";
+  const errorCode = isFirebaseError(error) ? error.code : "";
 
-  switch (erroCode) {
+  switch (errorCode) {
     case FIRESTORE_ERROR_CODES.UNAUTHENTICATED:
-      return t("forms.auth.firebase-generic-error-messages.user-token");
+      return t("error-messages.firebase.user-token");
     case FIRESTORE_ERROR_CODES.PERMISSION_DENIED:
-      return t("forms.auth.firebase-generic-error-messages.permission-denied");
+      return t("error-messages.firestore.permission-denied");
     case FIRESTORE_ERROR_CODES.UNAVAILABLE:
-      return t(
-        "forms.auth.firebase-generic-error-messages.network-request-failed",
-      );
+      return t("error-messages.firebase.network-request-failed");
     default:
-      return t("forms.generic-errorMessages.error");
+      return t("error-messages.generic");
   }
 };
 

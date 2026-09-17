@@ -12,11 +12,9 @@ export const getGenericAuthErrorMessage = (
 ) => {
   switch (error) {
     case FIREBASE_ERROR_CODES.NETWORK_REQUEST_FAILED:
-      return t(
-        "forms.auth.firebase-generic-error-messages.network-request-failed",
-      );
+      return t("error-messages.firebase.network-request-failed");
     case FIREBASE_ERROR_CODES.TOO_MANY_REQUESTS:
-      return t("forms.auth.firebase-generic-error-messages.too-many-requests");
+      return t("error-messages.firebase.too-many-requests");
   }
 };
 
@@ -32,6 +30,6 @@ export const getGenericSignInAuthErrorMessage = (
   switch (error) {
     case FIREBASE_ERROR_CODES.INVALID_USER_TOKEN:
     case FIREBASE_ERROR_CODES.USER_TOKEN_EXPIRED:
-      return t("forms.auth.firebase-generic-error-messages.user-token");
+      return t("error-messages.firebase.user-token");
   }
 };

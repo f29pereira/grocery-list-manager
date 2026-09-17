@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 import type { ReactChildrenType } from "@/types/common.types";
-import { getAuth, onAuthStateChanged, type User } from "firebase/auth";
+import type { AuthenticatedUser } from "./AuthContext/AuthContext.type";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { AuthContext } from "./AuthContext/AuthContext";
+import { getUserDetailsDocumentByUid } from "@/features/auth/components/utils/common.utils";
 
 /**
  * Provides the current authenticated user context
  */
 export default function AuthProvider({ children }: ReactChildrenType) {
-  const [user, setUser] = useState<User | null>(null);
+  const [authUser, setAuthUser] = useState<AuthenticatedUser | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   /**
@@ -16,14 +18,31 @@ export default function AuthProvider({ children }: ReactChildrenType) {
   useEffect(() => {
     const auth = getAuth();
 
-    return onAuthStateChanged(auth, (user) => {
-      setUser(user);
+    return onAuthStateChanged(auth, async (user) => {
+      setAuthUser({ user: user, details: null });
+
+      if (user) {
+        const userDetails = await getUserDetailsDocumentByUid(user.uid);
+
+        if (userDetails) {
+          const data = userDetails.data();
+
+          setAuthUser({
+            user: user,
+            details: {
+              firstName: data.firstName,
+              lastName: data.lastName,
+            },
+          });
+        }
+      }
+
       setIsLoading(false);
     });
   }, []);
 
   return (
-    <AuthContext value={{ user, setUser, isLoading, setIsLoading }}>
+    <AuthContext value={{ authUser, setAuthUser, isLoading, setIsLoading }}>
       {children}
     </AuthContext>
   );

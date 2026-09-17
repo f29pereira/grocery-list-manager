@@ -2,14 +2,12 @@ import { FirebaseError } from "firebase/app";
 import type { TFunction } from "i18next";
 import { FIRESTORE_ERROR_CODES } from "@/constants/app.constants";
 
-/*TO DO: Add updateDoc error messages for "not-found" //  Some requested document was not found.*/
-
 /**
  * Returns a custom error message for a given Firestore related error
  * @param t error messages translation
  * @param error Firebase error
  */
-export const getGenericDocumentError = (
+export const getGenericDocumentErrorMessage = (
   t: TFunction<"translation", undefined>,
   error: unknown,
 ) => {

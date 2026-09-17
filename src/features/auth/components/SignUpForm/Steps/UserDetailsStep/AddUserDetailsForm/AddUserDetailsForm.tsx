@@ -9,7 +9,7 @@ import {
   addUserDetailsDocument,
 } from "./AddUserDetailsForm.utils";
 import useErrorMessage from "@/hooks/useErrorMessage";
-import { getGenericDocumentError } from "@/utils/common.utils";
+import { getGenericDocumentErrorMessage } from "@/utils/common.utils";
 import SubmitErrorMessage from "@/components/shared/Form/SubmitErrorMessage/SubmitErrorMessage";
 import AddUserDetailsButton from "./AddUserDetailsButton/AddUserDetailsButton";
 
@@ -55,7 +55,7 @@ export default function AddUserDetailsForm() {
         // TO DO: redirect to user profile
       }
     } catch (error) {
-      const errorText = getGenericDocumentError(t, error);
+      const errorText = getGenericDocumentErrorMessage(t, error);
       setErrorMessage(errorText);
     }
   };

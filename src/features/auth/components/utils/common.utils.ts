@@ -6,7 +6,7 @@ import { FIREBASE_ERROR_CODES } from "@/constants/app.constants";
  * @param t error messages translation
  * @param error Firebase error
  */
-export const getGenericAuthErrorMessages = (
+export const getGenericAuthErrorMessage = (
   t: TFunction<"translation", undefined>,
   error: string,
 ) => {
@@ -25,7 +25,7 @@ export const getGenericAuthErrorMessages = (
  * @param t error messages translation
  * @param error Firebase error
  */
-export const getGenericSignInAuthErrorMessages = (
+export const getGenericSignInAuthErrorMessage = (
   t: TFunction<"translation", undefined>,
   error: string,
 ) => {

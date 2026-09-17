@@ -1,8 +1,8 @@
 import { isFirebaseError } from "@/utils/common.utils";
 import type { TFunction } from "i18next";
 import {
-  getGenericAuthErrorMessages,
-  getGenericSignInAuthErrorMessages,
+  getGenericAuthErrorMessage,
+  getGenericSignInAuthErrorMessage,
 } from "../../../utils/common.utils";
 
 /**
@@ -17,8 +17,8 @@ export const sendEmailVerificationErrorMessage = (
   const errorCode = isFirebaseError(error) ? error.code : "";
 
   return (
-    getGenericAuthErrorMessages(t, errorCode) ??
-    getGenericSignInAuthErrorMessages(t, errorCode) ??
+    getGenericAuthErrorMessage(t, errorCode) ??
+    getGenericSignInAuthErrorMessage(t, errorCode) ??
     t("forms.generic-errorMessages.error")
   );
 };

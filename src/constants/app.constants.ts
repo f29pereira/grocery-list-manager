@@ -6,6 +6,11 @@ export const LOCALIZATION_LOCAL_STORAGE = "app-locale";
 export const SUPPORTED_LANGUAGES = ["en", "pt"] as const;
 export const DEFAULT_LANGUAGE = SUPPORTED_LANGUAGES[0];
 
+// Firestore collections
+export const FIRESTORE_COLLECTIONS = {
+  USERS: "users",
+};
+
 // Firebase Errors
 export const FIREBASE_ERROR_CODES = {
   EMAIL_ALREADY_IN_USE: "auth/email-already-in-use", // Thrown if there already exists an account with the given email address
@@ -23,4 +28,5 @@ export const FIRESTORE_ERROR_CODES = {
   UNAUTHENTICATED: "unauthenticated", // Thrown if the request does not have valid authentication credentials for the operation
   PERMISSION_DENIED: "permission-denied", // Thrown if the caller does not have permission to execute the specified operation
   UNAVAILABLE: "unavailable", // Thrown if the service is currently unavailable
+  NOT_FOUND: "not-found", // Some requested document was not found
 };

@@ -7,14 +7,14 @@ import { Outlet, Navigate } from "react-router";
  * If no user is authenticated redirects to the "signIn" route
  */
 export default function ProtectedLayout() {
-  const { user, isLoading } = useAuth();
+  const { authUser, isLoading } = useAuth();
 
   if (isLoading) {
     // TO DO: Add Loading component
     return <p>Loading component</p>;
   }
 
-  if (!user) {
+  if (!authUser) {
     return <Navigate to="/signin" />;
   }
 

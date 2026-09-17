@@ -23,7 +23,7 @@ export default function AddUserDetailsForm() {
   const { t } = useTranslation();
 
   // Context
-  const { user } = useAuth();
+  const { authUser, setAuthUser } = useAuth();
   const { errorMessage, setErrorMessage, clearErrorMessage } =
     useErrorMessage();
 
@@ -50,8 +50,20 @@ export default function AddUserDetailsForm() {
     clearErrorMessage();
 
     try {
-      if (user) {
-        await addUserDetailsDocument(user.uid, data.firstName, data.lastName);
+      if (authUser?.user) {
+        const firstName = data.firstName;
+        const lastName = data.lastName;
+
+        await addUserDetailsDocument(authUser.user.uid, firstName, lastName);
+
+        setAuthUser((prev) =>
+          prev && prev.user
+            ? {
+                ...prev,
+                details: { firstName: firstName, lastName: lastName },
+              }
+            : prev,
+        );
         // TO DO: redirect to user profile
       }
     } catch (error) {

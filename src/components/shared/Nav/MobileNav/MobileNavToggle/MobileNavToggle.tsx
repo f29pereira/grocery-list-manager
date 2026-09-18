@@ -23,7 +23,7 @@ export default function MobileNavToggle() {
                   theme-transition 
                 hover:text-brand-hover"
         onClick={toggle}
-        aria-label={t("mobile.toggle-btn-label")}
+        aria-label={t("nav.mobile.toggle-btn-label")}
         aria-expanded={isToggled}
       >
         <RxHamburgerMenu className="text-2xl md:text-3xl" aria-hidden="true" />

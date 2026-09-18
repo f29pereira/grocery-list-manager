@@ -1,12 +1,18 @@
 {
-  "home": {
-    "link": "Home"
-  },
-  "mobile": {
-    "toggle-btn-label": "Mobile navigation",
-    "dialog-label": "Menu",
-    "nav-label": "Main",
-    "close-btn-label": "Close menu"
+  "nav": {
+    "links": {
+      "home": "Home",
+      "user-profile": {
+        "authenticated": "User profile",
+        "not-authenticated": "Log in"
+      }
+    },
+    "mobile": {
+      "toggle-btn-label": "Mobile navigation",
+      "dialog-label": "Menu",
+      "nav-label": "Main",
+      "close-btn-label": "Close menu"
+    }
   },
   "themeSwitcher": {
     "p-label": "Select a theme",

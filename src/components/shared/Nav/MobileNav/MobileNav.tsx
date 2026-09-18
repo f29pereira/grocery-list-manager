@@ -88,7 +88,7 @@ export default function MobileNav({ isToggled, setToggle }: MobileNavProps) {
       onClick={closeOnBackdropClick}
       onClose={() => setToggle(false)}
       onCancel={handleOnCancel}
-      aria-label={t("mobile.dialog-label")}
+      aria-label={t("nav.mobile.dialog-label")}
     >
       <nav
         className={clsx(
@@ -103,10 +103,10 @@ export default function MobileNav({ isToggled, setToggle }: MobileNavProps) {
             : "translate-x-0 starting:-translate-x-full",
         )}
         onTransitionEnd={handleOnTransitionEnd}
-        aria-label={t("mobile.nav-label")}
+        aria-label={t("nav.mobile.nav-label")}
       >
         <CloseButton
-          ariaLabel={t("mobile.close-btn-label")}
+          ariaLabel={t("nav.mobile.close-btn-label")}
           styles="w-9 h-9 mt-8 mb-16"
           handleClose={startClosingDialog}
         />

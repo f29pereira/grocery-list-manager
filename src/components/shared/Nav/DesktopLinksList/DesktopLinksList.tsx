@@ -29,7 +29,7 @@ export default function DesktopLinksList() {
     <ul className="hidden lg:flex">
       <li>
         <NavigationLink styles={navItemStyles} to="/" end={true}>
-          {t("home.link")}
+          {t("nav.links.home")}
         </NavigationLink>
       </li>
       {/*TO DO: Add Links*/}

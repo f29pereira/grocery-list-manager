@@ -28,7 +28,7 @@ export default function MobileLinksList({
           end={true}
           handleOnClick={handleOnClick}
         >
-          {t("home.link")}
+          {t("nav.links.home")}
         </NavigationLink>
       </li>
       {/*TO DO: Add Links*/}

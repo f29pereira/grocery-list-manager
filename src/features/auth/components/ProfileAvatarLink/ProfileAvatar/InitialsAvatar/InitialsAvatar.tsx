@@ -12,17 +12,26 @@ export default function InitialsAvatar() {
 
   return (
     <div
-      className="w-8.75 h-8.75 rounded-full 
-                border-2 border-solid border-button dark:border-white
+      className="w-7.5 h-7.5 rounded-full 
               bg-green-900 dark:bg-button
                 theme-transition
-              hover:bg-green-800 dark:hover:bg-button-hover"
+              hover:bg-green-800 dark:hover:bg-button-hover
+                md:w-10 md:h-10"
+      aria-hidden="true"
     >
-      <div className="flex justify-center items-center gap-0.5 w-full h-full">
-        <span className="font-bold leading-none text-md text-button-label">
+      <div className="flex justify-center items-center gap-[1.5px] w-full h-full">
+        <span
+          className="font-bold leading-none 
+                    text-sm text-button-label
+                    md:text-base lg:text-lg"
+        >
           {firstNameInitial}
         </span>
-        <span className="font-bold leading-none text-md text-button-label">
+        <span
+          className="font-bold leading-none 
+                    text-sm text-button-label
+                    md:text-base lg:text-lg"
+        >
           {lastNameInitial}
         </span>
       </div>

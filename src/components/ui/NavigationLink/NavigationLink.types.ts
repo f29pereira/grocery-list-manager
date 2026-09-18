@@ -6,6 +6,7 @@ import type { ReactNode } from "react";
  * @property to             - route to navigate to
  * @property end            - (optional) React Router end property
  * @property handleOnClick  - (optional) on click function
+ * @property ariaLabel      - aria-label text description
  * @property children       - link content
  */
 export type NavigationLinkProps = {
@@ -13,5 +14,6 @@ export type NavigationLinkProps = {
   to: string;
   end?: boolean;
   handleOnClick?: () => void;
+  ariaLabel?: string;
   children: ReactNode;
 };

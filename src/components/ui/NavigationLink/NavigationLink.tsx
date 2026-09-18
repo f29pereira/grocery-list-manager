@@ -12,6 +12,7 @@ export default function NavigationLink({
   to,
   end,
   handleOnClick,
+  ariaLabel,
   children,
 }: NavigationLinkProps) {
   return (
@@ -24,6 +25,7 @@ export default function NavigationLink({
       to={to}
       end={end}
       onClick={handleOnClick}
+      aria-label={ariaLabel}
     >
       {children}
     </NavLink>

@@ -1,10 +1,9 @@
-import { FaRegUserCircle } from "@/assets/icons/icon";
 import MobileNavToggle from "./MobileNav/MobileNavToggle/MobileNavToggle";
 import Logo from "../Logo/Logo";
 import DesktopLinksList from "./DesktopLinksList/DesktopLinksList";
 import ThemeSwitcher from "@/components/ui/ThemeSwitcher/ThemeSwitcher";
-import NavigationLink from "@/components/ui/NavigationLink/NavigationLink";
 import LanguageButton from "@/components/ui/LanguageButton/LanguageButton";
+import ProfileAvatarLink from "@/features/auth/components/ProfileAvatarLink/ProfileAvatarLink";
 
 /**
  * Renders the app navigation with:
@@ -40,20 +39,7 @@ export default function Nav() {
           <LanguageButton />
         </div>
 
-        {/*TO DO: update to property*/}
-        <NavigationLink
-          styles="text-2xl text-brand 
-                  hover:text-brand-hover 
-                  md:text-3xl"
-          to="/signin"
-        >
-          <FaRegUserCircle
-            className="text-2xl 
-                    text-brand
-                    hover:text-brand-hover
-                      md:text-3xl"
-          />
-        </NavigationLink>
+        <ProfileAvatarLink />
       </div>
     </nav>
   );

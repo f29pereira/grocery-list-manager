@@ -7,7 +7,6 @@ import useToggle from "@/hooks/useToggle";
 import useInputValidation from "@/hooks/useInputValidation";
 import FieldHeader from "@/components/shared/Form/FieldHeader/FieldHeader";
 import PasswordToggleButton from "../../shared/PasswordField/PasswordToggleButton/PasswordToggleButton";
-import PasswordRules from "./PasswordRules/PasswordRules";
 
 /**
  * Renders the password field
@@ -69,8 +68,6 @@ export default function PasswordField({ validation }: PasswordFieldProps) {
 
         <PasswordToggleButton isToggled={isToggled} toggle={toggle} />
       </div>
-
-      <PasswordRules password={currentPassword} />
     </>
   );
 }

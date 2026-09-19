@@ -2,9 +2,9 @@ import { useNavigate } from "react-router";
 import { useForm, FormProvider } from "react-hook-form";
 import type { AuthenticationFields } from "../../types/auth.types";
 import {
-  getSignInErrorMessage,
   signInFieldsValidation,
-} from "../SignInForm.utils";
+  getSignInErrorMessage,
+} from "./AuthenticateAccountForm.utils";
 import useErrorMessage from "@/hooks/useErrorMessage";
 import { auth } from "@/lib/firebase/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";

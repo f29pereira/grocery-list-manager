@@ -68,6 +68,10 @@
       "invalid": "This field is invalid"
     },
     "auth": {
+      "fields": {
+        "email-label": "Email",
+        "password-label": "Password"
+      },
       "password": {
         "toggle": {
           "show-label": "Show password",
@@ -93,8 +97,6 @@
         "step": "Account",
         "title": "Create an account",
         "title-label": "Step 1 of 3 Create an account",
-        "email-label": "Email",
-        "password-label": "Password",
         "signIn-message": "Already have an account ?",
         "signIn-link": "Sign In",
         "submit-btn": "Create account"

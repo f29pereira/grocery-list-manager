@@ -41,7 +41,7 @@ export default function PasswordField({ validation }: PasswordFieldProps) {
     <>
       <FieldHeader
         inputId="password"
-        labelText={t("forms.signUp.auth-step.password-label")}
+        labelText={t("forms.auth.fields.password-label")}
         errorId="password-error"
         errorMessage={getInputErrorMessage("password")}
       />

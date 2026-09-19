@@ -68,6 +68,10 @@
       "invalid": "Este campo é inválido"
     },
     "auth": {
+      "fields": {
+        "email-label": "Email",
+        "password-label": "Password"
+      },
       "password": {
         "toggle": {
           "show-label": "Mostrar palavra-passe",
@@ -93,8 +97,6 @@
         "step": "Conta",
         "title": "Criar uma conta",
         "title-label": "Etapa 1 de 3 Criar uma conta",
-        "email-label": "Email",
-        "password-label": "Password",
         "signIn-message": "Já tem uma conta ?",
         "signIn-link": "Iniciar Sessão",
         "submit-btn": "Criar conta"

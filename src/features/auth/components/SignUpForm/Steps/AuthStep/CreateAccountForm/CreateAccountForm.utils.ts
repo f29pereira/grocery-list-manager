@@ -1,7 +1,7 @@
 import type { TFunction } from "i18next";
 import type { RegisterOptions } from "react-hook-form";
 import type { AuthenticationFields } from "../../../../types/auth.types";
-import { getPasswordStatus } from "../../../../shared/PasswordField/PasswordRules/PasswordRules.utils";
+import { getPasswordStatus } from "./PasswordFieldWithRules/PasswordRules/PasswordRules.utils";
 import { isFirebaseError } from "@/utils/common.utils";
 import { getGenericAuthErrorMessage } from "@/features/auth/components/utils/common.utils";
 import { FIREBASE_ERROR_CODES } from "@/constants/app.constants";

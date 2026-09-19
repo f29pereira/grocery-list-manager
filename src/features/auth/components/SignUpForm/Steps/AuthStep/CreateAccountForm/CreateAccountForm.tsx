@@ -11,7 +11,7 @@ import { useAuth } from "@/contexts/AuthContext/useAuth";
 import { auth } from "@/lib/firebase/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import EmailField from "../../../../shared/EmailField/EmailField";
-import PasswordField from "../../../../shared/PasswordField/PasswordField";
+import PasswordFieldWithRules from "./PasswordFieldWithRules/PasswordFieldWithRules";
 import CreateAccountButton from "./CreateAccountButton/CreateAccountButton";
 import useErrorMessage from "@/hooks/useErrorMessage";
 import SubmitErrorMessage from "@/components/shared/Form/SubmitErrorMessage/SubmitErrorMessage";
@@ -74,7 +74,7 @@ export default function CreateAccountForm() {
         noValidate
       >
         <EmailField validation={signUpEmailValidation} />
-        <PasswordField validation={signUpPasswordValidation} />
+        <PasswordFieldWithRules validation={signUpPasswordValidation} />
 
         <SubmitErrorMessage message={errorMessage} />
 

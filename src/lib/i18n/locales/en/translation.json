@@ -119,6 +119,12 @@
           "name-max-length": "Max 50 characters"
         }
       }
+    },
+    "signIn": {
+      "title": "Welcome back!",
+      "signIn-button": "Log In",
+      "signUp-message": "Don't have an account ?",
+      "signUp-link": "Sign Up"
     }
   },
   "error-messages": {
@@ -130,7 +136,9 @@
       "weak-password": "Password is too weak. Please follow the password rules.",
       "too-many-requests": "Too many attempts. Please wait a moment and try again.",
       "network-request-failed": "Network error. Please check your connection and try again.",
-      "user-token": "Your session has expired. Please sign in."
+      "user-token": "Your session has expired. Please sign in.",
+      "invalid-credential": "Email or Password invalid.",
+      "user-disabled": "Sorry, this account is disabled."
     },
     "firestore": {
       "permission-denied": "You don't have permission to save this. Please sign in.",

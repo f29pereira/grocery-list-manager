@@ -21,6 +21,8 @@ export const FIREBASE_ERROR_CODES = {
   TOO_MANY_REQUESTS: "auth/too-many-requests", // Thrown if requests are blocked from a device due to unusual activity. Trying again after some delay would unblock
   INVALID_USER_TOKEN: "auth/invalid-user-token", // Thrown if the user's credential is no longer valid. The user must sign in again
   USER_TOKEN_EXPIRED: "auth/user-token-expired", // Thrown if the user's credential has expired. The user must sign in again
+  INVALID_CREDENTIAL: "auth/invalid-credential", // Thrown if the credential used to authenticate the Admin SDKs cannot be used to perform the desired action.
+  USER_DISABLED: "auth/user-disabled", // Thrown if	the user account has been disabled by an administrator.
 };
 
 // Firestore Errors

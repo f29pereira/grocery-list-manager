@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { useMultiStep } from "@/contexts/MultiStepContext/useMultiStep";
 import { getStepsDescription } from "./SignUpForm.utils";
+import Card from "@/components/shared/Card/Card";
 import Logo from "@/components/shared/Logo/Logo";
 import StepsList from "@/components/shared/StepsList/StepsList";
 import AuthStep from "./Steps/AuthStep/AuthStep";
@@ -29,13 +30,10 @@ export default function SignUpForm() {
                 md:px-10
                 lg:flex lg:justify-center lg:items-center lg:p-0"
     >
-      <div
-        className="px-6 py-10 overflow-hidden
-                bg-card 
-                  rounded-3xl 
-                  shadow-xl dark:shadow-none
-                  sm:px-10 md:px-20
-                  lg:w-200 lg:h-187.5 lg:px-10"
+      <Card
+        styles="px-6 py-10 
+              sm:px-10 md:px-20
+              lg:w-200 lg:h-187.5 lg:px-10"
       >
         <div className="lg:flex lg:gap-40 lg:w-full lg:h-full">
           <div className="mb-8 lg:flex lg:flex-col lg:gap-4 lg:mb-0">
@@ -54,7 +52,7 @@ export default function SignUpForm() {
             {currentStep === 2 && <UserDetailStep />}
           </div>
         </div>
-      </div>
+      </Card>
     </div>
   );
 }

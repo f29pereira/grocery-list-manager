@@ -1,8 +1,9 @@
 import { createBrowserRouter } from "react-router";
 import Root from "./routes/root";
 import RootErrorBoundary from "./routes/rootErrorBoundary";
-import SignIn from "./routes/signIn";
 import AuthLayout from "./routes/authLayout";
+import SignIn from "./routes/signIn";
+import SignUp from "./routes/signUp";
 
 /**
  * Routes configuration
@@ -12,7 +13,8 @@ export const router = createBrowserRouter([
   {
     Component: AuthLayout,
     children: [
-      { path: "signIn", Component: SignIn } /*TO DO: Add "signup" route*/,
+      { path: "signup", Component: SignUp },
+      { path: "signin", Component: SignIn },
     ],
   },
 

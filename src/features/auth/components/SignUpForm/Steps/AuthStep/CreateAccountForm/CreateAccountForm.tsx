@@ -28,8 +28,6 @@ export default function CreateAccountForm() {
   // Context
   const { nextStep } = useMultiStep();
   const { setAuthUser } = useAuth();
-  const { errorMessage, setErrorMessage, clearErrorMessage } =
-    useErrorMessage();
 
   // React Hook Form: methods
   const methods = useForm<AuthenticationFields>();
@@ -43,6 +41,10 @@ export default function CreateAccountForm() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     formState: { errors, isSubmitting },
   } = methods;
+
+  // Custom Hook
+  const { errorMessage, setErrorMessage, clearErrorMessage } =
+    useErrorMessage();
 
   /**
    * Submits the authentication form

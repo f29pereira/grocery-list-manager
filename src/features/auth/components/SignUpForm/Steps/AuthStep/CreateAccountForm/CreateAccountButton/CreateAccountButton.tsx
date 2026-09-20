@@ -27,7 +27,7 @@ export default function CreateAccountButton({
     >
       <span
         className="font-bold 
-                  text-lg text-button-label
+                  text-md text-button-label
                   lg:text-base"
       >
         {t("forms.signUp.auth-step.submit-btn")}

@@ -27,7 +27,11 @@ export default function SendEmailButton({
         />
       }
     >
-      <span className="font-black text-button-label">
+      <span
+        className="font-bold 
+                  text-md text-button-label 
+                  lg:text-base"
+      >
         {t("forms.signUp.email-verification-step.send-email-btn")}
       </span>
     </SubmitButton>

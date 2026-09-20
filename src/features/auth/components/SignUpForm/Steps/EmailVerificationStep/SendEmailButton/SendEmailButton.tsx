@@ -1,6 +1,6 @@
 import type { SendEmailButtonProps } from "./SendEmailButton.types";
 import { LuSend } from "@/assets/icons/icon";
-import PillButton from "@/components/ui/PillButton/PillButton";
+import SubmitButton from "@/components/shared/Form/SubmitButton/SubmitButton";
 import { useTranslation } from "react-i18next";
 
 /**
@@ -8,26 +8,28 @@ import { useTranslation } from "react-i18next";
  *
  * Props are defined in {@link SendEmailButtonProps}.
  */
-export default function SendEmailButton({ handleClick }: SendEmailButtonProps) {
+export default function SendEmailButton({
+  handleClick,
+  isSubmitting,
+}: SendEmailButtonProps) {
   // Translation
   const { t } = useTranslation();
 
   return (
-    <PillButton
-      styles="bg-button
-            shadow-lg shadow-green-600/50 
-            hover:bg-brand-hover"
+    <SubmitButton
+      styles="bg-button shadow-lg shadow-green-600/50 hover:bg-brand-hover"
       handleClick={handleClick}
-    >
-      <div className="flex justify-center items-center gap-4">
+      isSubmitting={isSubmitting}
+      buttonIcon={
         <LuSend
           className="text-2xl text-button-label rotate-12"
           aria-hidden="true"
         />
-        <span className="font-black text-button-label">
-          {t("forms.signUp.email-verification-step.send-email-btn")}
-        </span>
-      </div>
-    </PillButton>
+      }
+    >
+      <span className="font-black text-button-label">
+        {t("forms.signUp.email-verification-step.send-email-btn")}
+      </span>
+    </SubmitButton>
   );
 }

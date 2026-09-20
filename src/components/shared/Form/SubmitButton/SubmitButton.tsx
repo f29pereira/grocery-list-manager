@@ -4,7 +4,7 @@ import PillButton from "@/components/ui/PillButton/PillButton";
 import { FaSpinner } from "@/assets/icons/icon";
 
 /**
- * Renders a form submit pill button
+ * Renders a submit pill button
  *
  * If the associated form is submitting, displays a loading icon with spin animation instead of the buttonIcon prop
  *
@@ -12,6 +12,7 @@ import { FaSpinner } from "@/assets/icons/icon";
  */
 export default function SubmitButton({
   styles,
+  handleClick,
   isSubmitting,
   buttonIcon,
   children,
@@ -23,6 +24,7 @@ export default function SubmitButton({
         "disabled:hover:bg-button",
         styles,
       )}
+      handleClick={handleClick}
       isDisabled={isSubmitting}
     >
       <div className="flex justify-center items-center gap-4">

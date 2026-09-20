@@ -124,7 +124,14 @@
       "title": "Bem-vindo de volta!",
       "signIn-button": "Iniciar Sessão",
       "signUp-message": "Não está registado ?",
-      "signUp-link": "Criar conta"
+      "signUp-link": "Criar conta",
+      "forgot-password-link": "Esqueceu-se da palavra-passe ?"
+    },
+    "forgot-password": {
+      "title": "Repor palavra-passe",
+      "send-email-btn": "Enviar email",
+      "description-before-email-send": "Por favor, clique no botão para enviar um email de redefinição da palavra-passe.",
+      "description-after-email-send": "Email de verificação de palavra-passe enviado."
     }
   },
   "error-messages": {

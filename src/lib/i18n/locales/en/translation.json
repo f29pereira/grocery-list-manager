@@ -124,7 +124,14 @@
       "title": "Welcome back!",
       "signIn-button": "Log In",
       "signUp-message": "Don't have an account ?",
-      "signUp-link": "Sign Up"
+      "signUp-link": "Sign Up",
+      "forgot-password-link": "Forgot Password ?"
+    },
+    "forgot-password": {
+      "title": "Password reset",
+      "send-email-btn": "Send email",
+      "description-before-email-send": "Please click the button to send a password reset email.",
+      "description-after-email-send": "Password verification email sent."
     }
   },
   "error-messages": {

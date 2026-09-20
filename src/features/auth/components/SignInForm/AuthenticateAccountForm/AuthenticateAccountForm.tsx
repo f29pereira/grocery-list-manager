@@ -12,10 +12,13 @@ import { useTranslation } from "react-i18next";
 import EmailField from "../../shared/EmailField/EmailField";
 import PasswordField from "../../shared/PasswordField/PasswordField";
 import SubmitErrorMessage from "@/components/shared/Form/SubmitErrorMessage/SubmitErrorMessage";
+import ForgotPasswordLink from "../ForgotPasswordLink/ForgotPasswordLink";
 import SubmitButton from "@/components/shared/Form/SubmitButton/SubmitButton";
 
 /**
- * Renders the sign in form with email and password fields
+ * Renders the sign in form with:
+ * - Email and Password fields
+ * - Forgot password link
  */
 export default function AuthenticateAccountForm() {
   // Translation
@@ -45,6 +48,8 @@ export default function AuthenticateAccountForm() {
    *
    * If an error was caught, sets submitError state to display a form error message
    */
+
+  // TO DO: change to async
   const onSubmit = (data: AuthenticationFields) => {
     clearErrorMessage();
 
@@ -61,7 +66,7 @@ export default function AuthenticateAccountForm() {
   return (
     <FormProvider {...methods}>
       <form
-        className="w-full"
+        className="relative w-full"
         onSubmit={methods.handleSubmit((data) => onSubmit(data))}
         noValidate
       >
@@ -69,6 +74,10 @@ export default function AuthenticateAccountForm() {
         <PasswordField validation={signInFieldsValidation} />
 
         {/*TO DO: Add Forgot Password link*/}
+
+        <div className="absolute right-0 mt-2">
+          <ForgotPasswordLink />
+        </div>
 
         <div className="mt-8">
           <SubmitErrorMessage message={errorMessage} />
@@ -84,8 +93,8 @@ export default function AuthenticateAccountForm() {
           >
             <span
               className="font-bold 
-                  text-lg text-button-label
-                  lg:text-base"
+                        text-md text-button-label
+                        lg:text-base"
             >
               {t("forms.signIn.signIn-button")}
             </span>

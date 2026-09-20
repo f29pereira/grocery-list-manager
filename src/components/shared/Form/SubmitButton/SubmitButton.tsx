@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import type { SubmitButtonProps } from "./SubmitButton.types";
 import PillButton from "@/components/ui/PillButton/PillButton";
-import { FaCircleNotch } from "@/assets/icons/icon";
+import { FaSpinner } from "@/assets/icons/icon";
 
 /**
  * Renders a form submit pill button
@@ -27,7 +27,7 @@ export default function SubmitButton({
     >
       <div className="flex justify-center items-center gap-4">
         {isSubmitting ? (
-          <FaCircleNotch
+          <FaSpinner
             className="text-2xl text-button-label 
                         motion-safe:animate-spin"
             aria-hidden="true"

@@ -6,7 +6,7 @@ import {
   FaGlobe,
   FaRegEye,
   FaRegEyeSlash,
-  FaCircleNotch,
+  FaSpinner,
 } from "react-icons/fa";
 import {
   FaXTwitter,
@@ -63,7 +63,7 @@ export {
   FaGlobe,
   FaRegEye,
   FaRegEyeSlash,
-  FaCircleNotch,
+  FaSpinner,
   GoDot,
   LuFileX,
   LuMonitor,

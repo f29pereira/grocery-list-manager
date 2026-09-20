@@ -33,6 +33,7 @@ export default function EmailVerificationStep() {
   const { elementRef } = useFocus<HTMLHeadingElement>();
 
   // State
+  const [isSubmittingEmail, setIsSubmittingEmail] = useState<boolean>(false);
   const [isEmailSent, setIsEmailSent] = useState<boolean>(false);
 
   /**
@@ -40,18 +41,19 @@ export default function EmailVerificationStep() {
    *
    * If an error is catched, sets submitError state to display an error message
    */
-  const sendEmail = () => {
+  const sendEmail = async () => {
     clearErrorMessage();
 
-    if (authUser?.user) {
-      sendEmailVerification(authUser.user)
-        .then(() => {
-          setIsEmailSent(true);
-        })
-        .catch((error) => {
-          const errorMessage = sendEmailVerificationErrorMessage(t, error);
-          setErrorMessage(errorMessage);
-        });
+    try {
+      if (authUser?.user) {
+        setIsSubmittingEmail(true);
+        await sendEmailVerification(authUser.user);
+        setIsSubmittingEmail(false);
+        setIsEmailSent(true);
+      }
+    } catch (error) {
+      const errorMessage = sendEmailVerificationErrorMessage(t, error);
+      setErrorMessage(errorMessage);
     }
   };
 
@@ -72,7 +74,9 @@ export default function EmailVerificationStep() {
       </h1>
 
       <div
-        className="mb-8 text-center lg:text-left"
+        className="mb-8 min-h-12
+                  text-center 
+                  lg:text-left"
         aria-atomic="true"
         aria-live="polite"
       >
@@ -100,7 +104,10 @@ export default function EmailVerificationStep() {
         {isEmailSent ? (
           <NextStepButton />
         ) : (
-          <SendEmailButton handleClick={sendEmail} />
+          <SendEmailButton
+            handleClick={sendEmail}
+            isSubmitting={isSubmittingEmail}
+          />
         )}
       </div>
     </div>

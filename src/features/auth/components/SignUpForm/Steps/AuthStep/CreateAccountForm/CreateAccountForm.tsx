@@ -52,18 +52,20 @@ export default function CreateAccountForm() {
    *
    * If an error was caught, sets submitError state to display a form error message
    */
-  const onSubmit = (data: AuthenticationFields) => {
+  const onSubmit = async (data: AuthenticationFields) => {
     clearErrorMessage();
-
-    createUserWithEmailAndPassword(auth, data.email, data.password)
-      .then((userCredential) => {
-        setAuthUser({ user: userCredential.user, details: null });
-        nextStep();
-      })
-      .catch((error) => {
-        const errorText = getCreateUserErrorMessage(t, error);
-        setErrorMessage(errorText);
-      });
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        data.email,
+        data.password,
+      );
+      setAuthUser({ user: userCredential.user, details: null });
+      nextStep();
+    } catch (error) {
+      const errorText = getCreateUserErrorMessage(t, error);
+      setErrorMessage(errorText);
+    }
   };
 
   return (

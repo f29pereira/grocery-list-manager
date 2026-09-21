@@ -1,4 +1,4 @@
-import type { AuthenticationFields } from "../../../types/auth.types";
+import type { AuthenticationFields } from "@/features/auth/components/types/auth.types";
 
 /**
  * Props for the PasswordRules component

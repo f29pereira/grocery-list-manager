@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { useMultiStep } from "@/contexts/MultiStepContext/useMultiStep";
-import { getStepsDescription } from "./SignUpForm.utils";
+import { getStepsDescription } from "./SignUp.utils";
 import Card from "@/components/shared/Card/Card";
 import Logo from "@/components/shared/Logo/Logo";
 import StepsList from "@/components/shared/StepsList/StepsList";
@@ -9,12 +9,11 @@ import EmailVerificationStep from "./Steps/EmailVerificationStep/EmailVerificati
 import UserDetailStep from "./Steps/UserDetailsStep/UserDetailsStep";
 
 /**
- * Renders the multi-step sign up form with:
+ * Renders the multi-step sign up with:
  * - List of steps
- * - Authentication step
- * - Email Verification step
+ * - Form steps: Authentication, Email verification and User details
  */
-export default function SignUpForm() {
+export default function SignUp() {
   // Translation
   const { t } = useTranslation();
 

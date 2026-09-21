@@ -1,13 +1,13 @@
 import MultiStepProvider from "@/contexts/MultiStepContext/MultiStepProvider";
-import SignUpForm from "@/features/auth/components/SignUpForm/SignUpForm";
+import SignUp from "@/features/auth/components/SignUp/SignUp";
 
 /**
- * Renders the SignUpForm component
+ * Renders the SignUp component for the "sign-up" route
  */
-export default function SignUp() {
+export default function SignUpRoute() {
   return (
     <MultiStepProvider>
-      <SignUpForm />
+      <SignUp />
     </MultiStepProvider>
   );
 }

@@ -1,8 +1,8 @@
-import SignInForm from "@/features/auth/components/SignInForm/SignInForm";
+import SignIn from "@/features/auth/components/SignIn/SignIn";
 
 /**
- * Renders the SignInForm component
+ * Renders the SignIn component for the "sign-in" route
  */
-export default function SignIn() {
-  return <SignInForm />;
+export default function SignInRoute() {
+  return <SignIn />;
 }

@@ -48,19 +48,16 @@ export default function AuthenticateAccountForm() {
    *
    * If an error was caught, sets submitError state to display a form error message
    */
-
-  // TO DO: change to async
-  const onSubmit = (data: AuthenticationFields) => {
+  const onSubmit = async (data: AuthenticationFields) => {
     clearErrorMessage();
 
-    signInWithEmailAndPassword(auth, data.email, data.password)
-      .then(() => {
-        navigate("/"); // TO DO: redirect to "/profile"
-      })
-      .catch((error) => {
-        const errorText = getSignInErrorMessage(t, error);
-        setErrorMessage(errorText);
-      });
+    try {
+      await signInWithEmailAndPassword(auth, data.email, data.password);
+      navigate("/"); // TO DO: redirect to "/profile"
+    } catch (error) {
+      const errorText = getSignInErrorMessage(t, error);
+      setErrorMessage(errorText);
+    }
   };
 
   return (
@@ -73,13 +70,11 @@ export default function AuthenticateAccountForm() {
         <EmailField validation={signInFieldsValidation} />
         <PasswordField validation={signInFieldsValidation} />
 
-        {/*TO DO: Add Forgot Password link*/}
-
         <div className="absolute right-0 mt-2">
           <ForgotPasswordLink />
         </div>
 
-        <div className="mt-8">
+        <div className="mt-14">
           <SubmitErrorMessage message={errorMessage} />
         </div>
 

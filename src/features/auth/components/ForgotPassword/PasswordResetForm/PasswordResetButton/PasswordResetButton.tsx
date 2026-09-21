@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import type { PasswordResetButtonProps } from "./PasswordResetButton.types";
 import { LuSend } from "@/assets/icons/icon";
-import SubmitButton from "@/components/shared/Form/SubmitButton/SubmitButton";
+import SubmitButton from "@/components/ui/SubmitButton/SubmitButton";
 
 /**
  * Renders a send password reset email button

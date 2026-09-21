@@ -1,5 +1,5 @@
 import type { CreateAccountButtonProps } from "./CreateAccountButton.types";
-import SubmitButton from "@/components/shared/Form/SubmitButton/SubmitButton";
+import SubmitButton from "@/components/ui/SubmitButton/SubmitButton";
 import { FaUserPlus } from "@/assets/icons/icon";
 import { useTranslation } from "react-i18next";
 

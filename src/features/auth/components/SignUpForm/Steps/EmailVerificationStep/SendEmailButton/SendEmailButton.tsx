@@ -1,6 +1,6 @@
 import type { SendEmailButtonProps } from "./SendEmailButton.types";
 import { LuSend } from "@/assets/icons/icon";
-import SubmitButton from "@/components/shared/Form/SubmitButton/SubmitButton";
+import SubmitButton from "@/components/ui/SubmitButton/SubmitButton";
 import { useTranslation } from "react-i18next";
 
 /**

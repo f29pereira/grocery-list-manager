@@ -1,4 +1,4 @@
-import type { SubmitButtonProps } from "@/components/shared/Form/SubmitButton/SubmitButton.types";
+import type { SubmitButtonProps } from "@/components/ui/SubmitButton/SubmitButton.types";
 
 /**
  * Props for the AddUserDetailsButton component

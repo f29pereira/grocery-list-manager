@@ -13,7 +13,7 @@ import EmailField from "../../shared/EmailField/EmailField";
 import PasswordField from "../../shared/PasswordField/PasswordField";
 import SubmitErrorMessage from "@/components/shared/Form/SubmitErrorMessage/SubmitErrorMessage";
 import ForgotPasswordLink from "../ForgotPasswordLink/ForgotPasswordLink";
-import SubmitButton from "@/components/shared/Form/SubmitButton/SubmitButton";
+import SubmitButton from "@/components/ui/SubmitButton/SubmitButton";
 
 /**
  * Renders the sign in form with:

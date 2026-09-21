@@ -10,7 +10,7 @@ import NavigationLink from "@/components/ui/NavigationLink/NavigationLink";
  * - TO DO: Google Authentication button
  * - Sign up link
  */
-export default function SignInForm() {
+export default function SignIn() {
   // Translation
   const { t } = useTranslation();
 

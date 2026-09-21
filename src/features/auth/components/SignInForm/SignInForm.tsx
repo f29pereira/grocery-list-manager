@@ -1,5 +1,4 @@
 import { useTranslation } from "react-i18next";
-import useFocus from "@/hooks/useFocus";
 import Card from "@/components/shared/Card/Card";
 import Logo from "@/components/shared/Logo/Logo";
 import AuthenticateAccountForm from "./AuthenticateAccountForm/AuthenticateAccountForm";
@@ -7,16 +6,13 @@ import NavigationLink from "@/components/ui/NavigationLink/NavigationLink";
 
 /**
  * Renders the user authentication with:
- * - Email and Password sign in form
+ * - Email and Password sign in form and forgot password link
  * - TO DO: Google Authentication button
  * - Sign up link
  */
 export default function SignInForm() {
   // Translation
   const { t } = useTranslation();
-
-  // Custom Hook
-  const { elementRef } = useFocus<HTMLHeadingElement>();
 
   return (
     <div
@@ -25,7 +21,7 @@ export default function SignInForm() {
                 lg:flex lg:justify-center lg:items-center lg:p-0"
     >
       <Card
-        styles="px-6 py-10 
+        styles="relative px-6 py-10 
               sm:px-10 md:px-20
               lg:w-200 lg:h-187.5 lg:px-40"
       >
@@ -40,15 +36,11 @@ export default function SignInForm() {
                   text-center text-xl text-title
                   focus-visible:outline-none
                   lg:text-2xl"
-          ref={elementRef}
-          tabIndex={-1}
         >
           {t("forms.signIn.title")}
         </h1>
 
         <AuthenticateAccountForm />
-
-        {/*TO DO: Add Forgot Password Link*/}
 
         {/*TO DO: Add Google account*/}
 

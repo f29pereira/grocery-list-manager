@@ -13,7 +13,7 @@ import EmailField from "../../shared/Fields/EmailField/EmailField";
 import PasswordField from "../../shared/Fields/PasswordField/PasswordField";
 import SubmitErrorMessage from "@/components/shared/Form/SubmitErrorMessage/SubmitErrorMessage";
 import ForgotPasswordLink from "../ForgotPasswordLink/ForgotPasswordLink";
-import SubmitButton from "@/components/ui/SubmitButton/SubmitButton";
+import AuthenticateAccountButton from "./AuthenticateAccountButton/AuthenticateAccountButton";
 
 /**
  * Renders the sign in form with:
@@ -79,21 +79,7 @@ export default function AuthenticateAccountForm() {
         </div>
 
         <div className="mt-2 sm:mx-auto sm:w-2/3 lg:w-full">
-          <SubmitButton
-            styles="bg-button 
-                  shadow-lg shadow-green-600/50 
-                  hover:bg-button-hover
-                  disabled:hover:bg-button"
-            isSubmitting={isSubmitting}
-          >
-            <span
-              className="font-bold 
-                        text-md text-button-label
-                        lg:text-base"
-            >
-              {t("forms.signIn.signIn-button")}
-            </span>
-          </SubmitButton>
+          <AuthenticateAccountButton isSubmitting={isSubmitting} />
         </div>
       </form>
     </FormProvider>

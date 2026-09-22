@@ -10,7 +10,7 @@ import { useMultiStep } from "@/contexts/MultiStepContext/useMultiStep";
 import { useAuth } from "@/contexts/AuthContext/useAuth";
 import { auth } from "@/lib/firebase/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import EmailField from "../../../../shared/EmailField/EmailField";
+import EmailField from "@/features/auth/components/shared/Fields/EmailField/EmailField";
 import PasswordFieldWithRules from "./PasswordFieldWithRules/PasswordFieldWithRules";
 import CreateAccountButton from "./CreateAccountButton/CreateAccountButton";
 import useErrorMessage from "@/hooks/useErrorMessage";

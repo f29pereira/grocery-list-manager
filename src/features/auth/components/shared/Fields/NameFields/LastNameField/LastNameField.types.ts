@@ -1,13 +1,13 @@
 import type { TFunction } from "i18next";
 import type { RegisterOptions } from "react-hook-form";
-import type { UserDetailsFields } from "../../../types/auth.types";
+import type { UserDetailsFields } from "../../../../types/auth.types";
 
 /**
- * Props for the FirstNameField component
+ * Props for the LastNameField component
  * @property validation - React Hook Form field validation
  */
-export type FirstNameFieldProps = {
+export type LastNameFieldProps = {
   validation: (
     t: TFunction<"translation", undefined>,
-  ) => RegisterOptions<UserDetailsFields, "firstName">;
+  ) => RegisterOptions<UserDetailsFields, "lastName">;
 };

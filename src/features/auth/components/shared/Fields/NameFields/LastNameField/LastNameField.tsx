@@ -1,21 +1,21 @@
 import { useTranslation } from "react-i18next";
 import { useFormContext } from "react-hook-form";
 import clsx from "clsx";
-import type { FirstNameFieldProps } from "./FirstNameField.types";
-import type { UserDetailsFields } from "../../../types/auth.types";
+import type { LastNameFieldProps } from "./LastNameField.types";
+import type { UserDetailsFields } from "../../../../types/auth.types";
 import useInputValidation from "@/hooks/useInputValidation";
 import FieldHeader from "@/components/shared/Form/FieldHeader/FieldHeader";
 
 /**
- * Renders the first name field
+ * Renders the last name field
  *
  * Displays an error message if:
- * - No first name is provided
- * - The provided first name is invalid
+ * - No last name is provided
+ * - The provided last name is invalid
  *
- * Props are defined in {@link FirstNameFieldProps}.
+ * Props are defined in {@link LastNameFieldProps}.
  */
-export default function FirstNameField({ validation }: FirstNameFieldProps) {
+export default function LastNameField({ validation }: LastNameFieldProps) {
   // Translation
   const { t } = useTranslation();
 
@@ -29,15 +29,15 @@ export default function FirstNameField({ validation }: FirstNameFieldProps) {
   const { isInputInvalid, getInputErrorMessage } = useInputValidation(errors);
 
   return (
-    <div className="mb-8">
+    <div className="mb-4">
       <FieldHeader
-        inputId="first-name"
-        labelText={t("forms.signUp.user-details-step.name.first-name-label")}
+        inputId="last-name"
+        labelText={t("forms.signUp.user-details-step.name.last-name-label")}
         errorId="first-name-error"
-        errorMessage={getInputErrorMessage("firstName")}
+        errorMessage={getInputErrorMessage("lastName")}
       />
 
-      {/*First Name field*/}
+      {/*Last Name field*/}
       <input
         className={clsx(
           "w-full h-12 px-4 py-2",
@@ -48,12 +48,12 @@ export default function FirstNameField({ validation }: FirstNameFieldProps) {
             ? "border-input-error focus:border-input-error"
             : "focus:border-focus",
         )}
-        id="first-name"
+        id="last-name"
         type="text"
-        autoComplete="given-name"
-        aria-invalid={isInputInvalid("firstName")}
-        aria-describedby="first-name-error"
-        {...register("firstName", validation(t))}
+        autoComplete="family-name"
+        aria-invalid={isInputInvalid("lastName")}
+        aria-describedby="family-name"
+        {...register("lastName", validation(t))}
       />
     </div>
   );

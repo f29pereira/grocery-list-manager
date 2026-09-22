@@ -1,7 +1,7 @@
 import type { TFunction } from "i18next";
 import type { RegisterOptions } from "react-hook-form";
 import type { PasswordResetField } from "./PasswordResetForm.types";
-import { getGenericAuthErrorMessage } from "../../utils/common.utils";
+import { getGenericAuthErrorMessage } from "../../../../utils/common.utils";
 import { isFirebaseError } from "@/utils/common.utils";
 import { FIREBASE_ERROR_CODES } from "@/constants/app.constants";
 

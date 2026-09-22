@@ -1,5 +1,5 @@
 import type { Dispatch, SetStateAction } from "react";
-import type { AuthenticationFields } from "../../types/auth.types";
+import type { AuthenticationFields } from "../../../../types/auth.types";
 
 /**
  * Props for the PasswordResetForm component

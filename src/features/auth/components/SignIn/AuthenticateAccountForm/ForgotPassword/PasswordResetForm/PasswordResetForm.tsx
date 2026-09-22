@@ -9,7 +9,7 @@ import {
   getSendPasswordResetErrorMessage,
   passwordResetEmailFieldValidation,
 } from "./PasswordResetForm.utils";
-import EmailField from "../../shared/EmailField/EmailField";
+import EmailField from "../../../../shared/EmailField/EmailField";
 import SubmitErrorMessage from "@/components/shared/Form/SubmitErrorMessage/SubmitErrorMessage";
 import PasswordResetButton from "./PasswordResetButton/PasswordResetButton";
 

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import Card from "@/components/shared/Card/Card";
 import Logo from "@/components/shared/Logo/Logo";
-import SendResetEmailForm from "./PasswordResetForm/PasswordResetForm";
+import PasswordResetForm from "./PasswordResetForm/PasswordResetForm";
 import NavigationLink from "@/components/ui/NavigationLink/NavigationLink";
 
 /**
@@ -68,7 +68,7 @@ export default function ForgotPassword() {
         </div>
 
         {!isEmailSent ? (
-          <SendResetEmailForm setIsEmailSent={setIsEmailSent} />
+          <PasswordResetForm setIsEmailSent={setIsEmailSent} />
         ) : (
           <NavigationLink to="/signin">
             <span>{t("forms.signIn.signIn-button")}</span>

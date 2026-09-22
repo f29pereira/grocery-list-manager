@@ -1,6 +1,6 @@
 import type { TFunction } from "i18next";
 import type { RegisterOptions } from "react-hook-form";
-import type { AuthenticationFields } from "../../types/auth.types";
+import type { AuthenticationFields } from "../../../types/auth.types";
 
 /**
  * Props for the EmailField component

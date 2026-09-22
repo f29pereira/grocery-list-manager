@@ -2,7 +2,7 @@ import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import clsx from "clsx";
 import type { EmailFieldProps } from "./EmailField.types";
-import type { AuthenticationFields } from "../../types/auth.types";
+import type { AuthenticationFields } from "../../../types/auth.types";
 import useInputValidation from "@/hooks/useInputValidation";
 import FieldHeader from "@/components/shared/Form/FieldHeader/FieldHeader";
 

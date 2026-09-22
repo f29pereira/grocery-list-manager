@@ -2,11 +2,11 @@ import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import clsx from "clsx";
 import type { PasswordFieldProps } from "./PasswordField.type";
-import type { AuthenticationFields } from "../../types/auth.types";
+import type { AuthenticationFields } from "../../../types/auth.types";
 import useToggle from "@/hooks/useToggle";
 import useInputValidation from "@/hooks/useInputValidation";
 import FieldHeader from "@/components/shared/Form/FieldHeader/FieldHeader";
-import PasswordToggleButton from "../../shared/PasswordField/PasswordToggleButton/PasswordToggleButton";
+import PasswordToggleButton from "./PasswordToggleButton/PasswordToggleButton";
 
 /**
  * Renders the password field

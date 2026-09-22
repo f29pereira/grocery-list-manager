@@ -25,7 +25,7 @@ export const getUserProfileRoute = (
   isProfileComplete: boolean,
 ) => {
   if (!authUser?.user) {
-    return "/signin";
+    return "/sign-in";
   } else if (!isProfileComplete) {
     return ""; // TO DO: redirect to profile details form
   }

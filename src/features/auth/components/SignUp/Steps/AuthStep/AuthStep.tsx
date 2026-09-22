@@ -48,7 +48,7 @@ export default function AuthStep() {
                   hover:text-link-hover 
                   hover:underline hover:underline-offset-8 
                   hover:decoration-text-link"
-          to="/signin"
+          to="/sign-in"
         >
           {t("forms.signUp.auth-step.signIn-link")}
         </NavigationLink>

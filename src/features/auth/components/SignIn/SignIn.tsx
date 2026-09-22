@@ -54,7 +54,7 @@ export default function SignIn() {
                   hover:text-link-hover 
                   hover:underline hover:underline-offset-8 
                   hover:decoration-text-link"
-            to="/signup"
+            to="/sign-up"
           >
             {t("forms.signIn.signUp-link")}
           </NavigationLink>

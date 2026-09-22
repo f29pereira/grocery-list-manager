@@ -6,6 +6,8 @@ import SubmitButton from "@/components/ui/SubmitButton/SubmitButton";
 /**
  * Renders a send password reset email button
  *
+ * When hovered the send email icon features a scale animation
+ *
  * Props are defined in {@link PasswordResetButtonProps}.
  */
 export default function PasswordResetButton({
@@ -16,11 +18,16 @@ export default function PasswordResetButton({
 
   return (
     <SubmitButton
-      styles="bg-button shadow-lg shadow-green-600/50 hover:bg-brand-hover"
+      styles="bg-button group 
+            shadow-lg shadow-green-600/50 
+            hover:bg-brand-hover"
       isSubmitting={isSubmitting}
       buttonIcon={
         <LuSend
-          className="text-2xl text-button-label rotate-12"
+          className="text-2xl text-button-label rotate-12 
+                    transition-transform duration-300
+                    group-hover:scale-125
+                    motion-reduce:transition-none"
           aria-hidden="true"
         />
       }

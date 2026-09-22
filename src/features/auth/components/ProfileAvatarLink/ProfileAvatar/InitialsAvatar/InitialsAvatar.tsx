@@ -16,7 +16,7 @@ export default function InitialsAvatar() {
               bg-green-900 dark:bg-button
                 theme-transition
               hover:bg-green-800 dark:hover:bg-button-hover
-                md:w-10 md:h-10"
+                md:w-8.75 md:h-8.75"
       aria-hidden="true"
     >
       <div className="flex justify-center items-center gap-[1.5px] w-full h-full">

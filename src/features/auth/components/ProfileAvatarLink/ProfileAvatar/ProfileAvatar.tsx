@@ -14,8 +14,9 @@ export default function ProfileAvatar() {
     return (
       <FaRegUserCircle
         className="text-3xl
-                    text-brand
-                    hover:text-brand-hover"
+                text-brand
+                hover:text-brand-hover
+                  md:text-[35px]"
         aria-hidden="true"
       />
     );
@@ -27,7 +28,8 @@ export default function ProfileAvatar() {
       <FaUserCircle
         className="text-3xl
                 text-brand
-                hover:text-brand-hover"
+                hover:text-brand-hover
+                  md:text-[35px]"
         aria-hidden="true"
       />
     );

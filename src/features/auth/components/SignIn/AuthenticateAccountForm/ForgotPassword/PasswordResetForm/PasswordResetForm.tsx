@@ -58,7 +58,7 @@ export default function PasswordResetForm({
   return (
     <FormProvider {...methods}>
       <form
-        className="relative w-full"
+        className="relative md:max-w-112.5 md:mx-auto"
         onSubmit={methods.handleSubmit((data) => onSubmit(data))}
         noValidate
       >

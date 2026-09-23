@@ -3,7 +3,8 @@ import { useTranslation } from "react-i18next";
 import Card from "@/components/shared/Card/Card";
 import Logo from "@/components/shared/Logo/Logo";
 import PasswordResetForm from "./PasswordResetForm/PasswordResetForm";
-import NavigationLink from "@/components/ui/NavigationLink/NavigationLink";
+import EmailSentIcon from "../../../shared/EmailSentIcon/EmailSentIcon";
+import PillNavigationLink from "@/components/ui/Links/PillNavigationLink/PillNavigationLink";
 
 /**
  * Renders the forgot password screen
@@ -25,14 +26,14 @@ export default function ForgotPassword() {
 
   return (
     <div
-      className="min-h-screen px-6 py-10
+      className="flex justify-center items-center min-h-screen px-6
                 md:px-10
-                lg:flex lg:justify-center lg:items-center lg:p-0"
+                lg:p-0"
     >
       <Card
-        styles="px-6 py-10 
+        styles="h-160.5 w-full px-6 py-10 
               sm:px-10 md:px-20
-              lg:w-200 lg:h-187.5 lg:px-10"
+              lg:w-200 lg:h-187.5 lg:px-20"
       >
         <div className="flex justify-center mb-10">
           <Logo styles="text-brand hover:text-brand-hover" />
@@ -44,14 +45,14 @@ export default function ForgotPassword() {
                   font-black 
                   text-center text-xl text-title
                   focus-visible:outline-none
-                  lg:text-2xl"
+                  lg:text-2xl lg:text-left"
         >
           {t("forms.forgot-password.title")}
         </h1>
 
         <div
-          className="mb-8 min-h-12
-                  text-center 
+          className="min-h-12 mb-8
+                  text-center
                   lg:text-left"
           aria-atomic="true"
           aria-live="polite"
@@ -67,13 +68,35 @@ export default function ForgotPassword() {
           )}
         </div>
 
-        {!isEmailSent ? (
-          <PasswordResetForm setIsEmailSent={setIsEmailSent} />
-        ) : (
-          <NavigationLink to="/signin">
-            <span>{t("forms.signIn.signIn-button")}</span>
-          </NavigationLink>
+        {!isEmailSent ? null : (
+          <div className="min-h-17.5">
+            <EmailSentIcon />
+          </div>
         )}
+
+        <div>
+          {!isEmailSent ? (
+            <PasswordResetForm setIsEmailSent={setIsEmailSent} />
+          ) : (
+            <PillNavigationLink
+              styles="md:max-w-112.5 md:mx-auto 
+                  bg-button 
+                  shadow-lg shadow-green-600/50 
+                  hover:bg-button-hover"
+              to="/sign-in"
+            >
+              <div className="flex justify-center items-center">
+                <span
+                  className="font-bold 
+                  text-md text-button-label
+                  lg:text-base"
+                >
+                  {t("forms.signIn.signIn-button")}
+                </span>
+              </div>
+            </PillNavigationLink>
+          )}
+        </div>
       </Card>
     </div>
   );

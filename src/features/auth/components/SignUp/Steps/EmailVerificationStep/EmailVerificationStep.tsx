@@ -8,6 +8,7 @@ import { sendEmailVerificationErrorMessage } from "./EmailVerificationStep.utils
 import SendEmailButton from "./SendEmailButton/SendEmailButton";
 import NextStepButton from "@/components/ui/StepButtons/NextStepButton/NextStepButton";
 import SubmitErrorMessage from "@/components/shared/Form/SubmitErrorMessage/SubmitErrorMessage";
+import EmailSentIcon from "../../../shared/EmailSentIcon/EmailSentIcon";
 
 /**
  * Renders the email verification step used by the SignUpForm component
@@ -58,7 +59,7 @@ export default function EmailVerificationStep() {
   };
 
   return (
-    <div>
+    <div className="md:max-w-112.5 md:mx-auto">
       {/*Main title*/}
       <h1
         className="mb-8
@@ -98,9 +99,12 @@ export default function EmailVerificationStep() {
         )}
       </div>
 
-      <SubmitErrorMessage message={errorMessage} />
+      <div className="h-30 mb-8">
+        {isEmailSent && <EmailSentIcon />}
+        <SubmitErrorMessage message={errorMessage} />
+      </div>
 
-      <div className="mt-8 sm:mx-auto sm:w-2/3 lg:w-full">
+      <div>
         {isEmailSent ? (
           <NextStepButton />
         ) : (

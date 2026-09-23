@@ -74,7 +74,7 @@ export default function AuthenticateAccountForm() {
           <ForgotPasswordLink />
         </div>
 
-        <div className="mt-14">
+        <div className="h-17.5 mt-14">
           <SubmitErrorMessage message={errorMessage} />
         </div>
 

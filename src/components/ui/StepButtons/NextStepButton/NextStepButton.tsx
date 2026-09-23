@@ -23,7 +23,7 @@ export default function NextStepButton() {
       handleClick={nextStep}
     >
       <div className="flex justify-center items-center gap-2">
-        <span className="font-black text-lg text-button-label">
+        <span className="font-bold text-md text-button-label">
           {t("multi-step.next-step")}
         </span>
         <IoIosArrowForward

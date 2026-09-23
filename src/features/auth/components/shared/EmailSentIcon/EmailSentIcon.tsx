@@ -9,7 +9,7 @@ export default function EmailSentIcon() {
   return (
     <div
       className="relative w-30 h-30 mx-auto mb-16
-              bg-slate-400
+              bg-blue-950
                 rounded-full"
     >
       <div className="flex justify-center items-center h-full">

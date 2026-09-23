@@ -8,7 +8,7 @@ import { MdEmail, IoMdCheckmark } from "@/assets/icons/icon";
 export default function EmailSentIcon() {
   return (
     <div
-      className="relative w-30 h-30 mx-auto mb-16
+      className="relative w-30 h-30 mx-auto
               bg-blue-950
                 rounded-full"
     >

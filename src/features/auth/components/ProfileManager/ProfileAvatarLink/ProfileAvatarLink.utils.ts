@@ -30,5 +30,5 @@ export const getUserProfileRoute = (
     return ""; // TO DO: redirect to profile details form
   }
 
-  return ""; // TO DO: redirect to the user profile
+  return ""; // TO DO: redirect to user's profile
 };

@@ -95,7 +95,7 @@
     --color-paragraph: var(--color-slate-200);
     /*UI*/
     --color-placeholder: var(--color-paragraph);
-    --color-link: var(--color-slate-200);
+    --color-link: var(--color-paragraph);
     --color-link-hover: var(--color-slate-300);
     --color-button: var(--color-brand);
     --color-button-hover: var(--color-brand-hover);

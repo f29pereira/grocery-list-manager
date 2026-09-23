@@ -75,16 +75,18 @@ export default function AddUserDetailsForm() {
   return (
     <FormProvider {...methods}>
       <form
-        className="w-full"
+        className="md:max-w-112.5 md:mx-auto"
         onSubmit={methods.handleSubmit((data) => onSubmit(data))}
         noValidate
       >
         <FirstNameField validation={nameFieldValidation} />
         <LastNameField validation={nameFieldValidation} />
 
-        <SubmitErrorMessage message={errorMessage} />
+        <div className="h-17.5">
+          <SubmitErrorMessage message={errorMessage} />
+        </div>
 
-        <div className="mt-2 sm:mx-auto sm:w-2/3 lg:w-full">
+        <div className="mt-2">
           <AddUserDetailsButton isSubmitting={isSubmitting} />
         </div>
       </form>

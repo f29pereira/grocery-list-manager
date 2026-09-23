@@ -64,7 +64,7 @@ export default function PasswordResetForm({
       >
         <EmailField validation={passwordResetEmailFieldValidation} />
 
-        <div className="mb-8">
+        <div className="h-17.5 mb-8">
           <SubmitErrorMessage message={errorMessage} />
         </div>
 

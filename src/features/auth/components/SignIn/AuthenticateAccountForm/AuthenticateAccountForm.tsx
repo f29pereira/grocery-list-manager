@@ -63,7 +63,7 @@ export default function AuthenticateAccountForm() {
   return (
     <FormProvider {...methods}>
       <form
-        className="relative w-full"
+        className="relative md:max-w-112.5 md:mx-auto"
         onSubmit={methods.handleSubmit((data) => onSubmit(data))}
         noValidate
       >
@@ -78,7 +78,7 @@ export default function AuthenticateAccountForm() {
           <SubmitErrorMessage message={errorMessage} />
         </div>
 
-        <div className="mt-2 sm:mx-auto sm:w-2/3 lg:w-full">
+        <div className="mt-2">
           <AuthenticateAccountButton isSubmitting={isSubmitting} />
         </div>
       </form>

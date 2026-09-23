@@ -11,7 +11,8 @@ export default function SubmitErrorMessage({
 }: SubmitErrorMessageProps) {
   return (
     <div
-      className="min-h-17.5 overflow-hidden sm:mx-auto sm:w-2/3 lg:w-full"
+      className="flex justify-center items-center h-full w-full 
+                overflow-hidden"
       aria-live="assertive"
       aria-atomic="true"
     >

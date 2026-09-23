@@ -68,33 +68,33 @@ export default function ForgotPassword() {
           )}
         </div>
 
-        {!isEmailSent ? null : (
-          <div className="min-h-17.5">
-            <EmailSentIcon />
-          </div>
-        )}
-
         <div>
           {!isEmailSent ? (
             <PasswordResetForm setIsEmailSent={setIsEmailSent} />
           ) : (
-            <PillNavigationLink
-              styles="md:max-w-112.5 md:mx-auto 
+            <>
+              <div className="mb-8">
+                <EmailSentIcon />
+              </div>
+
+              <PillNavigationLink
+                styles="md:max-w-112.5 md:mx-auto 
                   bg-button 
                   shadow-lg shadow-green-600/50 
                   hover:bg-button-hover"
-              to="/sign-in"
-            >
-              <div className="flex justify-center items-center">
-                <span
-                  className="font-bold 
+                to="/sign-in"
+              >
+                <div className="flex justify-center items-center">
+                  <span
+                    className="font-bold 
                   text-md text-button-label
                   lg:text-base"
-                >
-                  {t("forms.signIn.signIn-button")}
-                </span>
-              </div>
-            </PillNavigationLink>
+                  >
+                    {t("forms.signIn.signIn-button")}
+                  </span>
+                </div>
+              </PillNavigationLink>
+            </>
           )}
         </div>
       </Card>

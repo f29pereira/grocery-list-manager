@@ -53,7 +53,7 @@ export default function AuthenticateAccountForm() {
 
     try {
       await signInWithEmailAndPassword(auth, data.email, data.password);
-      navigate("/"); // TO DO: redirect to "/profile"
+      navigate("/profile");
     } catch (error) {
       const errorText = getSignInErrorMessage(t, error);
       setErrorMessage(errorText);

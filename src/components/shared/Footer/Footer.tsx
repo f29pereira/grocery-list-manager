@@ -1,12 +1,12 @@
 import FooterLogo from "./FooterLogo/FooterLogo";
 import FooterNav from "./FooterNav/FooterNav";
-import FooterCredit from "./FooterCredit/FooterCredit";
+import Credits from "../Credits/Credits";
 
 /**
  * Renders the app footer with:
  * - Logo
  * - Links: Company, Legal, Support and Social
- * - Footer credit
+ * - App credits
  */
 export default function Footer() {
   return (
@@ -23,7 +23,7 @@ export default function Footer() {
         <FooterNav />
       </div>
 
-      <FooterCredit />
+      <Credits />
     </footer>
   );
 }

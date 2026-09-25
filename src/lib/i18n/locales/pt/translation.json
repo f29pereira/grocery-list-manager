@@ -91,7 +91,8 @@
             "unchecked": "Inválida"
           }
         }
-      }
+      },
+      "loading": "A carregar a sua conta"
     },
     "signUp": {
       "auth-step": {

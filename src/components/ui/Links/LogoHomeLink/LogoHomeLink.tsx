@@ -1,4 +1,4 @@
-import type { LogoProps } from "./Logo.types";
+import type { LogoHomeLinkProps } from "./LogoHomeLink.types";
 import clsx from "clsx";
 import { TbPaperBag } from "@/assets/icons/icon";
 import NavigationLink from "@/components/ui/NavigationLink/NavigationLink";
@@ -12,7 +12,7 @@ import NavigationLink from "@/components/ui/NavigationLink/NavigationLink";
  *
  * Props are defined in {@link LogoProps}.
  */
-export default function Logo({ styles }: LogoProps) {
+export default function LogoHomeLink({ styles }: LogoHomeLinkProps) {
   return (
     <NavigationLink
       styles={clsx(

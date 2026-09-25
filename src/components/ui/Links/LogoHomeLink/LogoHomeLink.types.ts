@@ -1,7 +1,7 @@
 /**
- * Props for the Logo component
+ * Props for the LogoHomeLink component
  * @property styles - (optional) Tailwind CSS classes
  */
-export type LogoProps = {
+export type LogoHomeLinkProps = {
   styles?: string;
 };

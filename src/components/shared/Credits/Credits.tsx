@@ -21,14 +21,14 @@ export default function Credits() {
     >
       <div className="flex flex-col lg:flex-row lg:justify-center">
         <div className="flex justify-center items-center mb-4 lg:mb-0">
-          <span className="sr-only">{t("footer.credits.copyright")}</span>
+          <span className="sr-only">{t("credits.copyright")}</span>
           <FaRegCopyright className="text-lg mr-2" aria-hidden="true" />
           <span className="mr-2">2026</span>
           <span className="mr-2">Grocery List</span>
         </div>
 
         <div className="flex justify-center items-center">
-          <span className="mr-1">{t("footer.credits.made-by")}</span>
+          <span className="mr-1">{t("credits.made-by")}</span>
           <a
             className="rounded-sm
                   font-bold
@@ -44,7 +44,7 @@ export default function Credits() {
             rel="noopener noreferrer"
           >
             f29.pereira
-            <span className="sr-only">{t("footer.credits.new-tab")}</span>
+            <span className="sr-only">{t("credits.new-tab")}</span>
           </a>
         </div>
       </div>

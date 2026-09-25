@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import FooterLogo from "./FooterLogo/FooterLogo";
 import FooterNav from "./FooterNav/FooterNav";
 import Credits from "../Credits/Credits";
@@ -9,6 +10,9 @@ import Credits from "../Credits/Credits";
  * - App credits
  */
 export default function Footer() {
+  // Translation
+  const { t } = useTranslation();
+
   return (
     <footer
       className="py-12
@@ -23,7 +27,11 @@ export default function Footer() {
         <FooterNav />
       </div>
 
-      <Credits />
+      <div>
+        {/*Screen reader only credits title*/}
+        <h4 className="sr-only">{t("credits.title")}</h4>
+        <Credits />
+      </div>
     </footer>
   );
 }

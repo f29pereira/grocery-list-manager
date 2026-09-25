@@ -1,6 +1,6 @@
 import useFocus from "@/hooks/useFocus";
 import { useTranslation } from "react-i18next";
-import AddUserDetailsForm from "./AddUserDetailsForm/AddUserDetailsForm";
+import AddUserDetailsForm from "../../../shared/AddUserDetailsForm/AddUserDetailsForm";
 
 /**
  * Renders the user details step used by the SignUpForm component

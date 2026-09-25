@@ -16,19 +16,17 @@ export const getUserProfileAriaLabel = (
 };
 
 /**
- * Returns the route for the user profile avatar link
- * @param authUser          autehnticated user
- * @param isProfileComplete is the user profile complete
+ * Returns the "profile" route or the "sign-in" route if no user is authenticated
+ * @param authUser authenticated user
  */
-export const getUserProfileRoute = (
-  authUser: AuthenticatedUser | null,
-  isProfileComplete: boolean,
-) => {
-  if (!authUser?.user) {
+export const getUserProfileRoute = (authUser: AuthenticatedUser | null) => {
+  /*if (!authUser?.user) {
     return "/sign-in";
   } else if (!isProfileComplete) {
     return ""; // TO DO: redirect to profile details form
   }
 
-  return ""; // TO DO: redirect to user's profile
+  return "/profile";*/
+
+  return authUser?.user ? "/profile" : "/sign-in";
 };

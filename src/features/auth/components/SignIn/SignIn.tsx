@@ -27,7 +27,7 @@ export default function SignIn() {
               lg:w-200 lg:h-187.5 lg:px-40"
       >
         <div className="flex justify-center mb-10">
-          <LogoHomeLink styles="text-brand hover:text-brand-hover" />
+          <LogoHomeLink />
         </div>
 
         {/*Main title*/}

@@ -17,7 +17,7 @@ export default function PageNotFound() {
         className="absolute flex justify-center top-5 right-0 left-0 
                   md:justify-start md:left-8 md:top-7"
       >
-        <LogoHomeLink styles="text-brand hover:text-brand-hover" />
+        <LogoHomeLink />
       </div>
 
       <div

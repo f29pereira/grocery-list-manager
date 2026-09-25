@@ -1,5 +1,3 @@
-import type { LogoHomeLinkProps } from "./LogoHomeLink.types";
-import clsx from "clsx";
 import { TbPaperBag } from "@/assets/icons/icon";
 import NavigationLink from "@/components/ui/NavigationLink/NavigationLink";
 
@@ -12,15 +10,14 @@ import NavigationLink from "@/components/ui/NavigationLink/NavigationLink";
  *
  * Props are defined in {@link LogoProps}.
  */
-export default function LogoHomeLink({ styles }: LogoHomeLinkProps) {
+export default function LogoHomeLink() {
   return (
     <NavigationLink
-      styles={clsx(
-        "inline-block",
-        "font-space-grotesk font-black",
-        "theme-transition",
-        styles,
-      )}
+      styles="inline-block
+            font-space-grotesk font-black 
+            text-brand 
+            hover:text-brand-hover 
+            theme-transition"
       to="/"
     >
       <div className="flex justify-center items-center gap-1">

@@ -40,7 +40,7 @@ export default function SignUp() {
               className="flex justify-center mb-4
                         lg:flex-none"
             >
-              <LogoHomeLink styles="text-brand hover:text-brand-hover" />
+              <LogoHomeLink />
             </div>
             <StepsList stepsList={stepsList} currentStep={currentStep} />
           </div>

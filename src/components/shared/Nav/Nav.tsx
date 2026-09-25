@@ -24,7 +24,7 @@ export default function Nav() {
       <MobileNavToggle />
 
       <div className="flex items-center gap-20">
-        <LogoHomeLink styles="text-brand hover:text-brand-hover" />
+        <LogoHomeLink />
 
         <DesktopLinksList />
       </div>

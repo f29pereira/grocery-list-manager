@@ -8,7 +8,6 @@ export default function LogoHomeLink() {
   return (
     <NavigationLink
       styles="inline-block
-            font-space-grotesk font-black 
             text-brand 
             hover:text-brand-hover 
             theme-transition"

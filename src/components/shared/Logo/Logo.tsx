@@ -11,7 +11,13 @@ import { TbPaperBag } from "@/assets/icons/icon";
  */
 export default function Logo({ styles }: LogoProps) {
   return (
-    <div className={clsx("flex justify-center items-center gap-1", styles)}>
+    <div
+      className={clsx(
+        "flex justify-center items-center gap-1",
+        "font-space-grotesk font-black",
+        styles,
+      )}
+    >
       <TbPaperBag className="text-2xl sm:text-3xl" aria-hidden="true" />
 
       {/*Viewports < 640px*/}

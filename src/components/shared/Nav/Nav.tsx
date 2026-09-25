@@ -1,5 +1,5 @@
 import MobileNavToggle from "./MobileNav/MobileNavToggle/MobileNavToggle";
-import Logo from "../Logo/Logo";
+import LogoHomeLink from "@/components/ui/Links/LogoHomeLink/LogoHomeLink";
 import DesktopLinksList from "./DesktopLinksList/DesktopLinksList";
 import ThemeSwitcher from "@/components/ui/ThemeSwitcher/ThemeSwitcher";
 import LanguageButton from "@/components/ui/LanguageButton/LanguageButton";
@@ -24,7 +24,7 @@ export default function Nav() {
       <MobileNavToggle />
 
       <div className="flex items-center gap-20">
-        <Logo styles="text-brand hover:text-brand-hover" />
+        <LogoHomeLink styles="text-brand hover:text-brand-hover" />
 
         <DesktopLinksList />
       </div>

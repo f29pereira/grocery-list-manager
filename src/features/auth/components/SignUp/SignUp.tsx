@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { useMultiStep } from "@/contexts/MultiStepContext/useMultiStep";
 import { getStepsDescription } from "./SignUp.utils";
 import Card from "@/components/shared/Card/Card";
-import Logo from "@/components/shared/Logo/Logo";
+import LogoHomeLink from "@/components/ui/Links/LogoHomeLink/LogoHomeLink";
 import StepsList from "@/components/shared/StepsList/StepsList";
 import AuthStep from "./Steps/AuthStep/AuthStep";
 import EmailVerificationStep from "./Steps/EmailVerificationStep/EmailVerificationStep";
@@ -40,7 +40,7 @@ export default function SignUp() {
               className="flex justify-center mb-4
                         lg:flex-none"
             >
-              <Logo styles="text-brand hover:text-brand-hover" />
+              <LogoHomeLink styles="text-brand hover:text-brand-hover" />
             </div>
             <StepsList stepsList={stepsList} currentStep={currentStep} />
           </div>

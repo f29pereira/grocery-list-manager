@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import Card from "@/components/shared/Card/Card";
-import Logo from "@/components/shared/Logo/Logo";
+import LogoHomeLink from "@/components/ui/Links/LogoHomeLink/LogoHomeLink";
 import AuthenticateAccountForm from "./AuthenticateAccountForm/AuthenticateAccountForm";
 import NavigationLink from "@/components/ui/NavigationLink/NavigationLink";
 
@@ -27,7 +27,7 @@ export default function SignIn() {
               lg:w-200 lg:h-187.5 lg:px-40"
       >
         <div className="flex justify-center mb-10">
-          <Logo styles="text-brand hover:text-brand-hover" />
+          <LogoHomeLink styles="text-brand hover:text-brand-hover" />
         </div>
 
         {/*Main title*/}

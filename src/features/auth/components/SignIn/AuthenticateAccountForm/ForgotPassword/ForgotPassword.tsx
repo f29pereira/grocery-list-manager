@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import Card from "@/components/shared/Card/Card";
-import Logo from "@/components/shared/Logo/Logo";
+import LogoHomeLink from "@/components/ui/Links/LogoHomeLink/LogoHomeLink";
 import PasswordResetForm from "./PasswordResetForm/PasswordResetForm";
 import EmailSentIcon from "../../../shared/EmailSentIcon/EmailSentIcon";
 import PillNavigationLink from "@/components/ui/Links/PillNavigationLink/PillNavigationLink";
@@ -36,7 +36,7 @@ export default function ForgotPassword() {
               lg:w-200 lg:h-187.5 lg:px-20"
       >
         <div className="flex justify-center mb-10">
-          <Logo styles="text-brand hover:text-brand-hover" />
+          <LogoHomeLink styles="text-brand hover:text-brand-hover" />
         </div>
 
         {/*Main title*/}

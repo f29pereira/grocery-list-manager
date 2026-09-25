@@ -2,13 +2,13 @@ import { FaRegCopyright } from "@/assets/icons/icon";
 import { useTranslation } from "react-i18next";
 
 /**
- * Renders the footer credits with:
+ * Renders the app credits with:
  * - Copyright icon
  * - Year
  * - Project name
  * - GitHub repo link
  */
-export default function FooterCredit() {
+export default function Credits() {
   const { t } = useTranslation();
 
   return (

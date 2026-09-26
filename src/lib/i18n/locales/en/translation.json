@@ -4,7 +4,10 @@
       "home": "Home",
       "user-profile": {
         "authenticated": "User profile",
-        "not-authenticated": "Log in"
+        "not-authenticated": "Log in",
+        "links": {
+          "acccount": "Account"
+        }
       }
     },
     "mobile": {

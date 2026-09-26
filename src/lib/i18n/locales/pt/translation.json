@@ -4,7 +4,10 @@
       "home": "Início",
       "user-profile": {
         "authenticated": "Perfil do utilizador",
-        "not-authenticated": "Iniciar sessão"
+        "not-authenticated": "Iniciar sessão",
+        "links": {
+          "acccount": "Conta"
+        }
       }
     },
     "mobile": {

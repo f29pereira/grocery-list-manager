@@ -1,8 +1,8 @@
-import Profile from "@/features/auth/components/ProfileManager/ProfileManager";
+import ProfileManager from "@/features/auth/components/ProfileManager/ProfileManager";
 
 /**
- * Renders the Profile component on the "profile" route
+ * Renders the ProfileManager component on the "profile" route
  */
 export default function ProfileScreen() {
-  return <Profile />;
+  return <ProfileManager />;
 }

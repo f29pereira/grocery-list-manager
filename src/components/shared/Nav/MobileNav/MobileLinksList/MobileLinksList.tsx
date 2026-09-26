@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import type { MobileLinksListProps } from "./MobileLinksList.type";
-import NavigationLink from "@/components/ui/NavigationLink/NavigationLink";
+import AppLink from "@/components/ui/Links/AppLink/AppLink";
 
 /**
  * Renders the mobile navigation links:
@@ -14,22 +14,17 @@ export default function MobileLinksList({
   const { t } = useTranslation();
 
   const navItemStyles = `relative inline-block
-                        font-bold text-link
-                        hover:text-link-hover
-                        theme-transition
-                        lg:mr-10`;
+                      font-bold text-link
+                      hover:text-link-hover
+                      theme-transition
+                      lg:mr-10`;
 
   return (
     <ul className="ml-2 flex flex-col gap-9">
       <li>
-        <NavigationLink
-          styles={navItemStyles}
-          to="/"
-          end={true}
-          handleOnClick={handleOnClick}
-        >
+        <AppLink styles={navItemStyles} to="/" handleOnClick={handleOnClick}>
           {t("nav.links.home")}
-        </NavigationLink>
+        </AppLink>
       </li>
       {/*TO DO: Add Links*/}
     </ul>

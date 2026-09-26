@@ -1,9 +1,9 @@
 import { useAuth } from "@/contexts/AuthContext/useAuth";
-import FinishProfile from "./FinishProfile/FinishProfile";
-import Profile from "./Profile/Profile";
+import FinishProfile from "@/features/auth/components/ProfileManager/FinishProfile/FinishProfile";
+import ProfileLayout from "./profileLayout";
 
 /**
- * Renders the user's details form or user's profile
+ * Renders the user's details form or the user's profile on the "profile" route
  *
  * Displays:
  * - User's details form: if the user's profile isn't complete
@@ -15,5 +15,5 @@ import Profile from "./Profile/Profile";
 export default function ProfileManager() {
   const { isProfileComplete } = useAuth();
 
-  return !isProfileComplete ? <FinishProfile /> : <Profile />;
+  return !isProfileComplete ? <FinishProfile /> : <ProfileLayout />;
 }

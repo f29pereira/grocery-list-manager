@@ -134,6 +134,10 @@
       "send-email-btn": "Send email",
       "description-before-email-send": "Please click the button to send a password reset email.",
       "description-after-email-send": "Password verification email sent."
+    },
+    "finish-user-profile": {
+      "title": "User Details",
+      "message": "Please complete your profile details below before continuing."
     }
   },
   "error-messages": {

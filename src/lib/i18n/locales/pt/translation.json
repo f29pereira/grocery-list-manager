@@ -134,6 +134,10 @@
       "send-email-btn": "Enviar email",
       "description-before-email-send": "Por favor, clique no botão para enviar um email de redefinição da palavra-passe.",
       "description-after-email-send": "Email de verificação de palavra-passe enviado."
+    },
+    "finish-user-profile": {
+      "title": "Detalhes to Utilizador",
+      "message": "Por favor, preencha os dados do seu perfil antes de continuar."
     }
   },
   "error-messages": {

@@ -4,7 +4,7 @@ import Card from "@/components/shared/Card/Card";
 import LogoHomeLink from "@/components/ui/Links/LogoHomeLink/LogoHomeLink";
 import PasswordResetForm from "./PasswordResetForm/PasswordResetForm";
 import EmailSentIcon from "../../../shared/EmailSentIcon/EmailSentIcon";
-import PillNavigationLink from "@/components/ui/Links/PillNavigationLink/PillNavigationLink";
+import PillAppLink from "@/components/ui/Links/AppLink/PillAppLink/PillAppLink";
 
 /**
  * Renders the forgot password screen
@@ -77,11 +77,10 @@ export default function ForgotPassword() {
                 <EmailSentIcon />
               </div>
 
-              <PillNavigationLink
-                styles="md:max-w-112.5 md:mx-auto 
-                  bg-button 
-                  shadow-lg shadow-green-600/50 
-                  hover:bg-button-hover"
+              <PillAppLink
+                styles="mx-auto bg-button 
+                      shadow-lg shadow-green-600/50 
+                      hover:bg-button-hover"
                 to="/sign-in"
               >
                 <div className="flex justify-center items-center">
@@ -93,7 +92,7 @@ export default function ForgotPassword() {
                     {t("forms.signIn.signIn-button")}
                   </span>
                 </div>
-              </PillNavigationLink>
+              </PillAppLink>
             </>
           )}
         </div>

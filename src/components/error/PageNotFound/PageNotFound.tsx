@@ -1,7 +1,7 @@
+import { useTranslation } from "react-i18next";
 import LogoHomeLink from "@/components/ui/Links/LogoHomeLink/LogoHomeLink";
 import { LuFileX, RiArrowGoBackFill } from "@/assets/icons/icon";
-import NavigationLink from "@/components/ui/NavigationLink/NavigationLink";
-import { useTranslation } from "react-i18next";
+import PillAppLink from "@/components/ui/Links/AppLink/PillAppLink/PillAppLink";
 
 /**
  * Renders the page not found with link with:
@@ -60,15 +60,12 @@ export default function PageNotFound() {
 
           {/*Home Link*/}
           <div className="flex justify-center">
-            <NavigationLink
-              styles="px-6 py-4
-                text-white bg-green-600
-                shadow-lg shadow-green-600/50 dark:shadow-none
-                theme-transition
-                hover:bg-green-500
-                md:px-8"
+            <PillAppLink
+              styles="text-white bg-green-600
+                    shadow-lg shadow-green-600/50
+                    theme-transition
+                    hover:bg-green-500"
               to="/"
-              end={true}
             >
               <div className="flex justify-center items-center gap-4">
                 <RiArrowGoBackFill
@@ -79,7 +76,7 @@ export default function PageNotFound() {
                   {t("pageNotFound.home-link")}
                 </span>
               </div>
-            </NavigationLink>
+            </PillAppLink>
           </div>
 
           <LuFileX

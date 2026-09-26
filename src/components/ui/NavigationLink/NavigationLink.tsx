@@ -3,12 +3,13 @@ import { NavLink } from "react-router";
 import clsx from "clsx";
 
 /**
- * Renders a navigation link
+ * Renders a React Router NavLink element
  *
  * Props are defined in {@link NavigationLinkProps}.
  */
 export default function NavigationLink({
   styles,
+  activeStyles,
   to,
   end,
   handleOnClick,
@@ -17,11 +18,14 @@ export default function NavigationLink({
 }: NavigationLinkProps) {
   return (
     <NavLink
-      className={clsx(
-        "rounded-full",
-        "focus-visible:focus-ring focus-visible:outline-offset-2",
-        styles,
-      )}
+      className={({ isActive }) =>
+        clsx(
+          "rounded-full",
+          "focus-visible:focus-ring focus-visible:outline-offset-2",
+          styles,
+          isActive && activeStyles,
+        )
+      }
       to={to}
       end={end}
       onClick={handleOnClick}

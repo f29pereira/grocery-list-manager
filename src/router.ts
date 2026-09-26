@@ -1,12 +1,12 @@
 import { createBrowserRouter } from "react-router";
 import Root from "./routes/root";
 import RootErrorBoundary from "./routes/rootErrorBoundary";
-import AuthLayout from "./routes/authLayout";
+import AuthLayout from "./routes/auth/authLayout";
 import ProtectedLayout from "./routes/protectedLayout";
-import SignInRoute from "./routes/signIn";
-import SignUp from "./routes/signUp";
-import ForgotPasswordRoute from "./routes/passwordReset";
-import Profile from "./routes/profile";
+import SignInRoute from "./routes/auth/signIn";
+import SignUpRoute from "./routes/auth/signUp";
+import ForgotPasswordRoute from "./routes/auth/passwordReset";
+import ProfileManager from "./routes/profile/profileManager";
 
 /**
  * Routes configuration
@@ -16,7 +16,7 @@ export const router = createBrowserRouter([
   {
     Component: AuthLayout,
     children: [
-      { path: "sign-up", Component: SignUp },
+      { path: "sign-up", Component: SignUpRoute },
       { path: "sign-in", Component: SignInRoute },
       { path: "password-reset", Component: ForgotPasswordRoute },
     ],
@@ -34,9 +34,12 @@ export const router = createBrowserRouter([
         children: [
           {
             path: "profile",
-            Component: Profile,
+            Component: ProfileManager,
+            children: [
+              // TO DO: /account route
+            ],
           },
-          // TO DO: Add "groceries" route
+          // TO DO: Add "/groceries" route
         ],
       },
     ],

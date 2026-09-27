@@ -28,7 +28,12 @@ export default function DesktopLinksList() {
   return (
     <ul className="hidden lg:flex">
       <li>
-        <NavigationLink styles={navItemStyles} to="/" end={true}>
+        <NavigationLink
+          styles={navItemStyles}
+          activeStyles="font-semibold"
+          to="/"
+          end={true}
+        >
           {t("nav.links.home")}
         </NavigationLink>
       </li>

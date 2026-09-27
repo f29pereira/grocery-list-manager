@@ -1,4 +1,4 @@
-import NavigationLink from "@/components/ui/NavigationLink/NavigationLink";
+import AppNavigationLink from "@/components/ui/Links/AppNavigationLink/AppNavigationLink";
 import { useTranslation } from "react-i18next";
 
 /**
@@ -28,14 +28,14 @@ export default function DesktopLinksList() {
   return (
     <ul className="hidden lg:flex">
       <li>
-        <NavigationLink
+        <AppNavigationLink
           styles={navItemStyles}
           activeStyles="font-semibold"
           to="/"
           end={true}
         >
           {t("nav.links.home")}
-        </NavigationLink>
+        </AppNavigationLink>
       </li>
       {/*TO DO: Add Links*/}
     </ul>

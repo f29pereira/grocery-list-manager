@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import NavigationLink from "@/components/ui/NavigationLink/NavigationLink";
+import AppNavigationLink from "@/components/ui/Links/AppNavigationLink/AppNavigationLink";
 import { FaUserCircle } from "@/assets/icons/icon";
 
 /**
@@ -15,14 +15,14 @@ export default function ProfileMenu() {
     <ul className="flex justify-center items-center px-4">
       {/*Account link*/}
       <li>
-        <NavigationLink
+        <AppNavigationLink
           styles="text-brand hover:text-brand-hover"
           activeStyles="text-brand-hover"
           to="/profile/account"
           ariaLabel={t("nav.links.user-profile.links.acccount")}
         >
           <FaUserCircle className="text-3xl" aria-hidden />
-        </NavigationLink>
+        </AppNavigationLink>
       </li>
       {/*TO DO: Add links for categories: Preferences, Activity, Data*/}
     </ul>

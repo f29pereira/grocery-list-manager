@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import type { NavLinkRenderProps } from "react-router";
 
 /**
- * Props for the NavigationLink component
+ * Props for the AppNavigationLink component
  * @property styles         - (optional) Tailwind CSS classes
  * @property activeStyles   - Tailwind CSS classes when the link is active
  * @property to             - route to navigate to
@@ -11,7 +11,7 @@ import type { NavLinkRenderProps } from "react-router";
  * @property ariaLabel      - aria-label text description
  * @property children       - link content
  */
-export type NavigationLinkProps = {
+export type AppNavigationLinkProps = {
   styles?: string;
   activeStyles: string;
   to: string;

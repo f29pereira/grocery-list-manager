@@ -1,13 +1,13 @@
-import type { NavigationLinkProps } from "./NavigationLink.types";
+import type { AppNavigationLinkProps } from "./AppNavigationLink.types";
 import { NavLink } from "react-router";
 import clsx from "clsx";
 
 /**
  * Renders a React Router NavLink element
  *
- * Props are defined in {@link NavigationLinkProps}.
+ * Props are defined in {@link AppNavigationLinkProps}.
  */
-export default function NavigationLink({
+export default function AppNavigationLink({
   styles,
   activeStyles,
   to,
@@ -15,7 +15,7 @@ export default function NavigationLink({
   handleOnClick,
   ariaLabel,
   children,
-}: NavigationLinkProps) {
+}: AppNavigationLinkProps) {
   return (
     <NavLink
       className={({ isActive }) =>

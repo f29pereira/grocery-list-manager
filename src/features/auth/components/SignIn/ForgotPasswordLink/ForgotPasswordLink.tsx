@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import NavigationLink from "@/components/ui/NavigationLink/NavigationLink";
+import AppLink from "@/components/ui/Links/AppLink/AppLink";
 
 /**
  * Renders the forgot password link
@@ -9,7 +9,7 @@ export default function ForgotPasswordLink() {
   const { t } = useTranslation();
 
   return (
-    <NavigationLink
+    <AppLink
       styles="text-sm text-link
             theme-transition
             hover:text-link-hover 
@@ -18,6 +18,6 @@ export default function ForgotPasswordLink() {
       to="/password-reset"
     >
       <span>{t("forms.signIn.forgot-password-link")}</span>
-    </NavigationLink>
+    </AppLink>
   );
 }

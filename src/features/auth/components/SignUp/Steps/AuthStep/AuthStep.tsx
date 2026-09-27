@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import CreateAccountForm from "./CreateAccountForm/CreateAccountForm";
-import NavigationLink from "@/components/ui/NavigationLink/NavigationLink";
 import useFocus from "@/hooks/useFocus";
+import AppLink from "@/components/ui/Links/AppLink/AppLink";
 
 /**
  * Renders the user authentication form step used by the SignUpForm component with:
@@ -41,7 +41,7 @@ export default function AuthStep() {
         <p className="text-paragraph">
           {t("forms.signUp.auth-step.signIn-message")}
         </p>
-        <NavigationLink
+        <AppLink
           styles="font-bold 
                   text-base text-link
                   theme-transition
@@ -51,7 +51,7 @@ export default function AuthStep() {
           to="/sign-in"
         >
           {t("forms.signUp.auth-step.signIn-link")}
-        </NavigationLink>
+        </AppLink>
       </div>
     </div>
   );

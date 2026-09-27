@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import Card from "@/components/shared/Card/Card";
 import LogoHomeLink from "@/components/ui/Links/LogoHomeLink/LogoHomeLink";
 import AuthenticateAccountForm from "./AuthenticateAccountForm/AuthenticateAccountForm";
-import NavigationLink from "@/components/ui/NavigationLink/NavigationLink";
+import AppLink from "@/components/ui/Links/AppLink/AppLink";
 
 /**
  * Renders the user authentication with:
@@ -48,7 +48,7 @@ export default function SignIn() {
         {/*Sign Up link*/}
         <div className="flex justify-center items-center gap-2 mt-10">
           <p className="text-paragraph">{t("forms.signIn.signUp-message")}</p>
-          <NavigationLink
+          <AppLink
             styles="font-bold 
                   text-base text-link
                   theme-transition
@@ -58,7 +58,7 @@ export default function SignIn() {
             to="/sign-up"
           >
             {t("forms.signIn.signUp-link")}
-          </NavigationLink>
+          </AppLink>
         </div>
       </Card>
     </div>

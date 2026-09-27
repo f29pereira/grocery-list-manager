@@ -1,4 +1,4 @@
-import NavigationLink from "@/components/ui/NavigationLink/NavigationLink";
+import AppLink from "@/components/ui/Links/AppLink/AppLink";
 import { TbPaperBag } from "@/assets/icons/icon";
 
 /**
@@ -10,7 +10,7 @@ export default function FooterLogo() {
       className="flex justify-center items-center mb-10 
                 lg:mb-0 lg:items-baseline"
     >
-      <NavigationLink
+      <AppLink
         styles="inline-block  
               text-brand 
               font-space-grotesk font-black
@@ -22,7 +22,7 @@ export default function FooterLogo() {
           <TbPaperBag className="text-2xl md:text-3xl" aria-hidden="true" />
           <span className="text-2xl lg:text-3xl">Grocery List</span>
         </div>
-      </NavigationLink>
+      </AppLink>
     </div>
   );
 }

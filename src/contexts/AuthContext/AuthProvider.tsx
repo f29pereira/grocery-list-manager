@@ -19,22 +19,25 @@ export default function AuthProvider({ children }: ReactChildrenType) {
     const auth = getAuth();
 
     return onAuthStateChanged(auth, async (user) => {
-      setAuthUser({ user: user, details: null });
+      if (!user) {
+        setIsLoading(false);
+        return;
+      }
 
-      if (user) {
+      try {
         const userDetails = await getUserDetailsDocumentByUid(user.uid);
-
-        if (userDetails) {
-          const data = userDetails.data();
-
-          setAuthUser({
-            user: user,
-            details: {
-              firstName: data.firstName,
-              lastName: data.lastName,
-            },
-          });
-        }
+        setAuthUser({
+          user: user,
+          details: userDetails
+            ? {
+                firstName: userDetails.data().firstName,
+                lastName: userDetails.data().lastName,
+              }
+            : null,
+        });
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      } catch (error) {
+        setAuthUser({ user: user, details: null });
       }
 
       setIsLoading(false);

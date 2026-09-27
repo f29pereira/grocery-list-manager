@@ -2,7 +2,7 @@ import MobileNavToggle from "./MobileNav/MobileNavToggle/MobileNavToggle";
 import LogoHomeLink from "@/components/ui/Links/LogoHomeLink/LogoHomeLink";
 import DesktopLinksList from "./DesktopLinksList/DesktopLinksList";
 import ThemeSwitcher from "@/components/ui/ThemeSwitcher/ThemeSwitcher";
-import LanguageButton from "@/components/ui/LanguageButton/LanguageButton";
+import LanguageButton from "@/components/ui/Buttons/LanguageButton/LanguageButton";
 import ProfileAvatarLink from "@/features/auth/components/ProfileManager/ProfileAvatarLink/ProfileAvatarLink";
 /**
  * Renders the app navigation with:

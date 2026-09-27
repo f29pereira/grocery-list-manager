@@ -6,7 +6,7 @@ import useDialog from "@/hooks/useDialog";
 import CloseButton from "@/components/ui/Buttons/CloseButton/CloseButton";
 import MobileLinksList from "./MobileLinksList/MobileLinksList";
 import ThemeSwitcher from "@/components/ui/ThemeSwitcher/ThemeSwitcher";
-import LanguageButton from "@/components/ui/LanguageButton/LanguageButton";
+import LanguageButton from "@/components/ui/Buttons/LanguageButton/LanguageButton";
 import { useTranslation } from "react-i18next";
 
 /**

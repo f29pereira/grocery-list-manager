@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import type { SubmitButtonProps } from "./SubmitButton.types";
-import PillButton from "@/components/ui/PillButton/PillButton";
+import PillButton from "@/components/ui/Buttons/PillButton/PillButton";
 import { FaSpinner } from "@/assets/icons/icon";
 
 /**

@@ -1,4 +1,4 @@
-import SubmitButton from "@/components/ui/SubmitButton/SubmitButton";
+import SubmitButton from "@/components/ui/Buttons/SubmitButton/SubmitButton";
 import type { AddUserDetailsButtonProps } from "./AddUserDetailsButton.types";
 import { FaUserCheck } from "@/assets/icons/icon";
 import { useTranslation } from "react-i18next";

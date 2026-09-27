@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import type { AuthenticateAccountButtonProps } from "./AuthenticateAccountButton.types";
-import SubmitButton from "@/components/ui/SubmitButton/SubmitButton";
+import SubmitButton from "@/components/ui/Buttons/SubmitButton/SubmitButton";
 
 /**
  * Renders an authenticate account button

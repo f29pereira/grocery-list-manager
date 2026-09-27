@@ -1,6 +1,6 @@
 import { useMultiStep } from "@/contexts/MultiStepContext/useMultiStep";
 import { useTranslation } from "react-i18next";
-import PillButton from "../../PillButton/PillButton";
+import PillButton from "../../../PillButton/PillButton";
 import { IoIosArrowForward } from "@/assets/icons/icon";
 
 /**

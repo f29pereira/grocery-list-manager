@@ -6,7 +6,7 @@ import useErrorMessage from "@/hooks/useErrorMessage";
 import { useAuth } from "@/contexts/AuthContext/useAuth";
 import { sendEmailVerificationErrorMessage } from "./EmailVerificationStep.utils";
 import SendEmailButton from "./SendEmailButton/SendEmailButton";
-import NextStepButton from "@/components/ui/StepButtons/NextStepButton/NextStepButton";
+import NextStepButton from "@/components/ui/Buttons/StepButtons/NextStepButton/NextStepButton";
 import SubmitErrorMessage from "@/components/shared/Form/SubmitErrorMessage/SubmitErrorMessage";
 import EmailSentIcon from "../../../shared/EmailSentIcon/EmailSentIcon";
 

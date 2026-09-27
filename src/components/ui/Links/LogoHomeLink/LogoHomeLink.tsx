@@ -1,4 +1,4 @@
-import NavigationLink from "@/components/ui/NavigationLink/NavigationLink";
+import AppLink from "../AppLink/AppLink";
 import Logo from "@/components/shared/Logo/Logo";
 
 /**
@@ -6,7 +6,7 @@ import Logo from "@/components/shared/Logo/Logo";
  */
 export default function LogoHomeLink() {
   return (
-    <NavigationLink
+    <AppLink
       styles="inline-block
             text-brand 
             hover:text-brand-hover 
@@ -14,6 +14,6 @@ export default function LogoHomeLink() {
       to="/"
     >
       <Logo />
-    </NavigationLink>
+    </AppLink>
   );
 }

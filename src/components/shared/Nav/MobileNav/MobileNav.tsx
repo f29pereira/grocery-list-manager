@@ -3,7 +3,7 @@ import type { MouseEvent, SyntheticEvent, TransitionEvent } from "react";
 import type { MobileNavProps } from "./MobileNav.types";
 import clsx from "clsx";
 import useDialog from "@/hooks/useDialog";
-import CloseButton from "@/components/ui/CloseButton/CloseButton";
+import CloseButton from "@/components/ui/Buttons/CloseButton/CloseButton";
 import MobileLinksList from "./MobileLinksList/MobileLinksList";
 import ThemeSwitcher from "@/components/ui/ThemeSwitcher/ThemeSwitcher";
 import LanguageButton from "@/components/ui/LanguageButton/LanguageButton";

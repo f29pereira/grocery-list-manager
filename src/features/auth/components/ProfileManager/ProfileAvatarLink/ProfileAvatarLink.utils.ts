@@ -20,13 +20,5 @@ export const getUserProfileAriaLabel = (
  * @param authUser authenticated user
  */
 export const getUserProfileRoute = (authUser: AuthenticatedUser | null) => {
-  /*if (!authUser?.user) {
-    return "/sign-in";
-  } else if (!isProfileComplete) {
-    return ""; // TO DO: redirect to profile details form
-  }
-
-  return "/profile";*/
-
   return authUser?.user ? "/profile" : "/sign-in";
 };

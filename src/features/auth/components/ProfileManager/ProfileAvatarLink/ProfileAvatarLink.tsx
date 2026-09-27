@@ -1,5 +1,5 @@
 import { useAuth } from "@/contexts/AuthContext/useAuth";
-import NavigationLink from "@/components/ui/NavigationLink/NavigationLink";
+import AppLink from "@/components/ui/Links/AppLink/AppLink";
 import ProfileAvatar from "./ProfileAvatar/ProfileAvatar";
 import {
   getUserProfileAriaLabel,
@@ -17,18 +17,14 @@ export default function ProfileAvatarLink() {
   const { t } = useTranslation();
 
   // Context
-  const { authUser, isProfileComplete } = useAuth();
+  const { authUser } = useAuth();
 
-  const linkRoute = getUserProfileRoute(authUser, isProfileComplete);
+  const linkRoute = getUserProfileRoute(authUser);
   const linkLabel = getUserProfileAriaLabel(t, authUser);
 
   return (
-    <NavigationLink
-      styles="theme-transition"
-      to={linkRoute}
-      ariaLabel={linkLabel}
-    >
+    <AppLink styles="theme-transition" to={linkRoute} ariaLabel={linkLabel}>
       <ProfileAvatar />
-    </NavigationLink>
+    </AppLink>
   );
 }

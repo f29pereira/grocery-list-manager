@@ -1,5 +1,5 @@
-import { FaXTwitter, FaFacebook, FaSquareInstagram } from "@/assets/icons/icon";
 import { useTranslation } from "react-i18next";
+import { FaXTwitter, FaFacebook, FaSquareInstagram } from "@/assets/icons/icon";
 
 /**
  * Renders the footer navigation links with:
@@ -33,10 +33,10 @@ export default function FooterNav() {
       >
         {/*Company links*/}
         <ul>
+          <h3 className="mb-2 font-bold text-lg text-title">
+            {t("footer.nav.company.title")}
+          </h3>
           <li>
-            <h3 className="mb-2 font-bold text-lg text-title">
-              {t("footer.nav.company.title")}
-            </h3>
             <a href="#" className={navItemStyles}>
               {t("footer.nav.company.about-link")}
             </a>
@@ -80,7 +80,7 @@ export default function FooterNav() {
 
       {/*Social links*/}
       <ul
-        className="flex justify-center gap-12 mt-10
+        className="flex justify-center gap-12 mt-20
                   lg:mt-0 xl:ml-20"
         aria-label={t("footer.nav.social-label")}
       >

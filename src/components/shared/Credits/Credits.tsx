@@ -13,11 +13,9 @@ export default function Credits() {
 
   return (
     <div
-      className="mt-20
-                font-bold 
+      className="font-bold 
               text-slate-700 dark:text-slate-300 text-sm 
-                lg:mt-44 lg:font-normal lg:text-base
-                xl:mt-50"
+                lg:font-normal lg:text-base"
     >
       <div className="flex flex-col lg:flex-row lg:justify-center">
         <div className="flex justify-center items-center mb-4 lg:mb-0">

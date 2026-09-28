@@ -20,6 +20,7 @@ export default function AuthProvider({ children }: ReactChildrenType) {
 
     return onAuthStateChanged(auth, async (user) => {
       if (!user) {
+        setAuthUser(null);
         setIsLoading(false);
         return;
       }

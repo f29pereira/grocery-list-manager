@@ -5,7 +5,7 @@ import LoadingUser from "@/features/auth/components/shared/LoadingUser/LoadingUs
 /**
  * Renders the Loading component (if the user authentication is loading) or the current route content
  *
- * If no user is authenticated redirects to the "signIn" route
+ * If no user is authenticated redirects to the "sign-in" route
  */
 export default function ProtectedLayout() {
   const { authUser, isLoading } = useAuth();

@@ -25,19 +25,13 @@ export default function LanguageList({ close }: LanguageListProps) {
       className="w-32.5 min-h-20 overflow-hidden
               bg-white dark:bg-body-bg
                 border-solid border-x-2 border-t-2 rounded-t-xl
-              border-slate-500 dark:border-white
-                lg:w-30
-                lg:border-t-0 lg:rounded-t-none lg:border-b-2 lg:rounded-b-xl"
+              border-slate-500 dark:border-white"
       role="menu"
     >
       {localesList
         .filter((l) => l !== locale)
         .map((l, index) => (
-          <li
-            className="first:mt-2 last:mb-3 
-                      lg:first:mt-3 lg:last:mb-2"
-            key={index}
-          >
+          <li className="first:mt-2 last:mb-3" key={index}>
             <button
               className="w-full p-2
                         cursor-pointer

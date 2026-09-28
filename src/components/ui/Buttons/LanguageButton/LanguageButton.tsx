@@ -2,21 +2,13 @@ import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext/useLanguage";
 import useToggle from "@/hooks/useToggle";
 import clsx from "clsx";
-import {
-  FaGlobe,
-  MdKeyboardArrowDown,
-  MdKeyboardArrowUp,
-} from "@/assets/icons/icon";
+import { FaGlobe, MdKeyboardArrowUp } from "@/assets/icons/icon";
 import { useTranslation } from "react-i18next";
 import { getLocaleName } from "./LanguageList/LanguageList.utils";
 import LanguageList from "./LanguageList/LanguageList";
 
 /**
  * Renders a button with the current app language and when clicked displays the languages list pop-up
- *
- * Displays:
- * - the icon MdKeyboardArrowUp on viewports < 1024px
- * - the icon MdKeyboardArrowDown on viewports >= 1024px
  *
  * The button arrow icon features a rotation animation and the languages list features a opacity animation
  */
@@ -47,8 +39,8 @@ export default function LanguageButton() {
 
   return (
     <div
-      className="relative h-13
-                lg:h-9.5 lg:w-32.75"
+      className="relative h-13 w-37.5
+                lg:h-9.5"
     >
       {/*Current app language button*/}
       <button
@@ -65,7 +57,7 @@ export default function LanguageButton() {
       >
         <div
           className="flex justify-between items-center gap-4 px-2
-                    lg:gap-2"
+                    "
         >
           <FaGlobe className="text-2xl lg:text-xl" aria-hidden="true" />
 
@@ -73,21 +65,10 @@ export default function LanguageButton() {
             {locale.toUpperCase()}
           </span>
 
-          {/*Viewports < 1024px*/}
-          <div className="lg:hidden">
-            <MdKeyboardArrowUp
-              className={clsx(iconStyles, isAnimating && "rotate-180")}
-              aria-hidden="true"
-            />
-          </div>
-
-          {/*Viewports >= 1024px*/}
-          <div className="hidden lg:inline-block">
-            <MdKeyboardArrowDown
-              className={clsx(iconStyles, isAnimating && "rotate-180")}
-              aria-hidden="true"
-            />
-          </div>
+          <MdKeyboardArrowUp
+            className={clsx(iconStyles, isAnimating && "rotate-180")}
+            aria-hidden="true"
+          />
         </div>
       </button>
 
@@ -98,7 +79,7 @@ export default function LanguageButton() {
             "absolute bottom-11.25 left-1/2 -translate-x-1/2",
             "transition-discrete transition-opacity duration-300 ease-out",
             "starting:opacity-0 motion-reduce:transition-none",
-            "lg:top-8 lg:bottom-0",
+            "lg:bottom-7.5",
             isToggled ? "opacity-100" : "opacity-0",
           )}
         >

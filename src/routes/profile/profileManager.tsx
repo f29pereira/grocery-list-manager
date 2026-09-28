@@ -1,5 +1,5 @@
 import { useAuth } from "@/contexts/AuthContext/useAuth";
-import FinishProfile from "@/features/auth/components/ProfileManager/FinishProfile/FinishProfile";
+import FinishProfile from "@/features/auth/components/Profile/FinishProfile/FinishProfile";
 import ProfileLayout from "./profileLayout";
 
 /**

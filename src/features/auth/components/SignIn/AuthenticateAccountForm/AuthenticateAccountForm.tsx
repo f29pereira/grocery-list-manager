@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router";
 import { useForm, FormProvider } from "react-hook-form";
 import type { AuthenticationFields } from "../../types/auth.types";
 import {
@@ -23,9 +22,6 @@ import AuthenticateAccountButton from "./AuthenticateAccountButton/AuthenticateA
 export default function AuthenticateAccountForm() {
   // Translation
   const { t } = useTranslation();
-
-  // React Router
-  const navigate = useNavigate();
 
   // React Hook Form: methods
   const methods = useForm<AuthenticationFields>();
@@ -53,7 +49,6 @@ export default function AuthenticateAccountForm() {
 
     try {
       await signInWithEmailAndPassword(auth, data.email, data.password);
-      navigate("/profile");
     } catch (error) {
       const errorText = getSignInErrorMessage(t, error);
       setErrorMessage(errorText);

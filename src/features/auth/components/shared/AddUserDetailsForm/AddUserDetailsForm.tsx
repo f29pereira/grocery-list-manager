@@ -1,5 +1,4 @@
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router";
 import { useAuth } from "@/contexts/AuthContext/useAuth";
 import { useForm, FormProvider } from "react-hook-form";
 import type { UserDetailsFields } from "@/features/auth/components/types/auth.types";
@@ -22,9 +21,6 @@ export default function AddUserDetailsForm() {
 
   // Translation
   const { t } = useTranslation();
-
-  // React Router
-  const navigate = useNavigate();
 
   // Context
   const { authUser, setAuthUser } = useAuth();
@@ -68,7 +64,6 @@ export default function AddUserDetailsForm() {
               }
             : prev,
         );
-        navigate("/profile");
       }
     } catch (error) {
       const errorText = getGenericDocumentErrorMessage(t, error);

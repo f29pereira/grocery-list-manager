@@ -10,6 +10,19 @@ export default function useDialog<T extends HTMLDialogElement>(
 ) {
   const dialogRef = useRef<T>(null);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    // Clean-up function
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
   /**
    * Opens the dialog
    * @param dialog dialog element

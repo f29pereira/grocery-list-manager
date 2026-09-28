@@ -3,7 +3,8 @@ import LogoHomeLink from "@/components/ui/Links/LogoHomeLink/LogoHomeLink";
 import DesktopLinksList from "./DesktopLinksList/DesktopLinksList";
 import ThemeSwitcher from "@/components/ui/ThemeSwitcher/ThemeSwitcher";
 import LanguageButton from "@/components/ui/Buttons/LanguageButton/LanguageButton";
-import ProfileAvatarLink from "@/features/auth/components/ProfileManager/ProfileAvatarLink/ProfileAvatarLink";
+import ProfileAvatarLink from "@/features/auth/components/Profile/ProfileAvatarLink/ProfileAvatarLink";
+
 /**
  * Renders the app navigation with:
  * - Mobile navigation toggle on viewports < 1024px

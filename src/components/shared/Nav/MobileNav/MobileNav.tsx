@@ -15,6 +15,8 @@ import { useTranslation } from "react-i18next";
  * - Navigation link: Home
  * - App theme switch
  *
+ * If the navigation dialog opens, it will prevent the page from scrolling
+ *
  * The navigation element features a translation transition when opened or closed.
  *
  * Props are defined in {@link MobileNavProps}.

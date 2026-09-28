@@ -1,4 +1,4 @@
-import ProfileMenu from "@/features/auth/components/ProfileManager/Profile/ProfileMenu/ProfileMenu";
+import ProfileMenu from "@/features/auth/components/Profile/ProfileMenu/ProfileMenu";
 import { Outlet } from "react-router";
 
 /**

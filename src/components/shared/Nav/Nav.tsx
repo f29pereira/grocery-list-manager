@@ -16,7 +16,7 @@ import ProfileAvatarLink from "@/features/auth/components/Profile/ProfileAvatarL
 export default function Nav() {
   return (
     <nav
-      className="relative flex justify-between items-center px-6 py-5
+      className="sticky top-0 flex justify-between items-center px-6 py-5
               bg-nav-footer-bg
                 theme-transition
                 md:px-8 md:py-7"

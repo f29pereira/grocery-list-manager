@@ -1,8 +1,6 @@
 import MobileNavToggle from "./MobileNav/MobileNavToggle/MobileNavToggle";
 import LogoHomeLink from "@/components/ui/Links/LogoHomeLink/LogoHomeLink";
 import DesktopLinksList from "./DesktopLinksList/DesktopLinksList";
-import ThemeSwitcher from "@/components/ui/ThemeSwitcher/ThemeSwitcher";
-import LanguageButton from "@/components/ui/Buttons/LanguageButton/LanguageButton";
 import ProfileAvatarLink from "@/features/auth/components/Profile/ProfileAvatarLink/ProfileAvatarLink";
 
 /**
@@ -30,17 +28,7 @@ export default function Nav() {
         <DesktopLinksList />
       </div>
 
-      <div className="flex items-center gap-8">
-        <div className="hidden lg:block">
-          <ThemeSwitcher />
-        </div>
-
-        <div className="hidden lg:block">
-          <LanguageButton />
-        </div>
-
-        <ProfileAvatarLink />
-      </div>
+      <ProfileAvatarLink />
     </nav>
   );
 }

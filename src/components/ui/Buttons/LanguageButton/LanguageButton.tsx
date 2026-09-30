@@ -20,7 +20,7 @@ export default function LanguageButton() {
   const { locale } = useLanguage();
 
   // Custom Hook
-  const [isLisVisible, toggleIsListVisible] = useToggle(false); // LanguageList toggle
+  const [isListVisible, toggleIsListVisible] = useToggle(false); // LanguageList toggle
   const [isIconAnimating, toggleIsIconAnimating] = useToggle(false); // ArrowIcon animation
 
   /**
@@ -68,14 +68,14 @@ export default function LanguageButton() {
       </button>
 
       {/*Languages list pop-up*/}
-      {isLisVisible ? (
+      {isListVisible ? (
         <div
           className={clsx(
             "absolute bottom-11.25 left-1/2 -translate-x-1/2",
             "transition-discrete transition-opacity duration-300 ease-out",
             "starting:opacity-0 motion-reduce:transition-none",
             "lg:bottom-7.5",
-            isLisVisible ? "opacity-100" : "opacity-0",
+            isListVisible ? "opacity-100" : "opacity-0",
           )}
         >
           <LanguageList close={handleClick} />

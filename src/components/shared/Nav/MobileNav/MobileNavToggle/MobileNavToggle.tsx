@@ -14,7 +14,10 @@ export default function MobileNavToggle() {
   const [isToggled, toggle, setIsToggled] = useToggle(false);
 
   return (
-    <div className="lg:hidden">
+    <div
+      className="min-w-17.5 md:min-w-22.75
+                lg:hidden"
+    >
       <button
         className="flex items-center
                   cursor-pointer rounded-sm 

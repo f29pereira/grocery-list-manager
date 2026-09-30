@@ -1,11 +1,11 @@
-import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext/useLanguage";
 import useToggle from "@/hooks/useToggle";
 import clsx from "clsx";
-import { FaGlobe, MdKeyboardArrowUp } from "@/assets/icons/icon";
+import { FaGlobe } from "@/assets/icons/icon";
 import { useTranslation } from "react-i18next";
 import { getLocaleName } from "./LanguageList/LanguageList.utils";
 import LanguageList from "./LanguageList/LanguageList";
+import ArrowIcon from "../../Icons/ArrowIcon/ArrowIcon";
 
 /**
  * Renders a button with the current app language and when clicked displays the languages list pop-up
@@ -20,22 +20,16 @@ export default function LanguageButton() {
   const { locale } = useLanguage();
 
   // Custom Hook
-  const { isToggled, toggle } = useToggle(false);
-
-  // State
-  const [isAnimating, setIsAnimating] = useState<boolean>(false);
+  const [isLisVisible, toggleIsListVisible] = useToggle(false); // LanguageList toggle
+  const [isIconAnimating, toggleIsIconAnimating] = useToggle(false); // ArrowIcon animation
 
   /**
    * Toggles the arrow icon animation and languages list pop-up
    */
   const handleClick = () => {
-    setIsAnimating((prev) => !prev);
-    toggle();
+    toggleIsIconAnimating();
+    toggleIsListVisible();
   };
-
-  const iconStyles = `scale-150 text-xl 
-                    transition-transform duration-300
-                    motion-reduce:transition-none`;
 
   return (
     <div
@@ -65,22 +59,23 @@ export default function LanguageButton() {
             {locale.toUpperCase()}
           </span>
 
-          <MdKeyboardArrowUp
-            className={clsx(iconStyles, isAnimating && "rotate-180")}
-            aria-hidden="true"
+          <ArrowIcon
+            styles="text-xl"
+            isAnimating={isIconAnimating}
+            pointingDirection="down"
           />
         </div>
       </button>
 
       {/*Languages list pop-up*/}
-      {isToggled ? (
+      {isLisVisible ? (
         <div
           className={clsx(
             "absolute bottom-11.25 left-1/2 -translate-x-1/2",
             "transition-discrete transition-opacity duration-300 ease-out",
             "starting:opacity-0 motion-reduce:transition-none",
             "lg:bottom-7.5",
-            isToggled ? "opacity-100" : "opacity-0",
+            isLisVisible ? "opacity-100" : "opacity-0",
           )}
         >
           <LanguageList close={handleClick} />

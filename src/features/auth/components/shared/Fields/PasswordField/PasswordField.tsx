@@ -33,7 +33,7 @@ export default function PasswordField({ validation }: PasswordFieldProps) {
   const currentPassword = watch("password");
 
   // Custom Hooks
-  const { isToggled, toggle } = useToggle(false); // Password visibility
+  const [isPasswordVisible, toggleIsPasswordVisible] = useToggle(false);
   const { isInputInvalid, getInputErrorMessage } = useInputValidation(errors);
 
   return (
@@ -54,19 +54,22 @@ export default function PasswordField({ validation }: PasswordFieldProps) {
             "border-2 border-solid border-input rounded-full",
             "focus:outline-none",
             "placeholder:text-placeholder placeholder:italic",
-            isToggled ? "text-base" : "text-lg tracking-widest",
+            isPasswordVisible ? "text-base" : "text-lg tracking-widest",
             isInputInvalid("password")
               ? "border-input-error focus:border-input-error"
               : "focus:border-focus",
           )}
           id="password"
-          type={isToggled ? "text" : "password"}
+          type={isPasswordVisible ? "text" : "password"}
           aria-invalid={isInputInvalid("password")}
           aria-describedby="password-error"
           {...register("password", validation(t, currentPassword))}
         />
 
-        <PasswordToggleButton isToggled={isToggled} toggle={toggle} />
+        <PasswordToggleButton
+          isToggled={isPasswordVisible}
+          toggle={toggleIsPasswordVisible}
+        />
       </div>
     </>
   );

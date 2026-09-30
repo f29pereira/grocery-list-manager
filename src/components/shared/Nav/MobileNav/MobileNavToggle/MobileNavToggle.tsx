@@ -11,7 +11,7 @@ export default function MobileNavToggle() {
   const { t } = useTranslation();
 
   // Custom Hook
-  const { isToggled, toggle, setIsToggled } = useToggle(false);
+  const [isToggled, toggle, setIsToggled] = useToggle(false);
 
   return (
     <div className="lg:hidden">

@@ -3,10 +3,12 @@
     "links": {
       "home": "Início",
       "user-profile": {
-        "authenticated": "Perfil do utilizador",
-        "not-authenticated": "Iniciar sessão",
-        "links": {
-          "acccount": "Conta"
+        "menu": "Menu de perfil",
+        "pop-up": {
+          "links": {
+            "profile": "Perfil"
+          },
+          "sign-out-btn": "Terminar sessão"
         }
       }
     },

@@ -3,10 +3,12 @@
     "links": {
       "home": "Home",
       "user-profile": {
-        "authenticated": "User profile",
-        "not-authenticated": "Log in",
-        "links": {
-          "acccount": "Account"
+        "menu": "Profile menu",
+        "pop-up": {
+          "links": {
+            "profile": "Profile"
+          },
+          "sign-out-btn": "Log Out"
         }
       }
     },

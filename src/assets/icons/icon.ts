@@ -1,7 +1,10 @@
 import {
   FaRegUserCircle,
+  FaUser,
   FaUserCircle,
   FaUserCheck,
+  FaSignOutAlt,
+  FaCircle,
   FaRegCopyright,
   FaGlobe,
   FaRegEye,
@@ -44,8 +47,11 @@ import { TbPaperBag } from "react-icons/tb";
 
 export {
   FaRegUserCircle,
+  FaUser,
   FaUserCircle,
   FaUserCheck,
+  FaSignOutAlt,
+  FaCircle,
   FaXTwitter,
   FaFacebook,
   FaSquareInstagram,

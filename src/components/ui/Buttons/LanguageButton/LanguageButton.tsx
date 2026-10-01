@@ -48,6 +48,7 @@ export default function LanguageButton() {
               hover:text-slate-400 hover:dark:text-slate-300"
         onClick={handleClick}
         aria-label={`${t("languageButton.label")} ${getLocaleName(locale)}`}
+        aria-expanded={isListVisible}
       >
         <div
           className="flex justify-between items-center gap-4 px-2
@@ -75,7 +76,7 @@ export default function LanguageButton() {
             "transition-discrete transition-opacity duration-300 ease-out",
             "starting:opacity-0 motion-reduce:transition-none",
             "lg:bottom-7.5",
-            isListVisible ? "opacity-100" : "opacity-0",
+            isListVisible && "opacity-100",
           )}
         >
           <LanguageList close={handleClick} />

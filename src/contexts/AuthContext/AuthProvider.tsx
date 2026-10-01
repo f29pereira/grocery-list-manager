@@ -4,6 +4,7 @@ import type { AuthenticatedUser } from "./AuthContext/AuthContext.type";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { AuthContext } from "./AuthContext/AuthContext";
 import { getUserDetailsDocumentByUid } from "@/features/auth/components/utils/common.utils";
+import { isAuthWithProfileComplete } from "./AuthProvider.utils";
 
 /**
  * Provides the current authenticated user context
@@ -45,7 +46,7 @@ export default function AuthProvider({ children }: ReactChildrenType) {
     });
   }, []);
 
-  const isProfileComplete = Boolean(authUser?.user && authUser?.details);
+  const isProfileComplete = isAuthWithProfileComplete(authUser);
 
   return (
     <AuthContext

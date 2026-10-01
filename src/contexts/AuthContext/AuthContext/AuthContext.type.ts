@@ -18,6 +18,16 @@ export type AuthContextType = {
 };
 
 /**
+ * Type for the authenticated user with complete profile
+ * @property user    - Firebase user
+ * @property details - user details
+ */
+export type CompleteUserProfile = {
+  user: User;
+  details: UserDetails;
+};
+
+/**
  * Type for the authenticated user
  * @property user              - Firebase user
  * @property details           - user details

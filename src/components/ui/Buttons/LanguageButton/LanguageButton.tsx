@@ -5,7 +5,7 @@ import { FaGlobe } from "@/assets/icons/icon";
 import { useTranslation } from "react-i18next";
 import { getLocaleName } from "./LanguageList/LanguageList.utils";
 import LanguageList from "./LanguageList/LanguageList";
-import ArrowIcon from "../../Icons/ArrowIcon/ArrowIcon";
+import AccordionArrowIcon from "../../Icons/ArrowIcon/AccordionArrowIcon/AccordionArrowIcon";
 
 /**
  * Renders a button with the current app language and when clicked displays the languages list pop-up
@@ -60,7 +60,7 @@ export default function LanguageButton() {
             {locale.toUpperCase()}
           </span>
 
-          <ArrowIcon
+          <AccordionArrowIcon
             styles="text-xl"
             isAnimating={isIconAnimating}
             pointingDirection="down"

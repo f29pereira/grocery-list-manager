@@ -5,7 +5,7 @@ import clsx from "clsx";
 import { useTranslation } from "react-i18next";
 import { getUserFullName } from "../../utils/common.utils";
 import ProfileAvatar from "../ProfileAvatar/ProfileAvatar";
-import ArrowIcon from "@/components/ui/Icons/ArrowIcon/ArrowIcon";
+import AccordionArrowIcon from "@/components/ui/Icons/ArrowIcon/AccordionArrowIcon/AccordionArrowIcon";
 import ProfilePopUp from "./ProfilePopUp/ProfilePopUp";
 import { getToggleButtonLabel } from "./ProfileToggleButton.utils";
 import { isAuthWithProfileComplete } from "@/contexts/AuthContext/AuthProvider.utils";
@@ -68,7 +68,7 @@ export default function ProfileToggleButton() {
             </div>
           </div>
 
-          <ArrowIcon
+          <AccordionArrowIcon
             styles="text-xl text-slate-500 dark:text-white"
             isAnimating={isToggled}
             pointingDirection="down"

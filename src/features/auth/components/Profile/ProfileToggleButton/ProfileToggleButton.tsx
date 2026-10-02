@@ -4,7 +4,7 @@ import useOutsidePointer from "@/hooks/useOutsidePointer";
 import clsx from "clsx";
 import { useTranslation } from "react-i18next";
 import { getUserFullName } from "../../utils/common.utils";
-import ProfileAvatar from "../ProfileAvatarLink/ProfileAvatar/ProfileAvatar";
+import ProfileAvatar from "../ProfileAvatar/ProfileAvatar";
 import ArrowIcon from "@/components/ui/Icons/ArrowIcon/ArrowIcon";
 import ProfilePopUp from "./ProfilePopUp/ProfilePopUp";
 import { getToggleButtonLabel } from "./ProfileToggleButton.utils";

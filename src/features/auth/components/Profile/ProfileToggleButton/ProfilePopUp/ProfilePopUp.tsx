@@ -29,7 +29,7 @@ export default function ProfilePopUp() {
           <div className="flex items-center gap-2">
             <FaUser className="text-xl text-brand" aria-hidden="true" />
             <span className="font-bold text-sm text-link lg:text-base">
-              {t("nav.links.user-profile.pop-up.links.profile")}
+              {t("nav.profile.pop-up.links.profile")}
             </span>
           </div>
         </ProfilePopUpLink>

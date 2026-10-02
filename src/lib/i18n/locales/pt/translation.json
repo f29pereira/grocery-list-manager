@@ -1,22 +1,27 @@
 {
   "nav": {
     "links": {
-      "home": "Início",
-      "user-profile": {
-        "menu": "Menu de perfil",
-        "pop-up": {
-          "links": {
-            "profile": "Perfil"
-          },
-          "sign-out-btn": "Terminar sessão"
-        }
-      }
+      "home": "Início"
     },
     "mobile": {
       "toggle-btn-label": "Navegação móvel",
       "dialog-label": "Menu",
       "nav-label": "Principal",
       "close-btn-label": "Fechar menu"
+    },
+    "profile": {
+      "profile-toggle-btn": "Menu de perfil",
+      "pop-up": {
+        "links": {
+          "profile": "Perfil"
+        },
+        "sign-out-btn": "Terminar sessão"
+      }
+    }
+  },
+  "user-profile": {
+    "links": {
+      "account": "Account"
     }
   },
   "themeSwitcher": {

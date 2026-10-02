@@ -48,7 +48,7 @@ export default function SignOutButton() {
                     font-bold text-sm 
                   text-button-label truncate"
         >
-          {t("nav.links.user-profile.pop-up.sign-out-btn")}
+          {t("nav.profile.pop-up.sign-out-btn")}
         </span>
       </div>
     </SubmitButton>

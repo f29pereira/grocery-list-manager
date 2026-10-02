@@ -19,7 +19,7 @@ export default function ProfileMenu() {
           styles="text-brand hover:text-brand-hover"
           activeStyles="text-brand-hover"
           to="/profile/account"
-          ariaLabel={t("nav.links.user-profile.links.acccount")}
+          ariaLabel={t("user-profile.links.account")}
         >
           <FaUserCircle className="text-3xl" aria-hidden />
         </AppNavigationLink>

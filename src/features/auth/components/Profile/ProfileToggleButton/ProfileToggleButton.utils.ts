@@ -15,7 +15,7 @@ export const getToggleButtonLabel = (
   t: TFunction<"translation", undefined>,
   authUser: AuthenticatedUser | null,
 ) => {
-  const profileMenuText = t("nav.links.user-profile.menu");
+  const profileMenuText = t("nav.profile.profile-toggle-btn");
 
   return isAuthWithProfileComplete(authUser)
     ? `${getUserFullName(authUser.details)}, ${profileMenuText}`

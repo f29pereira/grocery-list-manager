@@ -1,20 +1,21 @@
 import MobileNavToggle from "./MobileNav/MobileNavToggle/MobileNavToggle";
 import LogoHomeLink from "@/components/ui/Links/LogoHomeLink/LogoHomeLink";
 import DesktopLinksList from "./DesktopLinksList/DesktopLinksList";
-import ProfileAvatarLink from "@/features/auth/components/Profile/ProfileAvatarLink/ProfileAvatarLink";
+import Profile from "@/features/auth/components/Profile/Profile";
 
 /**
  * Renders the app navigation with:
  * - Mobile navigation toggle on viewports < 1024px
  * - Logo
  * - Desktop navigation links on viewports >= 1024px
- * - Theme switch on on viewports >= 1024px
  * - User profile button
  */
 export default function Nav() {
   return (
     <nav
-      className="sticky top-0 flex justify-between items-center px-6 py-5
+      className="sticky top-0 
+                flex justify-between items-center 
+                min-h-19.5 px-6 py-5
               bg-nav-footer-bg
                 theme-transition
                 md:px-8 md:py-7"
@@ -28,7 +29,7 @@ export default function Nav() {
         <DesktopLinksList />
       </div>
 
-      <ProfileAvatarLink />
+      <Profile />
     </nav>
   );
 }

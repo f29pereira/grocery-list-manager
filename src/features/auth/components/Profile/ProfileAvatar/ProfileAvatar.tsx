@@ -12,13 +12,15 @@ export default function ProfileAvatar() {
   // Unauthenticated user
   if (!authUser?.user) {
     return (
-      <FaRegUserCircle
-        className="text-3xl
+      <div className="flex flex-row-reverse">
+        <FaRegUserCircle
+          className="text-3xl
                 text-brand
                 hover:text-brand-hover
                   md:text-[35px]"
-        aria-hidden="true"
-      />
+          aria-hidden="true"
+        />
+      </div>
     );
   }
 

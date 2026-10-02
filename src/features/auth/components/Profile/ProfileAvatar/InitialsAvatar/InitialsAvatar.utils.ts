@@ -1,5 +1,5 @@
 /**
- * Returns the user's first initial in uppercase.
+ * Returns the user's first initials in uppercase.
  */
 export const getUserInitial = (userName: string = "") => {
   const initial = userName.trim().charAt(0);

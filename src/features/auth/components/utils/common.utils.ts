@@ -5,6 +5,15 @@ import {
 } from "@/constants/app.constants";
 import { db } from "@/lib/firebase/firebase";
 import { doc, getDoc } from "firebase/firestore";
+import type { UserDetails } from "@/contexts/AuthContext/AuthContext/AuthContext.type";
+
+/**
+ * Returns the authenticated user's full name
+ * @param userDetails authenticated user details
+ */
+export const getUserFullName = (userDetails: UserDetails) => {
+  return `${userDetails.firstName} ${userDetails.lastName}`;
+};
 
 /**
  * Returns a document with the user details from the collection "users" by a given user uid

@@ -1,6 +1,6 @@
 import type { ProfilePopUpLinkProps } from "./ProfilePopUpLink.types";
 import { Link } from "react-router";
-import { IoIosArrowForward } from "@/assets/icons/icon";
+import HoverScaleArrowIcon from "@/components/ui/Icons/ArrowIcon/HoverScaleArrowIcon/HoverScaleArrowIcon";
 
 /**
  * Renders a link used by the ProfilePopUp component with:
@@ -20,7 +20,10 @@ export default function ProfilePopUpLink({
       >
         {children}
 
-        <IoIosArrowForward className="text-xl text-brand" aria-hidden="true" />
+        <HoverScaleArrowIcon
+          styles="text-2xl text-brand group-hover:scale-125"
+          pointingDirection="right"
+        />
       </div>
     </Link>
   );

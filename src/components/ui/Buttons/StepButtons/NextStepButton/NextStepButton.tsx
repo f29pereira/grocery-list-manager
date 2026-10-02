@@ -1,7 +1,7 @@
 import { useMultiStep } from "@/contexts/MultiStepContext/useMultiStep";
 import { useTranslation } from "react-i18next";
 import PillButton from "../../PillButton/PillButton";
-import { IoIosArrowForward } from "@/assets/icons/icon";
+import HoverScaleArrowIcon from "@/components/ui/Icons/ArrowIcon/HoverScaleArrowIcon/HoverScaleArrowIcon";
 
 /**
  * Renders a next step button
@@ -26,12 +26,10 @@ export default function NextStepButton() {
         <span className="font-bold text-md text-button-label">
           {t("multi-step.next-step")}
         </span>
-        <IoIosArrowForward
-          className="text-3xl text-button-label
-                    transition-transform duration-300
-                    group-hover:scale-125
-                    motion-reduce:transition-none"
-          aria-hidden="true"
+
+        <HoverScaleArrowIcon
+          styles="text-3xl text-button-label group-hover:scale-125"
+          pointingDirection="right"
         />
       </div>
     </PillButton>

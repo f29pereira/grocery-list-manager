@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import type { ArrowIconProps } from "./ArrowIcon.types";
+import type { AccordionArrowIconProps } from "./AccordionArrowIcon.types";
 import { MdKeyboardArrowUp, MdKeyboardArrowDown } from "@/assets/icons/icon";
 
 /**
@@ -7,16 +7,14 @@ import { MdKeyboardArrowUp, MdKeyboardArrowDown } from "@/assets/icons/icon";
  *
  * The icon features a 180 degree rotation animation
  *
- * Props are defined in {@link ArrowIconProps}.
+ * Props are defined in {@link AccordionArrowIconProps}.
  */
-export default function ArrowIcon({
+export default function AccordionArrowIcon({
   styles,
   isAnimating,
   pointingDirection,
-}: ArrowIconProps) {
-  const iconStyles = `scale-150
-                    transition-transform duration-300
-                    motion-reduce:transition-none`;
+}: AccordionArrowIconProps) {
+  const iconStyles = `scale-150 transition-transform duration-300 motion-reduce:transition-none`;
 
   const animation = isAnimating && "rotate-180";
 

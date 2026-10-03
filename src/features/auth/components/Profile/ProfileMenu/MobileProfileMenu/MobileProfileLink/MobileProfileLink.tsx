@@ -20,7 +20,7 @@ export default function MobileProfileLink({
     <NavLink
       className={({ isActive }) =>
         clsx(
-          "relative group rounded-full",
+          "relative inline-block group rounded-full",
           "focus-visible:focus-ring focus-visible:outline-offset-2",
           isActive && activeStyles,
         )

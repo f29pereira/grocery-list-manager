@@ -6,12 +6,12 @@ import { Outlet } from "react-router";
  */
 export default function ProfileLayout() {
   return (
-    <>
+    <div className="lg:flex lg:justify-center lg:items-center lg:gap-4">
       <ProfileMenu />
 
-      <div className="mt-8">
+      <div className="mt-8 lg:mt-0">
         <Outlet />
       </div>
-    </>
+    </div>
   );
 }

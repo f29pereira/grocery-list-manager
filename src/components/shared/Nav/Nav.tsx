@@ -13,7 +13,7 @@ import Profile from "@/features/auth/components/Profile/Profile";
 export default function Nav() {
   return (
     <nav
-      className="sticky top-0 
+      className="sticky top-0 z-40
                 flex justify-between items-center 
                 min-h-19.5 px-6 py-5
               bg-nav-footer-bg

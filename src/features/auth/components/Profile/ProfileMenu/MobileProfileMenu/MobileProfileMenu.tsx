@@ -20,17 +20,21 @@ export default function MobileProfileMenu() {
 
   return (
     <ul className="flex justify-between items-center gap-4 pb-3 overflow-hidden">
-      {/*Account link*/}
-      <AppNavigationLink
-        styles="relative group"
-        activeStyles={activeStyles}
-        to="/profile/account"
-      >
-        <div className="flex justify-center items-center gap-2">
-          <FaUserCircle className="text-2xl text-brand" aria-hidden="true" />
-          <span className={linkStyles}>{t("user-profile.links.account")}</span>
-        </div>
-      </AppNavigationLink>
+      <li>
+        {/*Account link*/}
+        <AppNavigationLink
+          styles="relative group"
+          activeStyles={activeStyles}
+          to="/profile/account"
+        >
+          <div className="flex justify-center items-center gap-2">
+            <FaUserCircle className="text-2xl text-brand" aria-hidden="true" />
+            <span className={linkStyles}>
+              {t("user-profile.links.account")}
+            </span>
+          </div>
+        </AppNavigationLink>
+      </li>
 
       {/*TO DO: Add links for categories: Preferences, Activity, Data*/}
     </ul>

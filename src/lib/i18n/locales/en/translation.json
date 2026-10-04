@@ -73,7 +73,7 @@
   },
   "forms": {
     "step": "Step",
-    "submit-button": "Salvar",
+    "submit-button": "Save",
     "generic-errorMessages": {
       "required": "This field is required",
       "invalid": "This field is invalid"

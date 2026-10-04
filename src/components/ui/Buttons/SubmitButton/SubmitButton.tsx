@@ -14,6 +14,7 @@ export default function SubmitButton({
   styles,
   handleClick,
   isSubmitting,
+  isDisabled,
   buttonIcon,
   children,
 }: SubmitButtonProps) {
@@ -25,7 +26,7 @@ export default function SubmitButton({
         styles,
       )}
       handleClick={handleClick}
-      isDisabled={isSubmitting}
+      isDisabled={isSubmitting || isDisabled}
     >
       <div className="flex justify-center items-center gap-4">
         {isSubmitting ? (

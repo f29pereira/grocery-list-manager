@@ -12,6 +12,7 @@ import { useTranslation } from "react-i18next";
  */
 export default function AddUserDetailsButton({
   isSubmitting,
+  isDisabled,
 }: AddUserDetailsButtonProps) {
   // Translation
   const { t } = useTranslation();
@@ -23,6 +24,7 @@ export default function AddUserDetailsButton({
             hover:bg-button-hover
             disabled:hover:bg-button"
       isSubmitting={isSubmitting}
+      isDisabled={isDisabled}
       buttonIcon={
         <FaUserCheck
           className="text-2xl text-button-label"

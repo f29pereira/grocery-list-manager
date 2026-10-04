@@ -4,4 +4,7 @@ import type { SubmitButtonProps } from "@/components/ui/Buttons/SubmitButton/Sub
  * Props for the AddUserDetailsButton component
  * @property isSubmitting - is the add user details form submitting
  */
-export type AddUserDetailsButtonProps = Pick<SubmitButtonProps, "isSubmitting">;
+export type AddUserDetailsButtonProps = Pick<
+  SubmitButtonProps,
+  "isSubmitting" | "isDisabled"
+>;

@@ -11,7 +11,7 @@ import { useAuth } from "@/contexts/AuthContext/useAuth";
 import { auth } from "@/lib/firebase/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import EmailField from "@/features/auth/components/shared/Fields/EmailField/EmailField";
-import PasswordFieldWithRules from "./PasswordFieldWithRules/PasswordFieldWithRules";
+import PasswordFieldWithRules from "@/features/auth/components/shared/Fields/PasswordFieldWithRules/PasswordFieldWithRules";
 import CreateAccountButton from "./CreateAccountButton/CreateAccountButton";
 import useErrorMessage from "@/hooks/useErrorMessage";
 import SubmitErrorMessage from "@/components/shared/Form/SubmitErrorMessage/SubmitErrorMessage";

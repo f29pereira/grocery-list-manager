@@ -11,4 +11,10 @@ export type PasswordFieldProps = {
     t: TFunction<"translation", undefined>,
     password: string,
   ) => RegisterOptions<AuthenticationFields, "password">;
+  autoComplete: PasswordAutoComplete;
 };
+
+/**
+ * Type for the password autocomplete property
+ */
+type PasswordAutoComplete = "new-password" | "current-password";

@@ -17,7 +17,10 @@ import PasswordToggleButton from "./PasswordToggleButton/PasswordToggleButton";
  *
  * Props are defined in {@link PasswordFieldProps}.
  */
-export default function PasswordField({ validation }: PasswordFieldProps) {
+export default function PasswordField({
+  validation,
+  autoComplete,
+}: PasswordFieldProps) {
   "use no memo"; // Prevents React Hook Form (watch) conflict with the React compiler
 
   // Translation
@@ -61,6 +64,7 @@ export default function PasswordField({ validation }: PasswordFieldProps) {
           )}
           id="password"
           type={isPasswordVisible ? "text" : "password"}
+          autoComplete={autoComplete}
           aria-invalid={isInputInvalid("password")}
           aria-describedby="password-error"
           {...register("password", validation(t, currentPassword))}

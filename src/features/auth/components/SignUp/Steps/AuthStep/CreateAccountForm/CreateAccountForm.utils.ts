@@ -51,17 +51,15 @@ export const signUpEmailValidation = (
 
 /**
  * Returns the React Hook Form validation for the password field on the sign up form
- * @param t        error messages translation
- * @param password password field
+ * @param t error messages translation
  */
 export const signUpPasswordValidation = (
   t: TFunction<"translation", undefined>,
-  password: string,
 ): RegisterOptions<AuthenticationFields, "password"> => {
   return {
     required: t("forms.generic-errorMessages.required"),
-    validate: async () => {
-      const status = await getPasswordStatus(password);
+    validate: async (value) => {
+      const status = await getPasswordStatus(value);
       return status.isValid || t("forms.generic-errorMessages.invalid");
     },
   };

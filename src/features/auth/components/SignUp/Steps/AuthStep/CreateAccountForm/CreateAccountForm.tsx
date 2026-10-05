@@ -76,7 +76,10 @@ export default function CreateAccountForm() {
         noValidate
       >
         <EmailField validation={signUpEmailValidation} />
-        <PasswordFieldWithRules validation={signUpPasswordValidation} />
+        <PasswordFieldWithRules
+          validation={signUpPasswordValidation}
+          autoComplete="new-password"
+        />
 
         <div className="h-17.5">
           <SubmitErrorMessage message={errorMessage} />

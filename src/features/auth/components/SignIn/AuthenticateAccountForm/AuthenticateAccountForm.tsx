@@ -63,7 +63,10 @@ export default function AuthenticateAccountForm() {
         noValidate
       >
         <EmailField validation={signInFieldsValidation} />
-        <PasswordField validation={signInFieldsValidation} />
+        <PasswordField
+          validation={signInFieldsValidation}
+          autoComplete="current-password"
+        />
 
         <div className="absolute right-0 mt-2">
           <ForgotPasswordLink />

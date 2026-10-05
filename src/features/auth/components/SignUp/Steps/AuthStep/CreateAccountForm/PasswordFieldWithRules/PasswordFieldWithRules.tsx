@@ -1,12 +1,6 @@
-import { useFormContext } from "react-hook-form";
-import { useTranslation } from "react-i18next";
-import clsx from "clsx";
+import { useWatch } from "react-hook-form";
 import type { PasswordFieldProps } from "@/features/auth/components/shared/Fields/PasswordField/PasswordField.type";
-import type { AuthenticationFields } from "@/features/auth/components/types/auth.types";
-import useToggle from "@/hooks/useToggle";
-import useInputValidation from "@/hooks/useInputValidation";
-import FieldHeader from "@/components/shared/Form/FieldHeader/FieldHeader";
-import PasswordToggleButton from "@/features/auth/components/shared/Fields/PasswordField/PasswordToggleButton/PasswordToggleButton";
+import PasswordField from "@/features/auth/components/shared/Fields/PasswordField/PasswordField";
 import PasswordRules from "./PasswordRules/PasswordRules";
 
 /**
@@ -22,61 +16,12 @@ export default function PasswordFieldWithRules({
   validation,
   autoComplete,
 }: PasswordFieldProps) {
-  "use no memo"; // Prevents React Hook Form (watch) conflict with the React compiler
-
-  // Translation
-  const { t } = useTranslation();
-
-  // React Hook Form: context
-  const {
-    register,
-    watch,
-    formState: { errors },
-  } = useFormContext<AuthenticationFields>();
-
-  const currentPassword = watch("password");
-
-  // Custom Hooks
-  const [isPasswordVisible, toggleIsPasswordVisible] = useToggle(false);
-  const { isInputInvalid, getInputErrorMessage } = useInputValidation(errors);
+  // React Hook Form
+  const currentPassword = useWatch({ name: "password" });
 
   return (
     <>
-      <FieldHeader
-        inputId="password"
-        labelText={t("forms.auth.fields.password-label")}
-        errorId="password-error"
-        errorMessage={getInputErrorMessage("password")}
-      />
-
-      <div className="relative">
-        {/*Password input*/}
-        <input
-          className={clsx(
-            "w-full h-12 px-4 py-2",
-            "text-base text-paragraph",
-            "border-2 border-solid border-input rounded-full",
-            "focus:outline-none",
-            "placeholder:text-placeholder placeholder:italic",
-            isPasswordVisible ? "text-base" : "text-lg tracking-widest",
-            isInputInvalid("password")
-              ? "border-input-error focus:border-input-error"
-              : "focus:border-focus",
-          )}
-          id="password"
-          type={isPasswordVisible ? "text" : "password"}
-          autoComplete={autoComplete}
-          aria-invalid={isInputInvalid("password")}
-          aria-describedby="password-error"
-          {...register("password", validation(t, currentPassword))}
-        />
-
-        <PasswordToggleButton
-          isToggled={isPasswordVisible}
-          toggle={toggleIsPasswordVisible}
-        />
-      </div>
-
+      <PasswordField validation={validation} autoComplete={autoComplete} />
       <PasswordRules password={currentPassword} />
     </>
   );

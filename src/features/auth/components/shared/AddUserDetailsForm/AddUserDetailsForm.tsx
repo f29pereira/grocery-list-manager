@@ -33,8 +33,6 @@ export default function AddUserDetailsForm() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     register,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    watch,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     formState: { errors, isSubmitting },
   } = methods;
 

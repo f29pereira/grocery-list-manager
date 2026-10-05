@@ -20,6 +20,7 @@ import PasswordRules from "./PasswordRules/PasswordRules";
  */
 export default function PasswordFieldWithRules({
   validation,
+  autoComplete,
 }: PasswordFieldProps) {
   "use no memo"; // Prevents React Hook Form (watch) conflict with the React compiler
 
@@ -64,6 +65,7 @@ export default function PasswordFieldWithRules({
           )}
           id="password"
           type={isPasswordVisible ? "text" : "password"}
+          autoComplete={autoComplete}
           aria-invalid={isInputInvalid("password")}
           aria-describedby="password-error"
           {...register("password", validation(t, currentPassword))}

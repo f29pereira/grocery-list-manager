@@ -9,7 +9,6 @@ import type { AuthenticationFields } from "../../../types/auth.types";
 export type PasswordFieldProps = {
   validation: (
     t: TFunction<"translation", undefined>,
-    password: string,
   ) => RegisterOptions<AuthenticationFields, "password">;
   autoComplete: PasswordAutoComplete;
 };

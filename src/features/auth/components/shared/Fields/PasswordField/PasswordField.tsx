@@ -21,19 +21,14 @@ export default function PasswordField({
   validation,
   autoComplete,
 }: PasswordFieldProps) {
-  "use no memo"; // Prevents React Hook Form (watch) conflict with the React compiler
-
   // Translation
   const { t } = useTranslation();
 
   // React Hook Form: context
   const {
     register,
-    watch,
     formState: { errors },
   } = useFormContext<AuthenticationFields>();
-
-  const currentPassword = watch("password");
 
   // Custom Hooks
   const [isPasswordVisible, toggleIsPasswordVisible] = useToggle(false);
@@ -67,7 +62,7 @@ export default function PasswordField({
           autoComplete={autoComplete}
           aria-invalid={isInputInvalid("password")}
           aria-describedby="password-error"
-          {...register("password", validation(t, currentPassword))}
+          {...register("password", validation(t))}
         />
 
         <PasswordToggleButton

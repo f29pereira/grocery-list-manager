@@ -63,7 +63,7 @@ export default function AuthenticateAccountForm() {
         noValidate
       >
         <EmailField validation={signInFieldsValidation} />
-        <PasswordField
+        <PasswordField<AuthenticationFields>
           label={t("forms.auth.fields.password-label")}
           autoComplete="current-password"
           registerName="password"

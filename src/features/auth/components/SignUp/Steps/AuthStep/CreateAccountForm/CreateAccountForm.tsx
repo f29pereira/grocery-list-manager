@@ -74,7 +74,7 @@ export default function CreateAccountForm() {
         noValidate
       >
         <EmailField validation={signUpEmailValidation} />
-        <PasswordFieldWithRules
+        <PasswordFieldWithRules<AuthenticationFields>
           label={t("forms.auth.fields.password-label")}
           autoComplete="new-password"
           registerName="password"

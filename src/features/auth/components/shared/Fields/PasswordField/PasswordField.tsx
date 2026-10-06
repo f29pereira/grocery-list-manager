@@ -1,8 +1,7 @@
-import { useFormContext } from "react-hook-form";
+import { useFormContext, type FieldValues } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import clsx from "clsx";
 import type { PasswordFieldProps } from "./PasswordField.type";
-import type { AuthenticationFields } from "../../../types/auth.types";
 import useToggle from "@/hooks/useToggle";
 import useInputValidation from "@/hooks/useInputValidation";
 import FieldHeader from "@/components/shared/Form/FieldHeader/FieldHeader";
@@ -17,12 +16,12 @@ import PasswordToggleButton from "./PasswordToggleButton/PasswordToggleButton";
  *
  * Props are defined in {@link PasswordFieldProps}.
  */
-export default function PasswordField({
+export default function PasswordField<T extends FieldValues>({
   label,
   autoComplete,
-  validation,
   registerName,
-}: PasswordFieldProps) {
+  validation,
+}: PasswordFieldProps<T>) {
   // Translation
   const { t } = useTranslation();
 
@@ -30,7 +29,7 @@ export default function PasswordField({
   const {
     register,
     formState: { errors },
-  } = useFormContext<AuthenticationFields>();
+  } = useFormContext<T>();
 
   // Custom Hooks
   const [isPasswordVisible, toggleIsPasswordVisible] = useToggle(false);

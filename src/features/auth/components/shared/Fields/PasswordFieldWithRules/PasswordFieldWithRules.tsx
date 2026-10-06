@@ -1,4 +1,4 @@
-import { useWatch } from "react-hook-form";
+import { useWatch, type FieldValues } from "react-hook-form";
 import type { PasswordFieldProps } from "@/features/auth/components/shared/Fields/PasswordField/PasswordField.type";
 import PasswordField from "@/features/auth/components/shared/Fields/PasswordField/PasswordField";
 import PasswordRules from "./PasswordRules/PasswordRules";
@@ -12,18 +12,18 @@ import PasswordRules from "./PasswordRules/PasswordRules";
  *
  * Props are defined in {@link PasswordFieldProps}.
  */
-export default function PasswordFieldWithRules({
+export default function PasswordFieldWithRules<T extends FieldValues>({
   label,
   autoComplete,
   registerName,
   validation,
-}: PasswordFieldProps) {
+}: PasswordFieldProps<T>) {
   // React Hook Form
   const currentPassword = useWatch({ name: registerName });
 
   return (
     <>
-      <PasswordField
+      <PasswordField<T>
         label={label}
         autoComplete={autoComplete}
         registerName={registerName}

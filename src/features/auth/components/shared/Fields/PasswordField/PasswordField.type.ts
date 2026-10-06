@@ -1,32 +1,22 @@
 import type { TFunction } from "i18next";
-import type { RegisterOptions } from "react-hook-form";
-import type { AuthenticationFields } from "../../../types/auth.types";
+import type { FieldValues, RegisterOptions, Path } from "react-hook-form";
 
 /**
  * Props for the PasswordField component
+ * @template T            - input type for the React Hook Form useFormContext
  * @property label        - password label
  * @property autoComplete - input autocomplete property
  * @property registerName - input name used by the React Hook Form register method
  * @property validation   - input validation used by the React Hook Form register method
  */
-export type PasswordFieldProps = {
+export type PasswordFieldProps<T extends FieldValues> = {
   label: string;
   autoComplete: PasswordAutoComplete;
-  registerName: PasswordRegister;
+  registerName: Path<T>;
   validation: (
     t: TFunction<"translation", undefined>,
-  ) => RegisterOptions<AuthenticationFields, "password">;
+  ) => RegisterOptions<T, Path<T>>;
 };
-
-/**
- * Type for the password React Hook Form register method
- */
-type PasswordRegister = "password";
-/* TO DO: Add Names for the Password Update:
-  | "current-password"
-  | "new-password"
-  | "confirm-password"
-*/
 
 /**
  * Type for the password autocomplete property

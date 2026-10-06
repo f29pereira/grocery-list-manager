@@ -19,7 +19,7 @@ export default function PasswordFieldWithRules({
   validation,
 }: PasswordFieldProps) {
   // React Hook Form
-  const currentPassword = useWatch({ name: "password" });
+  const currentPassword = useWatch({ name: registerName });
 
   return (
     <>

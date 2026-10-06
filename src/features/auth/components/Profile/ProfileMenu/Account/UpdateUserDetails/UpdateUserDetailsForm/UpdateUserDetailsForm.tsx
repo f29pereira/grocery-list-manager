@@ -15,8 +15,6 @@ import AddUserDetailsButton from "@/features/auth/components/shared/AddUserDetai
  * Renders the update user details form with First name and Last name fields
  */
 export default function UpdateUserDetailsForm() {
-  "use no memo"; // Prevents React Hook Form conflict with the React compiler
-
   // Translation
   const { t } = useTranslation();
 
@@ -43,7 +41,7 @@ export default function UpdateUserDetailsForm() {
   } = methods;
 
   /**
-   * Submits the user details form
+   * Updates the user details form
    * @param data user detail fields
    *
    * If an error was caught, sets submitError state to display a form error message

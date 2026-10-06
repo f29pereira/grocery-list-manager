@@ -20,8 +20,6 @@ import SubmitErrorMessage from "@/components/shared/Form/SubmitErrorMessage/Subm
  * Renders the create account form with email and password fields
  */
 export default function CreateAccountForm() {
-  "use no memo"; // Prevents React Hook Form conflict with the React compiler
-
   // Translation
   const { t } = useTranslation();
 

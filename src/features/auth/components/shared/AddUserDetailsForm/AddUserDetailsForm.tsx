@@ -15,8 +15,6 @@ import AddUserDetailsButton from "./AddUserDetailsButton/AddUserDetailsButton";
  * Renders the add user details form with First name and Last name fields
  */
 export default function AddUserDetailsForm() {
-  "use no memo"; // Prevents React Hook Form conflict with the React compiler
-
   // Translation
   const { t } = useTranslation();
 

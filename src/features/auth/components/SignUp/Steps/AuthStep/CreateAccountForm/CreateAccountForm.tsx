@@ -75,8 +75,10 @@ export default function CreateAccountForm() {
       >
         <EmailField validation={signUpEmailValidation} />
         <PasswordFieldWithRules
-          validation={signUpPasswordValidation}
+          label={t("forms.auth.fields.password-label")}
           autoComplete="new-password"
+          registerName="password"
+          validation={signUpPasswordValidation}
         />
 
         <div className="h-17.5">

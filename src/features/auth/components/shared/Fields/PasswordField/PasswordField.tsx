@@ -13,13 +13,15 @@ import PasswordToggleButton from "./PasswordToggleButton/PasswordToggleButton";
  *
  * Displays an error message if:
  * - No password is provided
- * - The provider password is invalid
+ * - The provided password is invalid
  *
  * Props are defined in {@link PasswordFieldProps}.
  */
 export default function PasswordField({
-  validation,
+  label,
   autoComplete,
+  validation,
+  registerName,
 }: PasswordFieldProps) {
   // Translation
   const { t } = useTranslation();
@@ -37,10 +39,10 @@ export default function PasswordField({
   return (
     <>
       <FieldHeader
-        inputId="password"
-        labelText={t("forms.auth.fields.password-label")}
-        errorId="password-error"
-        errorMessage={getInputErrorMessage("password")}
+        inputId={registerName}
+        labelText={label}
+        errorId={`${registerName}-error`}
+        errorMessage={getInputErrorMessage(registerName)}
       />
 
       <div className="relative">
@@ -53,16 +55,16 @@ export default function PasswordField({
             "focus:outline-none",
             "placeholder:text-placeholder placeholder:italic",
             isPasswordVisible ? "text-base" : "text-lg tracking-widest",
-            isInputInvalid("password")
+            isInputInvalid(registerName)
               ? "border-input-error focus:border-input-error"
               : "focus:border-focus",
           )}
           id="password"
           type={isPasswordVisible ? "text" : "password"}
           autoComplete={autoComplete}
-          aria-invalid={isInputInvalid("password")}
-          aria-describedby="password-error"
-          {...register("password", validation(t))}
+          aria-invalid={isInputInvalid(registerName)}
+          aria-describedby={`${registerName}-error`}
+          {...register(registerName, validation(t))}
         />
 
         <PasswordToggleButton

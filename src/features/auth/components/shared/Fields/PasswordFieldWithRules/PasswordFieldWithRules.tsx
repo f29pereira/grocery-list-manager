@@ -13,15 +13,22 @@ import PasswordRules from "./PasswordRules/PasswordRules";
  * Props are defined in {@link PasswordFieldProps}.
  */
 export default function PasswordFieldWithRules({
-  validation,
+  label,
   autoComplete,
+  registerName,
+  validation,
 }: PasswordFieldProps) {
   // React Hook Form
   const currentPassword = useWatch({ name: "password" });
 
   return (
     <>
-      <PasswordField validation={validation} autoComplete={autoComplete} />
+      <PasswordField
+        label={label}
+        autoComplete={autoComplete}
+        registerName={registerName}
+        validation={validation}
+      />
       <PasswordRules password={currentPassword} />
     </>
   );

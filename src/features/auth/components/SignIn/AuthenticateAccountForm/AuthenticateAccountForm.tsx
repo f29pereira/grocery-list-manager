@@ -64,8 +64,10 @@ export default function AuthenticateAccountForm() {
       >
         <EmailField validation={signInFieldsValidation} />
         <PasswordField
-          validation={signInFieldsValidation}
+          label={t("forms.auth.fields.password-label")}
           autoComplete="current-password"
+          registerName="password"
+          validation={signInFieldsValidation}
         />
 
         <div className="absolute right-0 mt-2">

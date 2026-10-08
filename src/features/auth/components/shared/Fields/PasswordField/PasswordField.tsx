@@ -58,7 +58,7 @@ export default function PasswordField<T extends FieldValues>({
               ? "border-input-error focus:border-input-error"
               : "focus:border-focus",
           )}
-          id="password"
+          id={registerName}
           type={isPasswordVisible ? "text" : "password"}
           autoComplete={autoComplete}
           aria-invalid={isInputInvalid(registerName)}

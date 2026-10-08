@@ -5,6 +5,9 @@ import {
 } from "@/constants/app.constants";
 import { db } from "@/lib/firebase/firebase";
 import { doc, getDoc } from "firebase/firestore";
+import type { PasswordValidationStatus } from "firebase/auth";
+import { auth } from "@/lib/firebase/firebase";
+import { validatePassword } from "firebase/auth";
 import type { UserDetails } from "@/contexts/AuthContext/AuthContext/AuthContext.type";
 import type { RegisterOptions } from "react-hook-form";
 import type { UserDetailsFields } from "@/features/auth/components/types/auth.types";
@@ -48,6 +51,16 @@ export const nameFieldValidation = (
       message: t("forms.generic-errorMessages.invalid"),
     },
   };
+};
+
+/**
+ * Returns the Firebase password status
+ * @param password password field
+ */
+export const getPasswordStatus = async (
+  password: string,
+): Promise<PasswordValidationStatus> => {
+  return await validatePassword(auth, password);
 };
 
 /**

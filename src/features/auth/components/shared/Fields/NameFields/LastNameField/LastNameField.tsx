@@ -4,7 +4,8 @@ import clsx from "clsx";
 import type { LastNameFieldProps } from "./LastNameField.types";
 import type { UserDetailsFields } from "../../../../types/auth.types";
 import useInputValidation from "@/hooks/useInputValidation";
-import FieldHeader from "@/components/shared/Form/FieldHeader/FieldHeader";
+import FieldLabel from "@/components/shared/Form/Field/FieldLabel/FieldLabel";
+import FieldErrorMessage from "@/components/shared/Form/Field/FieldErrorMessage/FieldErrorMessage";
 
 /**
  * Renders the last name field
@@ -29,32 +30,39 @@ export default function LastNameField({ validation }: LastNameFieldProps) {
   const { isInputInvalid, getInputErrorMessage } = useInputValidation(errors);
 
   return (
-    <div className="mb-4">
-      <FieldHeader
+    <>
+      <FieldLabel
         inputId="last-name"
         labelText={t("forms.signUp.user-details-step.name.last-name-label")}
-        errorId="first-name-error"
-        errorMessage={getInputErrorMessage("lastName")}
       />
 
-      {/*Last Name field*/}
-      <input
-        className={clsx(
-          "w-full h-12 px-4 py-2",
-          "text-base text-paragraph",
-          "border-2 border-solid border-input rounded-full",
-          "focus:outline-none",
-          isInputInvalid("firstName")
-            ? "border-input-error focus:border-input-error"
-            : "focus:border-focus",
+      <div className="relative">
+        {/*Last Name field*/}
+        <input
+          className={clsx(
+            "w-full h-12 px-4 py-2",
+            "text-base text-paragraph",
+            "border-2 border-solid border-input rounded-full",
+            "focus:outline-none",
+            isInputInvalid("firstName")
+              ? "border-input-error focus:border-input-error"
+              : "focus:border-focus",
+          )}
+          id="last-name"
+          type="text"
+          autoComplete="family-name"
+          aria-invalid={isInputInvalid("lastName")}
+          aria-describedby="family-name"
+          {...register("lastName", validation(t))}
+        />
+
+        {isInputInvalid("lastName") && (
+          <FieldErrorMessage
+            errorId="first-name-error"
+            errorMessage={getInputErrorMessage("lastName")}
+          />
         )}
-        id="last-name"
-        type="text"
-        autoComplete="family-name"
-        aria-invalid={isInputInvalid("lastName")}
-        aria-describedby="family-name"
-        {...register("lastName", validation(t))}
-      />
-    </div>
+      </div>
+    </>
   );
 }

@@ -4,8 +4,9 @@ import clsx from "clsx";
 import type { PasswordFieldProps } from "./PasswordField.type";
 import useToggle from "@/hooks/useToggle";
 import useInputValidation from "@/hooks/useInputValidation";
-import FieldHeader from "@/components/shared/Form/FieldHeader/FieldHeader";
+import FieldLabel from "@/components/shared/Form/Field/FieldLabel/FieldLabel";
 import PasswordToggleButton from "./PasswordToggleButton/PasswordToggleButton";
+import FieldErrorMessage from "@/components/shared/Form/Field/FieldErrorMessage/FieldErrorMessage";
 
 /**
  * Renders the password field
@@ -37,12 +38,7 @@ export default function PasswordField<T extends FieldValues>({
 
   return (
     <>
-      <FieldHeader
-        inputId={registerName}
-        labelText={label}
-        errorId={`${registerName}-error`}
-        errorMessage={getInputErrorMessage(registerName)}
-      />
+      <FieldLabel inputId={registerName} labelText={label} />
 
       <div className="relative">
         {/*Password input*/}
@@ -70,6 +66,13 @@ export default function PasswordField<T extends FieldValues>({
           isToggled={isPasswordVisible}
           toggle={toggleIsPasswordVisible}
         />
+
+        {isInputInvalid(registerName) && (
+          <FieldErrorMessage
+            errorId={`${registerName}-error`}
+            errorMessage={getInputErrorMessage(registerName)}
+          />
+        )}
       </div>
     </>
   );

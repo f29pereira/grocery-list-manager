@@ -4,7 +4,8 @@ import clsx from "clsx";
 import type { EmailFieldProps } from "./EmailField.types";
 import type { AuthenticationFields } from "../../../types/auth.types";
 import useInputValidation from "@/hooks/useInputValidation";
-import FieldHeader from "@/components/shared/Form/FieldHeader/FieldHeader";
+import FieldLabel from "@/components/shared/Form/Field/FieldLabel/FieldLabel";
+import FieldErrorMessage from "@/components/shared/Form/Field/FieldErrorMessage/FieldErrorMessage";
 
 /**
  * Renders the email field
@@ -29,33 +30,40 @@ export default function EmailField({ validation }: EmailFieldProps) {
   const { isInputInvalid, getInputErrorMessage } = useInputValidation(errors);
 
   return (
-    <div className="mb-8">
-      <FieldHeader
+    <>
+      <FieldLabel
         inputId="email"
         labelText={t("forms.auth.fields.email-label")}
-        errorId="email-error"
-        errorMessage={getInputErrorMessage("email")}
       />
 
-      {/*Email input*/}
-      <input
-        className={clsx(
-          "w-full h-12 px-4 py-2",
-          "text-base text-paragraph",
-          "border-2 border-solid border-input rounded-full",
-          "focus:outline-none",
-          isInputInvalid("email")
-            ? "border-input-error focus:border-input-error"
-            : "focus:border-focus",
+      <div className="relative">
+        {/*Email input*/}
+        <input
+          className={clsx(
+            "w-full h-12 px-4 py-2",
+            "text-base text-paragraph",
+            "border-2 border-solid border-input rounded-full",
+            "focus:outline-none",
+            isInputInvalid("email")
+              ? "border-input-error focus:border-input-error"
+              : "focus:border-focus",
+          )}
+          id="email"
+          type="email"
+          autoComplete="email"
+          placeholder="e.g johndoe@lorem.com"
+          aria-invalid={isInputInvalid("email")}
+          aria-describedby="email-error"
+          {...register("email", validation(t))}
+        />
+
+        {isInputInvalid("email") && (
+          <FieldErrorMessage
+            errorId="email-error"
+            errorMessage={getInputErrorMessage("email")}
+          />
         )}
-        id="email"
-        type="email"
-        autoComplete="email"
-        placeholder="e.g johndoe@lorem.com"
-        aria-invalid={isInputInvalid("email")}
-        aria-describedby="email-error"
-        {...register("email", validation(t))}
-      />
-    </div>
+      </div>
+    </>
   );
 }

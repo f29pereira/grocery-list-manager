@@ -3,7 +3,11 @@ import { useForm, FormProvider } from "react-hook-form";
 import { useAuth } from "@/contexts/AuthContext/useAuth";
 import useErrorMessage from "@/hooks/useErrorMessage";
 import type { UpdatePasswordFields } from "./UpdateUserPasswordForm.types";
-import { updatePasswordFieldsValidation } from "./UpdateUserPasswordForm.utils";
+import {
+  currentPasswordFieldValidation,
+  newPasswordFieldValidation,
+  confirmPasswordFieldValidation,
+} from "./UpdateUserPasswordForm.utils";
 import PasswordField from "@/features/auth/components/shared/Fields/PasswordField/PasswordField";
 import PasswordFieldWithRules from "@/features/auth/components/shared/Fields/PasswordFieldWithRules/PasswordFieldWithRules";
 import SubmitErrorMessage from "@/components/shared/Form/SubmitErrorMessage/SubmitErrorMessage";
@@ -25,7 +29,13 @@ export default function UpdateUserPasswordForm() {
     useErrorMessage();
 
   // React Hook Form: methods
-  const methods = useForm<UpdatePasswordFields>();
+  const methods = useForm<UpdatePasswordFields>({
+    defaultValues: {
+      currentPassword: "",
+      newPassword: "",
+      confirmPassword: "",
+    },
+  });
 
   // React Hook Form: context for inputs
   const {
@@ -65,28 +75,32 @@ export default function UpdateUserPasswordForm() {
         onSubmit={methods.handleSubmit((data) => onSubmit(data))}
         noValidate
       >
-        <div className="mb-8">
+        <div className="mb-10">
           <PasswordField<UpdatePasswordFields>
             label={t("forms.update-password.fields.current-password")}
             autoComplete="current-password"
             registerName="currentPassword"
-            validation={updatePasswordFieldsValidation}
+            validation={currentPasswordFieldValidation}
           />
         </div>
 
-        <PasswordFieldWithRules<UpdatePasswordFields>
-          label={t("forms.update-password.fields.new-password")}
-          autoComplete="new-password"
-          registerName="newPassword"
-          validation={updatePasswordFieldsValidation}
-        />
+        <div className="mb-10">
+          <PasswordFieldWithRules<UpdatePasswordFields>
+            label={t("forms.update-password.fields.new-password")}
+            autoComplete="new-password"
+            registerName="newPassword"
+            validation={newPasswordFieldValidation}
+          />
+        </div>
 
-        <PasswordField<UpdatePasswordFields>
-          label={t("forms.update-password.fields.confirm-password")}
-          autoComplete="new-password"
-          registerName="confirmPassword"
-          validation={updatePasswordFieldsValidation}
-        />
+        <div className="mb-10">
+          <PasswordField<UpdatePasswordFields>
+            label={t("forms.update-password.fields.confirm-password")}
+            autoComplete="new-password"
+            registerName="confirmPassword"
+            validation={confirmPasswordFieldValidation}
+          />
+        </div>
 
         <div className="h-17.5">
           <SubmitErrorMessage message={errorMessage} />

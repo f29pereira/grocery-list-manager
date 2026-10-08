@@ -148,10 +148,24 @@
     "finish-user-profile": {
       "title": "User Details",
       "message": "Please complete your profile details below before continuing."
+    },
+    "update-password": {
+      "title": "Update Password",
+      "fields": {
+        "current-password": "Current password",
+        "new-password": "New password",
+        "confirm-password": "Confirm password"
+      }
     }
   },
   "error-messages": {
     "generic": "Sorry, something went wrong. Please try again later.",
+    "custom": {
+      "update-password": {
+        "password-not-different": "Must be different from current",
+        "password-not-match": "Passwords don't match"
+      }
+    },
     "firebase": {
       "email-already-in-use": "This email is already in use. Please sign in instead.",
       "invalid-email": "Invalid email",

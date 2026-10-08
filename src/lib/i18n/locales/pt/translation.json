@@ -148,10 +148,24 @@
     "finish-user-profile": {
       "title": "Detalhes to Utilizador",
       "message": "Por favor, preencha os dados do seu perfil antes de continuar."
+    },
+    "update-password": {
+      "title": "Alterar palavra-passe",
+      "fields": {
+        "current-password": "Palavra-passe atual",
+        "new-password": "Nova palavra-passe",
+        "confirm-password": "Confirmar palavra-passe"
+      }
     }
   },
   "error-messages": {
     "generic": "Lamentamos, algo correu mal. Por favor, tente mais tarde.",
+    "custom": {
+      "update-password": {
+        "password-not-different": "Deve ser diferente da atual",
+        "password-not-match": "Palavras-passe não coincidem"
+      }
+    },
     "firebase": {
       "email-already-in-use": "Este email já está a ser utilizado. Por favor, inicie sessão.",
       "invalid-email": "Email inválido",

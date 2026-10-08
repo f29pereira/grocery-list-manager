@@ -71,13 +71,18 @@ export default function CreateAccountForm() {
         onSubmit={methods.handleSubmit((data) => onSubmit(data))}
         noValidate
       >
-        <EmailField validation={signUpEmailValidation} />
-        <PasswordFieldWithRules<AuthenticationFields>
-          label={t("forms.auth.fields.password-label")}
-          autoComplete="new-password"
-          registerName="password"
-          validation={signUpPasswordValidation}
-        />
+        <div className="mb-15">
+          <EmailField validation={signUpEmailValidation} />
+        </div>
+
+        <div className="mb-8">
+          <PasswordFieldWithRules<AuthenticationFields>
+            label={t("forms.auth.fields.password-label")}
+            autoComplete="new-password"
+            registerName="password"
+            validation={signUpPasswordValidation}
+          />
+        </div>
 
         <div className="h-17.5">
           <SubmitErrorMessage message={errorMessage} />

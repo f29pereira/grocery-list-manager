@@ -62,19 +62,24 @@ export default function AuthenticateAccountForm() {
         onSubmit={methods.handleSubmit((data) => onSubmit(data))}
         noValidate
       >
-        <EmailField validation={signInFieldsValidation} />
-        <PasswordField<AuthenticationFields>
-          label={t("forms.auth.fields.password-label")}
-          autoComplete="current-password"
-          registerName="password"
-          validation={signInFieldsValidation}
-        />
-
-        <div className="absolute right-0 mt-2">
-          <ForgotPasswordLink />
+        <div className="mb-15">
+          <EmailField validation={signInFieldsValidation} />
         </div>
 
-        <div className="h-17.5 mt-14">
+        <div className="mb-10">
+          <PasswordField<AuthenticationFields>
+            label={t("forms.auth.fields.password-label")}
+            autoComplete="current-password"
+            registerName="password"
+            validation={signInFieldsValidation}
+          />
+
+          <div className="absolute right-0 mt-2">
+            <ForgotPasswordLink />
+          </div>
+        </div>
+
+        <div className="h-17.5">
           <SubmitErrorMessage message={errorMessage} />
         </div>
 

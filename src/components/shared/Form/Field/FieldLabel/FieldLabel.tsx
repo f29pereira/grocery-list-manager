@@ -7,7 +7,7 @@ import type { FieldLabelProps } from "./FieldLabel.types";
  */
 export default function FieldLabel({ inputId, labelText }: FieldLabelProps) {
   return (
-    <div className="flex justify-between items-center">
+    <div className="flex justify-between items-center mb-2">
       <label className="text-label" htmlFor={inputId}>
         {labelText}
       </label>

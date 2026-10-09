@@ -4,7 +4,7 @@ import { useForm, FormProvider } from "react-hook-form";
 import type { UserDetailsFields } from "@/features/auth/components/types/auth.types";
 import FirstNameField from "@/features/auth/components/shared/Fields/NameFields/FirstNameField/FirstNameField";
 import LastNameField from "@/features/auth/components/shared/Fields/NameFields/LastNameField/LastNameField";
-import { nameFieldValidation } from "../../utils/common.utils";
+import { nameFieldValidation } from "../../utils/validation.utils";
 import { addUserDetailsDocument } from "./AddUserDetailsForm.utils";
 import useErrorMessage from "@/hooks/useErrorMessage";
 import { getGenericDocumentErrorMessage } from "@/utils/common.utils";

@@ -4,7 +4,7 @@ import { useAuth } from "@/contexts/AuthContext/useAuth";
 import useErrorMessage from "@/hooks/useErrorMessage";
 import type { UserDetailsFields } from "@/features/auth/components/types/auth.types";
 import { getGenericDocumentErrorMessage } from "@/utils/common.utils";
-import { nameFieldValidation } from "@/features/auth/components/utils/common.utils";
+import { nameFieldValidation } from "@/features/auth/components/utils/validation.utils";
 import { updateUserDetailsDocument } from "./UpdateUserDetailsForm.utils";
 import FirstNameField from "@/features/auth/components/shared/Fields/NameFields/FirstNameField/FirstNameField";
 import LastNameField from "@/features/auth/components/shared/Fields/NameFields/LastNameField/LastNameField";

@@ -9,8 +9,6 @@ import type { PasswordValidationStatus } from "firebase/auth";
 import { auth } from "@/lib/firebase/firebase";
 import { validatePassword } from "firebase/auth";
 import type { UserDetails } from "@/contexts/AuthContext/AuthContext/AuthContext.type";
-import type { RegisterOptions } from "react-hook-form";
-import type { UserDetailsFields } from "@/features/auth/components/types/auth.types";
 
 /**
  * Returns the authenticated user's full name
@@ -29,28 +27,6 @@ export const getUserDetailsDocumentByUid = async (uid: string) => {
   const usersDocSnap = await getDoc(usersDocRef);
 
   return usersDocSnap.exists() ? usersDocSnap : null;
-};
-
-/**
- * Returns the React Hook Form validation for the first name and last name fields
- * @param t error messages translation
- */
-export const nameFieldValidation = (
-  t: TFunction<"translation", undefined>,
-):
-  | RegisterOptions<UserDetailsFields, "firstName">
-  | RegisterOptions<UserDetailsFields, "lastName"> => {
-  return {
-    required: t("forms.generic-errorMessages.required"),
-    maxLength: {
-      value: 50,
-      message: t("forms.signUp.user-details-step.name.name-max-length"),
-    },
-    pattern: {
-      value: /^[\p{L}\s'-]+$/u,
-      message: t("forms.generic-errorMessages.invalid"),
-    },
-  };
 };
 
 /**

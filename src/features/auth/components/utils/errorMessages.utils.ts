@@ -1,5 +1,15 @@
 import type { TFunction } from "i18next";
 import { FIREBASE_ERROR_CODES } from "@/constants/app.constants";
+import { isFirebaseError } from "@/utils/common.utils";
+
+/**
+ * Returns true if a given error code matches the Firebase "auth/invalid-credential" error
+ * @param error Firebase error
+ */
+export const isUserInvalid = (error: unknown) => {
+  const errorCode = isFirebaseError(error) ? error.code : "";
+  return errorCode === FIREBASE_ERROR_CODES.INVALID_CREDENTIAL;
+};
 
 /**
  * Returns a custom error message for a given auth related Firebase error

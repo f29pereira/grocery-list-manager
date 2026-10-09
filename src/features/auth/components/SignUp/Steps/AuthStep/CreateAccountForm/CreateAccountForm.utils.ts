@@ -3,7 +3,7 @@ import type { RegisterOptions } from "react-hook-form";
 import type { AuthenticationFields } from "../../../../types/auth.types";
 import { getPasswordStatus } from "@/features/auth/components/utils/common.utils";
 import { isFirebaseError } from "@/utils/common.utils";
-import { getGenericAuthErrorMessage } from "@/features/auth/components/utils/common.utils";
+import { getGenericAuthErrorMessage } from "@/features/auth/components/utils/errorMessages.utils";
 import { FIREBASE_ERROR_CODES } from "@/constants/app.constants";
 
 /**

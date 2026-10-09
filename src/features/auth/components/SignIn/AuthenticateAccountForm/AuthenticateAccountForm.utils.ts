@@ -3,7 +3,7 @@ import type { RegisterOptions } from "react-hook-form";
 import type { AuthenticationFields } from "../../types/auth.types";
 import { isFirebaseError } from "@/utils/common.utils";
 import { FIREBASE_ERROR_CODES } from "@/constants/app.constants";
-import { getGenericAuthErrorMessage } from "../../utils/common.utils";
+import { getGenericAuthErrorMessage } from "../../utils/errorMessages.utils";
 
 /**
  * Returns Firebase signInWithEmailAndPassword custom error messages

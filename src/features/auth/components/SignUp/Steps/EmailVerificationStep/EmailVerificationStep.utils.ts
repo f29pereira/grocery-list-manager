@@ -3,7 +3,7 @@ import type { TFunction } from "i18next";
 import {
   getGenericAuthErrorMessage,
   getGenericSignInAuthErrorMessage,
-} from "../../../utils/common.utils";
+} from "../../../utils/errorMessages.utils";
 
 /**
  * Returns Firebase sendEmailVerification custom error messages

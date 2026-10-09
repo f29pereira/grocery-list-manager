@@ -1,7 +1,7 @@
 import type { TFunction } from "i18next";
 import type { RegisterOptions } from "react-hook-form";
 import type { UpdatePasswordFields } from "./UpdateUserPasswordForm.types";
-import { getPasswordStatus } from "@/features/auth/components/utils/common.utils";
+import { getPasswordStatus } from "@/features/auth/components/services/auth.services";
 
 /**
  * Returns the React Hook Form validation for the current password field on the update password form

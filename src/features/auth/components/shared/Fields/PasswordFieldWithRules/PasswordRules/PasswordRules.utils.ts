@@ -1,6 +1,6 @@
 import type { TFunction } from "i18next";
 import type { Rule } from "./PasswordRules.types";
-import { getPasswordStatus } from "@/features/auth/components/utils/common.utils";
+import { getPasswordStatus } from "@/features/auth/components/services/auth.services";
 
 /**
  * Returns the list of password rules with validation

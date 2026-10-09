@@ -1,10 +1,30 @@
-import type { PasswordValidationStatus } from "firebase/auth";
+import type { PasswordValidationStatus, User } from "firebase/auth";
+import {
+  EmailAuthProvider,
+  validatePassword,
+  reauthenticateWithCredential,
+} from "firebase/auth";
 import { auth } from "@/lib/firebase/firebase";
-import { validatePassword } from "firebase/auth";
+
+/**
+ * Reauthenticates a user with new Firebase authentication credential
+ * @param user     Firebase user
+ * @param email    user email
+ * @param password user password
+ */
+export const reauthenticateUserWithCredential = async (
+  user: User,
+  email: string,
+  password: string,
+) => {
+  const credential = EmailAuthProvider.credential(email, password);
+
+  await reauthenticateWithCredential(user, credential);
+};
 
 /**
  * Returns the Firebase password status
- * @param password password field
+ * @param password user password
  */
 export const getPasswordStatus = async (
   password: string,

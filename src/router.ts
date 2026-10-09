@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter, redirect } from "react-router";
 import Root from "./routes/root";
 import RootErrorBoundary from "./routes/rootErrorBoundary";
 import AuthLayout from "./routes/auth/authLayout";
@@ -7,6 +7,7 @@ import SignInRoute from "./routes/auth/signIn";
 import SignUpRoute from "./routes/auth/signUp";
 import ForgotPasswordRoute from "./routes/auth/passwordReset";
 import ProfileManager from "./routes/profile/profileManager";
+import AccountRoute from "./routes/profile/account";
 
 /**
  * Routes configuration
@@ -36,7 +37,8 @@ export const router = createBrowserRouter([
             path: "profile",
             Component: ProfileManager,
             children: [
-              // TO DO: /account route
+              { index: true, loader: () => redirect("account") },
+              { path: "account", Component: AccountRoute },
             ],
           },
           // TO DO: Add "/groceries" route

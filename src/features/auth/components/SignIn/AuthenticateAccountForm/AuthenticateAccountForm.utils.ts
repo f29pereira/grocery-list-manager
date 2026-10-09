@@ -18,9 +18,9 @@ export const getSignInErrorMessage = (
 
   switch (errorCode) {
     case FIREBASE_ERROR_CODES.INVALID_CREDENTIAL:
-      return "Invalid email or password.";
+      return t("error-messages.firebase.invalid-credential");
     case FIREBASE_ERROR_CODES.USER_DISABLED:
-      return "Sorry, this account is disabled.";
+      return t("error-messages.firebase.user-disabled");
     default:
       return (
         getGenericAuthErrorMessage(t, errorCode) ?? t("error-messages.generic")

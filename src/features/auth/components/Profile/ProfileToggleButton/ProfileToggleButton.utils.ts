@@ -1,6 +1,6 @@
 import type { TFunction } from "i18next";
 import type { AuthenticatedUser } from "@/contexts/AuthContext/AuthContext/AuthContext.type";
-import { getUserFullName } from "../../utils/common.utils";
+import { getUserFullName } from "../../utils/user.utils";
 import { isAuthWithProfileComplete } from "@/contexts/AuthContext/AuthProvider.utils";
 
 /**

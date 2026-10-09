@@ -3,7 +3,7 @@ import useToggle from "@/hooks/useToggle";
 import useOutsidePointer from "@/hooks/useOutsidePointer";
 import clsx from "clsx";
 import { useTranslation } from "react-i18next";
-import { getUserFullName } from "../../utils/common.utils";
+import { getUserFullName } from "../../utils/user.utils";
 import ProfileAvatar from "../ProfileAvatar/ProfileAvatar";
 import AccordionArrowIcon from "@/components/ui/Icons/ArrowIcon/AccordionArrowIcon/AccordionArrowIcon";
 import ProfilePopUp from "./ProfilePopUp/ProfilePopUp";

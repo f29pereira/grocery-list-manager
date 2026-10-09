@@ -162,6 +162,7 @@
     "generic": "Sorry, something went wrong. Please try again later.",
     "custom": {
       "update-password": {
+        "current-password": "The current password is incorrect",
         "password-not-different": "Must be different from current",
         "password-not-match": "Passwords don't match"
       }

@@ -2,6 +2,24 @@ import type { TFunction } from "i18next";
 import type { RegisterOptions } from "react-hook-form";
 import type { UpdatePasswordFields } from "./UpdateUserPasswordForm.types";
 import { getPasswordStatus } from "@/features/auth/components/services/auth.services";
+import { isFirebaseError } from "@/utils/common.utils";
+import { getGenericAuthErrorMessage } from "@/features/auth/components/utils/errorMessages.utils";
+
+/**
+ * Returns Firebase updatePassword custom error messages
+ * @param t error messages translation
+ * @param error
+ */
+export const getUpdatePasswordErrorMessage = (
+  t: TFunction<"translation", undefined>,
+  error: unknown,
+) => {
+  const errorCode = isFirebaseError(error) ? error.code : "";
+
+  return (
+    getGenericAuthErrorMessage(t, errorCode) ?? t("error-messages.generic")
+  );
+};
 
 /**
  * Returns the React Hook Form validation for the current password field on the update password form

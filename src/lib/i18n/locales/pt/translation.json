@@ -162,6 +162,7 @@
     "generic": "Lamentamos, algo correu mal. Por favor, tente mais tarde.",
     "custom": {
       "update-password": {
+        "current-password": "A palavra-passe atual está incorreta",
         "password-not-different": "Deve ser diferente da atual",
         "password-not-match": "Palavras-passe não coincidem"
       }

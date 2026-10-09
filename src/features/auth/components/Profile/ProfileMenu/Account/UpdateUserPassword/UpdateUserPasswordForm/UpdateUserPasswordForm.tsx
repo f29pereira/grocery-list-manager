@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { useForm, FormProvider } from "react-hook-form";
+import { updatePassword } from "firebase/auth";
 import { useAuth } from "@/contexts/AuthContext/useAuth";
 import useErrorMessage from "@/hooks/useErrorMessage";
 import type { UpdatePasswordFields } from "./UpdateUserPasswordForm.types";
@@ -7,7 +8,10 @@ import {
   currentPasswordFieldValidation,
   newPasswordFieldValidation,
   confirmPasswordFieldValidation,
+  getUpdatePasswordErrorMessage,
 } from "./UpdateUserPasswordForm.utils";
+import { reauthenticateUserWithCredential } from "@/features/auth/components/services/auth.services";
+import { isUserInvalid } from "@/features/auth/components/utils/errorMessages.utils";
 import PasswordField from "@/features/auth/components/shared/Fields/PasswordField/PasswordField";
 import PasswordFieldWithRules from "@/features/auth/components/shared/Fields/PasswordFieldWithRules/PasswordFieldWithRules";
 import SubmitErrorMessage from "@/components/shared/Form/SubmitErrorMessage/SubmitErrorMessage";
@@ -41,6 +45,8 @@ export default function UpdateUserPasswordForm() {
   const {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     register,
+    reset,
+    setError,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     formState: { errors, isSubmitting },
   } = methods;
@@ -49,22 +55,39 @@ export default function UpdateUserPasswordForm() {
    * Updates the user password
    * @param data password fields
    *
+   * If the user reauthentication fails, displays an error message on the "currentPassword" field
+   *
    * If an error was caught, sets submitError state to display a form error message
    */
   const onSubmit = async (data: UpdatePasswordFields) => {
     clearErrorMessage();
 
     try {
-      if (authUser?.user) {
+      if (authUser?.user && authUser.user.email) {
+        const user = authUser.user;
+        const email = authUser.user.email;
         const currentPassword = data.currentPassword;
         const newPassword = data.newPassword;
-        const confirmPassword = data.confirmPassword;
 
-        // TO DO: Add fields validation
-        // TO DO: Update password
+        await reauthenticateUserWithCredential(user, email, currentPassword);
+        await updatePassword(user, newPassword);
+        reset();
       }
     } catch (error) {
-      // TO DO: Display error
+      if (isUserInvalid(error)) {
+        setError(
+          "currentPassword",
+          {
+            message: t(
+              "error-messages.custom.update-password.current-password",
+            ),
+          },
+          { shouldFocus: true },
+        );
+      } else {
+        const errorText = getUpdatePasswordErrorMessage(t, error);
+        setErrorMessage(errorText);
+      }
     }
   };
 

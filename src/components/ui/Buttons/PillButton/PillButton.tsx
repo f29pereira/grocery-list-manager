@@ -19,7 +19,8 @@ export default function PillButton({
         "w-full px-4 py-2",
         "rounded-full cursor-pointer",
         "theme-transition dark:shadow-none",
-        "focus-visible:focus-ring focus-visible:outline-offset-2",
+        "focus-visible:focus-ring focus-visible:-outline-offset-4",
+        "md:focus-visible:outline-offset-2",
         "md:px-6 md:py-3",
         styles,
       )}

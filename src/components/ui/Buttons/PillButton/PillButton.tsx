@@ -21,7 +21,8 @@ export default function PillButton({
         "theme-transition dark:shadow-none",
         "focus-visible:focus-ring focus-visible:-outline-offset-4",
         "md:focus-visible:outline-offset-2",
-        "md:px-6 md:py-3",
+        "sm:max-w-100 md:max-w-80 lg:max-w-70",
+        "sm:px-6 sm:py-3 lg:px-8 lg:py-4",
         styles,
       )}
       onClick={handleClick}

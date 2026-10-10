@@ -83,7 +83,7 @@ export default function AuthenticateAccountForm() {
           <SubmitErrorMessage message={errorMessage} />
         </div>
 
-        <div className="mt-2">
+        <div className="mt-2 flex justify-center">
           <AuthenticateAccountButton isSubmitting={isSubmitting} />
         </div>
       </form>

@@ -84,7 +84,7 @@ export default function AddUserDetailsForm() {
           <SubmitErrorMessage message={errorMessage} />
         </div>
 
-        <div className="mt-2">
+        <div className="flex justify-center mt-2">
           <AddUserDetailsButton isSubmitting={isSubmitting} />
         </div>
       </form>

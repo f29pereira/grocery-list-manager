@@ -75,7 +75,7 @@ export default function CreateAccountForm() {
           <EmailField validation={signUpEmailValidation} />
         </div>
 
-        <div className="mb-8">
+        <div className="mb-4">
           <PasswordFieldWithRules<AuthenticationFields>
             label={t("forms.auth.fields.password-label")}
             autoComplete="new-password"
@@ -88,7 +88,7 @@ export default function CreateAccountForm() {
           <SubmitErrorMessage message={errorMessage} />
         </div>
 
-        <div className="mt-2">
+        <div className="flex justify-center mt-2">
           <CreateAccountButton isSubmitting={isSubmitting} />
         </div>
       </form>

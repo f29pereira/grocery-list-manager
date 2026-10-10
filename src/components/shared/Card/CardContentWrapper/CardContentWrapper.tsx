@@ -1,7 +1,7 @@
 import type { CardContentWrapperProps } from "./CardContentWrapper.types";
 
 /**
- * Renders a wrapper component that features an opacity animation
+ * Renders a wrapper component that features an opacity and vertical translation animation
  *
  * Props are defined in {@link CardContentWrapperProps}.
  */
@@ -10,8 +10,8 @@ export default function CardContentWrapper({
 }: CardContentWrapperProps) {
   return (
     <div
-      className="transition-opacity duration-300 ease-out
-                starting:opacity-0 motion-reduce:transition-none"
+      className="transition-[opacity,translate] duration-300 ease-out
+                starting:opacity-0 starting:translate-y-2 motion-reduce:transition-none"
     >
       {children}
     </div>

@@ -62,8 +62,8 @@ export default function PasswordRules({ password }: PasswordRulesProps) {
 
   return (
     <div
-      className="w-62.5 h-37.5 my-2 mx-auto
-                sm:mx-0 sm:w-75"
+      className="w-62.5 h-37.5 mt-10
+                sm:w-75"
     >
       <ul aria-label={t("forms.auth.password.rules.label")}>
         {rulesList.map((rule, index) => (

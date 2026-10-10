@@ -13,7 +13,7 @@ export default function UserDetailStep() {
   const { elementRef } = useFocus<HTMLHeadingElement>();
 
   return (
-    <div>
+    <>
       {/*Main title*/}
       <h1
         className="mb-8
@@ -29,6 +29,6 @@ export default function UserDetailStep() {
       </h1>
 
       <AddUserDetailsForm />
-    </div>
+    </>
   );
 }

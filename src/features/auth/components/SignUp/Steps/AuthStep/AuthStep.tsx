@@ -17,7 +17,7 @@ export default function AuthStep() {
   const { elementRef } = useFocus<HTMLHeadingElement>();
 
   return (
-    <div>
+    <>
       {/*Main title*/}
       <h1
         className="mb-8
@@ -37,7 +37,7 @@ export default function AuthStep() {
       {/*TO DO: Add Google account*/}
 
       {/*Sign In link*/}
-      <div className="flex justify-center items-center gap-2 mt-10">
+      <div className="flex justify-center items-center gap-2 mt-6 mb-4">
         <p className="text-paragraph">
           {t("forms.signUp.auth-step.signIn-message")}
         </p>
@@ -53,6 +53,6 @@ export default function AuthStep() {
           {t("forms.signUp.auth-step.signIn-link")}
         </AppLink>
       </div>
-    </div>
+    </>
   );
 }

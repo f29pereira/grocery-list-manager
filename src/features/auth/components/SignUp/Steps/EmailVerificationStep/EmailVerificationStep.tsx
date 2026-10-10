@@ -104,7 +104,7 @@ export default function EmailVerificationStep() {
         <SubmitErrorMessage message={errorMessage} />
       </div>
 
-      <div>
+      <div className="flex justify-center">
         {isEmailSent ? (
           <NextStepButton />
         ) : (

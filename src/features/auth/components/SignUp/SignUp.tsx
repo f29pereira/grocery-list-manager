@@ -25,29 +25,23 @@ export default function SignUp() {
   const stepsList = getStepsDescription(t);
 
   return (
-    <div
-      className="min-h-screen px-6 py-10
-                sm:px-10
-                lg:flex lg:justify-center lg:items-center lg:p-0"
-    >
-      <Card styles="h-205 md:h-207.5 lg:w-200 lg:h-187.5">
-        <div className="lg:flex lg:gap-30 lg:w-full lg:h-full">
-          <div className="mb-8 lg:flex lg:flex-col lg:gap-4 lg:mb-0">
-            <div className="flex justify-center mb-6 lg:flex-none">
-              <LogoHomeLink />
-            </div>
-            <StepsList stepsList={stepsList} currentStep={currentStep} />
+    <Card styles="h-205 md:h-207.5 lg:w-200 lg:h-187.5">
+      <div className="lg:flex lg:gap-30 lg:w-full lg:h-full">
+        <div className="mb-8 lg:flex lg:flex-col lg:gap-4 lg:mb-0">
+          <div className="flex justify-center mb-6 lg:flex-none">
+            <LogoHomeLink />
           </div>
-
-          <div className="lg:flex-1 lg:flex lg:flex-col lg:justify-center">
-            <CardContentWrapper key={currentStep}>
-              {currentStep === 0 && <AuthStep />}
-              {currentStep === 1 && <EmailVerificationStep />}
-              {currentStep === 2 && <UserDetailStep />}
-            </CardContentWrapper>
-          </div>
+          <StepsList stepsList={stepsList} currentStep={currentStep} />
         </div>
-      </Card>
-    </div>
+
+        <div className="lg:flex-1 lg:flex lg:flex-col lg:justify-center">
+          <CardContentWrapper key={currentStep}>
+            {currentStep === 0 && <AuthStep />}
+            {currentStep === 1 && <EmailVerificationStep />}
+            {currentStep === 2 && <UserDetailStep />}
+          </CardContentWrapper>
+        </div>
+      </div>
+    </Card>
   );
 }

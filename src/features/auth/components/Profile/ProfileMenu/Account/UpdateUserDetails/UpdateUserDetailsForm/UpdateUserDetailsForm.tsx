@@ -80,8 +80,13 @@ export default function UpdateUserDetailsForm() {
         onSubmit={methods.handleSubmit((data) => onSubmit(data))}
         noValidate
       >
-        <FirstNameField validation={nameFieldValidation} />
-        <LastNameField validation={nameFieldValidation} />
+        <div className="mb-15">
+          <FirstNameField validation={nameFieldValidation} />
+        </div>
+
+        <div className="mb-8">
+          <LastNameField validation={nameFieldValidation} />
+        </div>
 
         <div className="h-17.5">
           <SubmitErrorMessage message={errorMessage} />

@@ -1,5 +1,5 @@
 /**
- * Props for the CloseButton component
+ * Props for the GlowingCircle component
  * @property styles         - (optional) Tailwind CSS classes
  * @property animationSpeed - fade in animation speed
  */

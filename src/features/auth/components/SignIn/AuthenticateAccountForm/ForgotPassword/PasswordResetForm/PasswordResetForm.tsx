@@ -58,7 +58,7 @@ export default function PasswordResetForm({
   return (
     <FormProvider {...methods}>
       <form
-        className="relative md:max-w-112.5 md:mx-auto"
+        className="relative w-full md:max-w-112.5 md:mx-auto"
         onSubmit={methods.handleSubmit((data) => onSubmit(data))}
         noValidate
       >
@@ -68,7 +68,9 @@ export default function PasswordResetForm({
           <SubmitErrorMessage message={errorMessage} />
         </div>
 
-        <PasswordResetButton isSubmitting={isSubmitting} />
+        <div className="flex justify-center mb-4">
+          <PasswordResetButton isSubmitting={isSubmitting} />
+        </div>
       </form>
     </FormProvider>
   );

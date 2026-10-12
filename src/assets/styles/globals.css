@@ -33,6 +33,9 @@
 
   /*Animations*/
   --animate-pop-in: pop-in 0.5s ease-out;
+  --animate-pulse-slow: pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-pulse-medium: pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-pulse-fast: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 
   @keyframes pop-in {
     0% {

@@ -4,6 +4,7 @@ import LogoHomeLink from "@/components/ui/Links/LogoHomeLink/LogoHomeLink";
 import CardContentWrapper from "@/components/shared/Card/CardContentWrapper/CardContentWrapper";
 import AuthenticateAccountForm from "./AuthenticateAccountForm/AuthenticateAccountForm";
 import AppLink from "@/components/ui/Links/AppLink/AppLink";
+import GlowingCircles from "@/components/shared/GlowingCircles/GlowingCircles";
 
 /**
  * Renders the user authentication with:
@@ -16,7 +17,7 @@ export default function SignIn() {
   const { t } = useTranslation();
 
   return (
-    <Card styles="lg:min-w-100">
+    <Card styles="relative w-full lg:w-150">
       <div className="flex justify-center mb-10">
         <LogoHomeLink />
       </div>
@@ -28,7 +29,7 @@ export default function SignIn() {
                   font-black 
                   text-center text-xl text-title
                   focus-visible:outline-none
-                  lg:text-2xl"
+                  md:text-2xl"
         >
           {t("forms.signIn.title")}
         </h1>
@@ -38,7 +39,7 @@ export default function SignIn() {
         {/*TO DO: Add Google account*/}
 
         {/*Sign Up link*/}
-        <div className="flex justify-center items-center gap-2 mt-10">
+        <div className="flex justify-center items-center gap-2 mt-10 mb-4">
           <p className="text-paragraph">{t("forms.signIn.signUp-message")}</p>
           <AppLink
             styles="font-bold 
@@ -53,6 +54,8 @@ export default function SignIn() {
           </AppLink>
         </div>
       </CardContentWrapper>
+
+      <GlowingCircles />
     </Card>
   );
 }

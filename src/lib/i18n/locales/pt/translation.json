@@ -143,7 +143,8 @@
       "title": "Repor palavra-passe",
       "send-email-btn": "Enviar email",
       "description-before-email-send": "Por favor, clique no botão para enviar um email de redefinição da palavra-passe.",
-      "description-after-email-send": "Email de verificação de palavra-passe enviado."
+      "description-after-email-send": "Email de verificação de palavra-passe enviado.",
+      "signIn-link": "Voltar a Iniciar Sessão"
     },
     "finish-user-profile": {
       "title": "Detalhes to Utilizador",

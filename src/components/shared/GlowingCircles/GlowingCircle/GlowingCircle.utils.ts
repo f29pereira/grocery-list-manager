@@ -1,4 +1,4 @@
-import type { FadeInAnimationSpeed } from "./GlowingCircle/GlowingCircle.types";
+import type { FadeInAnimationSpeed } from "./GlowingCircle.types";
 
 /**
  * Returns the custom property for fade in a out animation by a given speed animation speed

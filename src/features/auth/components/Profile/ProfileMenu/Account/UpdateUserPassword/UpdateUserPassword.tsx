@@ -9,7 +9,7 @@ export default function UpdateUserPassword() {
   const { t } = useTranslation();
 
   return (
-    <div>
+    <>
       {/*Main title*/}
       <h2
         className="mb-8
@@ -23,6 +23,6 @@ export default function UpdateUserPassword() {
       </h2>
 
       <UpdateUserPasswordForm />
-    </div>
+    </>
   );
 }

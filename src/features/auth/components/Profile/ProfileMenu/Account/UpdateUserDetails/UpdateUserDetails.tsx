@@ -1,6 +1,5 @@
 import { useTranslation } from "react-i18next";
 import UpdateUserDetailsForm from "./UpdateUserDetailsForm/UpdateUserDetailsForm";
-
 /**
  * Renders the form to update the user details
  */
@@ -9,7 +8,7 @@ export default function UpdateUserDetails() {
   const { t } = useTranslation();
 
   return (
-    <div>
+    <>
       {/*Main title*/}
       <h2
         className="mb-8
@@ -23,6 +22,6 @@ export default function UpdateUserDetails() {
       </h2>
 
       <UpdateUserDetailsForm />
-    </div>
+    </>
   );
 }

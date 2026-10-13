@@ -2,7 +2,7 @@ import { FormProvider, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import type { PasswordResetFormProps } from "./PasswordResetForm.types";
 import type { PasswordResetField } from "./PasswordResetForm.types";
-import useErrorMessage from "@/hooks/useErrorMessage";
+import useFormMessage from "@/hooks/useFormMessage";
 import { auth } from "@/lib/firebase/firebase";
 import { sendPasswordResetEmail } from "firebase/auth";
 import {
@@ -10,7 +10,7 @@ import {
   passwordResetEmailFieldValidation,
 } from "./PasswordResetForm.utils";
 import EmailField from "@/features/auth/components/shared/Fields/EmailField/EmailField";
-import SubmitErrorMessage from "@/components/shared/Form/SubmitErrorMessage/SubmitErrorMessage";
+import SubmitMessage from "@/components/shared/Form/SubmitMessage/SubmitMessage";
 import PasswordResetButton from "./PasswordResetButton/PasswordResetButton";
 
 /**
@@ -34,8 +34,7 @@ export default function PasswordResetForm({
   } = methods;
 
   // Custom Hook
-  const { errorMessage, setErrorMessage, clearErrorMessage } =
-    useErrorMessage();
+  const [formMessage, clearFormMessage, showErrorMessage] = useFormMessage();
 
   /**
    * Sends the password reset email
@@ -44,14 +43,14 @@ export default function PasswordResetForm({
    * If an error was caught, sets submitError state to display a form error message
    */
   const onSubmit = async (data: PasswordResetField) => {
-    clearErrorMessage();
+    clearFormMessage();
 
     try {
       await sendPasswordResetEmail(auth, data.email);
       setIsEmailSent(true);
     } catch (error) {
-      const errorText = getSendPasswordResetErrorMessage(t, error);
-      setErrorMessage(errorText);
+      const errorMessage = getSendPasswordResetErrorMessage(t, error);
+      showErrorMessage(errorMessage);
     }
   };
 
@@ -65,7 +64,10 @@ export default function PasswordResetForm({
         <EmailField validation={passwordResetEmailFieldValidation} />
 
         <div className="h-17.5 mb-8">
-          <SubmitErrorMessage message={errorMessage} />
+          <SubmitMessage
+            status={formMessage.status}
+            message={formMessage.message}
+          />
         </div>
 
         <div className="flex justify-center mb-4">

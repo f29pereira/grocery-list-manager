@@ -4,13 +4,13 @@ import {
   signInFieldsValidation,
   getSignInErrorMessage,
 } from "./AuthenticateAccountForm.utils";
-import useErrorMessage from "@/hooks/useErrorMessage";
+import useFormMessage from "@/hooks/useFormMessage";
 import { auth } from "@/lib/firebase/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useTranslation } from "react-i18next";
 import EmailField from "../../shared/Fields/EmailField/EmailField";
 import PasswordField from "../../shared/Fields/PasswordField/PasswordField";
-import SubmitErrorMessage from "@/components/shared/Form/SubmitErrorMessage/SubmitErrorMessage";
+import SubmitMessage from "@/components/shared/Form/SubmitMessage/SubmitMessage";
 import ForgotPasswordLink from "../ForgotPasswordLink/ForgotPasswordLink";
 import AuthenticateAccountButton from "./AuthenticateAccountButton/AuthenticateAccountButton";
 
@@ -35,8 +35,7 @@ export default function AuthenticateAccountForm() {
   } = methods;
 
   // Custom Hook
-  const { errorMessage, setErrorMessage, clearErrorMessage } =
-    useErrorMessage();
+  const [formMessage, clearFormMessage, showErrorMessage] = useFormMessage();
 
   /**
    * Signs in the user
@@ -45,13 +44,13 @@ export default function AuthenticateAccountForm() {
    * If an error was caught, sets submitError state to display a form error message
    */
   const onSubmit = async (data: AuthenticationFields) => {
-    clearErrorMessage();
+    clearFormMessage();
 
     try {
       await signInWithEmailAndPassword(auth, data.email, data.password);
     } catch (error) {
-      const errorText = getSignInErrorMessage(t, error);
-      setErrorMessage(errorText);
+      const errorMessage = getSignInErrorMessage(t, error);
+      showErrorMessage(errorMessage);
     }
   };
 
@@ -80,7 +79,10 @@ export default function AuthenticateAccountForm() {
         </div>
 
         <div className="h-17.5">
-          <SubmitErrorMessage message={errorMessage} />
+          <SubmitMessage
+            status={formMessage.status}
+            message={formMessage.message}
+          />
         </div>
 
         <div className="mt-2 flex justify-center">

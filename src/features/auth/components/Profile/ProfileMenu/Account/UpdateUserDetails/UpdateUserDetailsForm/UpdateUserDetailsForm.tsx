@@ -1,14 +1,14 @@
 import { useTranslation } from "react-i18next";
 import { useForm, FormProvider } from "react-hook-form";
 import { useAuth } from "@/contexts/AuthContext/useAuth";
-import useErrorMessage from "@/hooks/useErrorMessage";
+import useFormMessage from "@/hooks/useFormMessage";
 import type { UserDetailsFields } from "@/features/auth/components/types/auth.types";
 import { getGenericDocumentErrorMessage } from "@/utils/common.utils";
 import { nameFieldValidation } from "@/features/auth/components/utils/validation.utils";
 import { updateUserDetailsDocument } from "./UpdateUserDetailsForm.utils";
 import FirstNameField from "@/features/auth/components/shared/Fields/NameFields/FirstNameField/FirstNameField";
 import LastNameField from "@/features/auth/components/shared/Fields/NameFields/LastNameField/LastNameField";
-import SubmitErrorMessage from "@/components/shared/Form/SubmitErrorMessage/SubmitErrorMessage";
+import SubmitMessage from "@/components/shared/Form/SubmitMessage/SubmitMessage";
 import AddUserDetailsButton from "@/features/auth/components/shared/AddUserDetailsForm/AddUserDetailsButton/AddUserDetailsButton";
 
 /**
@@ -20,8 +20,10 @@ export default function UpdateUserDetailsForm() {
 
   // Context
   const { authUser, setAuthUser } = useAuth();
-  const { errorMessage, setErrorMessage, clearErrorMessage } =
-    useErrorMessage();
+
+  // Custom hook
+  const [formMessage, clearFormMessage, showErrorMessage, showSuccessMessage] =
+    useFormMessage();
 
   // React Hook Form: methods
   const methods = useForm<UserDetailsFields>({
@@ -47,7 +49,7 @@ export default function UpdateUserDetailsForm() {
    * If an error was caught, sets submitError state to display a form error message
    */
   const onSubmit = async (data: UserDetailsFields) => {
-    clearErrorMessage();
+    clearFormMessage();
 
     try {
       if (authUser?.user) {
@@ -66,10 +68,11 @@ export default function UpdateUserDetailsForm() {
         );
 
         resetDefaultValues(data);
+        showSuccessMessage(t("forms.update-user-details.success-message"));
       }
     } catch (error) {
       const errorText = getGenericDocumentErrorMessage(t, error);
-      setErrorMessage(errorText);
+      showErrorMessage(errorText);
     }
   };
 
@@ -89,7 +92,10 @@ export default function UpdateUserDetailsForm() {
         </div>
 
         <div className="h-17.5">
-          <SubmitErrorMessage message={errorMessage} />
+          <SubmitMessage
+            status={formMessage.status}
+            message={formMessage.message}
+          />
         </div>
 
         <div className="flex justify-center mt-2 mb-4">

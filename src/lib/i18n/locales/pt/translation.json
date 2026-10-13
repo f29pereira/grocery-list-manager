@@ -150,8 +150,12 @@
       "title": "Detalhes to Utilizador",
       "message": "Por favor, preencha os dados do seu perfil antes de continuar."
     },
+    "update-user-details": {
+      "success-message": "Os seus dados foram atualizados com sucesso."
+    },
     "update-password": {
       "title": "Alterar palavra-passe",
+      "success-message": "A sua palavra-passe foi atualizada com sucesso.",
       "fields": {
         "current-password": "Palavra-passe atual",
         "new-password": "Nova palavra-passe",

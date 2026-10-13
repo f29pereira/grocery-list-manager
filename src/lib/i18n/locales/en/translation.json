@@ -150,8 +150,12 @@
       "title": "User Details",
       "message": "Please complete your profile details below before continuing."
     },
+    "update-user-details": {
+      "success-message": "Your details have been updated successfully."
+    },
     "update-password": {
       "title": "Update Password",
+      "success-message": "Your password has been updated successfully.",
       "fields": {
         "current-password": "Current password",
         "new-password": "New password",

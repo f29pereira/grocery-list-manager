@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { useForm, FormProvider } from "react-hook-form";
 import { updatePassword } from "firebase/auth";
 import { useAuth } from "@/contexts/AuthContext/useAuth";
-import useErrorMessage from "@/hooks/useErrorMessage";
+import useFormMessage from "@/hooks/useFormMessage";
 import type { UpdatePasswordFields } from "./UpdateUserPasswordForm.types";
 import {
   currentPasswordFieldValidation,
@@ -14,7 +14,7 @@ import { reauthenticateUserWithCredential } from "@/features/auth/components/ser
 import { isUserInvalid } from "@/features/auth/components/utils/errorMessages.utils";
 import PasswordField from "@/features/auth/components/shared/Fields/PasswordField/PasswordField";
 import PasswordFieldWithRules from "@/features/auth/components/shared/Fields/PasswordFieldWithRules/PasswordFieldWithRules";
-import SubmitErrorMessage from "@/components/shared/Form/SubmitErrorMessage/SubmitErrorMessage";
+import SubmitMessage from "@/components/shared/Form/SubmitMessage/SubmitMessage";
 import UpdateUserPasswordButton from "./UpdateUserPasswordButton/UpdateUserPasswordButton";
 
 /**
@@ -29,8 +29,10 @@ export default function UpdateUserPasswordForm() {
 
   // Context
   const { authUser } = useAuth();
-  const { errorMessage, setErrorMessage, clearErrorMessage } =
-    useErrorMessage();
+
+  // Custom Hook
+  const [formMessage, clearFormMessage, showErrorMessage, showSuccessMessage] =
+    useFormMessage();
 
   // React Hook Form: methods
   const methods = useForm<UpdatePasswordFields>({
@@ -60,7 +62,7 @@ export default function UpdateUserPasswordForm() {
    * If an error was caught, sets submitError state to display a form error message
    */
   const onSubmit = async (data: UpdatePasswordFields) => {
-    clearErrorMessage();
+    clearFormMessage();
 
     try {
       if (authUser?.user && authUser.user.email) {
@@ -72,6 +74,7 @@ export default function UpdateUserPasswordForm() {
         await reauthenticateUserWithCredential(user, email, currentPassword);
         await updatePassword(user, newPassword);
         reset();
+        showSuccessMessage(t("forms.update-password.success-message"));
       }
     } catch (error) {
       if (isUserInvalid(error)) {
@@ -86,7 +89,7 @@ export default function UpdateUserPasswordForm() {
         );
       } else {
         const errorText = getUpdatePasswordErrorMessage(t, error);
-        setErrorMessage(errorText);
+        showErrorMessage(errorText);
       }
     }
   };
@@ -126,8 +129,12 @@ export default function UpdateUserPasswordForm() {
         </div>
 
         <div className="h-17.5">
-          <SubmitErrorMessage message={errorMessage} />
+          <SubmitMessage
+            status={formMessage.status}
+            message={formMessage.message}
+          />
         </div>
+
         <div className="flex justify-center mt-2 mb-4">
           <UpdateUserPasswordButton isSubmitting={isSubmitting} />
         </div>

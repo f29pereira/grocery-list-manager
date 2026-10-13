@@ -11,7 +11,7 @@ export default function ProfileLayout() {
 
       <div
         className="flex flex-col gap-8 mt-8
-                  lg:flex-row lg:justify-center lg:gap-16
+                  lg:flex-row lg:justify-center lg:gap-8
                   xl:mt-0 xl:flex-1 xl:flex-row xl:justify-start"
       >
         <Outlet />

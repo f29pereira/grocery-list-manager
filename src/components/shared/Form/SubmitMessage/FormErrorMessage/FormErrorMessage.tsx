@@ -10,18 +10,17 @@ export default function FormErrorMessage({ message }: FormErrorMessageProps) {
   return (
     <div
       className="w-full p-2
-                border-2 border-solid border-input-error
-                bg-red-50 dark:bg-transparent
-                rounded-full"
+                border-2 border-solid border-input-error rounded-full
+                bg-red-50 dark:bg-transparent"
     >
       <div className="flex justify-center items-center gap-2">
         <RiErrorWarningLine
-          className="shrink-0 text-2xl text-input-error
+          className="shrink-0 text-2xl text-red-700 dark:text-red-300
                     motion-safe:animate-pop-in"
           aria-hidden="true"
         />
         <p
-          className="font-medium text-sm text-input-error "
+          className="font-medium text-sm text-red-700 dark:text-red-300"
           aria-live="assertive"
         >
           {message}

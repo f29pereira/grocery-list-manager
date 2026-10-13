@@ -12,17 +12,19 @@ export default function FormSuccessMessage({
   return (
     <div
       className="w-full p-2
-                border-2 border-solid border-brand
-              bg-green-50 dark:bg-transparent
-                rounded-full"
+                border-2 border-solid text-brand rounded-full
+              bg-green-50 dark:bg-transparent"
     >
       <div className="flex justify-center items-center gap-2">
         <IoMdCheckmark
-          className="shrink-0 text-2xl text-brand
+          className="shrink-0 text-2xl text-green-700 dark:text-green-500
                     motion-safe:animate-pop-in"
           aria-hidden="true"
         />
-        <p className="font-medium text-sm text-brand " aria-live="assertive">
+        <p
+          className="font-medium text-sm text-green-700 dark:text-green-500"
+          aria-live="assertive"
+        >
           {message}
         </p>
       </div>

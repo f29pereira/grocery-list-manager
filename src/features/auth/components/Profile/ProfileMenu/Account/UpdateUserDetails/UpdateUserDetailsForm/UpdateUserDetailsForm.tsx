@@ -80,7 +80,7 @@ export default function UpdateUserDetailsForm() {
         onSubmit={methods.handleSubmit((data) => onSubmit(data))}
         noValidate
       >
-        <div className="mb-15">
+        <div className="mb-10">
           <FirstNameField validation={nameFieldValidation} />
         </div>
 
@@ -92,7 +92,7 @@ export default function UpdateUserDetailsForm() {
           <SubmitErrorMessage message={errorMessage} />
         </div>
 
-        <div className="mt-2">
+        <div className="flex justify-center mt-2 mb-4">
           <AddUserDetailsButton
             isSubmitting={isSubmitting}
             isDisabled={!isDirty}

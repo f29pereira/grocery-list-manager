@@ -128,7 +128,7 @@ export default function UpdateUserPasswordForm() {
         <div className="h-17.5">
           <SubmitErrorMessage message={errorMessage} />
         </div>
-        <div className="mt-2">
+        <div className="flex justify-center mt-2 mb-4">
           <UpdateUserPasswordButton isSubmitting={isSubmitting} />
         </div>
       </form>

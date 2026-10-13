@@ -1,6 +1,7 @@
 import Card from "@/components/shared/Card/Card";
 import UpdateUserDetails from "./UpdateUserDetails/UpdateUserDetails";
 import UpdateUserPassword from "./UpdateUserPassword/UpdateUserPassword";
+import GlowingCircles from "@/components/shared/GlowingCircles/GlowingCircles";
 
 /**
  * Renders the user's account
@@ -8,12 +9,22 @@ import UpdateUserPassword from "./UpdateUserPassword/UpdateUserPassword";
 export default function Account() {
   return (
     <>
-      <Card styles="px-6 py-10">
+      <Card styles="relative w-full">
         <UpdateUserDetails />
+
+        <GlowingCircles />
       </Card>
 
-      <Card styles="px-6 py-10">
+      <Card styles="relative w-full">
         <UpdateUserPassword />
+
+        <div className="lg:hidden">
+          <GlowingCircles />
+        </div>
+
+        <div className="hidden lg:block">
+          <GlowingCircles circlesPlacement="top-right" />
+        </div>
       </Card>
     </>
   );

@@ -2,12 +2,12 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { sendEmailVerification } from "firebase/auth";
 import useFocus from "@/hooks/useFocus";
-import useErrorMessage from "@/hooks/useErrorMessage";
+import useFormMessage from "@/hooks/useFormMessage";
 import { useAuth } from "@/contexts/AuthContext/useAuth";
 import { sendEmailVerificationErrorMessage } from "./EmailVerificationStep.utils";
 import SendEmailButton from "./SendEmailButton/SendEmailButton";
 import NextStepButton from "@/components/ui/Buttons/StepButtons/NextStepButton/NextStepButton";
-import SubmitErrorMessage from "@/components/shared/Form/SubmitErrorMessage/SubmitErrorMessage";
+import SubmitMessage from "@/components/shared/Form/SubmitMessage/SubmitMessage";
 import EmailSentIcon from "../../../shared/EmailSentIcon/EmailSentIcon";
 
 /**
@@ -27,11 +27,10 @@ export default function EmailVerificationStep() {
 
   // Context
   const { authUser } = useAuth();
-  const { errorMessage, setErrorMessage, clearErrorMessage } =
-    useErrorMessage();
 
   // Custom Hook
   const { elementRef } = useFocus<HTMLHeadingElement>();
+  const [formMessage, clearFormMessage, showErrorMessage] = useFormMessage();
 
   // State
   const [isSubmittingEmail, setIsSubmittingEmail] = useState<boolean>(false);
@@ -43,7 +42,7 @@ export default function EmailVerificationStep() {
    * If an error is catched, sets submitError state to display an error message
    */
   const sendEmail = async () => {
-    clearErrorMessage();
+    clearFormMessage();
 
     try {
       if (authUser?.user) {
@@ -54,7 +53,7 @@ export default function EmailVerificationStep() {
       }
     } catch (error) {
       const errorMessage = sendEmailVerificationErrorMessage(t, error);
-      setErrorMessage(errorMessage);
+      showErrorMessage(errorMessage);
     }
   };
 
@@ -101,7 +100,10 @@ export default function EmailVerificationStep() {
 
       <div className="h-30 mb-8">
         {isEmailSent && <EmailSentIcon />}
-        <SubmitErrorMessage message={errorMessage} />
+        <SubmitMessage
+          status={formMessage.status}
+          message={formMessage.message}
+        />
       </div>
 
       <div className="flex justify-center">

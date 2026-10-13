@@ -10,11 +10,11 @@ import { useMultiStep } from "@/contexts/MultiStepContext/useMultiStep";
 import { useAuth } from "@/contexts/AuthContext/useAuth";
 import { auth } from "@/lib/firebase/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import useFormMessage from "@/hooks/useFormMessage";
 import EmailField from "@/features/auth/components/shared/Fields/EmailField/EmailField";
 import PasswordFieldWithRules from "@/features/auth/components/shared/Fields/PasswordFieldWithRules/PasswordFieldWithRules";
 import CreateAccountButton from "./CreateAccountButton/CreateAccountButton";
-import useErrorMessage from "@/hooks/useErrorMessage";
-import SubmitErrorMessage from "@/components/shared/Form/SubmitErrorMessage/SubmitErrorMessage";
+import SubmitMessage from "@/components/shared/Form/SubmitMessage/SubmitMessage";
 
 /**
  * Renders the create account form with email and password fields
@@ -39,8 +39,7 @@ export default function CreateAccountForm() {
   } = methods;
 
   // Custom Hook
-  const { errorMessage, setErrorMessage, clearErrorMessage } =
-    useErrorMessage();
+  const [formMessage, clearFormMessage, showErrorMessage] = useFormMessage();
 
   /**
    * Submits the authentication form
@@ -49,7 +48,8 @@ export default function CreateAccountForm() {
    * If an error was caught, sets submitError state to display a form error message
    */
   const onSubmit = async (data: AuthenticationFields) => {
-    clearErrorMessage();
+    clearFormMessage();
+
     try {
       const userCredential = await createUserWithEmailAndPassword(
         auth,
@@ -59,8 +59,8 @@ export default function CreateAccountForm() {
       setAuthUser({ user: userCredential.user, details: null });
       nextStep();
     } catch (error) {
-      const errorText = getCreateUserErrorMessage(t, error);
-      setErrorMessage(errorText);
+      const errorMessage = getCreateUserErrorMessage(t, error);
+      showErrorMessage(errorMessage);
     }
   };
 
@@ -85,7 +85,10 @@ export default function CreateAccountForm() {
         </div>
 
         <div className="h-17.5">
-          <SubmitErrorMessage message={errorMessage} />
+          <SubmitMessage
+            status={formMessage.status}
+            message={formMessage.message}
+          />
         </div>
 
         <div className="flex justify-center mt-2">

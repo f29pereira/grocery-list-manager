@@ -2,7 +2,7 @@ import type { FormErrorMessageProps } from "./FormErrorMessage.types";
 import { RiErrorWarningLine } from "@/assets/icons/icon";
 
 /**
- * Renders a general form error message
+ * Renders a general form error message with a warning icon
  *
  * The warning icon features a pop-in animation
  */

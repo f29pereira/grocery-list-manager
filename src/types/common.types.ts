@@ -13,3 +13,13 @@ export type ReactChildrenType = {
  * Type for the supported app languages
  */
 export type SupportedLanguages = (typeof SUPPORTED_LANGUAGES)[number];
+
+/**
+ * Type for the form submission message
+ * @property status  - message status
+ * @property message - message text
+ */
+export type FormMessage = {
+  status: "empty" | "error" | "success";
+  message: string;
+};

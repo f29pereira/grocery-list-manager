@@ -3,6 +3,7 @@ import { useForm, FormProvider } from "react-hook-form";
 import { updatePassword } from "firebase/auth";
 import { useAuth } from "@/contexts/AuthContext/useAuth";
 import useFormMessage from "@/hooks/useFormMessage";
+import useRemountKey from "@/hooks/useRemountKey";
 import type { UpdatePasswordFields } from "./UpdateUserPasswordForm.types";
 import {
   currentPasswordFieldValidation,
@@ -33,14 +34,17 @@ export default function UpdateUserPasswordForm() {
   // Custom Hook
   const [formMessage, clearFormMessage, showErrorMessage, showSuccessMessage] =
     useFormMessage();
+  const [formKey, incrementFormKey] = useRemountKey();
 
   // React Hook Form: methods
+  const defaultFormValues: UpdatePasswordFields = {
+    currentPassword: "",
+    newPassword: "",
+    confirmPassword: "",
+  };
+
   const methods = useForm<UpdatePasswordFields>({
-    defaultValues: {
-      currentPassword: "",
-      newPassword: "",
-      confirmPassword: "",
-    },
+    defaultValues: defaultFormValues,
   });
 
   // React Hook Form: context for inputs
@@ -73,7 +77,10 @@ export default function UpdateUserPasswordForm() {
 
         await reauthenticateUserWithCredential(user, email, currentPassword);
         await updatePassword(user, newPassword);
-        reset();
+
+        reset(defaultFormValues);
+        incrementFormKey();
+
         showSuccessMessage(t("forms.update-password.success-message"));
       }
     } catch (error) {
@@ -98,6 +105,7 @@ export default function UpdateUserPasswordForm() {
     <FormProvider {...methods}>
       <form
         className="md:max-w-112.5 md:mx-auto"
+        key={formKey}
         onSubmit={methods.handleSubmit((data) => onSubmit(data))}
         noValidate
       >

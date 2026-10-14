@@ -1,3 +1,5 @@
+import type { InitialsAvatarColor } from "@/features/auth/components/types/auth.types";
+
 // App theme
 export const THEME_LOCAL_STORAGE = "app-theme";
 
@@ -10,6 +12,9 @@ export const DEFAULT_LANGUAGE = SUPPORTED_LANGUAGES[0];
 export const FIRESTORE_COLLECTIONS = {
   USERS: "users",
 };
+
+// Default initials avatar background color when creating a user account
+export const DEFAULT_INITIALS_AVATAR_COLOR: InitialsAvatarColor = "green";
 
 // Firebase Errors
 export const FIREBASE_ERROR_CODES = {

@@ -8,6 +8,7 @@ import { nameFieldValidation } from "../../utils/validation.utils";
 import { addUserDetailsDocument } from "./AddUserDetailsForm.utils";
 import useFormMessage from "@/hooks/useFormMessage";
 import { getGenericDocumentErrorMessage } from "@/utils/common.utils";
+import { DEFAULT_INITIALS_AVATAR_COLOR } from "@/constants/app.constants";
 import SubmitMessage from "@/components/shared/Form/SubmitMessage/SubmitMessage";
 import AddUserDetailsButton from "./AddUserDetailsButton/AddUserDetailsButton";
 
@@ -55,7 +56,11 @@ export default function AddUserDetailsForm() {
           prev && prev.user
             ? {
                 ...prev,
-                details: { firstName: firstName, lastName: lastName },
+                details: {
+                  initialsAvatarColor: DEFAULT_INITIALS_AVATAR_COLOR,
+                  firstName: firstName,
+                  lastName: lastName,
+                },
               }
             : prev,
         );

@@ -37,5 +37,5 @@ export default function ProfileAvatar() {
     );
   }
 
-  return <InitialsAvatar />;
+  return <InitialsAvatar styles="w-7.5 h-7.5 md:w-8.75 md:h-8.75" />;
 }

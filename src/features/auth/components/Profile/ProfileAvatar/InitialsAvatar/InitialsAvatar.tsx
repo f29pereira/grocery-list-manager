@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import type { InitialsAvatarProps } from "./InitialsAvatar.types";
 import { useAuth } from "@/contexts/AuthContext/useAuth";
 import {
   getInitialsAvatarStyles,
@@ -7,11 +8,13 @@ import {
 
 /**
  * Renders a profile avatar with the user's initials
+ *
+ * Props are defined in {@link InitialsAvatarProps}.
  */
-export default function InitialsAvatar() {
+export default function InitialsAvatar({ styles }: InitialsAvatarProps) {
   const { authUser } = useAuth();
 
-  const styles = getInitialsAvatarStyles(
+  const colorStyles = getInitialsAvatarStyles(
     authUser?.details?.initialsAvatarColor,
   );
   const firstNameInitial = getUserInitial(authUser?.details?.firstName);
@@ -19,12 +22,7 @@ export default function InitialsAvatar() {
 
   return (
     <div
-      className={clsx(
-        "w-7.5 h-7.5 rounded-full",
-        "theme-transition",
-        "md:w-8.75 md:h-8.75",
-        styles,
-      )}
+      className={clsx("rounded-full theme-transition", colorStyles, styles)}
       aria-hidden="true"
     >
       <div className="flex justify-center items-center gap-[1.5px] w-full h-full">

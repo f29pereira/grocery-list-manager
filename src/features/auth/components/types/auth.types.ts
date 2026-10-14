@@ -17,3 +17,14 @@ export type UserDetailsFields = {
   firstName: string;
   lastName: string;
 };
+
+/**
+ * Type for the Initials Avatar background color
+ */
+export type InitialsAvatarColor =
+  | "red"
+  | "green"
+  | "blue"
+  | "orange"
+  | "yellow"
+  | "purple";

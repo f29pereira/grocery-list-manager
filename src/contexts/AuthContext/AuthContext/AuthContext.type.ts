@@ -1,5 +1,6 @@
 import type { User } from "firebase/auth";
 import type { Dispatch, SetStateAction } from "react";
+import type { InitialsAvatarColor } from "@/features/auth/components/types/auth.types";
 
 /**
  * Type for the AuthContext
@@ -39,10 +40,12 @@ export type AuthenticatedUser = {
 
 /**
  * Type for the user details
- * @property firstName - first name
- * @property lastName  - last name
+ * @property initialsAvatarColor - initials avatar background color
+ * @property firstName           - first name
+ * @property lastName            - last name
  */
 export type UserDetails = {
+  initialsAvatarColor: InitialsAvatarColor;
   firstName: string;
   lastName: string;
 };

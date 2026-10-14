@@ -32,6 +32,7 @@ export default function AuthProvider({ children }: ReactChildrenType) {
           user: user,
           details: userDetails
             ? {
+                initialsAvatarColor: userDetails.data().initialsAvatarColor,
                 firstName: userDetails.data().firstName,
                 lastName: userDetails.data().lastName,
               }

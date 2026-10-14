@@ -38,7 +38,7 @@ export default function ProfileToggleButton() {
                 rounded-full cursor-pointer
                 border-2 border-solid border-slate-500 dark:border-white
                 focus-visible:focus-ring focus-visible:outline-offset-2
-                theme-transition
+                theme-transition group
                 sm:py-1 md:px-2 md:py-1.5"
         onClick={toggle}
         aria-label={getToggleButtonLabel(t, authUser)}

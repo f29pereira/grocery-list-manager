@@ -8,13 +8,21 @@ export const LOCALIZATION_LOCAL_STORAGE = "app-locale";
 export const SUPPORTED_LANGUAGES = ["en", "pt"] as const;
 export const DEFAULT_LANGUAGE = SUPPORTED_LANGUAGES[0];
 
+// Default initials avatar background color when creating a user account
+export const DEFAULT_INITIALS_AVATAR_COLOR: InitialsAvatarColor = "green";
+export const COLOR_PALETTE_LIST: InitialsAvatarColor[] = [
+  "red",
+  "green",
+  "blue",
+  "orange",
+  "yellow",
+  "purple",
+];
+
 // Firestore collections
 export const FIRESTORE_COLLECTIONS = {
   USERS: "users",
 };
-
-// Default initials avatar background color when creating a user account
-export const DEFAULT_INITIALS_AVATAR_COLOR: InitialsAvatarColor = "green";
 
 // Firebase Errors
 export const FIREBASE_ERROR_CODES = {

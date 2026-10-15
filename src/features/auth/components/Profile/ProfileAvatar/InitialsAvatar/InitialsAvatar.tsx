@@ -1,7 +1,5 @@
 import clsx from "clsx";
 import type { InitialsAvatarProps } from "./InitialsAvatar.types";
-import { useAuth } from "@/contexts/AuthContext/useAuth";
-import { getInitialsAvatarStyles } from "./InitialsAvatar.utils";
 import { FaRegUserCircle } from "@/assets/icons/icon";
 
 /**
@@ -19,21 +17,11 @@ export default function InitialsAvatar({
   firstNameInitial,
   lastNameInitial,
 }: InitialsAvatarProps) {
-  const { authUser } = useAuth();
-
-  const colorStyles = getInitialsAvatarStyles(
-    authUser?.details?.initialsAvatarColor,
-  );
-
   const isInitialsEmpty = firstNameInitial === "" && lastNameInitial === "";
 
   return (
     <div
-      className={clsx(
-        "rounded-full theme-transition overflow-hidden",
-        colorStyles,
-        styles,
-      )}
+      className={clsx("rounded-full theme-transition overflow-hidden", styles)}
       aria-hidden="true"
     >
       <div className="flex justify-center items-center gap-[1.5px] w-full h-full">

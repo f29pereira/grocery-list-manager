@@ -1,5 +1,6 @@
 import { useAuth } from "@/contexts/AuthContext/useAuth";
 import { FaRegUserCircle, FaUserCircle } from "@/assets/icons/icon";
+import { getUserInitial } from "./InitialsAvatar/InitialsAvatar.utils";
 import InitialsAvatar from "./InitialsAvatar/InitialsAvatar";
 
 /**
@@ -8,6 +9,9 @@ import InitialsAvatar from "./InitialsAvatar/InitialsAvatar";
 export default function ProfileAvatar() {
   // Context
   const { authUser, isProfileComplete } = useAuth();
+
+  const firstNameInitial = getUserInitial(authUser?.details?.firstName);
+  const lastNameInitial = getUserInitial(authUser?.details?.lastName);
 
   // Unauthenticated user
   if (!authUser?.user) {
@@ -37,5 +41,10 @@ export default function ProfileAvatar() {
     );
   }
 
-  return <InitialsAvatar styles="w-7.5 h-7.5 md:w-8.75 md:h-8.75" />;
+  return (
+    <InitialsAvatar
+      firstNameInitial={firstNameInitial}
+      lastNameInitial={lastNameInitial}
+    />
+  );
 }

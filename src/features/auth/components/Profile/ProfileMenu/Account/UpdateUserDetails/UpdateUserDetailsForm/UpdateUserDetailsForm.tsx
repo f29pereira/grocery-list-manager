@@ -6,6 +6,8 @@ import type { UserDetailsFields } from "@/features/auth/components/types/auth.ty
 import { getGenericDocumentErrorMessage } from "@/utils/common.utils";
 import { nameFieldValidation } from "@/features/auth/components/utils/validation.utils";
 import { updateUserDetailsDocument } from "./UpdateUserDetailsForm.utils";
+import { DEFAULT_INITIALS_AVATAR_COLOR } from "@/constants/app.constants";
+import InitialsAvatarField from "@/features/auth/components/shared/Fields/AvatarField/InitialsAvatarField/InitialsAvatarField";
 import FirstNameField from "@/features/auth/components/shared/Fields/NameFields/FirstNameField/FirstNameField";
 import LastNameField from "@/features/auth/components/shared/Fields/NameFields/LastNameField/LastNameField";
 import SubmitMessage from "@/components/shared/Form/SubmitMessage/SubmitMessage";
@@ -28,6 +30,8 @@ export default function UpdateUserDetailsForm() {
   // React Hook Form: methods
   const methods = useForm<UserDetailsFields>({
     defaultValues: {
+      initialsAvatarColor:
+        authUser?.details?.initialsAvatarColor ?? DEFAULT_INITIALS_AVATAR_COLOR,
       firstName: authUser?.details?.firstName ?? "",
       lastName: authUser?.details?.lastName ?? "",
     },
@@ -37,6 +41,7 @@ export default function UpdateUserDetailsForm() {
   const {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     register,
+    control,
     resetDefaultValues,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     formState: { errors, isSubmitting, isDirty },
@@ -53,16 +58,26 @@ export default function UpdateUserDetailsForm() {
 
     try {
       if (authUser?.user) {
+        const avatarColor = data.initialsAvatarColor;
         const firstName = data.firstName;
         const lastName = data.lastName;
 
-        await updateUserDetailsDocument(authUser.user.uid, firstName, lastName);
+        await updateUserDetailsDocument(
+          authUser.user.uid,
+          avatarColor,
+          firstName,
+          lastName,
+        );
 
         setAuthUser((prev) =>
           prev && prev.user
             ? {
                 ...prev,
-                details: { firstName: firstName, lastName: lastName },
+                details: {
+                  initialsAvatarColor: avatarColor,
+                  firstName: firstName,
+                  lastName: lastName,
+                },
               }
             : prev,
         );
@@ -83,6 +98,14 @@ export default function UpdateUserDetailsForm() {
         onSubmit={methods.handleSubmit((data) => onSubmit(data))}
         noValidate
       >
+        <div className="mb-20">
+          <InitialsAvatarField
+            control={control}
+            styles="w-25 h-25"
+            fontStyles="text-3xl"
+          />
+        </div>
+
         <div className="mb-10">
           <FirstNameField validation={nameFieldValidation} />
         </div>

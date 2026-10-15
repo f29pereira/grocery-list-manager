@@ -10,6 +10,7 @@ import {
   FaRegEye,
   FaRegEyeSlash,
   FaSpinner,
+  FaPaintBrush,
 } from "react-icons/fa";
 import {
   FaXTwitter,
@@ -70,6 +71,7 @@ export {
   FaRegEye,
   FaRegEyeSlash,
   FaSpinner,
+  FaPaintBrush,
   GoDot,
   LuFileX,
   LuMonitor,

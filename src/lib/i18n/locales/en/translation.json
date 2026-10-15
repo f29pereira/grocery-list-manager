@@ -102,6 +102,9 @@
           }
         }
       },
+      "change-initials-avatar-color": {
+        "change-color-button": "Change avatar color"
+      },
       "loading": "Loading your account"
     },
     "signUp": {

@@ -2,9 +2,14 @@ import clsx from "clsx";
 import type { InitialsAvatarProps } from "./InitialsAvatar.types";
 import { useAuth } from "@/contexts/AuthContext/useAuth";
 import { getInitialsAvatarStyles } from "./InitialsAvatar.utils";
+import { FaRegUserCircle } from "@/assets/icons/icon";
 
 /**
  * Renders a profile avatar with the user's initials
+ *
+ * If the initials are empty, it displays a user icon
+ *
+ * The initials and user icon feature a pop-in animation
  *
  * Props are defined in {@link InitialsAvatarProps}.
  */
@@ -20,6 +25,8 @@ export default function InitialsAvatar({
     authUser?.details?.initialsAvatarColor,
   );
 
+  const isInitialsEmpty = firstNameInitial === "" && lastNameInitial === "";
+
   return (
     <div
       className={clsx(
@@ -30,12 +37,31 @@ export default function InitialsAvatar({
       aria-hidden="true"
     >
       <div className="flex justify-center items-center gap-[1.5px] w-full h-full">
-        <span className={clsx("font-bold leading-none", fontStyles)}>
-          {firstNameInitial}
-        </span>
-        <span className={clsx("font-bold leading-none", fontStyles)}>
-          {lastNameInitial}
-        </span>
+        {isInitialsEmpty ? (
+          <FaRegUserCircle
+            className="text-5xl motion-safe:animate-pop-in"
+            aria-hidden="true"
+          />
+        ) : (
+          <>
+            <span
+              className={clsx(
+                "font-bold leading-none motion-safe:animate-pop-in",
+                fontStyles,
+              )}
+            >
+              {firstNameInitial}
+            </span>
+            <span
+              className={clsx(
+                "font-bold leading-none motion-safe:animate-pop-in",
+                fontStyles,
+              )}
+            >
+              {lastNameInitial}
+            </span>
+          </>
+        )}
       </div>
     </div>
   );

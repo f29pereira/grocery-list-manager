@@ -38,7 +38,11 @@ export default function InitialsAvatarField({
       <div className="flex justify-center items-center">
         <div className="relative">
           <InitialsAvatar
-            styles={clsx(colorStyles, styles)}
+            styles={clsx(
+              "border-4 border-solid border-input",
+              colorStyles,
+              styles,
+            )}
             fontStyles={fontStyles}
             firstNameInitial={firstNameInitial}
             lastNameInitial={lastNameInitial}

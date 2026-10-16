@@ -4,13 +4,18 @@ import ColorLabel from "./ColorLabel/ColorLabel";
 
 /**
  * Renders the list of color palette radio buttons
+ *
+ * The list features a pop-in animation
  */
 export default function ColorPalette() {
   return (
-    <fieldset className="flex justify-between items-center mt-10">
+    <fieldset
+      className="flex justify-center items-center gap-5 mt-10
+                sm:gap-10 motion-safe:animate-pop-in"
+    >
       <legend className="sr-only">Avatar color</legend>
       {COLOR_PALETTE_LIST.map((color) => (
-        <div key={color}>
+        <div className="group" key={color}>
           <ColorInput value={color} />
           <ColorLabel value={color} />
         </div>

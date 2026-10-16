@@ -11,7 +11,7 @@ export default function ColorInput({ value }: ColorInputProps) {
 
   return (
     <input
-      className="sr-only"
+      className="sr-only peer"
       id={`avatar-color-${value}`}
       type="radio"
       value={value}

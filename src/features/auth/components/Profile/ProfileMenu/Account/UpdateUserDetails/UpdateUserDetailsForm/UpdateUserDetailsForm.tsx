@@ -98,7 +98,7 @@ export default function UpdateUserDetailsForm() {
         onSubmit={methods.handleSubmit((data) => onSubmit(data))}
         noValidate
       >
-        <div className="mb-20">
+        <div className="h-42.5 mb-10">
           <InitialsAvatarField
             control={control}
             styles="w-25 h-25"

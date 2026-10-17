@@ -151,7 +151,7 @@
     },
     "finish-user-profile": {
       "title": "Detalhes to Utilizador",
-      "message": "Por favor, preencha os dados do seu perfil antes de continuar."
+      "message": "Por favor, preencha os dados de perfil da sua conta (<strong>{{email}}</strong>) antes de continuar."
     },
     "update-user-details": {
       "success-message": "Os seus dados foram atualizados com sucesso."

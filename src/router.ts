@@ -5,6 +5,7 @@ import AuthLayout from "./routes/auth/authLayout";
 import ProtectedLayout from "./routes/protectedLayout";
 import SignInRoute from "./routes/auth/signIn";
 import SignUpRoute from "./routes/auth/signUp";
+import FinishProfileRoute from "./routes/auth/finishProfile";
 import ForgotPasswordRoute from "./routes/auth/passwordReset";
 import ProfileManager from "./routes/profile/profileManager";
 import AccountRoute from "./routes/profile/account";
@@ -18,6 +19,7 @@ export const router = createBrowserRouter([
     Component: AuthLayout,
     children: [
       { path: "sign-up", Component: SignUpRoute },
+      { path: "finish-profile", Component: FinishProfileRoute },
       { path: "sign-in", Component: SignInRoute },
       { path: "password-reset", Component: ForgotPasswordRoute },
     ],

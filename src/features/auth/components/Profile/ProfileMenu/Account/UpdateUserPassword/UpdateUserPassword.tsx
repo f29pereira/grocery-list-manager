@@ -9,20 +9,21 @@ export default function UpdateUserPassword() {
   const { t } = useTranslation();
 
   return (
-    <>
-      {/*Main title*/}
-      <h2
-        className="mb-8
+    <div className="h-full md:max-w-112.5 md:mx-auto">
+      <div className="flex flex-col h-full">
+        {/*Main title*/}
+        <h2
+          className="mb-8 mt-4
                   font-black 
-                  text-center text-xl text-title
+                  text-center text-2xl text-title
                   focus-visible:outline-none
-                  lg:text-left lg:text-2xl"
-        aria-label={t("forms.signUp.user-details-step.title-label")}
-      >
-        {t("forms.update-password.title")}
-      </h2>
+                  lg:text-left xl:text-3xl"
+        >
+          {t("forms.update-password.title")}
+        </h2>
 
-      <UpdateUserPasswordForm />
-    </>
+        <UpdateUserPasswordForm />
+      </div>
+    </div>
   );
 }

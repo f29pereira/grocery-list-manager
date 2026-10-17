@@ -94,7 +94,7 @@ export default function UpdateUserDetailsForm() {
   return (
     <FormProvider {...methods}>
       <form
-        className="md:max-w-112.5 md:mx-auto"
+        className="flex flex-col justify-between h-full"
         onSubmit={methods.handleSubmit((data) => onSubmit(data))}
         noValidate
       >

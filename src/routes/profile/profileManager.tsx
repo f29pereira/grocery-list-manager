@@ -1,9 +1,9 @@
+import { Navigate } from "react-router";
 import { useAuth } from "@/contexts/AuthContext/useAuth";
-import FinishProfile from "@/features/auth/components/Profile/FinishProfile/FinishProfile";
 import ProfileLayout from "./profileLayout";
 
 /**
- * Renders the user's details form or the user's profile on the "profile" route
+ * Renders the add user's details form or the user's profile on the "profile" route
  *
  * Displays:
  * - User's details form: if the user's profile isn't complete
@@ -15,5 +15,9 @@ import ProfileLayout from "./profileLayout";
 export default function ProfileManager() {
   const { isProfileComplete } = useAuth();
 
-  return !isProfileComplete ? <FinishProfile /> : <ProfileLayout />;
+  if (!isProfileComplete) {
+    return <Navigate to="/finish-profile" replace />;
+  }
+
+  return <ProfileLayout />;
 }

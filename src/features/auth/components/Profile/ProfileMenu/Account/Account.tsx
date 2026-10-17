@@ -12,7 +12,13 @@ export default function Account() {
       <Card styles="relative w-full">
         <UpdateUserDetails />
 
-        <GlowingCircles />
+        <div className="xl:hidden">
+          <GlowingCircles circlesPlacement="top-right" />
+        </div>
+
+        <div className="hidden xl:block">
+          <GlowingCircles circlesPlacement="bottom-left" />
+        </div>
       </Card>
 
       <Card styles="relative w-full">

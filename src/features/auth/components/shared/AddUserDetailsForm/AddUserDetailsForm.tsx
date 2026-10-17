@@ -103,7 +103,7 @@ export default function AddUserDetailsForm() {
           />
         </div>
 
-        <div className="flex justify-center mt-2">
+        <div className="flex justify-center mt-2 mb-4">
           <AddUserDetailsButton isSubmitting={isSubmitting} />
         </div>
       </form>

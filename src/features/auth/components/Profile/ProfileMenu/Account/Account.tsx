@@ -12,11 +12,11 @@ export default function Account() {
       <Card styles="relative w-full">
         <UpdateUserDetails />
 
-        <div className="xl:hidden">
+        <div className="2xl:hidden">
           <GlowingCircles circlesPlacement="top-right" />
         </div>
 
-        <div className="hidden xl:block">
+        <div className="hidden 2xl:block">
           <GlowingCircles circlesPlacement="bottom-left" />
         </div>
       </Card>

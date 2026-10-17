@@ -104,7 +104,7 @@ export default function UpdateUserPasswordForm() {
   return (
     <FormProvider {...methods}>
       <form
-        className="flex flex-col justify-between h-full"
+        className="flex flex-col justify-between h-full overflow-hidden"
         key={formKey}
         onSubmit={methods.handleSubmit((data) => onSubmit(data))}
         noValidate

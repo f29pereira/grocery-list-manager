@@ -73,7 +73,10 @@
   },
   "forms": {
     "step": "Step",
-    "submit-button": "Save",
+    "generic-buttons": {
+      "submit-button": "Save",
+      "update-submit-button": "Save changes"
+    },
     "generic-errorMessages": {
       "required": "This field is required",
       "invalid": "This field is invalid"
@@ -132,7 +135,8 @@
           "first-name-label": "First name",
           "last-name-label": "Last name",
           "name-max-length": "Max 50 characters"
-        }
+        },
+        "submit-button": "Save details"
       }
     },
     "signIn": {

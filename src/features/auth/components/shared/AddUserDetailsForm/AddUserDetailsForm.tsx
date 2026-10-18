@@ -104,7 +104,10 @@ export default function AddUserDetailsForm() {
         </div>
 
         <div className="flex justify-center mt-2 mb-4">
-          <AddUserDetailsButton isSubmitting={isSubmitting} />
+          <AddUserDetailsButton
+            isSubmitting={isSubmitting}
+            description={t("forms.signUp.user-details-step.submit-button")}
+          />
         </div>
       </form>
     </FormProvider>

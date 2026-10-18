@@ -125,6 +125,7 @@ export default function UpdateUserDetailsForm() {
           <AddUserDetailsButton
             isSubmitting={isSubmitting}
             isDisabled={!isDirty}
+            description={t("forms.generic-buttons.update-submit-button")}
           />
         </div>
       </form>

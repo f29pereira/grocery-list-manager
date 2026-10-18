@@ -1,7 +1,6 @@
 import SubmitButton from "@/components/ui/Buttons/SubmitButton/SubmitButton";
 import type { AddUserDetailsButtonProps } from "./AddUserDetailsButton.types";
 import { FaUserCheck } from "@/assets/icons/icon";
-import { useTranslation } from "react-i18next";
 
 /**
  * Renders an add user details button
@@ -13,10 +12,8 @@ import { useTranslation } from "react-i18next";
 export default function AddUserDetailsButton({
   isSubmitting,
   isDisabled,
+  description,
 }: AddUserDetailsButtonProps) {
-  // Translation
-  const { t } = useTranslation();
-
   return (
     <SubmitButton
       styles="bg-button 
@@ -37,7 +34,7 @@ export default function AddUserDetailsButton({
                   text-md text-button-label
                   lg:text-base"
       >
-        {t("forms.submit-button")}
+        {description}
       </span>
     </SubmitButton>
   );

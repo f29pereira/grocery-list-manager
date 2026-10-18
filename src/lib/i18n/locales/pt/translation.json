@@ -73,7 +73,10 @@
   },
   "forms": {
     "step": "Etapa",
-    "submit-button": "Salvar",
+    "generic-buttons": {
+      "submit-button": "Guardar",
+      "update-submit-button": "Guardar alterações"
+    },
     "generic-errorMessages": {
       "required": "Este campo é obrigatório",
       "invalid": "Este campo é inválido"
@@ -126,13 +129,14 @@
       },
       "user-details-step": {
         "step": "Detalhes",
-        "title": "Detalhes to Utilizador",
+        "title": "Detalhes do Utilizador",
         "title-label": "Etapa 3 de 3 Detalhes to Utilizador",
         "name": {
           "first-name-label": "Nome",
           "last-name-label": "Apelido",
           "name-max-length": "Máx. 50 caracteres"
-        }
+        },
+        "submit-button": "Guardar detalhes"
       }
     },
     "signIn": {

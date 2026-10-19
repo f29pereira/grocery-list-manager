@@ -57,6 +57,8 @@ export default function InitialsAvatarField({
         </div>
       </div>
 
+      {/*TO DO: Add FieldErrorMessage*/}
+
       {isToggled && <ColorPalette />}
     </>
   );

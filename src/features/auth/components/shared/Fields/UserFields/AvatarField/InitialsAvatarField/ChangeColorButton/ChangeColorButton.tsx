@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import type { ChangeColorButtonProps } from "./ChangeColorButton.types";
 import { useTranslation } from "react-i18next";
 import { FaPaintBrush } from "@/assets/icons/icon";
@@ -9,18 +10,24 @@ import { FaPaintBrush } from "@/assets/icons/icon";
  */
 export default function ChangeColorButton({
   handleClick,
+  isToggled,
 }: ChangeColorButtonProps) {
   // Translation
   const { t } = useTranslation();
 
   return (
     <button
-      className="flex justify-center items-center w-11 h-11
-              bg-white hover:bg-slate-200 dark:bg-slate-950 dark:hover:bg-slate-900
-                theme-transition  
-                border-2 border-solid border-input rounded-full cursor-pointer
-                focus-visible:focus-ring focus-visible:outline-offset-2
-                md:w-12.5 md:h-12.5"
+      className={clsx(
+        "flex justify-center items-center w-11 h-11",
+        "theme-transition",
+        "hover:bg-slate-200 dark:hover:bg-slate-900",
+        "border-2 border-solid border-input rounded-full cursor-pointer",
+        "focus-visible:focus-ring focus-visible:outline-offset-2",
+        "md:w-12.5 md:h-12.5",
+        isToggled
+          ? "bg-slate-200 dark:bg-slate-800"
+          : "bg-white dark:bg-slate-950",
+      )}
       type="button"
       onClick={handleClick}
       aria-label={t(

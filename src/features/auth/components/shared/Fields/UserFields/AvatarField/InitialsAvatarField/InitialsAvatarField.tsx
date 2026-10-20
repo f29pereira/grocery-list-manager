@@ -49,10 +49,10 @@ export default function InitialsAvatarField({
           />
 
           <div
-            className="absolute -left-5 -bottom-2.5 
-                    md:-left-5 md:-bottom-4"
+            className="absolute -left-5 -bottom-2.5
+                    md:-left-5 md:-bottom-3"
           >
-            <ChangeColorButton handleClick={toggle} />
+            <ChangeColorButton handleClick={toggle} isToggled={isToggled} />
           </div>
         </div>
       </div>

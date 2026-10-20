@@ -15,8 +15,8 @@ export default function UserFields({
       <div className="h-42.5 mt-4 mb-10">
         <InitialsAvatarField
           control={control}
-          styles="w-25 h-25"
-          fontStyles="text-3xl"
+          styles="w-25 h-25 md:w-30 md:h-30"
+          fontStyles="text-3xl lg:text-4xl"
         />
       </div>
 

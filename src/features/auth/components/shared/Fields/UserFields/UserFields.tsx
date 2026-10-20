@@ -18,14 +18,14 @@ export default function UserFields({
           styles="w-25 h-25"
           fontStyles="text-3xl"
         />
+      </div>
 
-        <div className="mb-10">
-          <FirstNameField validation={namefieldValidation} />
-        </div>
+      <div className="mb-10">
+        <FirstNameField validation={namefieldValidation} />
+      </div>
 
-        <div className="mb-8">
-          <LastNameField validation={namefieldValidation} />
-        </div>
+      <div className="mb-8">
+        <LastNameField validation={namefieldValidation} />
       </div>
     </>
   );

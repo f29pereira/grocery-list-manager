@@ -6,10 +6,8 @@ import { nameFieldValidation } from "../../utils/validation.utils";
 import { addUserDetailsDocument } from "./AddUserDetailsForm.utils";
 import useFormMessage from "@/hooks/useFormMessage";
 import { getGenericDocumentErrorMessage } from "@/utils/common.utils";
-import InitialsAvatarField from "../Fields/AvatarField/InitialsAvatarField/InitialsAvatarField";
-import FirstNameField from "@/features/auth/components/shared/Fields/NameFields/FirstNameField/FirstNameField";
-import LastNameField from "@/features/auth/components/shared/Fields/NameFields/LastNameField/LastNameField";
 import SubmitMessage from "@/components/shared/Form/SubmitMessage/SubmitMessage";
+import UserFields from "../Fields/UserFields/UserFields";
 import AddUserDetailsButton from "./AddUserDetailsButton/AddUserDetailsButton";
 
 /**
@@ -80,21 +78,10 @@ export default function AddUserDetailsForm() {
         onSubmit={methods.handleSubmit((data) => onSubmit(data))}
         noValidate
       >
-        <div className="h-42.5 mb-10">
-          <InitialsAvatarField
-            control={control}
-            styles="w-25 h-25"
-            fontStyles="text-3xl"
-          />
-        </div>
-
-        <div className="mb-15">
-          <FirstNameField validation={nameFieldValidation} />
-        </div>
-
-        <div className="mb-8">
-          <LastNameField validation={nameFieldValidation} />
-        </div>
+        <UserFields
+          control={control}
+          namefieldValidation={nameFieldValidation}
+        />
 
         <div className="h-17.5">
           <SubmitMessage

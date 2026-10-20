@@ -11,8 +11,7 @@ export default function ColorPalette() {
   return (
     <fieldset
       className="flex justify-center items-center gap-5 mt-10
-                sm:gap-10 xl:gap-8 2xl:gap-12
-                motion-safe:animate-pop-in"
+                sm:gap-10 xl:gap-8 motion-safe:animate-pop-in"
     >
       <legend className="sr-only">Avatar color</legend>
       {COLOR_PALETTE_LIST.map((color) => (

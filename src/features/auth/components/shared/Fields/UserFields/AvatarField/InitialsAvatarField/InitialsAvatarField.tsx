@@ -1,6 +1,7 @@
 import clsx from "clsx";
-import { useWatch } from "react-hook-form";
+import { useFormContext, useWatch } from "react-hook-form";
 import type { InitialsAvatarFieldProps } from "./InitialsAvatarField.types";
+import type { UserDetailsFields } from "@/features/auth/components/types/auth.types";
 import useToggle from "@/hooks/useToggle";
 import {
   getUserInitial,
@@ -16,11 +17,12 @@ import ColorPalette from "./ColorPalette/ColorPalette";
  * Props are defined in {@link InitialsAvatarFieldProps}.
  */
 export default function InitialsAvatarField({
-  control,
   styles,
   fontStyles,
 }: InitialsAvatarFieldProps) {
-  // React Hook Form
+  // React Hook Form: context
+  const { control } = useFormContext<UserDetailsFields>();
+
   const [initialsAvatarColor, firstName, lastName] = useWatch({
     control,
     name: ["initialsAvatarColor", "firstName", "lastName"],

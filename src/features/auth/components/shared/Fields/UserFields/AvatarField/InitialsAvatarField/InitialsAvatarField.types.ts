@@ -1,6 +1,4 @@
 import type { InitialsAvatarProps } from "@/features/auth/components/Profile/ProfileAvatar/InitialsAvatar/InitialsAvatar.types";
-import type { Control } from "react-hook-form";
-import type { UserDetailsFields } from "@/features/auth/components/types/auth.types";
 
 /**
  * Props for the InitialsAvatarField component
@@ -11,6 +9,4 @@ import type { UserDetailsFields } from "@/features/auth/components/types/auth.ty
 export type InitialsAvatarFieldProps = Pick<
   InitialsAvatarProps,
   "styles" | "fontStyles"
-> & {
-  control: Control<UserDetailsFields>;
-};
+>;

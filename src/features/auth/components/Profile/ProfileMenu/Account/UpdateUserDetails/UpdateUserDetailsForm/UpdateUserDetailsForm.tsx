@@ -4,7 +4,6 @@ import { useAuth } from "@/contexts/AuthContext/useAuth";
 import useFormMessage from "@/hooks/useFormMessage";
 import type { UserDetailsFields } from "@/features/auth/components/types/auth.types";
 import { getGenericDocumentErrorMessage } from "@/utils/common.utils";
-import { nameFieldValidation } from "@/features/auth/components/utils/validation.utils";
 import { updateUserDetailsDocument } from "./UpdateUserDetailsForm.utils";
 import { DEFAULT_INITIALS_AVATAR_COLOR } from "@/constants/app.constants";
 import SubmitMessage from "@/components/shared/Form/SubmitMessage/SubmitMessage";
@@ -39,6 +38,7 @@ export default function UpdateUserDetailsForm() {
   const {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     register,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     control,
     resetDefaultValues,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -96,10 +96,7 @@ export default function UpdateUserDetailsForm() {
         onSubmit={methods.handleSubmit((data) => onSubmit(data))}
         noValidate
       >
-        <UserFields
-          control={control}
-          namefieldValidation={nameFieldValidation}
-        />
+        <UserFields />
 
         <div className="h-17.5">
           <SubmitMessage

@@ -2,7 +2,6 @@ import { useTranslation } from "react-i18next";
 import { useAuth } from "@/contexts/AuthContext/useAuth";
 import { useForm, FormProvider } from "react-hook-form";
 import type { UserDetailsFields } from "@/features/auth/components/types/auth.types";
-import { nameFieldValidation } from "../../utils/validation.utils";
 import { addUserDetailsDocument } from "./AddUserDetailsForm.utils";
 import useFormMessage from "@/hooks/useFormMessage";
 import { getGenericDocumentErrorMessage } from "@/utils/common.utils";
@@ -30,6 +29,7 @@ export default function AddUserDetailsForm() {
   const {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     register,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     control,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     formState: { errors, isSubmitting },
@@ -78,10 +78,7 @@ export default function AddUserDetailsForm() {
         onSubmit={methods.handleSubmit((data) => onSubmit(data))}
         noValidate
       >
-        <UserFields
-          control={control}
-          namefieldValidation={nameFieldValidation}
-        />
+        <UserFields />
 
         <div className="h-17.5">
           <SubmitMessage

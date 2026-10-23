@@ -11,11 +11,13 @@ export type AuthenticationFields = {
 /**
  * Type for the user detail fields
  * @property initialsAvatarColor - initials avatar background color
+ * @property avatarFile          - avatar file
  * @property firstName           - first name
  * @property lastName            - last name
  */
 export type UserDetailsFields = {
   initialsAvatarColor: InitialsAvatarColor;
+  avatarFile: FileList;
   firstName: string;
   lastName: string;
 };

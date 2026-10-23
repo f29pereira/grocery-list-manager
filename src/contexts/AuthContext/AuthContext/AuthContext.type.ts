@@ -4,11 +4,11 @@ import type { InitialsAvatarColor } from "@/features/auth/components/types/auth.
 
 /**
  * Type for the AuthContext
- * @property authUser     - authenticated user state
- * @property setAuthUser  - authenticated user state setter function
+ * @property authUser          - authenticated user state
+ * @property setAuthUser       - authenticated user state setter function
  * @property isProfileComplete - is the user profile complete
- * @property isLoading    - is loading authentication state
- * @property setIsLoading - is loading authentication state setter function
+ * @property isLoading         - is loading authentication state
+ * @property setIsLoading      - is loading authentication state setter function
  */
 export type AuthContextType = {
   authUser: AuthenticatedUser | null;
@@ -41,11 +41,13 @@ export type AuthenticatedUser = {
 /**
  * Type for the user details
  * @property initialsAvatarColor - initials avatar background color
+ * @property avatarUrl           - avatar image URL
  * @property firstName           - first name
  * @property lastName            - last name
  */
 export type UserDetails = {
   initialsAvatarColor: InitialsAvatarColor;
+  avatarUrl: string;
   firstName: string;
   lastName: string;
 };

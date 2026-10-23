@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
-import InitialsAvatarField from "./AvatarField/InitialsAvatarField/InitialsAvatarField";
 import { nameFieldValidation } from "../../../utils/validation.utils";
+import AvatarField from "./AvatarField/AvatarField";
 import NameField from "./NameField/NameField";
 
 /**
@@ -15,12 +15,7 @@ export default function UserFields() {
 
   return (
     <>
-      <div className="h-42.5 mt-4 mb-10">
-        <InitialsAvatarField
-          styles="w-25 h-25 md:w-30 md:h-30"
-          fontStyles="text-3xl lg:text-4xl"
-        />
-      </div>
+      <AvatarField />
 
       <div className="mb-10">
         <NameField

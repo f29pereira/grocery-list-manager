@@ -38,8 +38,8 @@ export const getInitialsAvatarStyles = (
 };
 
 /**
- * Returns the user's first initials in uppercase
- * @param userName user full name
+ * Returns the user's initial in uppercase
+ * @param userName user name
  */
 export const getUserInitial = (userName: string = "") => {
   const initial = userName.trim().charAt(0);

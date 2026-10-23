@@ -8,8 +8,7 @@ export const LOCALIZATION_LOCAL_STORAGE = "app-locale";
 export const SUPPORTED_LANGUAGES = ["en", "pt"] as const;
 export const DEFAULT_LANGUAGE = SUPPORTED_LANGUAGES[0];
 
-// Default initials avatar background color when creating a user account
-export const DEFAULT_INITIALS_AVATAR_COLOR: InitialsAvatarColor = "green";
+// Initials avatar availlable color
 export const COLOR_PALETTE_LIST: InitialsAvatarColor[] = [
   "red",
   "green",
@@ -18,6 +17,15 @@ export const COLOR_PALETTE_LIST: InitialsAvatarColor[] = [
   "yellow",
   "purple",
 ];
+// Default initials avatar color
+export const DEFAULT_INITIALS_AVATAR_COLOR: InitialsAvatarColor = "green";
+
+// Cloudinary
+export const CLOUDINARY_ENVIRONMENT = "grocery-list-manager";
+export const CLOUDINARY_UPLOAD_PRESET = "grocery-list-users";
+export const CLOUDINARY_ERROR_CODES = {
+  FAIL_UPLOAD: "cloudinary-fail-upload",
+};
 
 // Firestore collections
 export const FIRESTORE_COLLECTIONS = {

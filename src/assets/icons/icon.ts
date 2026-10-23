@@ -41,6 +41,7 @@ import {
   MdKeyboardArrowDown,
   MdKeyboardArrowUp,
   MdEmail,
+  MdAddAPhoto,
 } from "react-icons/md";
 import { RiArrowGoBackFill, RiErrorWarningLine } from "react-icons/ri";
 import { RxHamburgerMenu } from "react-icons/rx";
@@ -81,6 +82,7 @@ export {
   MdKeyboardArrowDown,
   MdKeyboardArrowUp,
   MdEmail,
+  MdAddAPhoto,
   IoIosClose,
   IoMdMoon,
   IoMdSunny,

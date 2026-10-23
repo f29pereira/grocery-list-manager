@@ -7,7 +7,9 @@ import {
   getUserInitial,
   getInitialsAvatarStyles,
 } from "@/features/auth/components/Profile/ProfileAvatar/InitialsAvatar/InitialsAvatar.utils";
+import AvatarWrapper from "../AvatarWrapper/AvatarWrapper";
 import InitialsAvatar from "@/features/auth/components/Profile/ProfileAvatar/InitialsAvatar/InitialsAvatar";
+import AddImageInput from "../../../AddImageInput/AddImageInput";
 import ChangeColorButton from "./ChangeColorButton/ChangeColorButton";
 import ColorPalette from "./ColorPalette/ColorPalette";
 
@@ -37,18 +39,21 @@ export default function InitialsAvatarField({
 
   return (
     <>
-      <div className="flex justify-center items-center">
-        <div className="relative">
+      <AvatarWrapper>
+        <div className="relative w-full h-full">
           <InitialsAvatar
-            styles={clsx(
-              "border-4 border-solid border-input",
-              colorStyles,
-              styles,
-            )}
+            styles={clsx(colorStyles, styles)}
             fontStyles={fontStyles}
             firstNameInitial={firstNameInitial}
             lastNameInitial={lastNameInitial}
           />
+
+          <div
+            className="absolute -right-5 -top-2.5
+                      md:-right-4 md:-top-3"
+          >
+            <AddImageInput />
+          </div>
 
           <div
             className="absolute -left-5 -bottom-2.5
@@ -57,7 +62,7 @@ export default function InitialsAvatarField({
             <ChangeColorButton handleClick={toggle} isToggled={isToggled} />
           </div>
         </div>
-      </div>
+      </AvatarWrapper>
 
       {/*TO DO: Add FieldErrorMessage*/}
 

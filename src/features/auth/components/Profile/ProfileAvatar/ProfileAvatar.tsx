@@ -6,6 +6,7 @@ import {
   getInitialsAvatarStyles,
 } from "./InitialsAvatar/InitialsAvatar.utils";
 import InitialsAvatar from "./InitialsAvatar/InitialsAvatar";
+import Avatar from "./Avatar/Avatar";
 
 /**
  * Renders the user's profile avatar
@@ -14,11 +15,16 @@ export default function ProfileAvatar() {
   // Context
   const { authUser, isProfileComplete } = useAuth();
 
+  // Data
+  const avatarUrl = authUser?.details?.avatarUrl;
   const initialsAvatarColor = getInitialsAvatarStyles(
     authUser?.details?.initialsAvatarColor,
   );
   const firstNameInitial = getUserInitial(authUser?.details?.firstName);
   const lastNameInitial = getUserInitial(authUser?.details?.lastName);
+
+  // Styles
+  const avatarStyles = "w-7.5 h-7.5 md:w-8.75 md:h-8.75";
 
   // Unauthenticated user
   if (!authUser?.user) {
@@ -48,9 +54,14 @@ export default function ProfileAvatar() {
     );
   }
 
+  // Authenticated user with avatar
+  if (avatarUrl) {
+    return <Avatar styles={avatarStyles} imageUrl={avatarUrl} />;
+  }
+
   return (
     <InitialsAvatar
-      styles={clsx("w-7.5 h-7.5 md:w-8.75 md:h-8.75", initialsAvatarColor)}
+      styles={clsx(avatarStyles, initialsAvatarColor)}
       firstNameInitial={firstNameInitial}
       lastNameInitial={lastNameInitial}
     />

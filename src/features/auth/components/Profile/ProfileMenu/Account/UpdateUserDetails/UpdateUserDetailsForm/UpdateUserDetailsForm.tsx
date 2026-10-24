@@ -6,6 +6,7 @@ import type { UserDetailsFields } from "@/features/auth/components/types/auth.ty
 import { getGenericDocumentErrorMessage } from "@/utils/common.utils";
 import { updateUserDetailsDocument } from "./UpdateUserDetailsForm.utils";
 import { DEFAULT_INITIALS_AVATAR_COLOR } from "@/constants/app.constants";
+import { isFailedUpload, uploadAvatarImage } from "@/lib/cloudinary/cloudinary";
 import SubmitMessage from "@/components/shared/Form/SubmitMessage/SubmitMessage";
 import UserFields from "@/features/auth/components/shared/Fields/UserFields/UserFields";
 import AddUserDetailsButton from "@/features/auth/components/shared/AddUserDetailsForm/AddUserDetailsButton/AddUserDetailsButton";
@@ -29,6 +30,7 @@ export default function UpdateUserDetailsForm() {
     defaultValues: {
       initialsAvatarColor:
         authUser?.details?.initialsAvatarColor ?? DEFAULT_INITIALS_AVATAR_COLOR,
+      avatarFile: null,
       firstName: authUser?.details?.firstName ?? "",
       lastName: authUser?.details?.lastName ?? "",
     },
@@ -57,12 +59,22 @@ export default function UpdateUserDetailsForm() {
     try {
       if (authUser?.user) {
         const avatarColor = data.initialsAvatarColor;
+        const avatarFile = data.avatarFile;
         const firstName = data.firstName;
         const lastName = data.lastName;
+
+        const currentAvatarUrl = authUser.details?.avatarUrl
+          ? authUser.details.avatarUrl
+          : "";
+
+        const url = avatarFile?.[0]
+          ? await uploadAvatarImage(avatarFile[0])
+          : currentAvatarUrl;
 
         await updateUserDetailsDocument(
           authUser.user.uid,
           avatarColor,
+          url,
           firstName,
           lastName,
         );
@@ -73,6 +85,7 @@ export default function UpdateUserDetailsForm() {
                 ...prev,
                 details: {
                   initialsAvatarColor: avatarColor,
+                  avatarUrl: url,
                   firstName: firstName,
                   lastName: lastName,
                 },
@@ -84,6 +97,10 @@ export default function UpdateUserDetailsForm() {
         showSuccessMessage(t("forms.update-user-details.success-message"));
       }
     } catch (error) {
+      if (isFailedUpload(error)) {
+        // TO DO: Show cloudinary upload error message
+      }
+
       const errorText = getGenericDocumentErrorMessage(t, error);
       showErrorMessage(errorText);
     }

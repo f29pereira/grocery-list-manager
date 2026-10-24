@@ -5,12 +5,14 @@ import { db } from "@/lib/firebase/firebase";
  * Updates the Firebase "users" document collection with updated user details
  * @param userId              Firebase User ID
  * @param initialsAvatarColor color for the user's initials avatar
+ * @param avatarUrl           avatar URL
  * @param firstName           user's first name
  * @param lastName            user's last name
  */
 export const updateUserDetailsDocument = async (
   userId: string,
   initialsAvatarColor: string,
+  avatarUrl: string,
   firstName: string,
   lastName: string,
 ) => {
@@ -18,6 +20,7 @@ export const updateUserDetailsDocument = async (
 
   await updateDoc(documentRef, {
     initialsAvatarColor: initialsAvatarColor,
+    avatarUrl: avatarUrl,
     firstName: firstName,
     lastName: lastName,
   });

@@ -17,7 +17,7 @@ export type AuthenticationFields = {
  */
 export type UserDetailsFields = {
   initialsAvatarColor: InitialsAvatarColor;
-  avatarFile: FileList;
+  avatarFile: FileList | null;
   firstName: string;
   lastName: string;
 };

@@ -6,7 +6,12 @@ import ImageAvatarField from "./ImageAvatarField/ImageAvatarField";
 import InitialsAvatarField from "./InitialsAvatarField/InitialsAvatarField";
 
 /**
- * Renders the field: Image avatar or Initials avatar if no image URL is available
+ * Renders the avatar field
+ *
+ * Display priority:
+ * - New avatar file
+ * - Saved user's avatar
+ * - Initials avatar
  */
 export default function AvatarField() {
   // Context
@@ -20,11 +25,13 @@ export default function AvatarField() {
     name: "avatarFile",
   });
 
+  const newAvatarFile = avatarFile?.[0];
+
   // State
   const [imagePreview, setImagePreview] = useState<string>("");
 
   useEffect(() => {
-    if (!avatarFile) {
+    if (!newAvatarFile) {
       return;
     }
     const reader = new FileReader();
@@ -39,12 +46,15 @@ export default function AvatarField() {
       reader.onload = null;
       reader.abort();
     };
-  }, [avatarFile]);
+  }, [avatarFile, newAvatarFile]);
+
+  const avatarPreview = newAvatarFile ? imagePreview : "";
+  const imageSrc = avatarPreview || authUser?.details?.avatarUrl;
 
   return (
     <div className="h-42.5 mt-4 mb-10">
-      {authUser?.details?.avatarUrl || imagePreview !== "" ? (
-        <ImageAvatarField imageUrl={imagePreview} />
+      {imageSrc ? (
+        <ImageAvatarField imageUrl={imageSrc} />
       ) : (
         <InitialsAvatarField
           styles="w-full h-full"

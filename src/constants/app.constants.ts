@@ -19,6 +19,8 @@ export const COLOR_PALETTE_LIST: InitialsAvatarColor[] = [
 ];
 // Default initials avatar color
 export const DEFAULT_INITIALS_AVATAR_COLOR: InitialsAvatarColor = "green";
+// Image avatar allowed file types
+export const ALLOWED_AVATAR_TYPES = ["image/webp", "image/png", "image/jpeg"];
 
 // Cloudinary
 export const CLOUDINARY_ENVIRONMENT = "grocery-list-manager";

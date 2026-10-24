@@ -131,6 +131,10 @@
         "step": "Detalhes",
         "title": "Detalhes do Utilizador",
         "title-label": "Etapa 3 de 3 Detalhes to Utilizador",
+        "avatar": {
+          "invalid-format": "Foto inválida. Por favor, faça upload de uma fototgrafia WebP, PNG ou JPEG.",
+          "invalid-size": "Foto demasiado grande. Por favor, faça upload de uma fotografia com menos de 500 KB."
+        },
         "name": {
           "first-name-label": "Nome",
           "last-name-label": "Apelido",

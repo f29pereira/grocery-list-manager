@@ -131,6 +131,10 @@
         "step": "Details",
         "title": "User Details",
         "title-label": "Step 3 of 3 User Details",
+        "avatar": {
+          "invalid-format": "Invalid photo type. Please upload WebP, PNG or JPEG image.",
+          "invalid-size": "Photo too large. Please upload photo under 500 KB."
+        },
         "name": {
           "first-name-label": "First name",
           "last-name-label": "Last name",

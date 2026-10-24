@@ -1,11 +1,16 @@
+import { useTranslation } from "react-i18next";
 import { MdAddAPhoto } from "@/assets/icons/icon";
 import type { UserDetailsFields } from "../../../types/auth.types";
 import { useFormContext } from "react-hook-form";
+import { addImageInputValidation } from "./AddImageInput.utils";
 
 /**
  * Renders the add user's avatar image button
  */
 export default function AddImageInput() {
+  // Translation
+  const { t } = useTranslation();
+
   // React Hook Form: context
   const { register } = useFormContext<UserDetailsFields>();
 
@@ -21,12 +26,11 @@ export default function AddImageInput() {
     >
       <MdAddAPhoto className="text-2xl text-brand" aria-hidden="true" />
       <span className="sr-only">Add Avatar Image</span>
-      {/*TO DO: Add file/image validation*/}
       <input
         className="sr-only"
         type="file"
         id="avatar-image"
-        {...register("avatarFile")}
+        {...register("avatarFile", addImageInputValidation(t))}
       />
     </label>
   );

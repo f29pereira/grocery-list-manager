@@ -3,6 +3,7 @@ import { MdAddAPhoto } from "@/assets/icons/icon";
 import type { UserDetailsFields } from "../../../types/auth.types";
 import { useFormContext } from "react-hook-form";
 import { addImageInputValidation } from "./AddImageInput.utils";
+import useInputValidation from "@/hooks/useInputValidation";
 
 /**
  * Renders the add user's avatar image button
@@ -12,7 +13,13 @@ export default function AddImageInput() {
   const { t } = useTranslation();
 
   // React Hook Form: context
-  const { register } = useFormContext<UserDetailsFields>();
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext<UserDetailsFields>();
+
+  // Custom Hook
+  const { isInputInvalid } = useInputValidation(errors);
 
   return (
     <label
@@ -28,8 +35,10 @@ export default function AddImageInput() {
       <span className="sr-only">Add Avatar Image</span>
       <input
         className="sr-only"
-        type="file"
         id="avatar-image"
+        type="file"
+        aria-invalid={isInputInvalid("avatarFile")}
+        aria-describedby="avatar-image-error"
         {...register("avatarFile", addImageInputValidation(t))}
       />
     </label>

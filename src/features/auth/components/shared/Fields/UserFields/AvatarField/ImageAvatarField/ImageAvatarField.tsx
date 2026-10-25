@@ -2,22 +2,26 @@ import { useFormContext, useWatch } from "react-hook-form";
 import type { UserDetailsFields } from "@/features/auth/components/types/auth.types";
 import type { ImageAvatarFieldProps } from "./ImageAvatarField.types";
 import { useAuth } from "@/contexts/AuthContext/useAuth";
+import { clearAvatarUrlOnUserDetailsDocument } from "./ImageAvatarField.utils";
 import AvatarWrapper from "../AvatarWrapper/AvatarWrapper";
 import Avatar from "@/features/auth/components/Profile/ProfileAvatar/Avatar/Avatar";
 import AddImageInput from "../../../AddImageInput/AddImageInput";
 import RevertAvatarButton from "./Buttons/RevertAvatarButton/RevertAvatarButton";
+import DeleteAvatarButton from "./Buttons/DeleteAvatarButton/DeleteAvatarButton";
 
 /**
  * Renders an image avatar field
  *
  * Displays:
- * - RevertAvatarButton component: if the user has a saved avatar (to revert to) and the file input is not null
+ * - Add image input button
+ * - Revert avatar button: if the user has a saved avatar and the file input is not null
+ * - Delete avatar button: if the user has a saved avatar and the file input is null
  *
  * Props are defined in {@link ImageAvatarFieldProps}.
  */
 export default function ImageAvatarField({ imageUrl }: ImageAvatarFieldProps) {
   // Context
-  const { authUser } = useAuth();
+  const { authUser, setAuthUser } = useAuth();
 
   // React Hook Form: context
   const { control, setValue, clearErrors } =
@@ -34,6 +38,35 @@ export default function ImageAvatarField({ imageUrl }: ImageAvatarFieldProps) {
   const revertToOriginalAvatar = () => {
     setValue("avatarFile", null);
     clearErrors("avatarFile");
+  };
+
+  /**
+   * Removes the user saved avatar url and updates authUser state
+   */
+  const removeAvatar = async () => {
+    try {
+      if (authUser?.user) {
+        await clearAvatarUrlOnUserDetailsDocument(authUser.user.uid);
+
+        setAuthUser((prev) =>
+          prev && prev.user && prev.details
+            ? {
+                ...prev,
+                details: {
+                  initialsAvatarColor: prev.details?.initialsAvatarColor,
+                  avatarUrl: "",
+                  firstName: prev.details?.firstName,
+                  lastName: prev.details?.lastName,
+                },
+              }
+            : prev,
+        );
+      }
+    } catch (error) {
+      // TO DO: Display error
+      // const errorText = getGenericDocumentErrorMessage(t, error);
+      // showErrorMessage(errorText);
+    }
   };
 
   return (
@@ -57,7 +90,14 @@ export default function ImageAvatarField({ imageUrl }: ImageAvatarFieldProps) {
           </div>
         ) : null}
 
-        {/*TO DO: Add delete button if avatarUrl is being displayed*/}
+        {authUser?.details?.avatarUrl && avatarFile === null ? (
+          <div
+            className="absolute -left-5 -bottom-2.5
+                     md:-bottom-3"
+          >
+            <DeleteAvatarButton handleClick={removeAvatar} />
+          </div>
+        ) : null}
       </div>
     </AvatarWrapper>
   );

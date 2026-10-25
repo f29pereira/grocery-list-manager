@@ -163,6 +163,7 @@
     },
     "update-user-details": {
       "revert-avatar-btn-label": "Revert to saved photo",
+      "remove-avatar-btn-label": "Remove saved photo",
       "success-message": "Your details have been updated successfully."
     },
     "update-password": {

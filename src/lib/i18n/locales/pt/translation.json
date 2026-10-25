@@ -163,6 +163,7 @@
     },
     "update-user-details": {
       "revert-avatar-btn-label": "Voltar à foto guardada",
+      "remove-avatar-btn-label": "Remover a foto guardada",
       "success-message": "Os seus dados foram atualizados com sucesso."
     },
     "update-password": {

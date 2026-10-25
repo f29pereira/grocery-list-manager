@@ -38,13 +38,8 @@ export default function UpdateUserDetailsForm() {
 
   // React Hook Form: context for inputs
   const {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    register,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    control,
     resetDefaultValues,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    formState: { errors, isSubmitting, isDirty },
+    formState: { isSubmitting, isDirty },
   } = methods;
 
   /**

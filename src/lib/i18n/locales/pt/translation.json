@@ -162,6 +162,7 @@
       "message": "Por favor, preencha os dados de perfil da sua conta (<strong>{{email}}</strong>) antes de continuar."
     },
     "update-user-details": {
+      "revert-avatar-btn-label": "Voltar à foto guardada",
       "success-message": "Os seus dados foram atualizados com sucesso."
     },
     "update-password": {

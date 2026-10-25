@@ -162,6 +162,7 @@
       "message": "Please complete the profile details for your account (<strong>{{email}}</strong>) before continuing."
     },
     "update-user-details": {
+      "revert-avatar-btn-label": "Revert to saved photo",
       "success-message": "Your details have been updated successfully."
     },
     "update-password": {

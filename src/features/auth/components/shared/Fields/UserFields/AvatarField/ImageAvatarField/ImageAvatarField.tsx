@@ -5,7 +5,7 @@ import { useAuth } from "@/contexts/AuthContext/useAuth";
 import AvatarWrapper from "../AvatarWrapper/AvatarWrapper";
 import Avatar from "@/features/auth/components/Profile/ProfileAvatar/Avatar/Avatar";
 import AddImageInput from "../../../AddImageInput/AddImageInput";
-import RevertAvatarButton from "./RevertAvatarButton/RevertAvatarButton";
+import RevertAvatarButton from "./Buttons/RevertAvatarButton/RevertAvatarButton";
 
 /**
  * Renders an image avatar field

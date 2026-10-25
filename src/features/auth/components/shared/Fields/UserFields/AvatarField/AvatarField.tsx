@@ -65,14 +65,12 @@ export default function AvatarField() {
         <>
           <ImageAvatarField imageUrl={imageSrc} />
 
-          <div className="mx-auto">
-            {isInputInvalid("avatarFile") && (
-              <FieldErrorMessage
-                errorId="avatar-image-error"
-                errorMessage={getInputErrorMessage("avatarFile")}
-              />
-            )}
-          </div>
+          {isInputInvalid("avatarFile") && (
+            <FieldErrorMessage
+              errorId="avatar-image-error"
+              errorMessage={getInputErrorMessage("avatarFile")}
+            />
+          )}
         </>
       ) : (
         <InitialsAvatarField

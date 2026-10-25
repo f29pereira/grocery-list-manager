@@ -4,6 +4,6 @@
  * @property isToggled    - is the button toggled
  */
 export type ChangeColorButtonProps = {
-  handleClick?: () => void;
+  handleClick: () => void;
   isToggled: boolean;
 };

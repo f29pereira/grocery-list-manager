@@ -4,6 +4,8 @@ import type { AvatarActionButtonProps } from "./AvatarActionButton.types";
 /**
  * Renders an action button used by the InitialsAvatarField and ImageAvatarField components
  *
+ * The button features a pop-in animation
+ *
  * Props are defined in {@link AvatarActionButtonProps}.
  */
 export default function AvatarActionButton({

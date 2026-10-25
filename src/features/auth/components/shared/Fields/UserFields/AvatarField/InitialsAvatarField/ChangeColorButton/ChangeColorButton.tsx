@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import type { ChangeColorButtonProps } from "./ChangeColorButton.types";
 import { useTranslation } from "react-i18next";
+import AvatarActionButton from "../../AvatarActionButton/AvatarActionButton";
 import { FaPaintBrush } from "@/assets/icons/icon";
 
 /**
@@ -16,25 +17,18 @@ export default function ChangeColorButton({
   const { t } = useTranslation();
 
   return (
-    <button
-      className={clsx(
-        "flex justify-center items-center w-11 h-11",
-        "theme-transition",
-        "hover:bg-slate-200 dark:hover:bg-slate-900",
-        "border-2 border-solid border-input rounded-full cursor-pointer",
-        "focus-visible:focus-ring focus-visible:outline-offset-2",
-        "md:w-12.5 md:h-12.5",
+    <AvatarActionButton
+      styles={clsx(
         isToggled
           ? "bg-slate-200 dark:bg-slate-800"
           : "bg-white dark:bg-slate-950",
       )}
-      type="button"
-      onClick={handleClick}
-      aria-label={t(
+      handleClick={handleClick}
+      labelText={t(
         "forms.auth.change-initials-avatar-color.change-color-button",
       )}
     >
-      <FaPaintBrush className="text-xl text-brand" aria-hidden="true" />
-    </button>
+      <FaPaintBrush className="text-2xl text-brand" aria-hidden="true" />
+    </AvatarActionButton>
   );
 }

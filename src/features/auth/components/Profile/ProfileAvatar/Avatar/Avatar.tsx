@@ -9,11 +9,7 @@ import type { AvatarProps } from "./Avatar.types";
 export default function Avatar({ styles, imageUrl }: AvatarProps) {
   return (
     <div className={clsx("rounded-full overflow-hidden", styles)}>
-      <img
-        className="w-full h-full object-cover motion-safe:animate-pop-in"
-        src={imageUrl}
-        alt=""
-      />
+      <img className="w-full h-full object-cover" src={imageUrl} alt="" />
     </div>
   );
 }

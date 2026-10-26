@@ -39,6 +39,7 @@ export default function UpdateUserDetailsForm() {
   // React Hook Form: context for inputs
   const {
     setValue,
+    setError,
     resetDefaultValues,
     formState: { isSubmitting, isDirty },
   } = methods;
@@ -95,11 +96,17 @@ export default function UpdateUserDetailsForm() {
       }
     } catch (error) {
       if (isFailedUpload(error)) {
-        // TO DO: Show cloudinary upload error message
+        setError(
+          "avatarFile",
+          {
+            message: t("error-messages.custom.cloudinary-fail-upload"),
+          },
+          { shouldFocus: true },
+        );
+      } else {
+        const errorText = getGenericDocumentErrorMessage(t, error);
+        showErrorMessage(errorText);
       }
-
-      const errorText = getGenericDocumentErrorMessage(t, error);
-      showErrorMessage(errorText);
     }
   };
 

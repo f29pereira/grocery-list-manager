@@ -28,9 +28,12 @@ export const uploadAvatarImage = async (file: File): Promise<string> => {
 };
 
 /**
- * Returns true if a given error code matches fail to upload to Cloudinary error
- * @param errorCode error code
+ * Returns true if a given error matches the fail to upload to Cloudinary error
+ * @param error error
  */
-export const isFailedUpload = (errorCode: unknown) => {
-  return errorCode === CLOUDINARY_ERROR_CODES.FAIL_UPLOAD;
+export const isFailedUpload = (error: unknown) => {
+  return (
+    error instanceof Error &&
+    error.message === CLOUDINARY_ERROR_CODES.FAIL_UPLOAD
+  );
 };

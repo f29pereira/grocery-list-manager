@@ -183,7 +183,8 @@
         "current-password": "The current password is incorrect",
         "password-not-different": "Must be different from current",
         "password-not-match": "Passwords don't match"
-      }
+      },
+      "cloudinary-fail-upload": "Couldn't upload your image. Please try again."
     },
     "firebase": {
       "email-already-in-use": "This email is already in use. Please sign in instead.",

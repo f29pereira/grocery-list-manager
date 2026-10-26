@@ -183,7 +183,8 @@
         "current-password": "A palavra-passe atual está incorreta",
         "password-not-different": "Deve ser diferente da atual",
         "password-not-match": "Palavras-passe não coincidem"
-      }
+      },
+      "cloudinary-fail-upload": "Não foi possível fazer upload da sua imagem. Tente novamente."
     },
     "firebase": {
       "email-already-in-use": "Este email já está a ser utilizado. Por favor, inicie sessão.",

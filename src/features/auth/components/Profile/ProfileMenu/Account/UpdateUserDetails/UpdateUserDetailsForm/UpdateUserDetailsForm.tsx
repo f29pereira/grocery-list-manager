@@ -38,6 +38,7 @@ export default function UpdateUserDetailsForm() {
 
   // React Hook Form: context for inputs
   const {
+    setValue,
     resetDefaultValues,
     formState: { isSubmitting, isDirty },
   } = methods;
@@ -88,7 +89,8 @@ export default function UpdateUserDetailsForm() {
             : prev,
         );
 
-        resetDefaultValues(data);
+        setValue("avatarFile", null); // Reset avatarFile so the revert button will not be displayed
+        resetDefaultValues({ ...data, avatarFile: null }); // Update avatarFile to null so isDirty is false for this field
         showSuccessMessage(t("forms.update-user-details.success-message"));
       }
     } catch (error) {

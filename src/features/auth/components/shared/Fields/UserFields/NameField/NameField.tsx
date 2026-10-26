@@ -56,12 +56,14 @@ export default function NameField({
           {...register(registerName, validation(t))}
         />
 
-        {isInputInvalid(registerName) && (
-          <FieldErrorMessage
-            errorId={`${inputId}-error`}
-            errorMessage={getInputErrorMessage(registerName)}
-          />
-        )}
+        <div className="absolute mt-2">
+          {isInputInvalid(registerName) && (
+            <FieldErrorMessage
+              errorId={`${inputId}-error`}
+              errorMessage={getInputErrorMessage(registerName)}
+            />
+          )}
+        </div>
       </div>
     </>
   );

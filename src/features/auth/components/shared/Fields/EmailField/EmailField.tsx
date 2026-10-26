@@ -57,12 +57,14 @@ export default function EmailField({ validation }: EmailFieldProps) {
           {...register("email", validation(t))}
         />
 
-        {isInputInvalid("email") && (
-          <FieldErrorMessage
-            errorId="email-error"
-            errorMessage={getInputErrorMessage("email")}
-          />
-        )}
+        <div className="absolute mt-2">
+          {isInputInvalid("email") && (
+            <FieldErrorMessage
+              errorId="email-error"
+              errorMessage={getInputErrorMessage("email")}
+            />
+          )}
+        </div>
       </div>
     </>
   );

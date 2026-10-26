@@ -67,12 +67,14 @@ export default function PasswordField<T extends FieldValues>({
           toggle={toggleIsPasswordVisible}
         />
 
-        {isInputInvalid(registerName) && (
-          <FieldErrorMessage
-            errorId={`${registerName}-error`}
-            errorMessage={getInputErrorMessage(registerName)}
-          />
-        )}
+        <div className="absolute mt-2">
+          {isInputInvalid(registerName) && (
+            <FieldErrorMessage
+              errorId={`${registerName}-error`}
+              errorMessage={getInputErrorMessage(registerName)}
+            />
+          )}
+        </div>
       </div>
     </>
   );

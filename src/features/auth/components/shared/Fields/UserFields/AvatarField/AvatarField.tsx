@@ -2,10 +2,8 @@ import { useState, useEffect } from "react";
 import { useFormContext, useWatch } from "react-hook-form";
 import type { UserDetailsFields } from "@/features/auth/components/types/auth.types";
 import { useAuth } from "@/contexts/AuthContext/useAuth";
-import useInputValidation from "@/hooks/useInputValidation";
 import ImageAvatarField from "./ImageAvatarField/ImageAvatarField";
 import InitialsAvatarField from "./InitialsAvatarField/InitialsAvatarField";
-import FieldErrorMessage from "@/components/shared/Form/Field/FieldErrorMessage/FieldErrorMessage";
 
 /**
  * Renders the avatar field
@@ -20,10 +18,7 @@ export default function AvatarField() {
   const { authUser } = useAuth();
 
   // React Hook Form: context
-  const {
-    control,
-    formState: { errors },
-  } = useFormContext<UserDetailsFields>();
+  const { control } = useFormContext<UserDetailsFields>();
 
   const avatarFile = useWatch({
     control,
@@ -31,9 +26,6 @@ export default function AvatarField() {
   });
 
   const newAvatarFile = avatarFile?.[0];
-
-  // Custom Hook
-  const { isInputInvalid, getInputErrorMessage } = useInputValidation(errors);
 
   // State
   const [imagePreview, setImagePreview] = useState<string>("");
@@ -62,16 +54,7 @@ export default function AvatarField() {
   return (
     <div className="h-42.5 mt-4 mb-10">
       {imageSrc ? (
-        <>
-          <ImageAvatarField imageUrl={imageSrc} />
-
-          {isInputInvalid("avatarFile") && (
-            <FieldErrorMessage
-              errorId="avatar-image-error"
-              errorMessage={getInputErrorMessage("avatarFile")}
-            />
-          )}
-        </>
+        <ImageAvatarField imageUrl={imageSrc} />
       ) : (
         <InitialsAvatarField
           styles="w-full h-full"

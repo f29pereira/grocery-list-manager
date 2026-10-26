@@ -2,12 +2,14 @@ import { useFormContext, useWatch } from "react-hook-form";
 import type { UserDetailsFields } from "@/features/auth/components/types/auth.types";
 import type { ImageAvatarFieldProps } from "./ImageAvatarField.types";
 import { useAuth } from "@/contexts/AuthContext/useAuth";
+import useInputValidation from "@/hooks/useInputValidation";
 import { clearAvatarUrlOnUserDetailsDocument } from "./ImageAvatarField.utils";
 import AvatarWrapper from "../AvatarWrapper/AvatarWrapper";
 import Avatar from "@/features/auth/components/Profile/ProfileAvatar/Avatar/Avatar";
 import AddImageInput from "../../../AddImageInput/AddImageInput";
 import RevertAvatarButton from "./Buttons/RevertAvatarButton/RevertAvatarButton";
 import DeleteAvatarButton from "./Buttons/DeleteAvatarButton/DeleteAvatarButton";
+import FieldErrorMessage from "@/components/shared/Form/Field/FieldErrorMessage/FieldErrorMessage";
 
 /**
  * Renders an image avatar field
@@ -24,13 +26,20 @@ export default function ImageAvatarField({ imageUrl }: ImageAvatarFieldProps) {
   const { authUser, setAuthUser } = useAuth();
 
   // React Hook Form: context
-  const { control, setValue, clearErrors } =
-    useFormContext<UserDetailsFields>();
+  const {
+    control,
+    setValue,
+    clearErrors,
+    formState: { errors },
+  } = useFormContext<UserDetailsFields>();
 
   const avatarFile = useWatch({
     control,
     name: "avatarFile",
   });
+
+  // Custom Hook
+  const { isInputInvalid, getInputErrorMessage } = useInputValidation(errors);
 
   /**
    * Removes the currently selected file from the avatar field and clears any associated errors
@@ -41,7 +50,7 @@ export default function ImageAvatarField({ imageUrl }: ImageAvatarFieldProps) {
   };
 
   /**
-   * Removes the user saved avatar url and updates authUser state
+   * Removes the saved user avatar url and updates the authUser state
    */
   const removeAvatar = async () => {
     try {
@@ -70,35 +79,46 @@ export default function ImageAvatarField({ imageUrl }: ImageAvatarFieldProps) {
   };
 
   return (
-    <AvatarWrapper>
-      <div className="relative w-full h-full">
-        <Avatar imageUrl={imageUrl} />
+    <div className="relative">
+      <AvatarWrapper>
+        <div className="relative w-full h-full">
+          <Avatar imageUrl={imageUrl} />
 
-        <div
-          className="absolute -right-5 -top-2.5
+          <div
+            className="absolute -right-5 -top-2.5
                     md:-top-3"
-        >
-          <AddImageInput />
+          >
+            <AddImageInput />
+          </div>
+
+          {authUser?.details?.avatarUrl && avatarFile !== null ? (
+            <div
+              className="absolute -left-5 -bottom-2.5
+                     md:-bottom-3"
+            >
+              <RevertAvatarButton handleClick={revertToOriginalAvatar} />
+            </div>
+          ) : null}
+
+          {authUser?.details?.avatarUrl && avatarFile === null ? (
+            <div
+              className="absolute -left-5 -bottom-2.5
+                     md:-bottom-3"
+            >
+              <DeleteAvatarButton handleClick={removeAvatar} />
+            </div>
+          ) : null}
         </div>
+      </AvatarWrapper>
 
-        {authUser?.details?.avatarUrl && avatarFile !== null ? (
-          <div
-            className="absolute -left-5 -bottom-2.5
-                     md:-bottom-3"
-          >
-            <RevertAvatarButton handleClick={revertToOriginalAvatar} />
-          </div>
-        ) : null}
-
-        {authUser?.details?.avatarUrl && avatarFile === null ? (
-          <div
-            className="absolute -left-5 -bottom-2.5
-                     md:-bottom-3"
-          >
-            <DeleteAvatarButton handleClick={removeAvatar} />
-          </div>
-        ) : null}
+      <div className="absolute mt-4">
+        {isInputInvalid("avatarFile") && (
+          <FieldErrorMessage
+            errorId="avatar-image-error"
+            errorMessage={getInputErrorMessage("avatarFile")}
+          />
+        )}
       </div>
-    </AvatarWrapper>
+    </div>
   );
 }

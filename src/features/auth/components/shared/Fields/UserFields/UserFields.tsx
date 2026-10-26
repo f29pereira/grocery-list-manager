@@ -5,7 +5,7 @@ import NameField from "./NameField/NameField";
 
 /**
  * Renders the form fields:
- * - Initials avatar
+ * - Image avatar or Initials avatar
  * - First name
  * - Last name
  */

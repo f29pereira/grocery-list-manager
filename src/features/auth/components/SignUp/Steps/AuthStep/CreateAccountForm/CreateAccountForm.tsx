@@ -32,10 +32,7 @@ export default function CreateAccountForm() {
 
   // React Hook Form: context for inputs
   const {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    register,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    formState: { errors, isSubmitting },
+    formState: { isSubmitting },
   } = methods;
 
   // Custom Hook

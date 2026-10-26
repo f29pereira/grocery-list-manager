@@ -5,6 +5,7 @@ import type { UserDetailsFields } from "@/features/auth/components/types/auth.ty
 import { addUserDetailsDocument } from "./AddUserDetailsForm.utils";
 import useFormMessage from "@/hooks/useFormMessage";
 import { getGenericDocumentErrorMessage } from "@/utils/common.utils";
+import { uploadAvatarImage, isFailedUpload } from "@/lib/cloudinary/cloudinary";
 import SubmitMessage from "@/components/shared/Form/SubmitMessage/SubmitMessage";
 import UserFields from "../Fields/UserFields/UserFields";
 import AddUserDetailsButton from "./AddUserDetailsButton/AddUserDetailsButton";
@@ -27,6 +28,7 @@ export default function AddUserDetailsForm() {
 
   // React Hook Form: context for inputs
   const {
+    setError,
     formState: { isSubmitting },
   } = methods;
 
@@ -42,10 +44,21 @@ export default function AddUserDetailsForm() {
     try {
       if (authUser?.user) {
         const avatarColor = data.initialsAvatarColor;
+        const avatarFile = data.avatarFile;
         const firstName = data.firstName;
         const lastName = data.lastName;
 
-        await addUserDetailsDocument(authUser.user.uid, firstName, lastName);
+        const avatarUrl = avatarFile?.[0]
+          ? await uploadAvatarImage(avatarFile[0])
+          : "";
+
+        await addUserDetailsDocument(
+          authUser.user.uid,
+          avatarColor,
+          avatarUrl,
+          firstName,
+          lastName,
+        );
 
         setAuthUser((prev) =>
           prev && prev.user
@@ -53,6 +66,7 @@ export default function AddUserDetailsForm() {
                 ...prev,
                 details: {
                   initialsAvatarColor: avatarColor,
+                  avatarUrl: avatarUrl,
                   firstName: firstName,
                   lastName: lastName,
                 },
@@ -61,8 +75,18 @@ export default function AddUserDetailsForm() {
         );
       }
     } catch (error) {
-      const errorMessage = getGenericDocumentErrorMessage(t, error);
-      showErrorMessage(errorMessage);
+      if (isFailedUpload(error)) {
+        setError(
+          "avatarFile",
+          {
+            message: t("error-messages.custom.cloudinary-fail-upload"),
+          },
+          { shouldFocus: true },
+        );
+      } else {
+        const errorText = getGenericDocumentErrorMessage(t, error);
+        showErrorMessage(errorText);
+      }
     }
   };
 

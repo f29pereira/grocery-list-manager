@@ -10,7 +10,7 @@ import ColorLabel from "./ColorLabel/ColorLabel";
 export default function ColorPalette() {
   return (
     <fieldset
-      className="flex justify-center items-center gap-5 mt-10
+      className="flex justify-center items-center gap-5 mt-8
                 sm:gap-10 xl:gap-8 motion-safe:animate-pop-in"
     >
       <legend className="sr-only">Avatar color</legend>

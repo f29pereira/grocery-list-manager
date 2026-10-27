@@ -12,12 +12,14 @@ export type AuthenticationFields = {
  * Type for the user detail fields
  * @property initialsAvatarColor - initials avatar background color
  * @property avatarFile          - avatar file
+ * @property removeAvatar        - is the URL for the user's avatar to be removed
  * @property firstName           - first name
  * @property lastName            - last name
  */
 export type UserDetailsFields = {
   initialsAvatarColor: InitialsAvatarColor;
   avatarFile: FileList | null;
+  removeAvatar: boolean;
   firstName: string;
   lastName: string;
 };

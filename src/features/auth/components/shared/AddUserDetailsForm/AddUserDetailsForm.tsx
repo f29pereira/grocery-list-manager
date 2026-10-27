@@ -24,7 +24,11 @@ export default function AddUserDetailsForm() {
   const [formMessage, clearFormMessage, showErrorMessage] = useFormMessage();
 
   // React Hook Form: methods
-  const methods = useForm<UserDetailsFields>();
+  const methods = useForm<UserDetailsFields>({
+    defaultValues: {
+      removeAvatar: false,
+    },
+  });
 
   // React Hook Form: context for inputs
   const {

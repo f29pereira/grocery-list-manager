@@ -31,6 +31,7 @@ export default function UpdateUserDetailsForm() {
       initialsAvatarColor:
         authUser?.details?.initialsAvatarColor ?? DEFAULT_INITIALS_AVATAR_COLOR,
       avatarFile: null,
+      removeAvatar: false,
       firstName: authUser?.details?.firstName ?? "",
       lastName: authUser?.details?.lastName ?? "",
     },
@@ -57,24 +58,35 @@ export default function UpdateUserDetailsForm() {
       if (authUser?.user) {
         const avatarColor = data.initialsAvatarColor;
         const avatarFile = data.avatarFile;
+        const removeAvatar = data.removeAvatar;
         const firstName = data.firstName;
         const lastName = data.lastName;
 
-        const currentAvatarUrl = authUser.details?.avatarUrl
-          ? authUser.details.avatarUrl
-          : "";
+        let url = "";
 
-        const url = avatarFile?.[0]
-          ? await uploadAvatarImage(avatarFile[0])
-          : currentAvatarUrl;
+        if (removeAvatar) {
+          await updateUserDetailsDocument(
+            authUser.user.uid,
+            avatarColor,
+            url,
+            firstName,
+            lastName,
+          );
+        } else {
+          const currentAvatarUrl = authUser.details?.avatarUrl ?? "";
 
-        await updateUserDetailsDocument(
-          authUser.user.uid,
-          avatarColor,
-          url,
-          firstName,
-          lastName,
-        );
+          url = avatarFile?.[0]
+            ? await uploadAvatarImage(avatarFile[0])
+            : currentAvatarUrl;
+
+          await updateUserDetailsDocument(
+            authUser.user.uid,
+            avatarColor,
+            url,
+            firstName,
+            lastName,
+          );
+        }
 
         setAuthUser((prev) =>
           prev && prev.user
@@ -91,6 +103,7 @@ export default function UpdateUserDetailsForm() {
         );
 
         setValue("avatarFile", null); // Reset avatarFile so the revert button will not be displayed
+        setValue("removeAvatar", false); // Reset removeAvatar value
         resetDefaultValues({ ...data, avatarFile: null }); // Update avatarFile to null so isDirty is false for this field
         showSuccessMessage(t("forms.update-user-details.success-message"));
       }

@@ -20,9 +20,9 @@ export default function AvatarField() {
   // React Hook Form: context
   const { control } = useFormContext<UserDetailsFields>();
 
-  const avatarFile = useWatch({
+  const [avatarFile, removeAvatar] = useWatch({
     control,
-    name: "avatarFile",
+    name: ["avatarFile", "removeAvatar"],
   });
 
   const newAvatarFile = avatarFile?.[0];
@@ -53,7 +53,7 @@ export default function AvatarField() {
 
   return (
     <div className="h-42.5 mt-4 mb-10">
-      {imageSrc ? (
+      {imageSrc && !removeAvatar ? (
         <ImageAvatarField imageUrl={imageSrc} />
       ) : (
         <InitialsAvatarField

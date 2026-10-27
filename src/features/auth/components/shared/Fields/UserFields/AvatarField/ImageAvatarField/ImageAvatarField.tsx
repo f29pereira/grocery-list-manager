@@ -3,7 +3,6 @@ import type { UserDetailsFields } from "@/features/auth/components/types/auth.ty
 import type { ImageAvatarFieldProps } from "./ImageAvatarField.types";
 import { useAuth } from "@/contexts/AuthContext/useAuth";
 import useInputValidation from "@/hooks/useInputValidation";
-import { clearAvatarUrlOnUserDetailsDocument } from "./ImageAvatarField.utils";
 import AvatarWrapper from "../AvatarWrapper/AvatarWrapper";
 import Avatar from "@/features/auth/components/Profile/ProfileAvatar/Avatar/Avatar";
 import AddImageInput from "../../../AddImageInput/AddImageInput";
@@ -23,7 +22,7 @@ import FieldErrorMessage from "@/components/shared/Form/Field/FieldErrorMessage/
  */
 export default function ImageAvatarField({ imageUrl }: ImageAvatarFieldProps) {
   // Context
-  const { authUser, setAuthUser } = useAuth();
+  const { authUser } = useAuth();
 
   // React Hook Form: context
   const {
@@ -50,32 +49,10 @@ export default function ImageAvatarField({ imageUrl }: ImageAvatarFieldProps) {
   };
 
   /**
-   * Removes the saved user avatar url and updates the authUser state
+   * Updates the removeAvatar field to true
    */
   const removeAvatar = async () => {
-    try {
-      if (authUser?.user) {
-        await clearAvatarUrlOnUserDetailsDocument(authUser.user.uid);
-
-        setAuthUser((prev) =>
-          prev && prev.user && prev.details
-            ? {
-                ...prev,
-                details: {
-                  initialsAvatarColor: prev.details?.initialsAvatarColor,
-                  avatarUrl: "",
-                  firstName: prev.details?.firstName,
-                  lastName: prev.details?.lastName,
-                },
-              }
-            : prev,
-        );
-      }
-    } catch (error) {
-      // TO DO: Display error
-      // const errorText = getGenericDocumentErrorMessage(t, error);
-      // showErrorMessage(errorText);
-    }
+    setValue("removeAvatar", true, { shouldDirty: true });
   };
 
   return (

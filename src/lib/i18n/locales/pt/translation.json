@@ -177,7 +177,8 @@
     },
     "delete-user": {
       "title": "Eliminar conta",
-      "message": "Apague a sua conta permanentemente."
+      "message": "Elimine a sua conta permanentemente.",
+      "delete-link": "Eliminar a minha conta"
     }
   },
   "error-messages": {

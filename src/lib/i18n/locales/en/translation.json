@@ -177,7 +177,8 @@
     },
     "delete-user": {
       "title": "Delete account",
-      "message": "Permanently delete your account."
+      "message": "Permanently delete your account.",
+      "delete-link": "Delete my account"
     }
   },
   "error-messages": {

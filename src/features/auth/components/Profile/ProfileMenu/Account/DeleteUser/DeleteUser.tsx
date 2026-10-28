@@ -1,7 +1,8 @@
 import { useTranslation } from "react-i18next";
+import DeleteUserLink from "./DeleteUserLink/DeleteUserLink";
 
 /**
- * Renders a card with button to redirect to the delete account page
+ * Renders a card with a link to redirect to the delete account page
  */
 export default function DeleteUser() {
   // Translation
@@ -27,7 +28,7 @@ export default function DeleteUser() {
         {t("forms.delete-user.message")}
       </p>
 
-      {/*TO DO: Add button to redirect to delete page*/}
+      <DeleteUserLink />
     </>
   );
 }

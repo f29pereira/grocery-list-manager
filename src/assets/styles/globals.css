@@ -102,7 +102,7 @@
     --color-link-hover: var(--color-slate-300);
     --color-button: var(--color-brand);
     --color-button-hover: var(--color-brand-hover);
-    --color-button-label: var(--color-green-950);
+    --color-button-label: var(--color-slate-800);
     /*Form*/
     --color-label: var(--color-title);
     --color-input: var(--color-title);

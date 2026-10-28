@@ -9,11 +9,7 @@ export default function ProfileLayout() {
     <div className="xl:flex xl:justify-center xl:gap-8">
       <ProfileMenu />
 
-      <div
-        className="flex flex-col gap-8 mt-8
-                  lg:flex-row lg:justify-center lg:gap-8
-                  xl:mt-0 xl:flex-1 xl:flex-row xl:justify-start"
-      >
+      <div className="w-full">
         <Outlet />
       </div>
     </div>

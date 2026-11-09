@@ -1,4 +1,4 @@
-import { Outlet } from "react-router";
+import { Outlet, ScrollRestoration } from "react-router";
 import Nav from "../components/shared/Nav/Nav";
 import Footer from "../components/shared/Footer/Footer";
 
@@ -16,6 +16,7 @@ export default function Root() {
                   xl:px-16 xl:py-32 2xl:py-40"
       >
         <Outlet />
+        <ScrollRestoration />
       </main>
 
       <Footer />

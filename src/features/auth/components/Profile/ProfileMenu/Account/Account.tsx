@@ -15,18 +15,20 @@ export default function Account() {
                   lg:flex-row lg:justify-center lg:gap-8
                   xl:mt-0 xl:flex-1 xl:flex-row xl:justify-start"
       >
+        {/*Update User Details form*/}
         <Card styles="relative w-full">
           <UpdateUserDetails />
 
           <div className="2xl:hidden">
-            <GlowingCircles circlesPlacement="top-right" />
+            <GlowingCircles iconsPlacement="top-right" />
           </div>
 
           <div className="hidden 2xl:block">
-            <GlowingCircles circlesPlacement="bottom-left" />
+            <GlowingCircles iconsPlacement="bottom-left" />
           </div>
         </Card>
 
+        {/*Update Password form*/}
         <Card styles="relative w-full">
           <UpdateUserPassword />
 
@@ -35,11 +37,12 @@ export default function Account() {
           </div>
 
           <div className="hidden lg:block">
-            <GlowingCircles circlesPlacement="top-right" />
+            <GlowingCircles iconsPlacement="top-right" />
           </div>
         </Card>
       </div>
 
+      {/*Delete User*/}
       <Card styles="relative w-full">
         <DeleteUser />
 
@@ -48,7 +51,7 @@ export default function Account() {
         </div>
 
         <div className="hidden lg:block">
-          <GlowingCircles circlesPlacement="top-right" />
+          <GlowingCircles iconsPlacement="top-right" />
         </div>
       </Card>
     </>

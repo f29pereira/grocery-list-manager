@@ -1,9 +1,9 @@
 /**
  * Type for the icons placement
- * @property circlesPlacement - (optional) circles placement
+ * @property iconsPlacement - (optional) circles placement
  */
 export type IconsPlacement = {
-  circlesPlacement?: "top-right" | "bottom-left";
+  iconsPlacement?: "top-right" | "bottom-left";
 };
 
 /**

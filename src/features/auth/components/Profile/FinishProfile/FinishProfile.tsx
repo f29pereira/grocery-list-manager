@@ -50,11 +50,11 @@ export default function FinishProfile() {
       </CardContentWrapper>
 
       <div className="hidden sm:block lg:hidden">
-        <GlowingCircles circlesPlacement="top-right" />
+        <GlowingCircles iconsPlacement="top-right" />
       </div>
 
       <div className="hidden lg:block">
-        <GlowingCircles circlesPlacement="bottom-left" />
+        <GlowingCircles iconsPlacement="bottom-left" />
       </div>
     </Card>
   );

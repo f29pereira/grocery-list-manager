@@ -4,7 +4,7 @@ import Card from "@/components/shared/Card/Card";
 import CardContentWrapper from "@/components/shared/Card/CardContentWrapper/CardContentWrapper";
 import LogoHomeLink from "@/components/ui/Links/LogoHomeLink/LogoHomeLink";
 import AddUserDetailsForm from "../../shared/AddUserDetailsForm/AddUserDetailsForm";
-import GlowingCircles from "@/components/shared/GlowingCircles/GlowingCircles";
+import GlowingCircles from "@/components/shared/Icons/GlowingIcons/GlowingCircles/GlowingCircles";
 
 /**
  * Renders the add user details form for users without complete profile

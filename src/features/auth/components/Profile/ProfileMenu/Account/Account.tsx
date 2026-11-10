@@ -2,7 +2,7 @@ import Card from "@/components/shared/Card/Card";
 import UpdateUserDetails from "./UpdateUserDetails/UpdateUserDetails";
 import UpdateUserPassword from "./UpdateUserPassword/UpdateUserPassword";
 import DeleteUser from "./DeleteUser/DeleteUser";
-import GlowingCircles from "@/components/shared/GlowingCircles/GlowingCircles";
+import GlowingCircles from "@/components/shared/Icons/GlowingIcons/GlowingCircles/GlowingCircles";
 
 /**
  * Renders cards with the user's account details form, update password form and delete account

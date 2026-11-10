@@ -7,7 +7,7 @@ import PasswordResetForm from "./PasswordResetForm/PasswordResetForm";
 import EmailSentIcon from "../../../shared/EmailSentIcon/EmailSentIcon";
 import PillAppLink from "@/components/ui/Links/AppLink/PillAppLink/PillAppLink";
 import SignInLink from "./SignInLink/SignInLink";
-import GlowingCircles from "@/components/shared/GlowingCircles/GlowingCircles";
+import GlowingCircles from "@/components/shared/Icons/GlowingIcons/GlowingCircles/GlowingCircles";
 
 /**
  * Renders the forgot password screen

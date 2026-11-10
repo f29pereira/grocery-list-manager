@@ -1,6 +1,6 @@
-import type { GlowingCircleProps } from "./GlowingCircle.types";
 import clsx from "clsx";
-import { getAnimationSpeed } from "./GlowingCircle.utils";
+import type { GlowingIconProps } from "../../types/glowingIcons.types";
+import { getAnimationSpeed } from "../../utils/glowingIcons.utils";
 import { FaCircle } from "@/assets/icons/icon";
 
 /**
@@ -8,12 +8,12 @@ import { FaCircle } from "@/assets/icons/icon";
  *
  * For bigger circles should be used the slow animation, and for small circles the fast animation
  *
- * Props are defined in {@link GlowingCircleProps}.
+ * Props are defined in {@link GlowingIconProps}.
  */
 export default function GlowingCircle({
   styles,
   animationSpeed,
-}: GlowingCircleProps) {
+}: GlowingIconProps) {
   const animation = getAnimationSpeed(animationSpeed);
 
   return <FaCircle className={clsx(styles, animation)} aria-hidden="true" />;

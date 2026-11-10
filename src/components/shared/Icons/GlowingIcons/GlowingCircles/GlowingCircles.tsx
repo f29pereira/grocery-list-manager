@@ -1,13 +1,15 @@
 import clsx from "clsx";
-import type { GlowingCirclesProps } from "./GlowingCircles.types";
+import type { IconsPlacement } from "../types/glowingIcons.types";
 import GlowingCircle from "./GlowingCircle/GlowingCircle";
 
 /**
  * Renders GlowingCircle components to be displayed at the bottom left or top right of an element
+ *
+ * Props are defined in {@link IconsPlacement}.
  */
 export default function GlowingCircles({
   circlesPlacement = "bottom-left",
-}: GlowingCirclesProps) {
+}: IconsPlacement) {
   const isTopRight = circlesPlacement === "top-right";
   const isBottomLeft = circlesPlacement === "bottom-left";
 

@@ -7,7 +7,7 @@ import PasswordResetForm from "./PasswordResetForm/PasswordResetForm";
 import EmailSentIcon from "../../../shared/EmailSentIcon/EmailSentIcon";
 import PillAppLink from "@/components/ui/Links/AppLink/PillAppLink/PillAppLink";
 import SignInLink from "./SignInLink/SignInLink";
-import GlowingCircles from "@/components/shared/Icons/GlowingIcons/GlowingCircles/GlowingCircles";
+import Circles from "@/components/shared/Icons/GlowingIcons/Circles/Circles";
 
 /**
  * Renders the forgot password screen
@@ -101,7 +101,7 @@ export default function ForgotPassword() {
         </div>
       </CardContentWrapper>
 
-      <GlowingCircles />
+      <Circles />
     </Card>
   );
 }

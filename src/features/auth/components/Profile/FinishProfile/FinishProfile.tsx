@@ -4,7 +4,7 @@ import Card from "@/components/shared/Card/Card";
 import CardContentWrapper from "@/components/shared/Card/CardContentWrapper/CardContentWrapper";
 import LogoHomeLink from "@/components/ui/Links/LogoHomeLink/LogoHomeLink";
 import AddUserDetailsForm from "../../shared/AddUserDetailsForm/AddUserDetailsForm";
-import GlowingCircles from "@/components/shared/Icons/GlowingIcons/GlowingCircles/GlowingCircles";
+import Circles from "@/components/shared/Icons/GlowingIcons/Circles/Circles";
 
 /**
  * Renders the add user details form for users without complete profile
@@ -50,11 +50,11 @@ export default function FinishProfile() {
       </CardContentWrapper>
 
       <div className="hidden sm:block lg:hidden">
-        <GlowingCircles iconsPlacement="top-right" />
+        <Circles iconsPlacement="top-right" />
       </div>
 
       <div className="hidden lg:block">
-        <GlowingCircles iconsPlacement="bottom-left" />
+        <Circles iconsPlacement="bottom-left" />
       </div>
     </Card>
   );

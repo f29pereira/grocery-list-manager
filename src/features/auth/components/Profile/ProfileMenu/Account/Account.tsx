@@ -2,7 +2,7 @@ import Card from "@/components/shared/Card/Card";
 import UpdateUserDetails from "./UpdateUserDetails/UpdateUserDetails";
 import UpdateUserPassword from "./UpdateUserPassword/UpdateUserPassword";
 import DeleteUser from "./DeleteUser/DeleteUser";
-import GlowingCircles from "@/components/shared/Icons/GlowingIcons/GlowingCircles/GlowingCircles";
+import Circles from "@/components/shared/Icons/GlowingIcons/Circles/Circles";
 
 /**
  * Renders cards with the user's account details form, update password form and delete account
@@ -20,11 +20,11 @@ export default function Account() {
           <UpdateUserDetails />
 
           <div className="2xl:hidden">
-            <GlowingCircles iconsPlacement="top-right" />
+            <Circles iconsPlacement="top-right" />
           </div>
 
           <div className="hidden 2xl:block">
-            <GlowingCircles iconsPlacement="bottom-left" />
+            <Circles iconsPlacement="bottom-left" />
           </div>
         </Card>
 
@@ -33,11 +33,11 @@ export default function Account() {
           <UpdateUserPassword />
 
           <div className="lg:hidden">
-            <GlowingCircles />
+            <Circles />
           </div>
 
           <div className="hidden lg:block">
-            <GlowingCircles iconsPlacement="top-right" />
+            <Circles iconsPlacement="top-right" />
           </div>
         </Card>
       </div>
@@ -47,11 +47,11 @@ export default function Account() {
         <DeleteUser />
 
         <div className="lg:hidden">
-          <GlowingCircles />
+          <Circles />
         </div>
 
         <div className="hidden lg:block">
-          <GlowingCircles iconsPlacement="top-right" />
+          <Circles iconsPlacement="top-right" />
         </div>
       </Card>
     </>

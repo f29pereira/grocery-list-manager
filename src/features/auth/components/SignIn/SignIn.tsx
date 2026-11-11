@@ -4,7 +4,7 @@ import LogoHomeLink from "@/components/ui/Links/LogoHomeLink/LogoHomeLink";
 import CardContentWrapper from "@/components/shared/Card/CardContentWrapper/CardContentWrapper";
 import AuthenticateAccountForm from "./AuthenticateAccountForm/AuthenticateAccountForm";
 import AppLink from "@/components/ui/Links/AppLink/AppLink";
-import GlowingCircles from "@/components/shared/GlowingCircles/GlowingCircles";
+import Circles from "@/components/shared/Icons/GlowingIcons/Circles/Circles";
 
 /**
  * Renders the user authentication with:
@@ -55,7 +55,7 @@ export default function SignIn() {
         </div>
       </CardContentWrapper>
 
-      <GlowingCircles />
+      <Circles />
     </Card>
   );
 }

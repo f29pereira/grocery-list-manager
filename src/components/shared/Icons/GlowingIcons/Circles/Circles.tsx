@@ -1,17 +1,17 @@
 import clsx from "clsx";
 import type { IconsPlacement } from "../types/glowingIcons.types";
-import GlowingCircle from "./GlowingCircle/GlowingCircle";
+import Circle from "./Circle/Circle";
 
 /**
- * Renders GlowingCircle components to be displayed at the bottom left or top right of an element
+ * Renders Circle components to be displayed at the bottom left or top right of an element
  *
  * Props are defined in {@link IconsPlacement}.
  */
-export default function GlowingCircles({
-  circlesPlacement = "bottom-left",
+export default function Circles({
+  iconsPlacement = "bottom-left",
 }: IconsPlacement) {
-  const isTopRight = circlesPlacement === "top-right";
-  const isBottomLeft = circlesPlacement === "bottom-left";
+  const isTopRight = iconsPlacement === "top-right";
+  const isBottomLeft = iconsPlacement === "bottom-left";
 
   return (
     <div
@@ -22,13 +22,13 @@ export default function GlowingCircles({
         isBottomLeft && "-bottom-5 -left-5",
       )}
     >
-      <GlowingCircle
+      <Circle
         styles="relative text-8xl text-brand 
                 md:text-9xl"
         animationSpeed="slow"
       />
 
-      <GlowingCircle
+      <Circle
         styles={clsx(
           "absolute",
           "text-6xl text-green-500 dark:text-green-400",
@@ -39,7 +39,7 @@ export default function GlowingCircles({
         animationSpeed="medium"
       />
 
-      <GlowingCircle
+      <Circle
         styles={clsx(
           "absolute",
           "text-4xl text-green-400 dark:text-green-300 md:text-5xl",

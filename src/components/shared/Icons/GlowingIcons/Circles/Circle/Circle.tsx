@@ -10,10 +10,7 @@ import { FaCircle } from "@/assets/icons/icon";
  *
  * Props are defined in {@link GlowingIconProps}.
  */
-export default function GlowingCircle({
-  styles,
-  animationSpeed,
-}: GlowingIconProps) {
+export default function Circle({ styles, animationSpeed }: GlowingIconProps) {
   const animation = getAnimationSpeed(animationSpeed);
 
   return <FaCircle className={clsx(styles, animation)} aria-hidden="true" />;

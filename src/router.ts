@@ -9,6 +9,7 @@ import FinishProfileRoute from "./routes/auth/finishProfile";
 import ForgotPasswordRoute from "./routes/auth/passwordReset";
 import ProfileManager from "./routes/profile/profileManager";
 import AccountRoute from "./routes/profile/account";
+import DeleteAccountRoute from "./routes/auth/deleteUser";
 
 /**
  * Routes configuration
@@ -44,6 +45,7 @@ export const router = createBrowserRouter([
             ],
           },
           // TO DO: Add "/groceries" route
+          { path: "delete-account", Component: DeleteAccountRoute },
         ],
       },
     ],

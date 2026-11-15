@@ -180,6 +180,7 @@
       "message": "Permanently delete your account.",
       "delete-link": "Delete my account",
       "account-screen": {
+        "title": "Confirm account removal",
         "message": "Do you wish to remove your account ? This will permanently delete your account and can't be undone.",
         "delete-btn": "Yes, remove account"
       }

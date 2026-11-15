@@ -178,7 +178,11 @@
     "delete-user": {
       "title": "Eliminar conta",
       "message": "Elimine a sua conta permanentemente.",
-      "delete-link": "Eliminar a minha conta"
+      "delete-link": "Eliminar a minha conta",
+      "account-screen": {
+        "message": "Pretende remover a sua conta ? Isto excluirá a sua conta permanentemente. Esta ação não pode ser desfeita.",
+        "delete-btn": "Sim, remover conta"
+      }
     }
   },
   "error-messages": {

@@ -8,7 +8,7 @@ import GoBackButton from "@/components/ui/Buttons/GoBackButton/GoBackButton";
 /**
  * Renders a card with the delete account and go back buttons
  */
-export default function DeleteAccount() {
+export default function DeleteUserConfirmation() {
   // Translation
   const { t } = useTranslation();
 

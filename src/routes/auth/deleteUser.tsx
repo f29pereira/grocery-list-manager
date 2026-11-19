@@ -1,8 +1,8 @@
-import DeleteAccount from "@/features/auth/components/Profile/DeleteAccount/DeleteAccount";
+import DeleteUserConfirmation from "@/features/auth/components/Profile/DeleteUserConfirmation/DeleteUserConfirmation";
 
 /**
- * Renders the DeleteUser component for the "delete-account" route
+ * Renders the DeleteUserConfirmation component for the "delete-account" route
  */
 export default function DeleteAccountRoute() {
-  return <DeleteAccount />;
+  return <DeleteUserConfirmation />;
 }

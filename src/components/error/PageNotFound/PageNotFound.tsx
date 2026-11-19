@@ -1,12 +1,12 @@
 import { useTranslation } from "react-i18next";
 import LogoHomeLink from "@/components/ui/Links/LogoHomeLink/LogoHomeLink";
-import { LuFileX, RiArrowGoBackFill } from "@/assets/icons/icon";
-import PillAppLink from "@/components/ui/Links/AppLink/PillAppLink/PillAppLink";
+import { LuFileX } from "@/assets/icons/icon";
+import GoBackButton from "@/components/ui/Buttons/GoBackButton/GoBackButton";
 
 /**
  * Renders the page not found with link with:
  * - Logo navigation link
- * - Card width error code, description and navigation link to return to the home page
+ * - Card width error code, description and go back button
  */
 export default function PageNotFound() {
   const { t } = useTranslation();
@@ -58,25 +58,13 @@ export default function PageNotFound() {
             {t("pageNotFound.message")}
           </p>
 
-          {/*Home Link*/}
-          <div className="flex justify-center">
-            <PillAppLink
+          <div className="flex justify-center items-center">
+            <GoBackButton
               styles="text-white bg-green-600
                     shadow-lg shadow-green-600/50
                     theme-transition
                     hover:bg-green-500"
-              to="/"
-            >
-              <div className="flex justify-center items-center gap-4">
-                <RiArrowGoBackFill
-                  className="text-2xl md:text-3xl"
-                  aria-hidden="true"
-                />
-                <span className="font-bold text-base">
-                  {t("pageNotFound.home-link")}
-                </span>
-              </div>
-            </PillAppLink>
+            />
           </div>
 
           <LuFileX

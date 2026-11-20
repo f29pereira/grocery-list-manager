@@ -7,10 +7,11 @@ import clsx from "clsx";
  * Props are defined in {@link PillButtonProps}.
  */
 export default function PillButton({
-  ariaLabel,
   styles,
+  type = "button",
   handleClick,
   isDisabled,
+  ariaLabel,
   children,
 }: PillButtonProps) {
   return (
@@ -25,6 +26,7 @@ export default function PillButton({
         "sm:px-6 sm:py-3 lg:px-8 lg:py-4",
         styles,
       )}
+      type={type}
       onClick={handleClick}
       aria-label={ariaLabel}
       disabled={isDisabled}

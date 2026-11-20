@@ -25,6 +25,7 @@ export default function SubmitButton({
         "disabled:hover:bg-button",
         styles,
       )}
+      type="submit"
       handleClick={handleClick}
       isDisabled={isSubmitting || isDisabled}
     >

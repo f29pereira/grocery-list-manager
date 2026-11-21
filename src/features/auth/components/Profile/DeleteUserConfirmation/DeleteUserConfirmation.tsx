@@ -13,6 +13,14 @@ export default function DeleteUserConfirmation() {
 
   return (
     <Card styles="relative lg:w-225 lg:mx-auto">
+      <div className="lg:hidden">
+        <Circles />
+      </div>
+
+      <div className="hidden lg:block">
+        <Circles iconsPlacement="top-right" />
+      </div>
+
       <CardContentWrapper>
         <h1
           className="mb-8 mt-4
@@ -27,14 +35,6 @@ export default function DeleteUserConfirmation() {
         <p className="text-center text-base text-paragraph lg:text-left">
           {t("forms.delete-user.account-screen.message")}
         </p>
-
-        <div className="lg:hidden">
-          <Circles />
-        </div>
-
-        <div className="hidden lg:block">
-          <Circles iconsPlacement="top-right" />
-        </div>
 
         <DeleteUserForm />
       </CardContentWrapper>

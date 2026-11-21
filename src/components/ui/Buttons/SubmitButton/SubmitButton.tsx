@@ -20,11 +20,7 @@ export default function SubmitButton({
 }: SubmitButtonProps) {
   return (
     <PillButton
-      styles={clsx(
-        "disabled:cursor-not-allowed disabled:opacity-75",
-        "disabled:hover:bg-button",
-        styles,
-      )}
+      styles={clsx("disabled:cursor-not-allowed disabled:opacity-75", styles)}
       type="submit"
       handleClick={handleClick}
       isDisabled={isSubmitting || isDisabled}
@@ -33,7 +29,7 @@ export default function SubmitButton({
         {isSubmitting ? (
           <FaSpinner
             className="text-2xl text-button-label 
-                        motion-safe:animate-spin"
+                      motion-safe:animate-spin"
             aria-hidden="true"
           />
         ) : (

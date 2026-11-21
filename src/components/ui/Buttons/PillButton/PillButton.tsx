@@ -22,8 +22,9 @@ export default function PillButton({
         "theme-transition dark:shadow-none",
         "focus-visible:focus-ring focus-visible:-outline-offset-4",
         "md:focus-visible:outline-offset-2",
-        "sm:max-w-100 md:max-w-80 lg:max-w-70",
-        "sm:px-6 sm:py-3 lg:px-8 lg:py-4",
+        "sm:max-w-100 sm:px-6 sm:py-3",
+        "md:max-w-80 md:h-13.5",
+        "lg:max-w-70 lg:h-15.5 lg:px-8 lg:py-4",
         styles,
       )}
       type={type}

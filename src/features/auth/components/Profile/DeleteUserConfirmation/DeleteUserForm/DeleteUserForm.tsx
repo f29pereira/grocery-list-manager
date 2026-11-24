@@ -9,7 +9,7 @@ import {
 } from "./DeleteUserForm.utils";
 import { reauthenticateUserWithCredential } from "../../../services/auth.services";
 import { isUserInvalid } from "../../../utils/errorMessages.utils";
-import { deleteUser } from "firebase/auth";
+import { deleteUserAccountAndDetails } from "./DeleteUserForm.utils";
 import PasswordField from "../../../shared/Fields/PasswordField/PasswordField";
 import SubmitMessage from "@/components/shared/Form/SubmitMessage/SubmitMessage";
 import DeleteAccountButton from "../DeleteAccountButton/DeleteAccountButton";
@@ -46,8 +46,6 @@ export default function DeleteUserForm() {
     formState: { isSubmitting },
   } = methods;
 
-  //const [isSubmitting, setIsSubmitting] = useState(true);
-
   /**
    * Deletes the user's account
    *  @param data current password field
@@ -62,7 +60,7 @@ export default function DeleteUserForm() {
         const currentPassword = data.currentPassword;
 
         await reauthenticateUserWithCredential(user, email, currentPassword);
-        await deleteUser(authUser.user);
+        await deleteUserAccountAndDetails(user);
       }
     } catch (error) {
       if (isUserInvalid(error)) {

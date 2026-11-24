@@ -6,6 +6,7 @@ import { addUserDetailsDocument } from "./AddUserDetailsForm.utils";
 import useFormMessage from "@/hooks/useFormMessage";
 import { getGenericDocumentErrorMessage } from "@/utils/common.utils";
 import { uploadAvatarImage, isFailedUpload } from "@/lib/cloudinary/cloudinary";
+import { DEFAULT_INITIALS_AVATAR_COLOR } from "@/constants/app.constants";
 import SubmitMessage from "@/components/shared/Form/SubmitMessage/SubmitMessage";
 import UserFields from "../Fields/UserFields/UserFields";
 import AddUserDetailsButton from "./AddUserDetailsButton/AddUserDetailsButton";
@@ -47,7 +48,8 @@ export default function AddUserDetailsForm() {
 
     try {
       if (authUser?.user) {
-        const avatarColor = data.initialsAvatarColor;
+        const avatarColor =
+          data.initialsAvatarColor ?? DEFAULT_INITIALS_AVATAR_COLOR;
         const avatarFile = data.avatarFile;
         const firstName = data.firstName;
         const lastName = data.lastName;

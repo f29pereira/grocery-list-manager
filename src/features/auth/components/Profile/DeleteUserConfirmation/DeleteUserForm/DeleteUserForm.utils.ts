@@ -1,6 +1,27 @@
 import type { TFunction } from "i18next";
 import type { RegisterOptions } from "react-hook-form";
 import type { DeleteUserAccountFields } from "./DeleteUserForm.types";
+import { isFirebaseError } from "@/utils/common.utils";
+import { getGenericAuthErrorMessage } from "../../../utils/errorMessages.utils";
+import { getGenericSignInAuthErrorMessage } from "../../../utils/errorMessages.utils";
+
+/**
+ * Returns Firebase deleteUser custom error messages
+ * @param t error messages translation
+ * @param error
+ */
+export const getDeleteUserErrorMessage = (
+  t: TFunction<"translation", undefined>,
+  error: unknown,
+) => {
+  const errorCode = isFirebaseError(error) ? error.code : "";
+
+  return (
+    getGenericAuthErrorMessage(t, errorCode) ??
+    getGenericSignInAuthErrorMessage(t, errorCode) ??
+    t("error-messages.generic")
+  );
+};
 
 /**
  * Returns the React Hook Form validation for the current password field on the delete user's account form

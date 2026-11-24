@@ -3,10 +3,15 @@ import { useForm, FormProvider } from "react-hook-form";
 import { useAuth } from "@/contexts/AuthContext/useAuth";
 import useFormMessage from "@/hooks/useFormMessage";
 import type { DeleteUserAccountFields } from "./DeleteUserForm.types";
-import { currentPasswordFieldValidation } from "./DeleteUserForm.utils";
+import {
+  currentPasswordFieldValidation,
+  getDeleteUserErrorMessage,
+} from "./DeleteUserForm.utils";
 import { reauthenticateUserWithCredential } from "../../../services/auth.services";
 import { isUserInvalid } from "../../../utils/errorMessages.utils";
+import { deleteUser } from "firebase/auth";
 import PasswordField from "../../../shared/Fields/PasswordField/PasswordField";
+import SubmitMessage from "@/components/shared/Form/SubmitMessage/SubmitMessage";
 import DeleteAccountButton from "../DeleteAccountButton/DeleteAccountButton";
 import GoBackButton from "@/components/ui/Buttons/GoBackButton/GoBackButton";
 
@@ -37,10 +42,11 @@ export default function DeleteUserForm() {
 
   // React Hook Form: context for the current password input
   const {
-    reset,
     setError,
     formState: { isSubmitting },
   } = methods;
+
+  //const [isSubmitting, setIsSubmitting] = useState(true);
 
   /**
    * Deletes the user's account
@@ -56,7 +62,7 @@ export default function DeleteUserForm() {
         const currentPassword = data.currentPassword;
 
         await reauthenticateUserWithCredential(user, email, currentPassword);
-        // TO DO: Add Firebase delete account
+        await deleteUser(authUser.user);
       }
     } catch (error) {
       if (isUserInvalid(error)) {
@@ -70,7 +76,8 @@ export default function DeleteUserForm() {
           { shouldFocus: true },
         );
       } else {
-        // TO DO: use showErrorMessage for other errors
+        const errorText = getDeleteUserErrorMessage(t, error);
+        showErrorMessage(errorText);
       }
     }
   };
@@ -81,13 +88,20 @@ export default function DeleteUserForm() {
         className=""
         onSubmit={methods.handleSubmit((data) => onSubmit(data))}
       >
-        <div className="mt-10 mb-20 md:max-w-112.5 md:mx-auto">
+        <div className="mt-10 md:max-w-112.5 md:mx-auto">
           <PasswordField<DeleteUserAccountFields>
             label={t("forms.update-password.fields.current-password")}
             autoComplete="current-password"
             registerName="currentPassword"
             validation={currentPasswordFieldValidation}
           />
+
+          <div className="h-17.5">
+            <SubmitMessage
+              status={formMessage.status}
+              message={formMessage.message}
+            />
+          </div>
         </div>
 
         <div

@@ -44,8 +44,7 @@
       "label": "Erro",
       "description": "Página não encontrada"
     },
-    "message": "Lamentamos, mas a página que procura não existe ou não está disponível de momento.",
-    "home-link": "Voltar à página inicial"
+    "message": "Lamentamos, mas a página que procura não existe ou não está disponível de momento."
   },
   "footer": {
     "nav": {

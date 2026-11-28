@@ -1,12 +1,16 @@
-import { defineConfig } from "vitest/config";
+import { defineConfig, mergeConfig } from "vitest/config";
+import viteConfig from "./vite.config";
 
 /**
  * Vitest configuration
  */
-export default defineConfig({
-  test: {
-    globals: true, // React Testing Library cleans rendered components automatically
-    environment: "jsdom",
-    setupFiles: ["./vitest.setup.ts"],
-  },
-});
+export default mergeConfig(
+  viteConfig,
+  defineConfig({
+    test: {
+      globals: true, // React Testing Library cleans rendered components automatically
+      environment: "jsdom",
+      setupFiles: ["./vitest.setup.ts"],
+    },
+  }),
+);
